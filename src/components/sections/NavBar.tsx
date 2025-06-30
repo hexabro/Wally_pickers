@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { Globe2, ChevronDown } from "lucide-react"; // ⟵ usa lucide-react o tu librería de iconos favorita
 import LanguageSelector from "../ui/LanguageSelector";
 
 const navItems = [
