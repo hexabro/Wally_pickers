@@ -3,9 +3,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import Lupa from "@/components/ui/lupa";
 import AnimatedUnderline from "@/components/ui/animatedUnderline";
-import { Space } from "lucide-react";
 /** -------------------------------------------------------------
  *  Wally Pickers – Página de inicio (tipo landing)            
  *  Estructura solicitada por el cliente:                      
