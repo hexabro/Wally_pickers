@@ -30,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className= {'${rubik.variable} {geistSans.variable} ${geistMono.variable}'}>
+    <html lang="es" className= {`${rubik.variable} ${geistSans.variable} ${geistMono.variable}`}>
       
       <body className={`font-sans antialiased`}>
         <header>

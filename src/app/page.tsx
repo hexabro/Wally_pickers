@@ -4,7 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 import Lupa from "@/components/ui/lupa";
-
+import AnimatedUnderline from "@/components/ui/animatedUnderline";
+import { Space } from "lucide-react";
 /** -------------------------------------------------------------
  *  Wally Pickers – Página de inicio (tipo landing)            
  *  Estructura solicitada por el cliente:                      
@@ -88,22 +89,8 @@ function Presentacion() {
   return (
     <section className="text-center py-16 px-4 bg-white">
       <h2 className="text-3xl md:text-4xl font-bold text-sky-950">
-        Traemos los mejores alimentos de{" "}
-        <span className="relative inline-block">
-          <span className="relative z-10">Asia y América</span>
-          <svg
-            className="absolute -bottom-1 left-0 w-full h-4 z-0"
-            viewBox="0 0 100 10"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M0,5 C20,15 80,-5 100,5"
-              stroke="#059669"
-              strokeWidth="2"
-              fill="none"
-            />
-          </svg>
-        </span>{" "}
+        Traemos los mejores alimentos de 
+        <AnimatedUnderline>  Asia y América </AnimatedUnderline>
         a Europa
       </h2>
 
