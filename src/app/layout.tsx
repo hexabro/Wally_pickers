@@ -1,7 +1,14 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Rubik } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/sections/NavBar";
+
+
+const rubik = Rubik({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-rubik',
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,8 +21,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Laborawi",
-  description: "Laborawi site",
+  title: "Wally pickers",
+  description: "Wally pickers importación de comida mundial",
 };
 
 export default function RootLayout({
@@ -24,13 +31,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <header>
-        <NavBar/>
-      </header>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="es" className= {'${rubik.variable}'}>
+      
+      <body className={`font-sans antialiased`}>
+        <header>
+          <NavBar/>
+        </header>
         {children}
       </body>
     </html>

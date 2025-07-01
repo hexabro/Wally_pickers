@@ -18,55 +18,121 @@ import Link from "next/link";
 /* ====================== 1 · HERO SLIDER ===================== */
 const heroSlides = [
   { src: "/images/hero/1.jpg", alt: "Jamón Ibérico" },
-  { src: "/images/hero/2.jpg", alt: "Queso Manchego" },
-  { src: "/images/hero/3.jpg", alt: "Aceite de Oliva" },
-  { src: "/images/hero/4.jpg", alt: "Aceite de Oliva" },
-  { src: "/images/hero/5.jpg", alt: "Aceite de Oliva" },
-  { src: "/images/hero/6.jpg", alt: "Aceite de Oliva" },
-  { src: "/images/hero/7.jpg", alt: "Aceite de Oliva" },
-  { src: "/images/hero/8.jpg", alt: "Aceite de Oliva" },
-  { src: "/images/hero/9.jpg", alt: "Aceite de Oliva" },
+  { src: "/images/hero/1.jpg", alt: "Jamón Ibérico" },
+  { src: "/images/hero/1.jpg", alt: "Jamón Ibérico" },
+  { src: "/images/hero/1.jpg", alt: "Jamón Ibérico" },
+  { src: "/images/hero/1.jpg", alt: "Jamón Ibérico" },
+  { src: "/images/hero/1.jpg", alt: "Jamón Ibérico" },
+
 ];
 
 function HeroSlider() {
   const [index, setIndex] = useState(0);
+
   useEffect(() => {
     const id = setInterval(() => setIndex((i) => (i + 1) % heroSlides.length), 4000);
     return () => clearInterval(id);
   }, []);
+
+  const prevSlide = () => {
+    setIndex((i) => (i - 1 + heroSlides.length) % heroSlides.length);
+  };
+
+  const nextSlide = () => {
+    setIndex((i) => (i + 1) % heroSlides.length);
+  };
+
   return (
     <section className="relative h-[85vh] overflow-hidden">
+      {/* Imágenes del slider */}
       {heroSlides.map(({ src, alt }, i) => (
         <Image
-          key={src}
+          key={i}
           src={src}
           alt={alt}
           fill
           priority={i === 0}
-          className={`object-cover object-center transition-opacity duration-1000 ${i === index ? "opacity-100" : "opacity-0"}`}
+          className={`object-cover object-center transition-opacity duration-1000 ${
+            i === index ? "opacity-100" : "opacity-0"
+          }`}
         />
       ))}
-      
+
+      {/* Botón anterior */}
+      <button
+        onClick={prevSlide}
+        className="absolute top-1/2 left-4 -translate-y-1/2 bg-white/70 hover:bg-white text-sky-900 rounded-full w-10 h-10 flex items-center justify-center shadow transition z-10"
+        aria-label="Anterior"
+      >
+        ‹
+      </button>
+
+      {/* Botón siguiente */}
+      <button
+        onClick={nextSlide}
+        className="absolute top-1/2 right-4 -translate-y-1/2 bg-white/70 hover:bg-white text-sky-900 rounded-full w-10 h-10 flex items-center justify-center shadow transition z-10"
+        aria-label="Siguiente"
+      >
+        ›
+      </button>
     </section>
   );
 }
+
+
+function Presentacion() {
+
+
+  return (
+    <section className="text-center py-16 px-4 bg-white">
+      <h2 className="text-3xl md:text-4xl font-bold text-sky-950">
+        Traemos los mejores alimentos de{" "}
+        <span className="relative inline-block">
+          <span className="relative z-10">Asia y América</span>
+          <svg
+            className="absolute -bottom-1 left-0 w-full h-4 z-0"
+            viewBox="0 0 100 10"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0,5 C20,15 80,-5 100,5"
+              stroke="#059669"
+              strokeWidth="2"
+              fill="none"
+            />
+          </svg>
+        </span>{" "}
+        al mundo
+      </h2>
+
+      <p className="mt-6 max-w-5xl  mx-auto text-gray-700 text-lg leading-relaxed">
+        Importamos los mejores alimentos de Latinoamérica para miles de clientes en toda Europa, con un firme compromiso por la calidad, 
+        la autenticidad y la confianza. Acercamos los sabores, colores y tradiciones de nuestra tierra al mundo.
+      </p>
+    </section>  
+  )
+}
+
 
 /* =============== 2 · PROCEDENCIA + CTA MARCAS =============== */
 function OriginSection() {
   return (
     <section id="procedencia" className="py-20 px-6 max-w-6xl mx-auto text-center md:text-left flex flex-col md:flex-row items-center gap-10">
       <div className="flex-1 space-y-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-sky-900">Origen garantizado</h2>
+        <h2 className="text-3xl md:text-4xl font-bold ">Calidad garantizada</h2>
         <p>
-          Seleccionamos productores certificados en Europa, América, Asia y Oceanía para asegurar la mejor calidad y trazabilidad.
-          Nuestro catálogo incluye charcutería gourmet, quesos con D.O.P., salsas asiáticas auténticas y mucho más.
+          Contamos con gran variedad de productos como salsas, bebidas, especias, pulpas congeladas, cafés, golosinas y muchos más sabores de Latinoamérica. <br /><br />
+
+          Somos una referencia en la importación, distribución y comercialización de alimentos nostálgicos en Europa. <br /><br />
+
+          Esta experiencia nos ha otorgado una sólida posición en el mercado, permitiéndonos satisfacer las necesidades de nuestros clientes..
         </p>
-        <Link href="#marcas" className="inline-block mt-4 px-6 py-3 rounded-full bg-sky-900 text-white hover:bg-sky-700 transition">
+        <Link href="#marcas" className="inline-block mt-4 px-6 py-3 rounded-full bg-sky-600 text-white hover:bg-sky-700 transition">
           Conoce todas nuestras marcas
         </Link>
       </div>
 
-      <Image src="/images/world-map.svg" alt="Mapa procedencia" width={500} height={350} className="flex-1" />
+      <Image src="/images/mapamundi.jpg" alt="Mapa procedencia" width={500} height ={500} className="flex-1" />
     </section>
   );
 }
@@ -205,6 +271,7 @@ export default function HomePage() {
   return (
     <main>
       <HeroSlider />
+      <Presentacion />
       <OriginSection />
       <StatsStrip />
       <BrandCarousel />
