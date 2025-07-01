@@ -15,7 +15,7 @@ const navItems = [
 export default function NavBar() {
   return (
     <header className="w-full bg-white">
-      <nav className="  mx-auto flex max-w-7xl items-center justify-between gap-6 px-6">
+      <nav className=" mx-auto flex max-w-7xl items-center justify-between gap-6 px-6">
         {/* ---------- Logo ---------- */}
         <Link href="/" className="flex items-center gap-2">
           <Image
