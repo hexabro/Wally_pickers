@@ -28,7 +28,7 @@ export default function NavBar() {
         </Link>
 
         {/* ---------- Links de navegación ---------- */}
-        <ul className="lg:flex items-center gap-10 text-lg font-semibold font-sans text-[#070707]">
+        <ul className="lg:flex items-center gap-10 text-lg font-medium  text-[#070707]">
           {navItems.map(({ href, label}) => (
             <li key={href}>
               <Link

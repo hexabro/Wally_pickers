@@ -6,7 +6,6 @@ import NavBar from "@/components/sections/NavBar";
 
 const rubik = Rubik({
   subsets: ['latin'],
-  weight: ['400', '700'],
   variable: '--font-rubik',
 });
 
@@ -31,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className= {'${rubik.variable}'}>
+    <html lang="es" className= {'${rubik.variable} {geistSans.variable} ${geistMono.variable}'}>
       
       <body className={`font-sans antialiased`}>
         <header>

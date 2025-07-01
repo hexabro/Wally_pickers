@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+import Lupa from "@/components/ui/lupa";
+
 /** -------------------------------------------------------------
  *  Wally Pickers – Página de inicio (tipo landing)            
  *  Estructura solicitada por el cliente:                      
@@ -43,7 +45,7 @@ function HeroSlider() {
   };
 
   return (
-    <section className="relative h-[85vh] overflow-hidden">
+    <section className="relative h-[85vh] overflow-hidden py-20">
       {/* Imágenes del slider */}
       {heroSlides.map(({ src, alt }, i) => (
         <Image
@@ -79,7 +81,7 @@ function HeroSlider() {
   );
 }
 
-
+/* PRESENTACIÓN */
 function Presentacion() {
 
 
@@ -102,7 +104,7 @@ function Presentacion() {
             />
           </svg>
         </span>{" "}
-        al mundo
+        a Europa
       </h2>
 
       <p className="mt-6 max-w-5xl  mx-auto text-gray-700 text-lg leading-relaxed">
@@ -114,25 +116,25 @@ function Presentacion() {
 }
 
 
-/* =============== 2 · PROCEDENCIA + CTA MARCAS =============== */
+/* =============== 2  CTA MARCAS =============== */
 function OriginSection() {
   return (
-    <section id="procedencia" className="py-20 px-6 max-w-6xl mx-auto text-center md:text-left flex flex-col md:flex-row items-center gap-10">
+    <section id="procedencia" className="px-20 mx-auto text-center md:text-left flex flex-col md:flex-row items-center gap-10 bg-[#0e344f]">
       <div className="flex-1 space-y-4">
-        <h2 className="text-3xl md:text-4xl font-bold ">Calidad garantizada</h2>
-        <p>
+        <h2 className="text-3xl md:text-4xl font-bold text-amber-50 underline decoration-dashed ">Calidad garantizada</h2>
+        <p className = "text-[#f7f7f7]">
           Contamos con gran variedad de productos como salsas, bebidas, especias, pulpas congeladas, cafés, golosinas y muchos más sabores de Latinoamérica. <br /><br />
 
           Somos una referencia en la importación, distribución y comercialización de alimentos nostálgicos en Europa. <br /><br />
 
-          Esta experiencia nos ha otorgado una sólida posición en el mercado, permitiéndonos satisfacer las necesidades de nuestros clientes..
+          Esta experiencia nos ha otorgado una sólida posición en el mercado, permitiéndonos satisfacer las necesidades de nuestros clientes.
         </p>
-        <Link href="#marcas" className="inline-block mt-4 px-6 py-3 rounded-full bg-sky-600 text-white hover:bg-sky-700 transition">
+        <Link href="#marcas" className="inline-block mt-4 px-6 py-3 rounded-full bg-[#7688d6] text-white hover:bg-sky-700 transition">
           Conoce todas nuestras marcas
         </Link>
       </div>
 
-      <Image src="/images/mapamundi.jpg" alt="Mapa procedencia" width={500} height ={500} className="flex-1" />
+      <Image src="/images/culturas.png" alt="Mapa procedencia" width={400} height ={400} className="flex-1" />
     </section>
   );
 }
@@ -270,6 +272,7 @@ function CatalogDownload() {
 export default function HomePage() {
   return (
     <main>
+      {/* <Lupa /> */}
       <HeroSlider />
       <Presentacion />
       <OriginSection />
