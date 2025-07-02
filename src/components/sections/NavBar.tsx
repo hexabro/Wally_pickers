@@ -1,9 +1,16 @@
 'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import LanguageSelector from '../ui/LanguageSelector';
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react'; // o cualquier ícono de hamburguesa que uses
+import { Menu, X } from 'lucide-react';
+import { usePathname } from 'next/navigation';
+
+// Helper opcional para concatenar clases
+function cn(...classes: (string | undefined | null | false)[]) {
+  return classes.filter(Boolean).join(' ');
+}
 
 const navItems = [
   { href: '/', label: 'Inicio' },
@@ -16,16 +23,13 @@ const navItems = [
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname(); // ← ruta actual
 
   return (
     <header className="w-full bg-white relative z-50">
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-4 h-20">
         {/* ---------- Botón hamburguesa (solo móvil) ---------- */}
-        <button
-          onClick={() => setIsOpen(true)}
-          className="lg:hidden"
-          aria-label="Abrir menú"
-        >
+        <button onClick={() => setIsOpen(true)} className="lg:hidden" aria-label="Abrir menú">
           <Menu size={28} />
         </button>
 
@@ -41,17 +45,26 @@ export default function NavBar() {
         </Link>
 
         {/* ---------- Links navegación (desktop) ---------- */}
-        <ul className="hidden lg:flex items-center gap-10 text-lg font-medium text-[#070707]">
-          {navItems.map(({ href, label }) => (
-            <li key={href}>
-              <Link
-                href={href}
-                className="relative hover:text-[#798ea6] hover:underline hover:decoration-2 underline-offset-32"
-              >
-                {label}
-              </Link>
-            </li>
-          ))}
+        <ul className="hidden lg:flex items-center gap-10 text-lg font-medium">
+          {navItems.map(({ href, label }) => {
+            const isActive = pathname === href || (href !== '/' && pathname.startsWith(href));
+            return (
+              <li key={href}>
+                <Link
+                  href={href}
+                  className={cn(
+                    'relative transition-colors',
+                    isActive
+                      ? 'text-blue-600 underline decoration-2 underline-offset-8'
+                      : 'text-[#070707] hover:text-[#798ea6] hover:underline hover:decoration-2 underline-offset-32'
+                  )}
+                  aria-current={isActive ? 'page' : undefined}
+                >
+                  {label}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
 
         {/* ---------- Selector de idioma ---------- */}
@@ -66,35 +79,35 @@ export default function NavBar() {
       >
         <div className="flex items-center justify-between px-6 py-4 border-b">
           <span className="text-xl font-semibold">Menú</span>
-          <button
-            onClick={() => setIsOpen(false)}
-            className="text-gray-600"
-            aria-label="Cerrar menú"
-          >
+          <button onClick={() => setIsOpen(false)} className="text-gray-600" aria-label="Cerrar menú">
             <X size={24} />
           </button>
         </div>
-        <ul className="flex flex-col px-6 py-4 gap-4 text-base">
-          {navItems.map(({ href, label }) => (
-            <li key={href}>
-              <Link
-                href={href}
-                onClick={() => setIsOpen(false)}
-                className="block text-gray-800 hover:text-[#798ea6] font-medium"
-              >
-                {label}
-              </Link>
-            </li>
-          ))}
+        <ul className="flex flex-col px-6 py-4 gap-4 text-base font-medium">
+          {navItems.map(({ href, label }) => {
+            const isActive = pathname === href || (href !== '/' && pathname.startsWith(href));
+            return (
+              <li key={href}>
+                <Link
+                  href={href}
+                  onClick={() => setIsOpen(false)}
+                  className={cn(
+                    'block transition-colors',
+                    isActive ? 'text-blue-600' : 'text-gray-800 hover:text-[#798ea6]'
+                  )}
+                  aria-current={isActive ? 'page' : undefined}
+                >
+                  {label}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </div>
 
       {/* ---------- Overlay al abrir menú ---------- */}
       {isOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-40 z-40"
-          onClick={() => setIsOpen(false)}
-        />
+        <div className="fixed inset-0 bg-black/40 z-40" onClick={() => setIsOpen(false)} />
       )}
     </header>
   );

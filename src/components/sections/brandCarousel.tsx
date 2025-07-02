@@ -69,7 +69,7 @@ export default function BrandCarousel({ direction = 'right' }: BrandCarouselProp
               alt={logo}
               width={140}
               height={80}
-              className="object-contain grayscale hover:grayscale-0"
+              className="object-contain md:grayscale md:hover:grayscale-0"
             />
           ))}
         </div>

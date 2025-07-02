@@ -33,8 +33,10 @@ function Presentacion() {
       </h2>
 
       <p className="mt-6 max-w-5xl  mx-auto text-gray-700 text-lg leading-relaxed">
-        Importamos los mejores alimentos de Latinoamérica para miles de clientes en toda Europa, con un firme compromiso por la calidad, 
-        la autenticidad y la confianza. Acercamos los sabores, colores y tradiciones de nuestra tierra al mundo.
+        Importamos los mejores alimentos de Latinoamérica para miles de clientes en toda Europa.
+      </p>
+      <p className="hidden md:block mt-6 max-w-5xl  mx-auto text-gray-700 text-lg leading-relaxed">
+        Con un firme compromiso por la calidad, la autenticidad y la confianza, acercamos los sabores, colores y tradiciones de nuestra tierra al mundo.
       </p>
     </section>  
   )
@@ -61,7 +63,7 @@ export default function HomePage() {
         <h2 className="text-3xl font-bold text-center text-sky-900 bg-neutral-100">
           Marcas que confían en nosotros
         </h2>
-        <p className = "text-center">Con más de 200 productos diferentes, traemos sabores de todo el planeta a tus manos</p>
+        <p className = "text-center pt-3.5 ">Con más de 200 productos diferentes, traemos sabores de todo el planeta a tus manos</p>
       </div>
       
       <BrandCarousel direction="right"/>
