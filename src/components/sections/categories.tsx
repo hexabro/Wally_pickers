@@ -11,7 +11,7 @@ const categories = [
 export default function CategorySection() {
   return (
     <section className="py-20 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
-      <Image src="/images/categories-basket.jpg" alt="Cesta de productos" width={450} height={350} className="rounded-lg shadow-md" />
+      <Image src="/images/compra.png" alt="Cesta de productos" width={450} height={350} className="rounded-lg shadow-md" />
 
       <div className="flex-1 space-y-6 text-center md:text-left">
         <h2 className="text-3xl md:text-4xl font-bold text-sky-900">Explora nuestras categorías</h2>

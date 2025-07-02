@@ -1,5 +1,3 @@
-
-
 import HeroSlider from "@/components/sections/HeroSlider";
 import AutoritySection from "@/components/sections/autority"
 import StatsStrip from "@/components/sections/metrics";
@@ -59,7 +57,15 @@ export default function HomePage() {
       <Presentacion />
       <AutoritySection />
       <StatsStrip />
-      <BrandCarousel />
+      <div className = "bg-neutral-100 pt-10 pb-5 ">
+        <h2 className="text-3xl font-bold text-center text-sky-900 bg-neutral-100">
+          Marcas que confían en nosotros
+        </h2>
+        <p className = "text-center">Con más de 200 productos diferentes, traemos sabores de todo el planeta a tus manos</p>
+      </div>
+      
+      <BrandCarousel direction="right"/>
+      <BrandCarousel direction ="left"/>
       <CategorySection />
       <CatalogDownload />
     </main>

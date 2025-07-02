@@ -5,13 +5,17 @@ import { useState, useEffect } from "react";
 
 /* ====================== 1 · HERO SLIDER ===================== */
 const heroSlides = [
-  { src: "/images/hero/1.jpg", alt: "Jamón Ibérico" },
-  { src: "/images/hero/1.jpg", alt: "Jamón Ibérico" },
-  { src: "/images/hero/1.jpg", alt: "Jamón Ibérico" },
-  { src: "/images/hero/1.jpg", alt: "Jamón Ibérico" },
-  { src: "/images/hero/1.jpg", alt: "Jamón Ibérico" },
-  { src: "/images/hero/1.jpg", alt: "Jamón Ibérico" },
-
+  { src: "/images/hero/template.jpg", alt: "Jamón Ibérico" },
+  { src: "/images/hero/template.jpg", alt: "Jamón Ibérico" },
+  { src: "/images/hero/template.jpg", alt: "Jamón Ibérico" },
+  { src: "/images/hero/template.jpg", alt: "Jamón Ibérico" },
+  { src: "/images/hero/template.jpg", alt: "Jamón Ibérico" },
+  { src: "/images/hero/template.jpg", alt: "Jamón Ibérico" },
+  { src: "/images/hero/template.jpg", alt: "Jamón Ibérico" },
+  { src: "/images/hero/template.jpg", alt: "Jamón Ibérico" },
+  { src: "/images/hero/template.jpg", alt: "Jamón Ibérico" },
+  { src: "/images/hero/template.jpg", alt: "Jamón Ibérico" },
+  
 ];
 
 export default function HeroSlider() {
@@ -31,7 +35,7 @@ export default function HeroSlider() {
   };
 
   return (
-    <section className="relative h-[85vh] overflow-hidden py-20">
+    <section className="relative  w-auto md:h-[85vh] min-h-[200px] overflow-hidden py-8 md:py-20">
       {/* Imágenes del slider */}
       {heroSlides.map(({ src, alt }, i) => (
         <Image

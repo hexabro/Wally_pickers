@@ -1,74 +1,75 @@
 'use client'
 
-import { useState, useEffect } from "react";
-import Image from "next/image";
+import { useEffect, useRef } from 'react'
+import Image from 'next/image'
 
+const logos = [
+  'logo_template.jpg',
+  'logo_template.jpg',
+  'logo_template.jpg',
+  'logo_template.jpg',
+  'logo_template.jpg',
+  'logo_template.jpg',
+  'logo_template.jpg',
+  'logo_template.jpg',
+]
 
-const brandLogos = [
-  "logo_template.jpg",
-  "logo_template.jpg",
-  "logo_template.jpg",
-  "logo_template.jpg",
-  "logo_template.jpg",
-  "logo_template.jpg",
-  "logo_template.jpg",
-  "logo_template.jpg",
-];
+interface BrandCarouselProps {
+  direction?: 'left' | 'right'
+}
 
-
-
-export default function BrandCarousel() {
-  const brandLogos = [
-    'logo_template.jpg',
-    'logo_template.jpg',
-    'logo_template.jpg',
-    'logo_template.jpg',
-    'logo_template.jpg',
-    'logo_template.jpg',
-    'logo_template.jpg',
-  ]
-
-  const [offset, setOffset] = useState(0)
-  const [direction, setDirection] = useState(1)
-  const logoWidth = 160 // 140px ancho + ~20px gap
-  const visibleCount = 3 // ajusta según tu diseño
+export default function BrandCarousel({ direction = 'right' }: BrandCarouselProps) {
+  const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setOffset((prev) => {
-        const maxOffset = (brandLogos.length - visibleCount) * logoWidth
-        const next = prev + direction * logoWidth
+    const container = containerRef.current
+    if (!container) return
 
-        if (next >= maxOffset || next <= 0) {
-          setDirection((d) => -d) // cambia dirección
-        }
+    const updateScroll = () => {
+      if (!container) return
 
-        return Math.min(Math.max(next, 0), maxOffset)
-      })
-    }, 2500)
+      const scrollArea = container.scrollWidth / 3
+      const speed = direction === 'left' ? 1 : -1
 
+      container.scrollLeft += speed
+
+      const min = 1
+      const max = scrollArea * 2 - 1
+
+      if (direction === 'left' && container.scrollLeft >= max) {
+        container.style.transition = 'none' // Disable transition for reset
+        container.scrollLeft = scrollArea
+        setTimeout(() => container.style.transition = '', 0) // Re-enable transition
+      } else if (direction === 'right' && container.scrollLeft <= min) {
+        container.style.transition = 'none' // Disable transition for reset
+        container.scrollLeft = scrollArea
+        setTimeout(() => container.style.transition = '', 0) // Re-enable transition
+      }
+    }
+
+    const scrollAreaInit = container.scrollWidth / 3
+    container.scrollLeft = scrollAreaInit
+
+    const interval = setInterval(updateScroll, 16)
     return () => clearInterval(interval)
   }, [direction])
 
-  return (
-    <section id="marcas" className="py-16 bg-neutral-100">
-      <h2 className="text-3xl font-bold text-center mb-8 text-sky-900">
-        Marcas que confían en nosotros
-      </h2>
 
-      <div className="overflow-hidden">
-        <div
-          className="flex gap-12 transition-transform duration-700"
-          style={{ transform: `translateX(-${offset}px)` }}
-        >
-          {brandLogos.map((logo, i) => (
+  return (
+    <section id="marcas" className="py-5 overflow-hidden">
+      <div
+        ref={containerRef}
+        className="overflow-hidden whitespace-nowrap select-none"
+      >
+        <div className="flex gap-12 w-max">
+          {[...logos, ...logos, ...logos, ...logos, ...logos, ...logos].map((logo, i) => (
             <Image
               key={i}
               src={`/images/brands/${logo}`}
-              alt={logo.replace('.svg', '')}
+              alt={logo}
               width={140}
               height={80}
-              className="object-contain"
+              className="object-contain grayscale hover:grayscale-0"
             />
           ))}
         </div>
