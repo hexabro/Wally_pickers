@@ -21,9 +21,9 @@ const navItems = [
   { href: '/contacto', label: 'Contacto' },
 ];
 
-export default function NavBar() {
+const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname(); // ← ruta actual
+  const pathname = usePathname(); 
 
   return (
     <header className="w-full bg-white relative z-50">
@@ -56,7 +56,7 @@ export default function NavBar() {
                     'relative transition-colors',
                     isActive
                       ? 'text-blue-600 underline decoration-2 underline-offset-8'
-                      : 'text-[#070707] hover:text-[#798ea6] hover:underline hover:decoration-2 underline-offset-32'
+                      : 'text-[#070707] hover:text-[#6b80c1] hover:underline hover:decoration-2 underline-offset-8'
                   )}
                   aria-current={isActive ? 'page' : undefined}
                 >
@@ -112,3 +112,5 @@ export default function NavBar() {
     </header>
   );
 }
+
+export default NavBar;
