@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Rubik } from "next/font/google";
 import "./globals.css";
 
-import NavBar from "@/components/sections/navBar";
+import NavBar from "@/components/sections/nav_bar";
 import Footer from "@/components/sections/footer";
 
 const rubik = Rubik({
