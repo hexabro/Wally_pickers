@@ -11,16 +11,18 @@ function cn(...classes: (string | undefined | null | false)[]) {
 const navItems = [
   { href: "/", label: "Inicio" },
   { href: "/catalogo", label: "Catálogo" },
+  { href: "/ser-cliente", label: "Ser Cliente" },
   { href: "/sobre-nosotros", label: "Sobre Nosotros" },
   { href: "/contacto", label: "Contacto" },
-  { href: "/ser-cliente", label: "Ser Cliente" },
+  { href: "/blog", label: "Noticias" },
+  
 ];
 
 export default function Footer() {
   const pathname = usePathname();
 
   return (
-    <footer className="bg-blue-900 text-white">
+    <footer className="bg-[#0e344f] text-white">
       {/* Top footer nav */}
       <nav className="container mx-auto flex flex-wrap items-center justify-center gap-6 py-8 px-4">
         {navItems.map(({ href, label }) => {
@@ -50,7 +52,7 @@ export default function Footer() {
       </nav>
 
       {/* Legal link */}
-      <div className="border-t border-blue-700 py-4">
+      <div className="border-t border-[#091f2f] py-4">
         <div className="container mx-auto text-center text-sm">
           <Link
             href="/terminos-y-condiciones"
