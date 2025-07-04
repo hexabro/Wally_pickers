@@ -1,4 +1,4 @@
-import CustomersRectangle from "@/components/sections/rectangle";
+import CustomersRectangle from "@/components/ui/rectangle";
 import Image from "next/image";
 
 import {
@@ -9,13 +9,19 @@ import {
   DollarSign,
   Layers,
 } from "lucide-react";
-import { div } from "framer-motion/client";
+
 import AnimatedUnderline from "@/components/ui/animatedUnderline";
 
 const stats = [
   { label: "Clientes satisfechos", value: "3.200+" },
   { label: "Unidades vendidas", value: "7,8M" },
   { label: "Países servidos", value: "18" },
+  { label: "Años de experiencia", value: "10" },
+  { label: "Referencias en catálogo", value: "1.500+" },
+  { label: "Pedidos mensuales", value: "1.000+" },
+  { label: "Centros de distribución", value: "3" },
+  { label: "Proveedores certificados", value: "40+" },
+  { label: "Tasa de satisfacción", value: "98%" },
 ];
 
 const reasons = [
@@ -86,6 +92,18 @@ export default function BecomeCustomerPage() {
             </p>
           </div>
           
+        </section>
+
+        <section className="max-w-7xl mx-auto p-10">
+          <h3 className="text-2xl font-semibold text-sky-900 text-center mb-6"> ¿Necesitas más razones?</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {stats.map((stat) => (
+              <div key={stat.label} className="bg-white p-6 rounded-lg shadow-md text-center">
+                  <h4 className="text-xl font-bold text-sky-900">{stat.value}</h4>
+                  <p className="text-gray-600">{stat.label}</p>
+              </div>
+            ))}
+          </div>  
         </section>
     </div>
       
