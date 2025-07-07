@@ -1,5 +1,8 @@
 import CustomersRectangle from "@/components/ui/rectangle";
+import ContactForm from "@/components/sections/contactForm";
 import Image from "next/image";
+import ReasonsCards from "@/components/sections/reasonsCards";
+import ReviewsSection from "@/components/sections/ReviewsSection";
 
 import {
   Package,
@@ -12,17 +15,8 @@ import {
 
 import AnimatedUnderline from "@/components/ui/animatedUnderline";
 
-const stats = [
-  { label: "Clientes satisfechos", value: "3.200+" },
-  { label: "Unidades vendidas", value: "7,8M" },
-  { label: "Países servidos", value: "18" },
-  { label: "Años de experiencia", value: "10" },
-  { label: "Referencias en catálogo", value: "1.500+" },
-  { label: "Pedidos mensuales", value: "1.000+" },
-  { label: "Centros de distribución", value: "3" },
-  { label: "Proveedores certificados", value: "40+" },
-  { label: "Tasa de satisfacción", value: "98%" },
-];
+
+
 
 const reasons = [
   {
@@ -60,12 +54,15 @@ const reasons = [
 export default function BecomeCustomerPage() {
   return (
     <div>
+      {/* CUSTOMERS RECTANGLE */}
       <CustomersRectangle
         tagline="Ser cliente"
         title="Crezcamos juntos"
         paragraph="Nos enorgullecemos de apoyar el éxito de nuestros clientes proporcionando productos de alta calidad y un servicio excepcional."
         imageSrc="/images/imagen_robada.jpg"
         imageAlt="Clientes disfrutando de comida juntos"
+        buttonText="Contacta con nosotros"
+        buttonLink="#contact"
         />
 
         <section className = "max-w-7xl p-10 text-center mx-auto ">
@@ -94,17 +91,45 @@ export default function BecomeCustomerPage() {
           
         </section>
 
-        <section className="max-w-7xl mx-auto p-10">
-          <h3 className="text-2xl font-semibold text-sky-900 text-center mb-6"> ¿Necesitas más razones?</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {stats.map((stat) => (
-              <div key={stat.label} className="bg-white p-6 rounded-lg shadow-md text-center">
-                  <h4 className="text-xl font-bold text-sky-900">{stat.value}</h4>
-                  <p className="text-gray-600">{stat.label}</p>
-              </div>
-            ))}
-          </div>  
-        </section>
+        {/* REASON CARDS */}
+
+        <ReasonsCards />
+        
+        
+        {/* RESEÑAS */}
+        <ReviewsSection />
+
+
+
+
+
+
+
+        {/* SECCIÓN DE FORMULARIO DE CONTACTO, FORMULARIO A LA DRECHA Y SECCIÓN DE TEXTO A LA IZQUIERDA */}
+        <div className="mx-auto p-10 flex flex-col md:flex-row items-stretch gap-8 ">
+          <div className="relative  bg-center flex-1 rounded-lg text-center md:text-left flex flex-col justify-center h-auto" 
+          style = {{ backgroundImage: "url(/images/contact/background.jpg)", }}>
+          {/* DARK OVERLAY */}
+          <div className="absolute inset-0 bg-black/30 z-0 rounded-lg" aria-hidden= "true"></div>
+            {/* CONTENT INSIDE THE OVERLAY */}
+            <div className="p-10 relative z-10">
+              <h3 className="text-2xl font-semibold text-white mb-8">
+                ¿Listo para empezar?
+              </h3>
+              <p className="text-white/80 mb-4">
+                Rellena el formulario y nos pondremos en contacto contigo para ofrecerte una propuesta personalizada.
+              </p>
+              <p className="text-white/80 mb-4 flex-1">
+                Nuestro equipo está listo para ayudarte a encontrar los productos perfectos para tu negocio y responder a todas tus preguntas.
+              </p>
+            </div>
+          </div>
+
+            <div className = "flex-1 h-full">
+               <ContactForm />
+            </div>
+
+        </div>
     </div>
       
   );

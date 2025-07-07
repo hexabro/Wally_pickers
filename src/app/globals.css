@@ -2,8 +2,12 @@
 
 @tailwind utilities;
 
+
+html{
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
 :root {
-  --background: #ffffff;
   --foreground: #171717;
   --principal: #4b68e8;
   --secondary: #7688d6;
@@ -24,5 +28,21 @@ body {
   color: var(--foreground);
   font-family: Rubik, Arial, Helvetica, sans-serif;
 }
+
+@media (min-width: 1024px) {
+  .scrollbar-hidden-lg {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE y Edge antiguo */
+  }
+  .scrollbar-hidden-lg::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+  }
+}
+
+
+
+
 
 

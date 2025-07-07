@@ -1,5 +1,7 @@
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
+import { button } from "framer-motion/client";
 
 interface CustomerRectangleProps {
   /**
@@ -20,6 +22,12 @@ interface CustomerRectangleProps {
   imageAlt?: string;
 
   paragraph?: string; 
+
+  buttonText?: string;
+  /**
+   * Enlace del botón (puede ser una ruta interna o externa)
+   */
+  buttonLink?: string;
 }
 
 /**
@@ -32,6 +40,8 @@ const CustomersRectangle: React.FC<CustomerRectangleProps> = ({
   paragraph,
   imageSrc,
   imageAlt = "People enjoying food together",
+  buttonText = "Contacta con nosotros",
+  buttonLink = "#contacto",
 }) => {
   return (
     <section className="w-full  p-20">
@@ -50,6 +60,9 @@ const CustomersRectangle: React.FC<CustomerRectangleProps> = ({
                 {paragraph}
                 </p>
             )}
+          <Link  href = {buttonLink} className="mt-8 px-6 py-3 bg-white text-[#0e344f] font-semibold rounded-lg shadow hover:bg-gray-100 transition-colors">
+            {buttonText}
+          </Link>
         </div>
 
         {/* Columna derecha: imagen */}
