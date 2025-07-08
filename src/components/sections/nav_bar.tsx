@@ -27,14 +27,14 @@ const NavBar = () => {
 
   return (
     <header className="w-full bg-white relative z-50">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-4 h-20">
+      <nav className="mx-auto flex  items-center justify-between gap-6 px-6 py-4 h-20">
         {/* ---------- Botón hamburguesa (solo móvil) ---------- */}
         <button onClick={() => setIsOpen(true)} className="lg:hidden" aria-label="Abrir menú">
           <Menu size={28} />
         </button>
 
         {/* ---------- Logo (solo desktop) ---------- */}
-        <Link href="/" className="hidden lg:flex items-center gap-2">
+        <Link href="/" className="hidden lg:flex  ml-4">
           <Image
             src="/images/logo_wally.svg"
             alt="Wally pickers logo"
