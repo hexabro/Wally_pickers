@@ -3,6 +3,8 @@ import ContactForm from "@/components/sections/contactForm";
 import Image from "next/image";
 import ReasonsCards from "@/components/sections/reasonsCards";
 import ReviewsSection from "@/components/sections/ReviewsSection";
+import VerticalTimelineSection from "@/components/sections/timeline";
+
 
 import {
   Package,
@@ -73,6 +75,8 @@ export default function BecomeCustomerPage() {
 
         <hr className="my-8 border-t border-gray-300"/>
 
+        
+
         {/* SECTION WITH A MAP ON THE LEFT AND HEADING AND TEXT ON THE RIGHT */}
         <section className="max-w-7xl mx-auto p-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <Image
@@ -98,6 +102,15 @@ export default function BecomeCustomerPage() {
         
         {/* RESEÑAS */}
         <ReviewsSection />
+
+        {/* CUSTOMER ROADMAP */}
+        {/* VERTICAL TIMELINE USED FOR SHOWCASING THE KIND OF BUSINESS THEY ATTEND TO */}
+        <section className= "bg-[#fff] py-8">
+          <VerticalTimelineSection/>
+        </section>
+
+        
+
 
 
 

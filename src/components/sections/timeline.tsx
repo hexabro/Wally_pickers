@@ -1,10 +1,7 @@
 import React from "react";
-import classNames from "classnames";
-import { Factory, Handshake, Warehouse, Leaf, Users } from "lucide-react";
 
 import "./timeline.css"; // Importa los estilos de la línea de tiempo
-import { style } from "framer-motion/client";
-
+import Image from "next/image";
 /**
  * Vertical Timeline – Tarjetas alternando derecha / izquierda
  * ─────────────────────────────────────────────────────────────
@@ -17,48 +14,43 @@ export type TimelineEvent = {
   year: string;
   title: string;
   description: string;
-  icon: React.ElementType;
+  icon: string; // Cambiado a string para usar iconos SVG
 };
 
 const events: TimelineEvent[] = [
   {
-    year: "2015",
-    title: "Fundación",
-    description: "Nacemos conectando sabores del mundo con Europa.",
-    icon: Factory
+    year: "",
+    title: "1. Descubrimiento",
+    description: "Nos reunimos contigo para conocer tus necesidades específicas de abastecimiento, volumen y frecuencia. Queremos entender lo que hace único tu negocio.",
+    icon: "/images/timeline/lupa.svg"
   },
   {
-    year: "2017",
-    title: "Primer acuerdo",
-    description: "Alianzas clave con productores artesanos.",
-    icon: Handshake
+    year: "",
+    title: "2. Planificamos tu suministro",
+    description: "Diseñamos una estrategia personalizada de abastecimiento para que siempre tengas los productos que necesitas, al mejor precio y en el momento justo.",
+    icon: "/images/timeline/plan.svg"
   },
   {
-    year: "2019",
-    title: "Hub Róterdam",
-    description: "Abrimos nuestro centro logístico para optimizar entregas.",
-    icon: Warehouse
+    year: "",
+    title: "3. Gestionamos tu pedido",
+    description: "Procesamos y preparamos tu pedido con rapidez y precisión, asegurando que la calidad y las condiciones de almacenamiento se mantengan siempre óptimas.",
+    icon: "/images/timeline/pedido.svg"
   },
   {
-    year: "2021",
-    title: "Sostenibilidad",
-    description: "Envases 100 % reciclables y -30 % de huella de CO₂.",
-    icon: Leaf
+    year: "",
+    title: "4. Entrega y seguimiento",
+    description: "Realizamos la entrega en el tiempo acordado, y te ofrecemos un seguimiento continuo para adaptarnos a tus futuras necesidades de stock.",
+    icon: "/images/timeline/seguimiento.svg"
   },
-  {
-    year: "2025",
-    title: "Hoy",
-    description: "5K+ clientes disfrutan de productos auténticos a precios justos.",
-    icon: Users
-  }
+  
 ];
 
 
 const VerticalTimelineSection: React.FC = () => {
   return (
-    <section className="py-8  w-full">
+    <section className="  w-full">
 
-      <h2 className="text-3xl font-bold text-center mb-6 text-neutral-50">Nuestra Historia</h2>
+      <h2 className="text-3xl font-bold text-center mb-6 text-[#0e344f]"> Nuestra manera de trabajar </h2>
 
       <div className="timeline">
         {events.map((event, index) => (
@@ -66,7 +58,11 @@ const VerticalTimelineSection: React.FC = () => {
           className={`timeline-container ${index % 2 === 0 ? "left-container" : "right-container"}`}
           /* ANIMATE 1S AFTER FOR EVERY INDEX */
           style={{ animationDelay: `${index}s` }}>
-            <event.icon
+            <Image
+              src= {event.icon}
+              alt={event.title}
+              width={20}
+              height={20}
               className={`absolute w-[40px] rounded-[50%] right-[-20px] top-[32px] z-2 bg-green-400 left-[10px] 
                 ${index % 2 === 0 
                   ? 'sm:left-full sm:translate-x-[-50%]'
@@ -74,10 +70,11 @@ const VerticalTimelineSection: React.FC = () => {
                 }
               `}
             />
+            
             <div className={`textbox `} >
-              <h3 className="text-xl font-semibold">{event.title}</h3>
-              <small className="text-gray-500 inline-block mb-[15px]">{event.year}</small>
-              <p className="mt-2 text-gray-700">{event.description}</p>
+              <h3 className="text-xl font-semibold text-neutral-100">{event.title}</h3>
+              <small className="text-gray-300 inline-block mb-[15px]">{event.year}</small>
+              <p className = "text-[#eee]"> {event.description}</p>
               <span className= {`${index %2 == 0 ? "left-container-arrow": "right-container-arrow"}`}></span>
             </div>
             

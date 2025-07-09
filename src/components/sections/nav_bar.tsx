@@ -53,7 +53,7 @@ const NavBar = () => {
                 <Link
                   href={href}
                   className={cn(
-                    'relative transition-colors',
+                    'relative transition-colors font-semibold',
                     isActive
                       ? 'text-blue-600 underline decoration-2 underline-offset-8'
                       : 'text-[#070707] hover:text-[#6b80c1] hover:underline hover:decoration-2 underline-offset-8'
