@@ -57,7 +57,7 @@ const VerticalTimelineSection: React.FC = () => {
           <div key = {index} 
           className={`timeline-container ${index % 2 === 0 ? "left-container" : "right-container"}`}
           /* ANIMATE 1S AFTER FOR EVERY INDEX */
-          style={{ animationDelay: `${index}s` }}>
+          >
             <Image
               src= {event.icon}
               alt={event.title}

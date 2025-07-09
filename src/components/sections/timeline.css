@@ -1,7 +1,8 @@
 .timeline{
   position:relative;
   max-width: 1200px;
-  margin: 100px auto;
+  margin: 50px auto;
+  margin-bottom:0;
   z-index: 1;
 }
 
@@ -9,26 +10,13 @@
   padding: 10px 50px;
   position: relative ;
   width: 50%;;
-  animation: movedown 1s linear forwards;
-  opacity: 0;
   z-index: 1;;
-}
-
-@keyframes movedown {
-  0%{
-    transform: translateY(-30px);
-    opacity: 1;
-  }
-  100%{
-    transform: translateY(0);
-    opacity: 1;
-  }
 }
 
 .textbox{
   padding: 20px 30px;
   background: #0e344f ;
-  border-radius: 6;
+  border-radius: 6px;
   position: relative;
   font-size: 15px;
 }
@@ -48,19 +36,7 @@
   top: 0;
   left: 50%;
   margin-left: -3px;
-  animation:moveline 6s linear forwards;
 
-}
-
-@keyframes moveline {
-  0%{
-    z-index: 0;
-    height: 0;
-  }
-  100%{
-    z-index: 0;
-    height: 100%;
-  }
 }
 
 .left-container-arrow{

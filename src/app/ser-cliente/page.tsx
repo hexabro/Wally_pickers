@@ -105,21 +105,19 @@ export default function BecomeCustomerPage() {
 
         {/* CUSTOMER ROADMAP */}
         {/* VERTICAL TIMELINE USED FOR SHOWCASING THE KIND OF BUSINESS THEY ATTEND TO */}
-        <section className= "bg-[#fff] py-8">
+        <section className= "bg-[#fff] pt-8 ">
           <VerticalTimelineSection/>
         </section>
 
+
+
         
 
-
-
-
-
-
-
-
         {/* SECCIÓN DE FORMULARIO DE CONTACTO, FORMULARIO A LA DRECHA Y SECCIÓN DE TEXTO A LA IZQUIERDA */}
-        <div className="mx-auto p-10 flex flex-col md:flex-row items-stretch gap-8 ">
+        <div className="mx-auto p-10 flex flex-col md:flex-row items-stretch gap-8 bg-[#eeeff1] ">
+          
+          {/* IZQUIERDA  */}
+
           <div className="relative  bg-center flex-1 rounded-lg text-center md:text-left flex flex-col justify-center h-auto" 
           style = {{ backgroundImage: "url(/images/contact/background.jpg)", }}>
           {/* DARK OVERLAY */}
