@@ -9,8 +9,8 @@
 .timeline-container{
   padding: 10px 50px;
   position: relative ;
-  width: 50%;;
-  z-index: 1;;
+  width: 50%;
+  z-index: 1;
 }
 
 .textbox{
@@ -31,12 +31,26 @@
   content: "";
   position: absolute;
   width: 6px;
-  height: 100%;
+  height: 0%;
   background-color: #05df72 ;
   top: 0;
   left: 50%;
   margin-left: -3px;
+  
 
+}
+
+.animate-line::after{
+  animation: moveline 6s ease-in-out forwards;
+}
+
+@keyframes moveline{
+  0%{
+    height: 0%;
+  }
+  100%{
+    height: 100%;
+  }
 }
 
 .left-container-arrow{
