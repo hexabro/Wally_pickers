@@ -4,7 +4,7 @@ import StatsStrip from "@/components/sections/metrics";
 import CategorySection from "@/components/sections/categories";
 import  BrandCarousel  from "@/components/sections/brandCarousel";
 import CatalogDownload from "@/components/sections/catalogDownload";
-
+import CategoryCards from "@/components/sections/CategoryCards";
 
 import AnimatedUnderline from "@/components/ui/animatedUnderline";
 /** -------------------------------------------------------------
@@ -27,17 +27,18 @@ function Presentacion() {
   return (
     <section className="text-center py-16 px-4 bg-white">
       <h2 className="text-3xl md:text-4xl font-bold text-sky-950">
-        Traemos los mejores alimentos de{' '}
-        <AnimatedUnderline>  Asia y América </AnimatedUnderline>
-        {' '}a Europa
+        Especialistas en bienes de {' '}
+        <AnimatedUnderline>  alta rotación </AnimatedUnderline>
+        {' '}
       </h2>
 
       <p className="mt-6 max-w-5xl  mx-auto text-gray-700 text-lg leading-relaxed">
-        Importamos los mejores alimentos de Latinoamérica para miles de clientes en toda Europa.
+        Importamos los mejores productos del mundo para que tu negocio esté abastecido con lo que más vende
       </p>
-      <p className="hidden md:block mt-6 max-w-5xl  mx-auto text-gray-700 text-lg leading-relaxed">
-        Con un firme compromiso por la calidad, la autenticidad y la confianza, acercamos los sabores, colores y tradiciones de nuestra tierra al mundo.
-      </p>
+
+      <CategoryCards/>
+      
+      
     </section>  
   )
 }

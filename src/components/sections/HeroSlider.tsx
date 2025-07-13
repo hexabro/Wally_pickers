@@ -23,13 +23,10 @@ import { useState, useEffect, useRef, useCallback } from "react";
 
 /* ====================== 1 · ARRAY ORIGINAL ========================== */
 const heroSlides = [
-  { src: "/images/hero/1.jpg", alt: "Jamón Ibérico" },
-  { src: "/images/hero/2.jpg", alt: "Jamón Ibérico" },
-  { src: "/images/hero/3.jpg", alt: "Jamón Ibérico" },
-  { src: "/images/hero/4.jpg", alt: "Jamón Ibérico" },
-  { src: "/images/hero/5.jpg", alt: "Jamón Ibérico" },
-  { src: "/images/hero/6.jpg", alt: "Jamón Ibérico" }
-];
+  { src: "/images/hero/one.jpg", alt: "Jamón Ibérico" },
+  { src: "/images/hero/two.jpg", alt: "Jamón Ibérico" },
+  { src: "/images/hero/three.jpg", alt: "Jamón Ibérico" },
+  ];
 
 /* Array extendido con clones (cloneLast, originals…, cloneFirst) */
 const extendedSlides = [
@@ -120,7 +117,7 @@ export default function HeroSlider() {
   /* --------------------------- RENDER ------------------------------ */
   return (
     <section
-      className="relative overflow-hidden w-full md:h-[85vh] min-h-[220px] select-none touch-none cursor-grab active:cursor-grabbing"
+      className="relative overflow-hidden w-full  h-[30vh] lg:h-screen min-h-[220px] select-none touch-none cursor-grab active:cursor-grabbing"
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
@@ -136,13 +133,13 @@ export default function HeroSlider() {
         onDragStart={(e) => e.preventDefault()}
       >
         {extendedSlides.map(({ src, alt }, i) => (
-          <div key={i} className="relative flex-shrink-0 w-screen h-full">
+          <div key={i} className=" flex relative flex-shrink-0 w-screen h-full items-center justify-center">
             <Image
               src={src}
               alt={alt}
               fill
               draggable={false}
-              className="object-cover object-center select-none pointer-events-none"
+              className="object-center select-none pointer-events-none"
             />
           </div>
         ))}
