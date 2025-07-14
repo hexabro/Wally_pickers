@@ -1,0 +1,6 @@
+/* Only apply blur on devices with a fine pointer (mouse/trackpad) */
+@media (pointer: fine) {
+  .blur-on-mouse {
+    filter: blur(4px); /* Tailwind's blur-sm */
+  }
+}

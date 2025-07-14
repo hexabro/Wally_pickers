@@ -117,7 +117,7 @@ export default function HeroSlider() {
   /* --------------------------- RENDER ------------------------------ */
   return (
     <section
-      className="relative overflow-hidden w-full  h-[30vh] lg:h-screen min-h-[220px] select-none touch-none cursor-grab active:cursor-grabbing"
+      className="relative overflow-hidden w-full  h-[30vh] xl:h-screen min-h-[220px] select-none touch-none cursor-grab active:cursor-grabbing"
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}

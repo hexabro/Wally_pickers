@@ -4,14 +4,14 @@ import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 
 const logos = [
-  'logo_template.jpg',
-  'logo_template.jpg',
-  'logo_template.jpg',
-  'logo_template.jpg',
-  'logo_template.jpg',
-  'logo_template.jpg',
-  'logo_template.jpg',
-  'logo_template.jpg',
+  'logo_template.svg',
+  'logo_template.svg',
+  'logo_template.svg',
+  'logo_template.svg',
+  'logo_template.svg',
+  'logo_template.svg',
+  'logo_template.svg',
+  'logo_template.svg',
 ]
 
 interface BrandCarouselProps {
@@ -56,7 +56,7 @@ export default function BrandCarousel({ direction = 'right' }: BrandCarouselProp
 
 
   return (
-    <section id="marcas" className="py-5 overflow-hidden">
+    <section id="marcas" className="py-5 overflow-hidden bg-neutral-100">
       <div
         ref={containerRef}
         className="overflow-hidden whitespace-nowrap select-none"

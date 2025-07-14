@@ -1,5 +1,5 @@
 import HeroSlider from "@/components/sections/HeroSlider";
-import AutoritySection from "@/components/sections/autority"
+import MagnifyingSection from "@/components/sections/magnifyingSection"
 import StatsStrip from "@/components/sections/metrics";
 import CategorySection from "@/components/sections/categories";
 import  BrandCarousel  from "@/components/sections/brandCarousel";
@@ -7,6 +7,7 @@ import CatalogDownload from "@/components/sections/catalogDownload";
 import CategoryCards from "@/components/sections/CategoryCards";
 
 import AnimatedUnderline from "@/components/ui/animatedUnderline";
+import Image from "next/image";
 /** -------------------------------------------------------------
  *  Wally Pickers – Página de inicio (tipo landing)            
  *  Estructura solicitada por el cliente:                      
@@ -58,17 +59,32 @@ export default function HomePage() {
       {/* <Lupa /> */}
       <HeroSlider />
       <Presentacion />
-      <AutoritySection />
+      <section className="flex flex-col md:flex-row bg-[#2c81be] items-center justify-center">
+        <div className="w-full md:w-1/2 h-64">
+          <MagnifyingSection />
+        </div>
+        <div className="w-full md:w-1/2">
+          <Image
+            src="/images/mapa_wally.png"
+            alt="Mapa de proveedores de Wally Pickers"
+            width={600}
+            height={500}
+            className="h-auto object-cover md:rounded-lg mb-10"
+          />
+        </div>
+      </section>
+
       <StatsStrip />
       <div className = "bg-neutral-100 pt-10 pb-5 ">
         <h2 className="text-3xl font-bold text-center text-sky-900 bg-neutral-100">
           Marcas que confían en nosotros
         </h2>
-        <p className = "text-center pt-3.5 ">Con más de 200 productos diferentes, traemos sabores de todo el planeta a tus manos</p>
+        <p className = "text-center pt-3.5 ">Descubre algunas de las empresas líderes que ya han apostado por nuestro trabajo.</p>
       </div>
       
-      <BrandCarousel direction="right"/>
+      <BrandCarousel direction="right" />
       <BrandCarousel direction ="left"/>
+
       <CategorySection />
       <CatalogDownload />
     </main>
