@@ -4,7 +4,6 @@ import "./timeline.css";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 
-
 export type TimelineEvent = {
   year: string;
   title: string;
@@ -79,12 +78,15 @@ const VerticalTimelineSection: React.FC = () => {
                   }
                 `}
             />
-            <motion.div className={`textbox`}
-              initial = {{opacity:0, y: 50}}
+            <motion.div
+              className="textbox"
+              initial={{ opacity: 0, y: 50 }}
               animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 0.5, ease: "easeInOut" , delay: index * 1.2}}
-              whileInView={{opacity: 1, y:0}}
-              custom ={index}
+              variants={{
+                visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeInOut", delay: index * 1.2 } },
+                hidden: { opacity: 0, y: 50 }
+              }}
+              custom={index}
             >
               <h3 className="text-xl font-semibold text-neutral-100">
                 {event.title}

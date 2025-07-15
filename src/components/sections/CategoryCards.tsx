@@ -89,7 +89,7 @@ export default function CategoryCards() {
       <div
         className="
           hidden md:flex gap-4 overflow-x-auto snap-x snap-mandatory 
-          px-2 py-4 -mx-2 md:grid md:grid-cols-3 md:gap-6 md:-mx-0
+          px-2 py-4 -mx-2  md:grid-cols-3 md:gap-6 md:-mx-0
         "
         style={{
           touchAction: 'pan-x',
