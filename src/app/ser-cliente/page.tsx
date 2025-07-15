@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 
 import AnimatedUnderline from "@/components/ui/animatedUnderline";
+import AnimatedCircleWord from "@/components/ui/animatedCircleWord";
 
 
 
@@ -57,18 +58,10 @@ export default function BecomeCustomerPage() {
   return (
     <div>
       {/* CUSTOMERS RECTANGLE */}
-      <CustomersRectangle
-        tagline="Ser cliente"
-        title="Crezcamos juntos"
-        paragraph="Nos enorgullecemos de apoyar el éxito de nuestros clientes proporcionando productos de alta calidad y un servicio excepcional."
-        imageSrc="/images/imagen_robada.jpg"
-        imageAlt="Clientes disfrutando de comida juntos"
-        buttonText="Contacta con nosotros"
-        buttonLink="#contact"
-        />
+      <CustomersRectangle />
 
         <section className = "max-w-7xl p-10 text-center mx-auto ">
-          <h2 className = "text-center text-[#0e344f] font-semibold text-4xl  "> Escoge <AnimatedUnderline> calidad </AnimatedUnderline></h2>
+          <h2 className = "text-center text-[#0e344f] font-semibold text-4xl  "> Escoge <AnimatedCircleWord word = "calidad" className = "text-4xl"/></h2>
           <p className = "mt-6 max-w-5xl  mx-auto text-gray-700 text-lg leading-relaxed"> En Wally Pickers te ofrecemos una cuidada selección de productos de todo el mundo, escogidos para garantizar la <span className = "font-medium"> excelencia </span>.</p>
           {/* <p className = "mt-6 max-w-5xl  mx-auto text-gray-700 text-lg leading-relaxed">Con más de 40 fuertes vínculos, hemos creado una red robusta de clientes de todo tipo: supermercados convencionales, foodservice, exportación e industria... y tu negocio puede ser uno de ellos</p> */}
         </section>
