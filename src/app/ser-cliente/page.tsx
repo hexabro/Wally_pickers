@@ -17,6 +17,7 @@ import {
 import AnimatedCircleWord from "@/components/ui/animatedCircleWord";
 import ReviewsSection from "@/components/sections/ReviewsSection";
 import ReasonsCards from "@/components/sections/reasonsCards";
+import { px } from "motion";
 
 
 
@@ -71,7 +72,7 @@ export default function BecomeCustomerPage() {
 
         {/* SECTION WITH A MAP ON THE LEFT AND HEADING AND TEXT ON THE RIGHT */}
         <section
-          className="relative mx-auto p-20 grid grid-cols-1 md:grid-cols-2 gap-8 items-center w-full "
+          className="relative mx-auto py-20 px-5  grid grid-cols-1 md:grid-cols-2 gap-8 items-center w-full "
         >
           {/* Gradient background for border blending */}
           <div className="absolute inset-0 pointer-events-none z-0">
@@ -79,21 +80,8 @@ export default function BecomeCustomerPage() {
             <div className="w-full h-full bg-black" />
             {/* custom gradient: white → white 30%, black 30–70%, white after */}
             <div
-              className="absolute inset-0"
-              style={{
-                backgroundImage: `
-                  linear-gradient(
-                    to bottom,
-                    white 0%,
-                    white 5%,
-                    black 15%,
-                    black 85%,
-                    white 95%,
-                    white 100%
-                  )
-                  
-                `,
-              }}
+              className="absolute inset-0
+                  md:bg-[linear-gradient(to_bottom,white_0%,black_10%,black_10%,black_90%,black_90%,white_100%)]"              
             />
           </div>
 
@@ -107,7 +95,7 @@ export default function BecomeCustomerPage() {
             style={{ aspectRatio: "16/9" }}
             aria-label="Animación de un globo terráqueo girando"
           />
-          <div className="space-y-6 relative z-10">
+          <div className="space-y-6 relative z-10 ">
             <h3 className="text-2xl font-semibold text-[#2b95e1]">¿Por qué elegirnos?</h3>
             <p className="text-gray-300">
               Hemos llevado productos de todo el mundo a los estantes de nuestros clientes. Desde supermercados hasta restaurantes y tiendas especializadas. Nuestra experiencia y red global nos permiten ofrecerte una selección inigualable de productos de alta calidad.
