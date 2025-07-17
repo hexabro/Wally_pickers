@@ -1,6 +1,7 @@
 "use client"
 import React, { useEffect, useRef, useCallback, useMemo } from "react";
 import "./profileCard.css";
+import Image from "next/image";
 
 interface ProfileCardProps {
   avatarUrl: string;
@@ -265,13 +266,13 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
       className={`pc-card-wrapper ${className}`.trim()}
       style={cardStyle}
     >
-      <section ref={cardRef} className="pc-card">
+      <section ref={cardRef} className=" pc-card">
         <div className="pc-inside">
           <div className="pc-shine" />
           <div className="pc-glare" />
           <div className="pc-content pc-avatar-content">
             <img
-              className="avatar"
+              className="avatar object-cover"
               src={avatarUrl}
               alt={`${name || "User"} avatar`}
               loading="lazy"
@@ -283,7 +284,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
             {showUserInfo && (
               <div className="pc-user-info ">
                 <button
-                  className="pc-contact-btn w-full"
+                  className="pc-contact-btn w-full font-bold"
                   onClick={handleContactClick}
                   style={{ pointerEvents: "auto"}}
                   type="button"

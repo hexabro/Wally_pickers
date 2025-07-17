@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const CustomersRectangle: React.FC = () => {
   return (
-    <section className="w-full py-6 sm:py-12 lg:py-20 px-4 sm:px-6 lg:px-20 h-screen">
+    <section className="w-full py-6 sm:py-12 lg:py-20 px-4 sm:px-6 lg:px-20 h[80vh]">
       <div className="overflow-hidden rounded-2xl grid grid-cols-1 md:grid-cols-2 min-h-[60vh]">
         
         {/* Texto */}
@@ -51,6 +51,7 @@ const CustomersRectangle: React.FC = () => {
             src="/images/ser-cliente-svg.svg"
             alt={"imagen de mujer sonriendo"}
             fill
+            loading = "eager"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
             className="object-cover"
             priority

@@ -40,6 +40,20 @@ body {
     display: none;
   }
 }
+/* globals.css */
+
+/* Chrome, Safari, Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Firefox */
+.hide-scrollbar {
+  scrollbar-width: none;
+}
+/* IE 10+ */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+}
 
 
 

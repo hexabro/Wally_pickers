@@ -43,7 +43,7 @@
   background-position: inherit;
   border-radius: inherit;
   transition: all 0.5s ease;
-  filter: contrast(2) saturate(2) blur(36px);
+  filter: contrast(2) saturate(2);
   transform: scale(0.8) translate3d(0, 0, 0.1px);
   background-size: 100% 100%;
   background-image: var(--behind-gradient);
@@ -56,7 +56,7 @@
 
 .pc-card-wrapper:hover::before,
 .pc-card-wrapper.active::before {
-  filter: contrast(1) saturate(2) blur(40px) opacity(1);
+  filter: contrast(1) saturate(2)  opacity(1);
   transform: scale(0.9) translate3d(0, 0, 0.1px);
 }
 
@@ -177,13 +177,16 @@
 }
 
 .pc-avatar-content {
-  mix-blend-mode: screen;
+  mix-blend-mode: normal;
   overflow: hidden;
 }
 
 .pc-avatar-content .avatar {
   width: 100%;
+  height: 100%;
   position: absolute;
+  object-fit: cover;
+  inset:0 ;
   left: 50%;
   transform: translateX(-50%) scale(1);
   bottom: 2px;
@@ -195,7 +198,6 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  backdrop-filter: blur(30px);
   mask: linear-gradient(to bottom,
       rgba(0, 0, 0, 0) 0%,
       rgba(0, 0, 0, 0) 60%,
@@ -219,6 +221,8 @@
   border-radius: 15px;
   padding: 12px 14px;
   pointer-events: auto;
+  background: radial-gradient(circle at 60% 40%, #7d7c7c 0%, #d4d0d0 60%, #ffffff 100%);
+;
 }
 
 .pc-user-details {
@@ -248,6 +252,7 @@
   align-items: flex-start;
   flex-direction: column;
   gap: 6px;
+  
 }
 
 .pc-handle {
@@ -269,7 +274,9 @@
   padding: 8px 16px;
   font-size: 14px;
   font-weight: 600;
+  background: radial-gradient(circle at 60% 40%, #7d7c7c 0%, #d4d0d0 60%, #ffffff 100%);
   color: white;
+  stroke:black;
   cursor: pointer;
   transition: all 0.2s ease;
   backdrop-filter: blur(10px);
@@ -288,7 +295,7 @@
   position: relative;
   transform: translate3d(calc(var(--pointer-from-left) * -6px + 3px), calc(var(--pointer-from-top) * -6px + 3px), 0.1px) !important;
   z-index: 5;
-  mix-blend-mode: luminosity;
+  ;
 }
 
 .pc-details {
@@ -297,6 +304,7 @@
   top: 3em;
   display: flex;
   flex-direction: column;
+  
 }
 
 .pc-details h3 {
@@ -304,7 +312,7 @@
   margin: 0;
   font-size: min(5svh, 3em);
   margin: 0;
-  background-image: linear-gradient(to bottom, #ff0080, #7928ca); /* nuevo gradiente */
+  background-image: linear-gradient(to bottom, #2fb780, #1a5a85); /* green to blue gradient */
   background-size: 1em 1.5em;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -391,6 +399,7 @@
   .pc-contact-btn {
     padding: 6px 12px;
     font-size: 11px;
+
   }
 }
 

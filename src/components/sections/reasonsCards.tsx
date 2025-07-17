@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Award, ShieldCheck, Globe, Truck, CheckCircle, Headset } from 'lucide-react';
 
 
-export default function ImmersiveSection() {
+export default function ReasonsCards() {
   const [count, setCount] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -80,7 +80,7 @@ export default function ImmersiveSection() {
   }, [count]);
 
   return (
-    <section className="w-full flex flex-col items-center bg-gray-50 p-8 min-h-[60vh]">
+    <section className="w-full flex flex-col items-center bg-white p-8 min-h-[60vh]">
       {/* Animated header text always visible */}
       <motion.div
         className="text-center w-full flex flex-col justify-center items-center"

@@ -69,18 +69,18 @@ export default function CategorySection() {
   return (
     <section className="py-20 px-6 max-w-7xl mx-auto flex flex-col items-center justify-center gap-8">
 
-      <h2 className="text-4xl font-extrabold text-slate-800 text-center md:text-left">
+      <h2 className="text-4xl font-extrabold text-slate-800 text-center lg:text-left">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">
             Explora nuestras categorías
           </span>
       </h2>
 
-      <div className = "flex flex-col md:flex-row items-center gap-12">
+      <div className = "flex flex-col lg:flex-row items-center gap-12">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="md:w-1/2 w-full rounded-xl overflow-hidden shadow-xl"
+          className="lg:w-1/2 w-full rounded-xl overflow-hidden shadow-xl"
         >
           <Image
             src="/images/categorias/imagen_trabajadora.jpg"
@@ -91,7 +91,7 @@ export default function CategorySection() {
           />
         </motion.div>
 
-        <div className="md:w-1/2 w-full flex flex-col space-y-8">
+        <div className="lg:w-1/2 w-full flex flex-col space-y-8">
           
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -114,7 +114,7 @@ export default function CategorySection() {
             ))}
           </div>
 
-          <div className="pt-4 text-center md:text-left">
+          <div className="pt-4 text-center lg:text-left">
             <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
               <Link
                 href="/catalogo"

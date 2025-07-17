@@ -1,8 +1,7 @@
 import CustomersRectangle from "@/components/ui/rectangle";
 import ContactForm from "@/components/sections/contactForm";
 import Image from "next/image";
-import ReasonsCards from "@/components/sections/reasonsCards";
-import ReviewsSection from "@/components/sections/ReviewsSection";
+import ReasonsSection from "@/components/sections/reasonsCards";
 import VerticalTimelineSection from "@/components/sections/timeline";
 
 
@@ -15,8 +14,9 @@ import {
   Layers,
 } from "lucide-react";
 
-import AnimatedUnderline from "@/components/ui/animatedUnderline";
 import AnimatedCircleWord from "@/components/ui/animatedCircleWord";
+import ReviewsSection from "@/components/sections/ReviewsSection";
+import ReasonsCards from "@/components/sections/reasonsCards";
 
 
 
@@ -58,51 +58,76 @@ export default function BecomeCustomerPage() {
   return (
     <div>
       {/* CUSTOMERS RECTANGLE */}
-      <CustomersRectangle />
+      <CustomersRectangle  />
 
-        <section className = "max-w-7xl p-10 text-center mx-auto ">
+        <section className = "max-w-7xl  text-center mx-auto p-10">
           <h2 className = "text-center text-[#0e344f] font-semibold text-4xl  "> Escoge <AnimatedCircleWord word = "calidad" className = "text-4xl"/></h2>
           <p className = "mt-6 max-w-5xl  mx-auto text-gray-700 text-lg leading-relaxed"> En Wally Pickers te ofrecemos una cuidada selección de productos de todo el mundo, escogidos para garantizar la <span className = "font-medium"> excelencia </span>.</p>
           {/* <p className = "mt-6 max-w-5xl  mx-auto text-gray-700 text-lg leading-relaxed">Con más de 40 fuertes vínculos, hemos creado una red robusta de clientes de todo tipo: supermercados convencionales, foodservice, exportación e industria... y tu negocio puede ser uno de ellos</p> */}
         </section>
 
-        <hr className="my-8 border-t border-gray-300"/>
 
         
 
         {/* SECTION WITH A MAP ON THE LEFT AND HEADING AND TEXT ON THE RIGHT */}
-        <section className="max-w-7xl mx-auto p-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <Image
-           src="/images/mapaEuropa.jpg" 
-           alt="Mapa de colaboradores de Wally Pickers" 
-            width={600}
-            height={400}
-           className="w-full h-auto object-cover rounded-lg shadow-md"
+        <section
+          className="relative mx-auto p-20 grid grid-cols-1 md:grid-cols-2 gap-8 items-center w-full "
+        >
+          {/* Gradient background for border blending */}
+          <div className="absolute inset-0 pointer-events-none z-0">
+            {/* fallback hard black */}
+            <div className="w-full h-full bg-black" />
+            {/* custom gradient: white → white 30%, black 30–70%, white after */}
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage: `
+                  linear-gradient(
+                    to bottom,
+                    white 0%,
+                    white 5%,
+                    black 15%,
+                    black 85%,
+                    white 95%,
+                    white 100%
+                  )
+                  
+                `,
+              }}
             />
-          <div className="space-y-6">
-            <h3 className="text-2xl font-semibold text-sky-900">¿Por qué elegirnos?</h3>
-            <p className="text-gray-700">
-              Con más de 40 fuertes vínculos, hemos creado una red robusta de clientes de todo tipo: supermercados convencionales, foodservice, exportación e industria... y tu negocio puede ser uno de ellos.
+          </div>
+
+          {/* Content */}
+          <video
+            src="/videos/animacion_globo.mp4"
+            autoPlay
+            playsInline
+            muted
+            className="w-full h-auto rounded-lg shadow-lg object-cover relative z-10"
+            style={{ aspectRatio: "16/9" }}
+            aria-label="Animación de un globo terráqueo girando"
+          />
+          <div className="space-y-6 relative z-10">
+            <h3 className="text-2xl font-semibold text-[#2b95e1]">¿Por qué elegirnos?</h3>
+            <p className="text-gray-300">
+              Hemos llevado productos de todo el mundo a los estantes de nuestros clientes. Desde supermercados hasta restaurantes y tiendas especializadas. Nuestra experiencia y red global nos permiten ofrecerte una selección inigualable de productos de alta calidad.
             </p>
           </div>
-          
         </section>
 
-        {/* REASON CARDS */}
 
-        <ReasonsCards />
-        
-        
-        {/* RESEÑAS */}
+        {/* REASONS CARDS SECTION */}
+        <div className = "py-10 ">
+          <ReasonsCards/>
+        </div>
+
+        {/* REVIEWS SECTION */}
         <ReviewsSection />
 
-        {/* CUSTOMER ROADMAP */}
-        {/* VERTICAL TIMELINE USED FOR SHOWCASING THE KIND OF BUSINESS THEY ATTEND TO */}
-        <section className= "bg-[#fff] pt-8 ">
-          <VerticalTimelineSection/>
-        </section>
-
-
+        {/* VERTICAL TIMELINE SECTION */}
+        <div className = "pt-10">
+          <VerticalTimelineSection />
+        </div>
 
         
 
