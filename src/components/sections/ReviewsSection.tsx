@@ -66,8 +66,16 @@ const reviews: Review[] = [
   },
 ];
 
+interface ReviewsSectionProps  {
+  title: string;
+  backgroundColor?: string;
+  titleColor?: string;  
+
+
+};
+
 /* ── COMPONENTE ────────────────────────────────────────────────────────────── */
-const ReviewsSection: React.FC = () => {
+const ReviewsSection: React.FC<ReviewsSectionProps> = ({ title, backgroundColor, titleColor }) => {
   const trackRef = useRef<HTMLDivElement>(null);
   const [canPrev, setCanPrev] = useState(false);
   const [canNext, setCanNext] = useState(false);
@@ -95,10 +103,10 @@ const ReviewsSection: React.FC = () => {
   };
 
   return (
-    <section className="py-12 bg-[#0e344f] relative">
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-semibold text-white mb-8 text-center">
-          Lo que dicen nuestros clientes
+    <section className={`py-12 bg-${backgroundColor} relative`}>
+      <div className="mx-auto px-4">
+        <h2 className={`text-3xl font-semibold text-${titleColor} mb-8 text-center`}>
+          {title || "Lo que dicen nuestros clientes"}
         </h2>
 
         {/* PISTA HORIZONTAL */}
@@ -114,7 +122,7 @@ const ReviewsSection: React.FC = () => {
               key={i}
               className="
                 snap-center w-full sm:w-4/5 md:w-1/2 lg:w-1/3
-                bg-transparent border border-white/20 rounded-lg p-6 mb-5
+                bg-transparent border border-white/20 rounded-lg p-6 mb-5 
               "
             >
               {/* estrellas */}

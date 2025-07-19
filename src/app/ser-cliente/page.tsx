@@ -110,7 +110,9 @@ export default function BecomeCustomerPage() {
         </div>
 
         {/* REVIEWS SECTION */}
-        <ReviewsSection />
+        <div className = "bg-[#0e344f]">
+          <ReviewsSection title = "Lo que opinan nuestros clientes" titleColor="white" backgroundColor=""></ReviewsSection>
+        </div>
 
         {/* VERTICAL TIMELINE SECTION */}
         <div className = "pt-10">

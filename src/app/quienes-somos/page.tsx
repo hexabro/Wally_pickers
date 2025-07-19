@@ -1,11 +1,14 @@
 import React from "react";
 import Image from "next/image";
 
+import AboutHero from "@/components/sections/about-hero";
 import ContactForm from "@/components/sections/contactForm";
+import FeaturesSection from "@/components/sections/featuresSection";
+import ReviewsSection from "@/components/sections/ReviewsSection";
 
 import { TextCarousel } from "@/components/ui/textCarousel";
-import ProfileCardsSection from "@/components/sections/ContactCards";
 import CatalogDownload from "@/components/sections/catalogDownload";
+import ChatMessagesSection from "@/components/sections/FoundersSection";
 /**
  * Página "Quiénes Somos"
  * ────────────────────────────────────────────────────────────────────────────
@@ -17,29 +20,13 @@ import CatalogDownload from "@/components/sections/catalogDownload";
 
 const AboutUsPage: React.FC = () => {
   return (
-    <main className="space-y-24">
-      {/* ── Sección 1 ─────────────────────────────────────────────────────── */}
-      <section className="flex items-center h-[80vh]  mb-0 pb-0 ">
-        <div id="presentación" className="flex flex-col flex-1  md-w-1/2 p-0 pr-0">
-          <small className = "font-light text-2xl m-7 mb-0">¡HOLA!</small>
+    <main className="space-y-8">
+      {/* HERO */}
 
-          <h1 className="font-bold text-4xl m-7 mb-0">
-            Encantados de conocerte    
-          </h1>
-          <p className="m-7 mt-4 max-w-[500px]">
-            Somos Wally Pickers, y tenemos un reto claro: transformar la forma en que los negocios gestionan sus productos de alta rotación.
-          </p>
-        </div>
+      <div className = "pb-0 mb-0">
+       <AboutHero></AboutHero>
 
-        <div className="relative flex-1 h-full md:w-1/2 m-0 p-0">
-          <Image
-            src="/images/mozo.jpg"
-            alt="Trabajador de Wally Pickers sonriendo"
-            fill
-            className="object-cover m-0 p-0"
-          />
-        </div>
-      </section>
+      </div>
 
       {/* CARROUSEL DE TEXTO  AUTOMÁTICO*/}
       <TextCarousel  items = {[
@@ -49,45 +36,47 @@ const AboutUsPage: React.FC = () => {
         "Procedencia internacional"
       ]}/>
 
+      {/* FEATURES SECTION */}
+      <FeaturesSection />
 
 
-      {/* ── Sección 3: Misión ─────────────────────────────────────────────── */}
+
+      {/* SECCIÓN DE PRESENTACIÓN */}
       <section className="flex items-center h-[80vh] mb-0 pb-0 ">
         
 
         <div className="relative flex-1 h-full m-0 p-0">
           <Image
-            src="/images/about/mission.png"
+            src="/images/about/fundadores.jpg"
             alt="Trabajador de Wally Pickers sonriendo"
             fill
             className="object-cover m-0-0 p-0"
           />
         </div>
 
-        <div id="presentación" className="flex flex-col flex-1  pr-0">
-          <small className = "font-light text-2xl m-7 mb-0">EL PROBLEMA</small>
+        <div id="presentación" className="flex flex-col flex-1 pt-0 mt-0">
           <h1 className="font-semibold text-4xl mt-3 ml-7 mb-0 max-w-xl">
-            Las tendencias son menospreciadas
+            ¿De dónde surge Wally Pickers?
           </h1>
           <p className="m-7 mt-4">
-            Muchos negocios tienen dificultades para identificar los productos en tendencia. <br />
-            Aunque estos productos generan gran demanda, suelen tener un ciclo de vida muy corto, lo que complica su aprovechamiento.
+            Los fundadores detectaron un problema: muchos negocios tienen dificultades para identificar productos en tendencia, aún cuando estos cuentan con una gran demanda.
+            <br /><br />
+            Dando solución a esta necesidad nace Wally Pickers, que además de ofrecer productos en tendencia, garantiza un abastecimiento constante y eficiente.
           </p>
         </div>
       </section>
 
-      {/* SOLUCIÓN */}
-      <section className = "relative flow flow-row bg-radial from-blue-400  to-green-400 ">
-        <small className = "block font-light text-2xl pt-20 text-center text-gray-200">LA SOLUCIÓN </small>
-        <h2 className=" block font-semibold text-4xl mt-3 m-7 text-center text-white" >PROVEEDORES QUE TE ASISTEN</h2>
-        <p className = "block max-w-2xl mx-auto text-center pb-20 text-gray-200"> En Wally Pickers somos expertos en encontrar productos en tendencia por todo el mundo. <br />
-        Te proveemos de lo que necesitas y de lo que aún no sabes que necesitas
-        </p>
-      </section>
 
+      {/* REVIEWS */}
+      <div className = "bg-sky-900 mb-0 py-10">
+        <ReviewsSection title = "Lo que opinan nuestros clientes" titleColor="white" backgroundColor=""></ReviewsSection>
+      </div>
       {/* EL EQUIPO FUNDADOR */}
-      <ProfileCardsSection></ProfileCardsSection>
+      <div className = "bg-neutral-100 pt-10 pb-5 mt-0">
 
+        <ChatMessagesSection />
+
+      </div>
 
       {/* CATALOG DOWNLOAD */}
       <CatalogDownload></CatalogDownload>

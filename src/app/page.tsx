@@ -61,7 +61,16 @@ export default function HomePage() {
       <Presentacion />
       <section className="flex flex-col md:flex-row bg-[#2c81be] items-center justify-center">
         <div className="w-full md:w-1/2 h-64">
-          <MagnifyingSection />
+          <MagnifyingSection  
+            title = "Calidad garantizada" 
+            description = {`Trabajamos con fabricantes y distribuidores líderes en Asia, América, Europa y Reino Unido.${<br />}
+            Contamos con más de 300 productos internacionales listos para tu negocio, con alta rotación,${<br />}>
+            márgenes competitivos y distribución eficiente.`}
+             titleColor="white" 
+             descColor= "white"
+             magnifyColor="white" 
+             textCentered={false}/>
+          
         </div>
         <div className="w-full md:w-1/2">
           <Image
