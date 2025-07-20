@@ -5,6 +5,7 @@ import CategorySection from "@/components/sections/categories";
 import  BrandCarousel  from "@/components/sections/brandCarousel";
 import CatalogDownload from "@/components/sections/catalogDownload";
 import CategoryCards from "@/components/sections/CategoryCards";
+import ContactForm from "@/components/sections/contactForm";
 
 import AnimatedUnderline from "@/components/ui/animatedUnderline";
 import Image from "next/image";
@@ -96,6 +97,31 @@ export default function HomePage() {
 
       <CategorySection />
       <CatalogDownload />
+
+      {/* SECCIÓN DE FORMULARIO DE CONTACTO, FORMULARIO A LA DRECHA Y SECCIÓN DE TEXTO A LA IZQUIERDA */}
+        <div className="mx-auto p-10  flex flex-col md:flex-row items-stretch gap-8 ">
+          <div className="relative  bg-center flex-1 rounded-lg text-center md:text-left flex flex-col justify-center h-auto" 
+            style = {{ backgroundImage: "url(/images/contact/background.jpg)", }}>
+          {/* DARK OVERLAY */}
+          <div className="absolute inset-0 bg-black/30 z-0 rounded-lg" aria-hidden= "true"></div>
+            {/* CONTENT INSIDE THE OVERLAY */}
+            <div className="p-10 relative z-10">
+              <h3 className="text-2xl font-semibold text-white mb-8">
+                ¿Listo para empezar?
+              </h3>
+              <p className="text-white/80 mb-4">
+                Rellena el formulario y nos pondremos en contacto contigo para ofrecerte una propuesta personalizada.
+              </p>
+              <p className="text-white/80 mb-4 flex-1">
+                Nuestro equipo está listo para ayudarte a encontrar los productos perfectos para tu negocio y responder a todas tus preguntas.
+              </p>
+            </div>
+          </div>
+
+            <div className = "flex-1 h-full">
+               <ContactForm />
+            </div>
+        </div>
     </main>
   );
 }

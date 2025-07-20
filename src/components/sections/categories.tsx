@@ -69,16 +69,23 @@ export default function CategorySection() {
   return (
     <section className="py-20 px-6 max-w-7xl mx-auto flex flex-col items-center justify-center gap-8">
 
-      <h2 className="text-4xl font-extrabold text-slate-800 text-center lg:text-left">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">
-            Explora nuestras categorías
-          </span>
-      </h2>
+      <motion.h2
+        className="text-4xl font-extrabold text-slate-800 text-center lg:text-left"
+        initial={{ y: 50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true, amount: 0.6 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+      >
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">
+          Explora nuestras categorías
+        </span>
+      </motion.h2>
 
       <div className = "flex flex-col lg:flex-row items-center gap-12">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.6 }}
           transition={{ duration: 0.8 }}
           className="lg:w-1/2 w-full rounded-xl overflow-hidden shadow-xl"
         >
