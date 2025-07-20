@@ -8,7 +8,7 @@ import ReviewsSection from "@/components/sections/ReviewsSection";
 
 import { TextCarousel } from "@/components/ui/textCarousel";
 import CatalogDownload from "@/components/sections/catalogDownload";
-import ChatMessagesSection from "@/components/sections/FoundersSection";
+import FoundersSection from "@/components/sections/FoundersSection";
 /**
  * Página "Quiénes Somos"
  * ────────────────────────────────────────────────────────────────────────────
@@ -39,26 +39,24 @@ const AboutUsPage: React.FC = () => {
       {/* FEATURES SECTION */}
       <FeaturesSection />
 
-
-
       {/* SECCIÓN DE PRESENTACIÓN */}
-      <section className="flex items-center h-[80vh] mb-0 pb-0 ">
-        
-
-        <div className="relative flex-1 h-full m-0 p-0">
+      <section className="flex flex-col sm:flex-row items-center justify-center h-auto sm:h-[80vh] mb-0  sm:p-16 p-8 gap-8">
+        <div className="relative flex justify-center items-center w-full sm:w-1/2 h-64 sm:h-full mb-6 sm:mb-0">
           <Image
             src="/images/about/fundadores.jpg"
             alt="Trabajador de Wally Pickers sonriendo"
-            fill
-            className="object-cover m-0-0 p-0"
+            width={600}
+            height={500}
+            className="object-cover rounded-4xl shadow-lg w-full h-full"
+            style={{ maxHeight: "600px" }}
           />
         </div>
 
-        <div id="presentación" className="flex flex-col flex-1 pt-0 mt-0">
-          <h1 className="font-semibold text-4xl mt-3 ml-7 mb-0 max-w-xl">
+        <div id="presentación" className="flex flex-col w-full sm:w-1/2 pt-0 mt-0">
+          <h1 className="font-semibold text-3xl sm:text-4xl mt-3 sm:ml-7 mb-0 max-w-xl text-[#0e344f]">
             ¿De dónde surge Wally Pickers?
           </h1>
-          <p className="m-7 mt-4">
+          <p className="m-0 sm:m-7 mt-4">
             Los fundadores detectaron un problema: muchos negocios tienen dificultades para identificar productos en tendencia, aún cuando estos cuentan con una gran demanda.
             <br /><br />
             Dando solución a esta necesidad nace Wally Pickers, que además de ofrecer productos en tendencia, garantiza un abastecimiento constante y eficiente.
@@ -71,15 +69,14 @@ const AboutUsPage: React.FC = () => {
       <div className = "bg-sky-900 mb-0 py-10">
         <ReviewsSection title = "Lo que opinan nuestros clientes" titleColor="white" backgroundColor=""></ReviewsSection>
       </div>
-      {/* EL EQUIPO FUNDADOR */}
-      <div className = "bg-neutral-100 pt-10 pb-5 mt-0">
 
-        <ChatMessagesSection />
+      {/* EL EQUIPO FUNDADOR */}
+      <div className = "bg-neutral-100   mt-0">
+
+        <FoundersSection />
 
       </div>
 
-      {/* CATALOG DOWNLOAD */}
-      <CatalogDownload></CatalogDownload>
       
 
       {/* SECCIÓN DE FORMULARIO DE CONTACTO, FORMULARIO A LA DRECHA Y SECCIÓN DE TEXTO A LA IZQUIERDA */}
@@ -106,6 +103,10 @@ const AboutUsPage: React.FC = () => {
                <ContactForm />
             </div>
         </div>
+
+      {/* SECCIÓN DE DESCARGA DE CATÁLOGO */}
+      <CatalogDownload />
+        
     </main>
   );
 };

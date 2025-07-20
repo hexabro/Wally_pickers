@@ -31,7 +31,7 @@ export default function FeaturesSection() {
   return (
     <section className="bg-gray-50 py-16 mb-0 pb-20">
       <div className="max-w-4xl mx-auto px-4 text-center s">
-        <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-20   ">
+        <h2 className="text-2xl md:text-3xl font-semibold text-[#0e344f] mb-20   ">
           Descubre lo que nos hace únicos <Search className = " ml-2 inline scale-150"></Search>
         </h2>
 

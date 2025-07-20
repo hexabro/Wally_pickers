@@ -1,78 +1,75 @@
-"use client";
-import Image from "next/image";
+"use client"
+import Image from 'next/image'
+import { motion } from 'framer-motion'
 
-interface FounderMessageProps {
-  src: string;
-  alt: string;
-  message: string;
-  isLeft: boolean;
-}
+const founders = [
+  {
+    name: 'Othon Ansatuña',
+    title: 'Co-Fundador & CEO',
+    message: 'Somos tu equipo de confianza en la importación de todo tipo de productos de alta rotación. Estamos aquí para atenderte 24/7 y asegurarnos de que cada pedido llegue rápido y sin sorpresas',
+    image: '/images/about/ceo.jpg',
+  },
+  {
+    name: 'Jhonatan López',
+    title: 'Co-Fundador & CTO',
+    message: 'Sabemos que el mercado FMCG se mueve a mil por hora. Por eso te ofrecemos un canal directo con nuestro equipo joven y apasionado, dispuesto a resolverte cualquier tema en minutos. Dinos, ¿qué necesitas hoy?',
+    image: '/images/about/ceo2.jpg',
+  },
+]
 
-const FounderMessage: React.FC<FounderMessageProps> = ({ src, alt, message, isLeft }) => {
+const cardVariants = (alignLeft: boolean) => ({
+  hidden: { x: alignLeft ? -100 : 100, opacity: 0 },
+  visible: { x: 0, opacity: 1, transition: { duration: 0.6 } },
+})
+
+export default function FoundersSection() {
   return (
-    <div className={`flex items-start ${isLeft ? "justify-start" : "justify-end"}`}>
-      {isLeft && (
-        <Image
-          src={src}
-          alt={alt}
-          width={64}
-          height={64}
-          className="rounded-full border-2 border-indigo-500"
-        />
-      )}
-      <div
-        className={`relative max-w-[60%] px-6 py-4 mx-4 bg-white rounded-2xl shadow-lg
-          ${isLeft ? "rounded-bl-none" : "rounded-br-none"}`}
-      >
-        <p className="text-gray-800 leading-relaxed">{message}</p>
-        <span
-          className={`absolute bottom-0 w-4 h-4 bg-white shadow-lg
-            ${isLeft ? "-left-2 rotate-45 origin-top-left" : "-right-2 rotate-45 origin-top-right"}`}
-        />
-      </div>
-      {!isLeft && (
-        <Image
-          src={src}
-          alt={alt}
-          width={64}
-          height={64}
-          className="rounded-full border-2 border-indigo-500"
-        />
-      )}
-    </div>
-  );
-};
-
-const ChatMessagesSection: React.FC = () => {
-  const messages = [
-    {
-      src: "/images/about/othon2.png",
-      alt: "Othon Ansatuña",
-      message:
-        "Trabajamos mano a mano con fabricantes y distribuidores líderes en Asia, América, Europa y Reino Unido para ofrecer productos de alta rotación, con márgenes competitivos y distribución eficiente.",
-      isLeft: true,
-    },
-    {
-      src: "/images/about/jhonny2.png",
-      alt: "Jhonatan",
-      message:
-        "Queremos ser el socio estratégico de tu negocio, brindándote acceso inmediato a más de 300 productos internacionales y un canal de distribución global sin complicaciones.",
-      isLeft: false,
-    },
-  ];
-
-  return (
-    <section className="max-w-4xl mx-auto p-8 bg-gradient-to-r from-indigo-50 to-white rounded-3xl shadow-xl">
-      <h2 className="text-center text-4xl font-extrabold text-indigo-600 mb-10">
-        Mensajes de Nuestros Fundadores
-      </h2>
-      <div className="space-y-8">
-        {messages.map((msg, idx) => (
-          <FounderMessage key={idx} {...msg} />
-        ))}
+    <section className="bg-white py-16 px-8 " >
+      <div className="container mx-auto px-4">
+        <h2 className="text-4xl font-bold text-center text-[#0e344f] mb-12">
+          Mensaje de los Fundadores
+        </h2>
+        {founders.map((founder, index) => {
+          const alignLeft = index % 2 === 1
+          return (
+            <motion.div
+              key={founder.name}
+              className="flex flex-col-reverse md:flex-row items-center my-12"
+              variants={cardVariants(alignLeft)}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              <div
+                className={`md:w-1/2 p-6 px-0 md:px-6 space-y-4  ${
+                  alignLeft ? '' : 'md:order-2'
+                }`}
+              >
+                <h3 className="text-2xl font-semibold text-blue-900">
+                  {founder.name}
+                </h3>
+                <p className="italic text-green-600">{founder.title}</p>
+                <p className="text-gray-700 leading-relaxed">
+                  {founder.message}
+                </p>
+              </div>
+              <div
+                className={`md:w-1/2 flex justify-center ${
+                  alignLeft ? '' : 'md:order-1'
+                }`}
+              >
+                <Image
+                  src={founder.image}
+                  alt={founder.name}
+                  width={600}
+                  height={300}
+                  className="rounded-2xl shadow-xl object-fill  "
+                />
+              </div>
+            </motion.div>
+          )
+        })}
       </div>
     </section>
-  );
-};
-
-export default ChatMessagesSection;
+  )
+}
