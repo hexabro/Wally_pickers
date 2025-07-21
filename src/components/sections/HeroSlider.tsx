@@ -143,7 +143,7 @@ export default function HeroSlider() {
               draggable={false}
               className="select-none pointer-events-none object-contain"
               sizes="100vw"
-              style={{ objectFit: "contain" }}
+              style={{ objectFit: "cover" }}
               />
             </div>
             </div>
