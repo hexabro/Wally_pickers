@@ -80,9 +80,11 @@ export default function CategoryCards() {
 
       {/* ======== ESCRITORIO (md+): layout original con ProfileCard ======== */}
       <div
-        className="
-          hidden lg:flex gap-4 overflow-x-auto snap-x snap-mandatory justify-center
-          px-2 py-4 -mx-2  md:grid-cols-3 md:gap-6 md:-mx-0 hide-scrollbar 
+          className="
+          hidden lg:flex gap-4 overflow-x-auto snap-x snap-mandatory
+          px-6 py-4                /* más padding a ambos lados */
+          scroll-pl-6 scroll-pr-6  /* scroll-padding para snap */
+          hide-scrollbar
         "
         style={{
           touchAction: 'pan-x',
@@ -92,7 +94,7 @@ export default function CategoryCards() {
         {categories.map(cat => (
           <div
             key={cat.name}
-            className="snap-start flex-shrink-0 w-64 md:flex-shrink md:w-auto"
+            className="snap-start flex-shrink-0 w-64 md:flex-shrink md:w-auto hover: z-50"
           >
             <ProfileCard
               name={cat.name}

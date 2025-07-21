@@ -23,9 +23,10 @@ import { useState, useEffect, useRef, useCallback } from "react";
 
 /* ====================== 1 · ARRAY ORIGINAL ========================== */
 const heroSlides = [
-  { src: "/images/hero/one.jpg", alt: "Jamón Ibérico" },
-  { src: "/images/hero/two.jpg", alt: "Jamón Ibérico" },
-  { src: "/images/hero/three.jpg", alt: "Jamón Ibérico" },
+  { src: "/images/hero/tmpl1.jpg", alt: "Jamón Ibérico" },
+  { src: "/images/hero/tmpl2.jpg", alt: "Jamón Ibérico" },
+  { src: "/images/hero/tmpl3.jpg", alt: "Jamón Ibérico" },
+  
   ];
 
 /* Array extendido con clones (cloneLast, originals…, cloneFirst) */
@@ -133,15 +134,19 @@ export default function HeroSlider() {
         onDragStart={(e) => e.preventDefault()}
       >
         {extendedSlides.map(({ src, alt }, i) => (
-          <div key={i} className=" flex relative flex-shrink-0 w-screen h-full items-center justify-center">
-            <Image
+            <div key={i} className="flex relative flex-shrink-0 w-screen h-full items-center justify-center">
+            <div className="relative w-full h-full flex items-center justify-center">
+              <Image
               src={src}
               alt={alt}
               fill
               draggable={false}
-              className="object-center select-none pointer-events-none"
-            />
-          </div>
+              className="select-none pointer-events-none object-contain"
+              sizes="100vw"
+              style={{ objectFit: "contain" }}
+              />
+            </div>
+            </div>
         ))}
       </div>
 

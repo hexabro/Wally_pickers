@@ -35,7 +35,7 @@ export default function FeaturesSection() {
           Descubre lo que nos hace únicos <Search className = " ml-2 inline scale-150"></Search>
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-0 ">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-0 ">
           {features.map(({ title, Icon }) => (
             <div key={title} className="flex flex-col items-center space-y-4">
               <Icon className="w-12 h-12 text-green-400" />
