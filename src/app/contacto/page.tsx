@@ -2,16 +2,31 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import ContactForm from '@/components/sections/contactForm'
+import Link from 'next/link'
+import { useState } from 'react'
 
 export default function ContactPage() {
+    const [copied, setCopied] = useState(false);
+    const email = 'info@wally-pickers.com';
+
+    const handleCopyEmail = async () => {
+      try {
+        await navigator.clipboard.writeText(email);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      } catch (err) {
+        console.error('Error copying email: ', err);
+      }
+    };
+
   return (
     <main className="bg-gray-50">
       {/* Hero Section */}
-      <section className="flex flex-col md:flex-row items-center py-16 px-6 md:px-12 h-auto md:h-screen bg-cover bg-center"
+      <section className="flex flex-col md:flex-row items-center py-16 px-6 md:px-12 h-auto lg:h-screen bg-cover bg-center"
        style={{ backgroundImage: "url('images/contact/bg.jpg')" }}
       >
         <motion.div
-          className="md:w-1/2 space-y-6"
+          className="md:w-1/2 space-y-6 "
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
@@ -24,7 +39,7 @@ export default function ContactPage() {
           </p>
         </motion.div>
         <motion.div
-          className="w-full md:w-1/2 mt-8 md:mt-0 px-10"
+          className="w-full md:w-1/2 mt-8 md:mt-0 "
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
@@ -34,33 +49,48 @@ export default function ContactPage() {
       </section>
 
       {/* Visit Us Section */}
-      <section className="bg-white py-16 h-screen">
-        {/* MAP SECTION */}
-      <div className="container mx-auto p-10 lg:flex lg:space-x-8 h-[75vh]">
-        {/* Left Column: Contact Info Only */}
-        <div className="lg:w-1/4 space-y-8">
+     <section className="bg-white py-16 ">
+      <div className="container mx-auto px-4 xl:px-16 2xl:px-4 flex flex-col-reverse xl:flex-row space-y-8 xl:space-y-0 xl:space-x-8 ">
+        {/* Left Column: Contact Info */}
+        <div className="w-full xl:w-1/4 space-y-8 flex flex-col items-start  justify-center py-16">
           <div className="space-y-4">
-            <h2 className="text-3xl font-bold text-blue-600">Central Grupo Atlanta</h2>
-            <p className="text-gray-700">
-              C/ Rey Pastor 7 BC<br />
-              28914 Leganés (Madrid) – Spain
+            <h2 className="text-5xl font-bold text-[#0e344f]">Central de Wally Pickers</h2>
+             <Link href = "https://www.google.com/maps/place/Wally+Pickers+Trading+S.L./@40.6037937,-3.2232876,629m/data=!3m2!1e3!4b1!4m6!3m5!1s0xd43ade45f6f9797:0x8c4dd2487a6cddae!8m2!3d40.6037897!4d-3.2207127!16s%2Fg%2F11xml5f319?entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D"
+                  target = "_blank"
+                  rel= "noopener noreferrer"
+             >
+              <p className="text-gray-700 underline text-xl lg:text-sm">
+                  C/Francisco de Medina y Mendoza 50, <br />
+                  19171 Cabanillas del Campo (Guadalajara) – España
+                
+                </p>
+             </Link> 
+              
+          </div>
+          <div className="space-y-2 text-gray-700 lg:text-xl text-2xl ">
+            <p><span className="font-semibold">Teléfono:</span> (+34) 640 69 05 04</p>
+            <p><span className="font-semibold">Pedidos:</span> (+34) 634 65 34 75</p>
+            <p className="flex items-center space-x-2">
+              <span className="font-semibold">Email:</span>
+              <button
+                onClick={handleCopyEmail}
+                className="underline focus:outline-none hover:cursor-pointer "
+              >
+                {email}
+              </button>
+              {copied && <span className="text-sm text-[#0e344f]">¡Copiado!</span>}
+
             </p>
+            
           </div>
-          <div className="space-y-2 text-gray-700">
-            <p><span className="font-semibold">Teléfono:</span> (+34) 91 680 55 25</p>
-            <p><span className="font-semibold">Fax:</span> (+34) 91 686 16 28</p>
-            <p><span className="font-semibold">Pedidos:</span> (+34) 902 18 19 49</p>
-            <p><span className="font-semibold">Email:</span> <a href="mailto:atlanta@grupoatlanta.es" className="text-blue-600 hover:underline">atlanta@grupoatlanta.es</a></p>
-          </div>
-          
+         
         </div>
 
         {/* Right Column: Map */}
-        <div className="lg:w-3/4 mt-12 lg:mt-0">
-          <div className="relative w-full h-full rounded-lg overflow-hidden shadow-lg">
+        <div className="w-full xl:w-3/4">
+          <div className="relative w-full h-[50vh] 2xl:h-[80vh]  rounded-lg overflow-hidden shadow-lg">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2739.8275803949077!2d-3.1672051245054607!3d40.63852544211121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd43abbb4efeab6f%3A0x201eb55be9bc779a!2sLaborawi!5e1!3m2!1ses!2ses!4v1753087012070!5m2!1ses!2ses"
-              width="100%"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2741.2525233398937!2d-3.223287624507281!3d40.603793744233876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd43ade45f6f9797%3A0x8c4dd2487a6cddae!2sWally%20Pickers%20Trading%20S.L.!5e1!3m2!1ses!2ses!4v1753092901195!5m2!1ses!2ses"              width="100%"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen={false}
@@ -70,39 +100,6 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            <div className="flex items-start space-x-4">
-              <svg className="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 24 24"><path d="M3 8a1 1 0 011-1h3a1 1..." /></svg>
-              <div>
-                <p className="font-semibold">Teléfono:</p>
-                <p>(+34) 91 680 55 25</p>
-                <p className="font-semibold mt-2">Fax:</p>
-                <p>(+34) 91 686 16 28</p>
-                <p className="font-semibold mt-2">Pedidos:</p>
-                <p>(+34) 902 18 19 49</p>
-                <p className="font-semibold mt-2">Email:</p>
-                <p>atlanta@grupoatlanta.es</p>
-              </div>
-            </div>
-            <div className="flex items-start space-x-4">
-              <svg className="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13..." /></svg>
-              <div>
-                <p className="font-semibold">Dirección:</p>
-                <p>C/ Rey Pastor 7 BC</p>
-                <p>28914 Leganés (Madrid)</p>
-                <p>Spain</p>
-              </div>
-            </div>
-          </div>
-          <a
-            href="https://goo.gl/maps/your-map-link"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-blue-600 text-white px-6 py-3 rounded-full font-medium hover:bg-blue-700 transition"
-          >
-            Ver Mapa
-          </a>
     </section>
     </main>
   )
