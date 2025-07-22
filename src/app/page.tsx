@@ -8,7 +8,8 @@ import ContactForm from "@/components/sections/contactForm";
 
 import AnimatedUnderline from "@/components/ui/animatedUnderline";
 import Image from "next/image";
-import Carousel from "@/components/sections/Carousel";
+import { SwipeCarousel } from "@/components/sections/SwipeCarousel";
+
 /** -------------------------------------------------------------
  *  Wally Pickers – Página de inicio (tipo landing)            
  *  Estructura solicitada por el cliente:                      
@@ -59,14 +60,8 @@ export default function HomePage() {
   return (
     <main>
       {/* CAROUSEL */}
-      <div className = "flex items-center justify-center  h-[30vh] w-full md:h-[80vh] ">
-        <Carousel
-          autoplay={true}
-          autoplayDelay={5000}
-          pauseOnHover={false}
-          loop={true}
-          round={false}
-        />  
+      <div className = "mx-auto">
+        <SwipeCarousel></SwipeCarousel>
       </div>  
       
       <Presentacion />
