@@ -4,6 +4,7 @@ import "./timeline.css";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 
+
 export type TimelineEvent = {
   year: string;
   title: string;
@@ -17,28 +18,28 @@ const events: TimelineEvent[] = [
     title: "1. Descubrimiento",
     description:
       "Nos reunimos contigo para conocer tus necesidades específicas de abastecimiento, volumen y frecuencia. Queremos entender lo que hace único tu negocio.",
-    icon: "/images/timeline/lupa.svg",
+    icon: "/images/timeline/lupa_blanca.svg",
   },
   {
     year: "",
     title: "2. Planificamos tu suministro",
     description:
       "Diseñamos una estrategia personalizada de abastecimiento para que siempre tengas los productos que necesitas, al mejor precio y en el momento justo.",
-    icon: "/images/timeline/plan.svg",
+    icon: "/images/timeline/engranaje.svg",
   },
   {
     year: "",
     title: "3. Gestionamos tu pedido",
     description:
       "Procesamos y preparamos tu pedido con rapidez y precisión, asegurando que la calidad y las condiciones de almacenamiento se mantengan siempre óptimas.",
-    icon: "/images/timeline/pedido.svg",
+    icon: "/images/timeline/pedido-blanco2.svg",
   },
   {
     year: "",
     title: "4. Entrega y seguimiento",
     description:
       "Realizamos la entrega en el tiempo acordado, y te ofrecemos un seguimiento continuo para adaptarnos a tus futuras necesidades de stock.",
-    icon: "/images/timeline/seguimiento.svg",
+    icon: "/images/timeline/seguimiento-blanco.svg",
   },
 ];
 
@@ -70,7 +71,7 @@ const VerticalTimelineSection: React.FC = () => {
               alt={event.title}
               width={20}
               height={20}
-              className={`absolute w-[40px] rounded-[50%] right-[-20px] top-[32px] z-2 bg-green-400 left-[10px] 
+              className={`absolute w-[40px] rounded-[50%] right-[-20px] top-[32px] z-2 bg-[#777] left-[10px] 
                   ${
                     index % 2 === 0
                       ? "sm:left-full sm:translate-x-[-50%]"

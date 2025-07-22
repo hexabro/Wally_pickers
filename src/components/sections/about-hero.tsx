@@ -50,14 +50,15 @@ export default function AboutHero() {
                 > 
                  En Wally Pickers garantizamos productos de máxima calidad y seguridad, entregados puntualmente y al mejor precio.
                 </motion.p>
+                <motion.a
+                  href="#contact"
+                  className="inline-block bg-white text-gray-900 font-medium px-6 py-2 rounded shadow hover:bg-gray-100"
+                  variants={fadeInUp}
+              >
+                  Contacta con nosotros
+              </motion.a>
             </div>
-            <motion.a
-            href="#contact"
-            className="inline-block bg-white text-gray-900 font-medium px-6 py-2 rounded shadow hover:bg-gray-100"
-            variants={fadeInUp}
-        >
-            Contacta con nosotros
-        </motion.a>
+            
         </div>
         
         

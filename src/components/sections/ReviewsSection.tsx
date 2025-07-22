@@ -134,7 +134,7 @@ const ReviewsSection: React.FC<ReviewsSectionProps> = ({ title, backgroundColor,
                     viewBox="0 0 24 24"
                     fill="currentColor"
                     className={`w-5 h-5 ${
-                      ix < r.rating ? "text-green-400" : "text-green-400/30"
+                      ix < r.rating ? "text-yellow-300" : "text-yellow-400"
                     }`}
                   >
                     <path d="M12 17.27 18.18 21 16.54 13.97 22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />

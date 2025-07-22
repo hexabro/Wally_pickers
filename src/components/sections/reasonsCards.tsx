@@ -127,10 +127,10 @@ export default function ReasonsCards() {
       {/* Button */}
       <button
         onClick={handleClick}
-        className={`mt-8 px-6 py-3 rounded-full shadow focus:outline-none focus:ring-2 focus:ring-blue-400
-          ${count === 0 ? 'hidden' : count < cards.length ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-green-600 text-white hover:bg-green-700'}`}
+        className={`mt-8 px-6 py-3 rounded-full shadow focus:outline-none focus:ring-2 focus:ring-blue-400 hover:cursor-pointer
+          ${count === 0 ? 'hidden' : count < cards.length ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-[#d68a49] text-white hover:bg-[#d1a47d]'}`}
       >
-        {count === 0 ? 'Comenzar' : count < cards.length ? 'Siguiente tarjeta' : 'Reiniciar'}
+        {count === 0 ? 'Comenzar' : count < cards.length ? 'Siguiente razón' : 'Reiniciar'}
       </button>
     </section>
   );

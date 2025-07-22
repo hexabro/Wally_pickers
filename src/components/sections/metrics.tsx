@@ -8,7 +8,7 @@ const metrics = [
 ];
 export default function StatsStrip() {
   return (
-    <section className="bg-green-600 py-12 text-white">
+    <section className="bg-gray-600 py-12 text-white">
       <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
         {metrics.map((m) => (
           <div key={m.label} className="space-y-1">

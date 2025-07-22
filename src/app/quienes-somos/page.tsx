@@ -28,13 +28,7 @@ const AboutUsPage: React.FC = () => {
 
       </div>
 
-      {/* CARROUSEL DE TEXTO  AUTOMÁTICO*/}
-      <TextCarousel  items = {[
-        "Precios competitivos", 
-        "Envíos en 72 horas",
-        "Productos en tendencia",
-        "Procedencia internacional"
-      ]}/>
+    
 
       {/* FEATURES SECTION */}
       <FeaturesSection />

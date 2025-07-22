@@ -7,7 +7,7 @@ import {
 } from 'lucide-react'
 
 import MagnifyingSection from './magnifyingSection';
-
+import AnimatedUnderline from '../ui/animatedUnderline';
 const features = [
 {
     title: 'Análisis de tendencias',
@@ -32,13 +32,13 @@ export default function FeaturesSection() {
     <section className="bg-gray-50 py-16 mb-0 pb-20">
       <div className="max-w-4xl mx-auto px-4 text-center s">
         <h2 className="text-2xl md:text-3xl font-semibold text-[#0e344f] mb-20   ">
-          Descubre lo que nos hace únicos <Search className = " ml-2 inline scale-150"></Search>
+          Descubre lo que nos hace  <AnimatedUnderline>únicos</AnimatedUnderline>
         </h2>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-x-0 ">
           {features.map(({ title, Icon }) => (
             <div key={title} className="flex flex-col items-center space-y-4">
-              <Icon className="w-12 h-12 text-green-400" />
+              <Icon className="w-12 h-12 text-[#0e344f]" />
               <MagnifyingSection  description = {title} titleColor='black' descColor='black' magnifyColor="[#0e344f]" textCentered={true}/>
             </div>
           ))}

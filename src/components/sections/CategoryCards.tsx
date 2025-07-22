@@ -40,10 +40,10 @@ export default function CategoryCards() {
     <section className="py-12 px-4 max-w-7xl mx-auto ">
       {/* ======== MÓVIL: imagen de fondo + overlays ======== */}
       <div className="lg:hidden flex flex-col space-y-4 hide-scrollbar">
-        {categories.map(cat => (
+        {categories.map((cat) => (
           <div
             key={cat.name}
-            className="w-full h-40 rounded-xl overflow-hidden shadow-lg  relative"
+            className={`w-full h-40 rounded-xl overflow-hidden shadow-lg  relative `}
           >
 
             {/* Imagen de fondo */}
@@ -85,16 +85,17 @@ export default function CategoryCards() {
           px-6 py-4                /* más padding a ambos lados */
           scroll-pl-6 scroll-pr-6  /* scroll-padding para snap */
           hide-scrollbar
+          w-full
         "
         style={{
           touchAction: 'pan-x',
           WebkitOverflowScrolling: 'touch'
         }}
       >
-        {categories.map(cat => (
+        {categories.map((cat, i) => (
           <div
             key={cat.name}
-            className="snap-start flex-shrink-0 w-64 md:flex-shrink md:w-auto hover: z-50"
+            className={`${i=== 1 ? 'snap-center': ''} py-6 flex-shrink-0 w-64 md:flex-shrink md:w-auto hover: z-50`}
           >
             <ProfileCard
               name={cat.name}

@@ -48,7 +48,7 @@ export default function FoundersSection() {
                 <h3 className="text-2xl font-semibold text-blue-900">
                   {founder.name}
                 </h3>
-                <p className="italic text-green-600">{founder.title}</p>
+                <p className="italic text-[#d68a49]">{founder.title}</p>
                 <p className="text-gray-700 leading-relaxed">
                   {founder.message}
                 </p>
