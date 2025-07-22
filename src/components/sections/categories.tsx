@@ -3,34 +3,27 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ChevronRight, ArrowRight } from 'lucide-react';
+import AnimatedColumns from "@/components/ui/AnimatedColumns"
 
 interface FlipCardProps {
   href: string;
   label: string;
-  emoji: string;
 }
 
-const FlipCard: React.FC<FlipCardProps> = ({ href, label, emoji }) => (
+export const FlipCard: React.FC<FlipCardProps> = ({ href, label }) => (
   <Link href={href} className="block">
     <motion.div
-      initial={{ scale: 1 }}
-      whileHover={{ scale: 1.05 }}
+      initial={{ opacity: 0.8, y: 5 }}
+      whileHover={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      className="relative w-full h-16 rounded-xl shadow-lg overflow-hidden transform-gpu group"
+      className="text-base font-semibold text-gray-700 hover:underline underline-offset-4 transition duration-200 ease-in-out"
     >
-      <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-sky-600 to-indigo-500 text-white rounded-xl">
-        <span className="text-lg font-semibold opacity-100 group-hover:opacity-0 transition-opacity duration-200">
-          {label}
-        </span>
-        <span className="text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 absolute">
-          {emoji}
-        </span>
-      </div>
+      {label}
     </motion.div>
   </Link>
 );
 
-interface CategoryColumn {
+export interface CategoryColumn {
   label: string;
   items: FlipCardProps[];
 }
@@ -40,28 +33,28 @@ export default function CategorySection() {
     {
       label: 'Alimentación',
       items: [
-        { href: '#chocolates', label: 'Chocolates', emoji: '🍫' },
-        { href: '#snacks', label: 'Snacks', emoji: '🍿' },
-        { href: '#chicles', label: 'Chicles', emoji: '🍬' },
-        { href: '#frutos-secos', label: 'Frutos secos', emoji: '🥜' },
+        { href: '#chocolates', label: 'Chocolates'},
+        { href: '#snacks', label: 'Snacks' },
+        { href: '#chicles', label: 'Chicles' },
+        { href: '#frutos-secos', label: 'Frutos secos' },
       ],
     },
     {
       label: 'Limpieza',
       items: [
-        { href: '#detergentes', label: 'Detergentes', emoji: '🧼' },
-        { href: '#multiusos', label: 'Multiusos', emoji: '🧴' },
-        { href: '#desinfectantes', label: 'Desinfectantes', emoji: '🧴' },
-        { href: '#suavizantes', label: 'Suavizantes', emoji: '🧺' },
+        { href: '#detergentes', label: 'Detergentes' },
+        { href: '#multiusos', label: 'Multiusos' },
+        { href: '#desinfectantes', label: 'Desinfectantes' },
+        { href: '#suavizantes', label: 'Suavizantes' },
       ],
     },
     {
       label: 'Cosmética',
       items: [
-        { href: '#champu', label: 'Champú', emoji: '🧴' },
-        { href: '#gel-bano', label: 'Gel de baño', emoji: '🛁' },
-        { href: '#crema-facial', label: 'Crema facial', emoji: '🥒' },
-        { href: '#desodorante', label: 'Desodorante', emoji: '🧊' },
+        { href: '#champu', label: 'Champú' },
+        { href: '#gel-bano', label: 'Gel de baño' },
+        { href: '#crema-facial', label: 'Crema facial' },
+        { href: '#desodorante', label: 'Desodorante' },
       ],
     },
   ];
@@ -76,7 +69,7 @@ export default function CategorySection() {
         viewport={{ once: true, amount: 0.6 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
       >
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">
+        <span className="bg-clip-text text-blue-500">
           Explora nuestras categorías
         </span>
       </motion.h2>
@@ -101,7 +94,14 @@ export default function CategorySection() {
         <div className="lg:w-1/2 w-full flex flex-col space-y-8">
           
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Versión para móviles: cada columna es un <details> */}
+          <div className = "lg:hidden">
+            <AnimatedColumns CategoryColumns={columns}></AnimatedColumns>
+          </div>
+
+
+          {/* Versión para escritorio: 3 columnas visibles */}
+          <div className="hidden lg:grid lg:grid-cols-3 gap-6">
             {columns.map((col) => (
               <div key={col.label} className="space-y-4">
                 <h3 className="text-xl font-semibold text-slate-700 border-b-2 border-sky-300 pb-1">
@@ -109,23 +109,19 @@ export default function CategorySection() {
                 </h3>
                 <div className="space-y-4">
                   {col.items.map((item) => (
-                    <FlipCard
-                      key={item.href}
-                      href={item.href}
-                      label={item.label}
-                      emoji={item.emoji}
-                    />
+                    <FlipCard key={item.href} {...item} />
                   ))}
                 </div>
               </div>
             ))}
           </div>
 
+
           <div className="pt-4 text-center lg:text-left">
             <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
               <Link
                 href="/catalogo"
-                className="inline-flex items-center px-6 py-3 rounded-full bg-green-600 text-white font-semibold hover:bg-green-500 transition-shadow shadow-lg hover:shadow-xl"
+                className="inline-flex items-center px-6 py-3 rounded-full bg-[#1470b1] text-white font-semibold hover:bg transition-shadow shadow-lg hover:shadow-xl"
               >
                 Ver todos nuestros productos
                 <ArrowRight size={20} className="ml-2" />
