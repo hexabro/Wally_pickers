@@ -1,4 +1,3 @@
-import HeroSlider from "@/components/sections/HeroSlider";
 import MagnifyingSection from "@/components/sections/magnifyingSection"
 import StatsStrip from "@/components/sections/metrics";
 import CategorySection from "@/components/sections/categories";
@@ -9,6 +8,7 @@ import ContactForm from "@/components/sections/contactForm";
 
 import AnimatedUnderline from "@/components/ui/animatedUnderline";
 import Image from "next/image";
+import Carousel from "@/components/sections/Carousel";
 /** -------------------------------------------------------------
  *  Wally Pickers – Página de inicio (tipo landing)            
  *  Estructura solicitada por el cliente:                      
@@ -53,12 +53,22 @@ function Presentacion() {
 
 
 
+
 /* ========================== EXPORT ========================== */
 export default function HomePage() {
   return (
     <main>
-      {/* <Lupa /> */}
-      <HeroSlider />
+      {/* CAROUSEL */}
+      <div className = "flex items-center justify-center  h-[30vh] w-full md:h-[80vh] ">
+        <Carousel
+          autoplay={true}
+          autoplayDelay={5000}
+          pauseOnHover={false}
+          loop={true}
+          round={false}
+        />  
+      </div>  
+      
       <Presentacion />
       
       <section className="flex flex-col md:flex-row bg-[#2c81be] items-center justify-center">
