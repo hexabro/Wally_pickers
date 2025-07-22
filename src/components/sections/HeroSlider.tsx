@@ -123,6 +123,19 @@ export default function HeroSlider() {
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
       onPointerLeave={handlePointerUp}
+      onTouchStart={e => handlePointerDown({
+        clientX: e.touches[0].clientX,
+        pointerId: 1,
+        currentTarget: e.currentTarget
+      } as any)}
+     onTouchMove={e => handlePointerMove({
+       clientX: e.touches[0].clientX
+       } as any)}
+     onTouchEnd={e => handlePointerUp({
+     clientX: e.changedTouches[0].clientX,
+     pointerId: 1,
+     currentTarget: e.currentTarget
+   } as any)}
     >
       {/* Contenedor deslizante */}
       <div
