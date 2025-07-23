@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
@@ -6,13 +5,13 @@ import Link from "next/link";
 
 const CustomersRectangle: React.FC = () => {
   return (
-    <section className="w-full py-6 sm:py-12 lg:py-20 px-4 sm:px-6 lg:px-20 h[80vh]">
+    <section className="w-full  px-6  py-6 sm:py-12 lg:py-20 sm:px-6 lg:px-20h[80vh] ">
       <div className="overflow-hidden rounded-2xl grid grid-cols-1 md:grid-cols-2 min-h-[60vh]">
         
         {/* Texto */}
         <div
           className="
-            flex flex-col justify-center px-4 sm:px-8 md:px-12 lg:px-16 py-6 sm:py-8 md:py-12
+            flex flex-col justify-center py-4 md:px-8
              md:bg-[#0e344f]
           "
         >
@@ -29,24 +28,41 @@ const CustomersRectangle: React.FC = () => {
           </p>
           
 
-          {/* hide on mobile, show from sm+ */}
-          <Link
+          {/* BUTTON hide on mobile, show from sm+ */}
+          
+          <div className = "pb-4 ">
+            <Link
             href='#contact'
             className="
-              hidden md:inline-block mt-6 sm:mt-8
+              hidden md:inline-block  mt-6 sm:mt-8
               bg-white text-[#0e344f] font-semibold
               rounded-lg
               px-4 py-2 sm:px-6 sm:py-3
               shadow-md hover:bg-gray-100
               transition-colors
+              
             "
           >
             Contacta con nosotros
           </Link>
+          </div>
+          
         </div>
 
-        {/* Imagen */}
-        <div className="relative h-64 md:h-auto rounded-2xl md:rounded-bl-none md:rounded-tl-none overflow-hidden">
+        {/* Imagen ordenador*/}
+        <div className="hidden md:block relative h-64 md:h-auto md:rounded-tl-none md:rounded-bl-none rounded-2xl overflow-hidden ">
+          <Image
+            src="/images/ser-cliente-svg.svg"
+            alt={"imagen de mujer sonriendo"}
+            fill
+            loading = "eager"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
+            className="object-cover"
+            priority
+          />
+        </div>
+        {/* IMAGEN MOVIL */}
+        <div className="md:hidden relative h-64 md:h-auto w-full  rounded-2xl overflow-hidden ">
           <Image
             src="/images/ser-cliente-svg.svg"
             alt={"imagen de mujer sonriendo"}
@@ -67,7 +83,7 @@ const CustomersRectangle: React.FC = () => {
               bg-[#0e344f] text-white font-semibold
               rounded-2xl
               px-4 py-2 sm:px-6 sm:py-3
-              shadow-md hover:bg-gray-100
+              shadow-md hover:bg-[#6b96b4]
               transition-colors
               text-center w-full
             "

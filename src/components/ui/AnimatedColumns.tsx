@@ -17,10 +17,13 @@ const AnimatedColumns: React.FC<AnimatedColumnsProps> = ({ CategoryColumns }) =>
                 const [open, setOpen] = useState(false);
 
                 return (
-                    <div key={col.label} className="bg-gray-50 rounded-lg shadow-md p-4">
+                    <div
+                        key={col.label}
+                        className="bg-gradient-to-r from-gray-700 to-blue-700 rounded-lg shadow-md p-4"
+                    >
                         <button
                             onClick={() => setOpen(!open)}
-                            className="w-full flex items-start justify-between text-lg font-bold text-slate-800 cursor-pointer"
+                            className="w-full flex items-center justify-center text-lg font-bold text-white cursor-pointer"
                         >
                             {col.label}
                             <ChevronRight

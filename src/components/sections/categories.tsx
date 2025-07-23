@@ -15,8 +15,8 @@ export const FlipCard: React.FC<FlipCardProps> = ({ href, label }) => (
     <motion.div
       initial={{ opacity: 0.8, y: 5 }}
       whileHover={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3 }}
-      className="text-base font-semibold text-gray-700 hover:underline underline-offset-4 transition duration-200 ease-in-out"
+      transition={{ duration: 0.1, ease: "linear" }}
+      className="text-base text-center font-semibold text-white hover:underline underline-offset-4 transition duration-200 ease-in-out"
     >
       {label}
     </motion.div>
@@ -121,10 +121,10 @@ export default function CategorySection() {
             <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
               <Link
                 href="/catalogo"
-                className="inline-flex items-center px-6 py-3 rounded-full bg-[#1470b1] text-white font-semibold hover:bg transition-shadow shadow-lg hover:shadow-xl"
+                className="inline-flex items-center px-6 py-3 rounded-full bg-[#d68a49] text-white font-semibold hover:bg transition-shadow shadow-lg hover:shadow-xl"
               >
                 Ver todos nuestros productos
-                <ArrowRight size={20} className="ml-2" />
+                <ArrowRight size={20} className="ml-2 mt-1" />
               </Link>
             </motion.div>
           </div>

@@ -70,34 +70,30 @@ export default function BecomeCustomerPage() {
 
         
 
-        {/* SECTION WITH A MAP ON THE LEFT AND HEADING AND TEXT ON THE RIGHT */}
+        {/* SECTION WITH A GLOBE */}
         <section
-          className="relative mx-auto py-20 px-5  grid grid-cols-1 md:grid-cols-2 gap-8 items-center w-full "
+          className="relative  mt-20 pb-20 md:pb-0  grid grid-cols-1 md:grid-cols-2 gap-8 items-center w-full "
         >
           {/* Gradient background for border blending */}
           <div className="absolute inset-0 pointer-events-none z-0">
             {/* fallback hard black */}
-            <div className="w-full h-full bg-black" />
-            {/* custom gradient: white → white 30%, black 30–70%, white after */}
-            <div
-              className="absolute inset-0
-                  md:bg-[linear-gradient(to_bottom,white_0%,black_10%,black_10%,black_90%,black_90%,white_100%)]"              
-            />
+            <div className="w-full h-full bg-[#0e2f46]" />
+
           </div>
 
           {/* Content */}
           <video
-            src="/videos/animacion_globo.mp4"
+            src="/videos/canva-anim-bbg.mp4"
             autoPlay
             playsInline
             muted
-            className="w-full h-auto rounded-lg shadow-lg object-cover relative z-10"
+            className="w-full h-auto rounded-lg  object-cover relative z-10 "
             style={{ aspectRatio: "16/9" }}
             aria-label="Animación de un globo terráqueo girando"
           />
-          <div className="space-y-6 relative z-10 ">
-            <h3 className="text-2xl font-semibold text-[#2b95e1]">¿Por qué elegirnos?</h3>
-            <p className="text-gray-300">
+          <div className="space-y-6 relative z-10 px-7">
+            <h3 className="text-2xl font-semibold text-sky-600">¿Por qué elegirnos?</h3>
+            <p className="text-white/80">
               Hemos llevado productos de todo el mundo a los estantes de nuestros clientes. Desde supermercados hasta restaurantes y tiendas especializadas. Nuestra experiencia y red global nos permiten ofrecerte una selección inigualable de productos de alta calidad.
             </p>
           </div>
