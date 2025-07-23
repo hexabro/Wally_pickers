@@ -52,7 +52,7 @@ const CustomersRectangle: React.FC = () => {
         {/* Imagen ordenador*/}
         <div className="hidden md:block relative h-64 md:h-auto md:rounded-tl-none md:rounded-bl-none rounded-2xl overflow-hidden ">
           <Image
-            src="/images/ser-cliente-svg.svg"
+            src="/images/become-client/trabajadora-buena.png"
             alt={"imagen de mujer sonriendo"}
             fill
             loading = "eager"
@@ -64,7 +64,7 @@ const CustomersRectangle: React.FC = () => {
         {/* IMAGEN MOVIL */}
         <div className="md:hidden relative h-64 md:h-auto w-full  rounded-2xl overflow-hidden ">
           <Image
-            src="/images/ser-cliente-svg.svg"
+            src="/images/become-client/trabajadora-buena.png"
             alt={"imagen de mujer sonriendo"}
             fill
             loading = "eager"

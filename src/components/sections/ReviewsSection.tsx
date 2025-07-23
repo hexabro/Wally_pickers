@@ -98,7 +98,7 @@ const ReviewsSection: React.FC<ReviewsSectionProps> = ({ title, backgroundColor,
   const scrollBy = (dir: "prev" | "next") => {
     const el = trackRef.current;
     if (!el) return;
-    const amount = el.clientWidth;
+    const amount = el.clientWidth/2;
     el.scrollBy({ left: dir === "next" ? amount : -amount, behavior: "smooth" });
   };
 
@@ -121,7 +121,7 @@ const ReviewsSection: React.FC<ReviewsSectionProps> = ({ title, backgroundColor,
             <article
               key={i}
               className="
-                snap-center w-full sm:w-4/5 md:w-1/2 lg:w-1/3
+                snap-center w-full sm:w-4/5 md:w-1/2 lg:w-1/4
                 bg-transparent border border-white/20 rounded-lg p-6 mb-5 
               "
             >
@@ -157,7 +157,7 @@ const ReviewsSection: React.FC<ReviewsSectionProps> = ({ title, backgroundColor,
         className="
           hidden lg:flex items-center justify-center
           absolute top-1/2 -translate-y-1/2 left-4
-          w-10 h-10 rounded-full bg-white/10 hover:bg-white/20
+          w-10 h-10 rounded-full bg-[#777] hover:bg-[#908f8f]
           transition disabled:opacity-30 disabled:pointer-events-none
         "
       >
@@ -172,7 +172,7 @@ const ReviewsSection: React.FC<ReviewsSectionProps> = ({ title, backgroundColor,
         className="
           hidden lg:flex items-center justify-center
           absolute top-1/2 -translate-y-1/2 right-4
-          w-10 h-10 rounded-full bg-white/10 hover:bg-white/20
+          w-10 h-10 rounded-full bg-[#777] hover:bg-[#908f8f]
           transition disabled:opacity-30 disabled:pointer-events-none
         "
       >

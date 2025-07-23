@@ -1,3 +1,5 @@
+"use client"
+import { useRef, useState } from 'react';
 import {
   TrendingUp,
   Globe,
@@ -28,8 +30,34 @@ const features = [
 ]
 
 export default function FeaturesSection() {
+
+    const containerRef = useRef<HTMLDivElement>(null);
+    const [pointer, setPointer] = useState<{ x: number; y: number }>({ x: -1000, y: -1000 });
+  
+    // Update pointer position logic
+    const updatePointer = (clientX: number, clientY: number) => {
+      const rect = containerRef.current?.getBoundingClientRect();
+      if (rect) {
+        setPointer({
+          x: clientX - rect.left,
+          y: clientY - rect.top
+        });
+      }
+    };
+  
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) =>
+      updatePointer(e.clientX, e.clientY);
+  
+    const handleMouseLeave = () =>
+      setPointer({ x: -1000, y: -1000 });
+
   return (
-    <section className="bg-gray-50 py-16 mb-0 pb-20">
+    <section 
+    ref = {containerRef}
+    onMouseMove = {handleMouseMove}
+    onMouseLeave ={handleMouseLeave}
+    
+    className="relative bg-gray-50 py-16 mb-0 pb-20 xl:cursor-none">
       <div className="max-w-4xl mx-auto px-4 text-center s">
         <h2 className="text-2xl md:text-3xl font-semibold text-[#0e344f] mb-20   ">
           Descubre lo que nos hace  <AnimatedUnderline>únicos</AnimatedUnderline>
@@ -44,6 +72,22 @@ export default function FeaturesSection() {
           ))}
         </div>
       </div>
+
+      {/* Magnifier lens */}
+      <div
+        className={`absolute w-40 h-40  rounded-full border-2  border-black pointer-events-none hidden xl:block`}
+        style={{ left: pointer.x - 80, top: pointer.y - 80 }}
+      />
+      {/* PALO */}
+      <div
+        className={`absolute w-2 h-20 bg-black pointer-events-none hidden xl:block`}
+        style={{
+          left: pointer.x - 60,
+          top: pointer.y + 50,
+          transform: 'rotate(45deg)',
+          transformOrigin: 'top left'
+        }}
+      />
     </section>
   )
 }
