@@ -1,23 +1,38 @@
-"use client";
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ChevronRight, ArrowRight } from 'lucide-react';
+import { ArrowRight, LucideIcon } from 'lucide-react';
 import AnimatedColumns from "@/components/ui/AnimatedColumns"
+
+import {
+  Candy,
+  Cookie,
+  Nut,
+  SprayCan,
+  Droplets,
+  Sparkles,
+  ShowerHead,
+  Smile,
+  ShieldCheck
+} from "lucide-react";
+
 
 interface FlipCardProps {
   href: string;
   label: string;
+  icon: LucideIcon;
 }
 
-export const FlipCard: React.FC<FlipCardProps> = ({ href, label }) => (
+export const FlipCard: React.FC<FlipCardProps> = ({ href, label, icon: Icon}) => (
   <Link href={href} className="block">
     <motion.div
       initial={{ opacity: 0.8, y: 5 }}
       whileHover={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.1, ease: "linear" }}
-      className="text-base text-center font-semibold text-white hover:underline underline-offset-4 transition duration-200 ease-in-out"
+      className="text-base text-center font-semibold  text-white hover:underline underline-offset-4 transition duration-200 ease-in-out"
     >
+      <Icon className = "inline mr-2 "></Icon>
       {label}
     </motion.div>
   </Link>
@@ -30,35 +45,34 @@ export interface CategoryColumn {
 
 export default function CategorySection() {
   const columns: CategoryColumn[] = [
-    {
-      label: 'Alimentación',
-      items: [
-        { href: '#chocolates', label: 'Chocolates'},
-        { href: '#snacks', label: 'Snacks' },
-        { href: '#chicles', label: 'Chicles' },
-        { href: '#frutos-secos', label: 'Frutos secos' },
-      ],
-    },
-    {
-      label: 'Limpieza',
-      items: [
-        { href: '#detergentes', label: 'Detergentes' },
-        { href: '#multiusos', label: 'Multiusos' },
-        { href: '#desinfectantes', label: 'Desinfectantes' },
-        { href: '#suavizantes', label: 'Suavizantes' },
-      ],
-    },
-    {
-      label: 'Cosmética',
-      items: [
-        { href: '#champu', label: 'Champú' },
-        { href: '#gel-bano', label: 'Gel de baño' },
-        { href: '#crema-facial', label: 'Crema facial' },
-        { href: '#desodorante', label: 'Desodorante' },
-      ],
-    },
-  ];
-
+  {
+    label: 'Alimentación',
+    items: [
+      { href: '#chocolates', label: 'Chocolates', icon: Candy },
+      { href: '#snacks', label: 'Snacks', icon: Cookie },
+      { href: '#chicles', label: 'Chicles', icon: Cookie },
+      { href: '#frutos-secos', label: 'Frutos secos', icon: Nut },
+    ],
+  },
+  {
+    label: 'Limpieza',
+    items: [
+      { href: '#detergentes', label: 'Detergentes', icon: SprayCan },
+      { href: '#multiusos', label: 'Multiusos', icon: SprayCan },
+      { href: '#desinfectantes', label: 'Desinfectantes', icon: ShieldCheck },
+      { href: '#suavizantes', label: 'Suavizantes', icon: Droplets },
+    ],
+  },
+  {
+    label: 'Cosmética',
+    items: [
+      { href: '#champu', label: 'Champú', icon: Sparkles },
+      { href: '#gel-bano', label: 'Gel de baño', icon: ShowerHead },
+      { href: '#crema-facial', label: 'Crema facial', icon: Smile },
+      { href: '#desodorante', label: 'Desodorante', icon: Sparkles },
+    ],
+  },
+];
   return (
     <section className="py-20 px-6 max-w-7xl mx-auto flex flex-col items-center justify-center gap-8">
 
@@ -109,7 +123,17 @@ export default function CategorySection() {
                 </h3>
                 <div className="space-y-4">
                   {col.items.map((item) => (
-                    <FlipCard key={item.href} {...item} />
+                    <motion.div
+                      whileHover={{ scale: 1.03 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    > 
+                      <Link key = {item.href} href= {item.href} className = "block ">
+                        <item.icon size = {18} className = "text-blue-500 inline mr-2"></item.icon>
+                        {item.label}
+                        <div className = "border-1 border-dashed mt-2 "></div>
+                      </Link>
+                    </motion.div>
+                    
                   ))}
                 </div>
               </div>
