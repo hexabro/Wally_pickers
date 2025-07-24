@@ -13,7 +13,8 @@ export default defineConfig([
     },
     rules: {
       // tus reglas aquí
-      "react/jsx-uses-react": "on",
+      "react/jsx-uses-react": "off",
+      "react/react-in-jsx-scope": "off",
     },
     languageOptions: {
       globals: globals.browser,
