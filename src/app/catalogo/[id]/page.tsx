@@ -1,15 +1,11 @@
-/* ESTA SERÍA LA PÁGINA DE DETALLES DE CADA PRODUCTO */
-// /src/app/catalogo/[id]/page.tsx
 import { getProductById } from '@/lib/load-products';
 import { notFound } from 'next/navigation';
 
-interface PageProps {
+export default async function Page({
+  params,
+}: {
   params: { id: string };
-  searchParams?: Record<string, string | string[]>;
-}
-
-export default async function Page(props: PageProps) {
-  const params = await props.params;
+}) {
   const product = await getProductById(params.id);
 
   if (!product) return notFound();
@@ -26,4 +22,3 @@ export default async function Page(props: PageProps) {
     </main>
   );
 }
-
