@@ -9,7 +9,8 @@ type Props = {
 };
 
 export default async function Page(props: Props) {
-  const product = await getProductById(props.params.id);
+  const params = await props.params;
+  const product = await getProductById(params.id);
 
   if (!product) return notFound();
 
