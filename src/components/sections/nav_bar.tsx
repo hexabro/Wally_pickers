@@ -14,7 +14,7 @@ function cn(...classes: (string | undefined | null | false)[]) {
 
 const navItems = [
   { href: '/', label: 'Inicio' },
-  { href: '/marcas', label: 'Marcas' },
+  { href: '/catalogo', label: 'Catálogo' },
   { href: '/ser-cliente', label: 'Ser Cliente' },
   { href: '/quienes-somos', label: 'Quiénes Somos' },
   { href: '/noticias', label: 'Noticias' },

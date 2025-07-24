@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Wally Pickers - Proyecto Web
 
-## Getting Started
+Este proyecto es una plataforma web desarrollada con Next.js para Wally Pickers, una importadora y distribuidora de productos FMCG (Fast Moving Consumer Goods) internacionales. El objetivo es facilitar la conexión entre negocios y productos en tendencia, garantizando abastecimiento eficiente, precios competitivos y una experiencia de usuario moderna y confiable.
 
-First, run the development server:
+## Características principales
+- **Catálogo digital**: Navegación por categorías (alimentación, limpieza, cosmética) con productos destacados y acceso rápido a fichas y descarga de catálogo.
+- **Animaciones y experiencia interactiva**: Uso de Framer Motion, carrousels, efectos de lupa y secciones animadas para destacar la innovación y facilidad de uso.
+- **Sección de fundadores**: Mensajes personales de los fundadores para inspirar confianza y cercanía.
+- **Formulario de contacto**: Para recibir propuestas personalizadas y resolver dudas de clientes potenciales.
+- **Reseñas de clientes**: Testimonios reales que refuerzan la reputación y el valor de la empresa.
+- **Información de contacto y ubicación**: Mapa interactivo y datos de la central para facilitar la comunicación.
+
+## Estructura del catálogo
+El catálogo debe incluir:
+- Listado de productos por categoría (alimentación, limpieza, cosmética, etc.)
+- Nombre, imagen y descripción breve de cada producto
+- Origen/procedencia internacional
+- Precios y condiciones de compra (si aplica)
+- Información sobre disponibilidad y logística
+- Fichas técnicas y certificaciones relevantes
+- Productos en tendencia y novedades
+
+## Tecnologías utilizadas
+- Next.js (React)
+- Tailwind CSS
+- Framer Motion
+- Lucide Icons
+- Vercel (despliegue recomendado)
+
+## Cómo ejecutar el proyecto
 
 ```bash
 npm run dev
-# or
+# o
 yarn dev
-# or
+# o
 pnpm dev
-# or
+# o
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver el resultado.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Personalización y edición
+- Edita las páginas en la carpeta `app/` y los componentes en `src/components/`.
+- El catálogo y las categorías pueden actualizarse en los archivos de sección correspondientes.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Recomendaciones para el catálogo
+El catálogo debe ser claro, visual y fácil de navegar. Incluye imágenes de alta calidad, información relevante y destaca los productos más demandados. Considera agregar filtros por tendencia, origen y disponibilidad.
 
-## Learn More
+## Contacto y soporte
+Para dudas o soporte, utiliza el formulario de contacto en la web o consulta la sección de información de la empresa.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Este proyecto está diseñado para transmitir confianza, innovación y cercanía, alineado con los valores de Wally Pickers y las necesidades de sus clientes.
