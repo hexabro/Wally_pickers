@@ -3,13 +3,14 @@
 import { getProductById } from '@/lib/load-products';
 import { notFound } from 'next/navigation';
 
-type Props = {
+type PageParams = {
   params: {
     id: string;
   };
+  searchParams: { [key: string]: string | string[] | undefined };
 };
 
-export default async function Page({ params }: { params: Record<string, string> }) {
+export default async function Page({ params }: PageParams) {
   const product = await getProductById(params.id);
 
   if (!product) return notFound();
