@@ -9,7 +9,7 @@ const categories = [
 ];
 
 export default async function CatalogPage({ searchParams }: {
-  searchParams?: { category?: string; type?: string; brand?: string };
+  searchParams?: Promise<{ category?: string; type?: string; brand?: string }>;
 }) {
   const awaitedSearchParams = await searchParams;
   const selectedCategory = awaitedSearchParams?.category;
