@@ -17,12 +17,9 @@ export default defineConfig([
       react: pluginReact,
     },
     extends: [
-      "js",
-      "eslint:recommended",
       "plugin:@typescript-eslint/recommended",
       "plugin:react/recommended",
       "plugin:react/jsx-runtime",
-      "next",
     ],
     rules: {
       "react/jsx-uses-react": "off",
@@ -35,3 +32,4 @@ export default defineConfig([
     },
   },
 ]);
+  
