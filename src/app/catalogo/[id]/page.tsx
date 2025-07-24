@@ -3,8 +3,10 @@ import { notFound } from 'next/navigation';
 
 export default async function Page({
   params,
+  searchParams,
 }: {
   params: { id: string };
+  searchParams?: Record<string, string | string[]>;
 }) {
   const product = await getProductById(params.id);
 
