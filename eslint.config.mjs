@@ -15,9 +15,7 @@ export default defineConfig([
         }
       }
     },
-    plugins: {
-      react: pluginReact,
-    },
+    plugins: ["react"],
     extends: [
       "eslint:recommended",
       "plugin:react/recommended",
@@ -25,7 +23,8 @@ export default defineConfig([
     ],
     rules: {
       "react/jsx-uses-react": "off",
-      "react/react-in-jsx-scope": "off"
+      "react/react-in-jsx-scope": "off",
+      ...pluginReact.rules,
     },
     settings: {
       react: {
