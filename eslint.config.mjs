@@ -9,23 +9,29 @@ export default defineConfig([
     files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
     languageOptions: {
       globals: globals.browser,
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true
+        }
+      }
     },
     plugins: {
-      react: pluginReact,
+      react: pluginReact
     },
     extends: [
-      "plugin:react/recommended",
-      "plugin:react/jsx-runtime",
+      "eslint:recommended",
+      "react/recommended",
+      "react/jsx-runtime"
     ],
     rules: {
       "react/jsx-uses-react": "off",
-      "react/react-in-jsx-scope": "off",
+      "react/react-in-jsx-scope": "off"
     },
     settings: {
       react: {
-        version: "detect",
-      },
-    },
-  },
+        version: "detect"
+      }
+    }
+  }
 ]);
-   
+

@@ -3,12 +3,13 @@
 import { getProductById } from '@/lib/load-products';
 import { notFound } from 'next/navigation';
 
-interface PageProps {
+type Props = {
   params: { id: string };
-}
+  searchParams: Record<string, string | string[] | undefined>;
+};
 
-export default async function Page({ params }: PageProps) {
-  const product = await getProductById(params.id);
+export default async function Page(props: Props) {
+  const product = await getProductById(props.params.id);
 
   if (!product) return notFound();
 
@@ -24,4 +25,4 @@ export default async function Page({ params }: PageProps) {
     </main>
   );
 }
- 
+
