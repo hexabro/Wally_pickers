@@ -25,7 +25,7 @@ interface FlipCardProps {
 }
 
 export const FlipCard: React.FC<FlipCardProps> = ({ href, label, icon: Icon}) => (
-  <Link href={href} className="block">
+  <Link key={href} href={href} className="block">
     <motion.div
       initial={{ opacity: 0.8, y: 5 }}
       whileHover={{ opacity: 1, y: 0 }}
@@ -124,6 +124,7 @@ export default function CategorySection() {
                 <div className="space-y-4">
                   {col.items.map((item) => (
                     <motion.div
+                      key={item.href}
                       whileHover={{ scale: 1.03 }}
                       transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     > 
@@ -144,6 +145,7 @@ export default function CategorySection() {
           <div className="pt-4 text-center lg:text-left">
             <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
               <Link
+                key="ver-todos-productos"
                 href="/catalogo"
                 className="inline-flex items-center px-6 py-3 rounded-full bg-[#d68a49] text-white font-semibold hover:bg transition-shadow shadow-lg hover:shadow-xl"
               >

@@ -8,15 +8,14 @@ const categories = [
   { name: 'Cosmetica', value: 'Cosmetica' },
 ];
 
-export default async function CatalogPage({
-  searchParams,
-}: {
+export default async function CatalogPage({ searchParams }: {
   searchParams?: { category?: string; type?: string; brand?: string };
 }) {
+  const awaitedSearchParams = await searchParams;
+  const selectedCategory = awaitedSearchParams?.category;
+  const selectedType = awaitedSearchParams?.type;
+  const selectedBrand = awaitedSearchParams?.brand;
   const products = await getProducts();
-  const selectedCategory = searchParams?.category;
-  const selectedType = searchParams?.type;
-  const selectedBrand = searchParams?.brand;
 
   if (!selectedCategory) {
     // Show category cards
