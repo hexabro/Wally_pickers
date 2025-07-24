@@ -1,0 +1,242 @@
+[
+  {
+    "ID": "p001",
+    "NOMBRE": "Galletas integrales",
+    "DESCRIPCION": "Galletas ricas en fibra sin azúcar añadido",
+    "CATEGORIA": "alimentacion",
+    "MARCA": "NutriVida",
+    "TIPO": "snack"
+  },
+  {
+    "ID": "p002",
+    "NOMBRE": "Zumo de naranja 1L",
+    "DESCRIPCION": "Zumo 100% natural sin conservantes",
+    "CATEGORIA": "alimentacion",
+    "MARCA": "VitalDrink",
+    "TIPO": "bebida"
+  },
+  {
+    "ID": "p003",
+    "NOMBRE": "Barrita energética de avena",
+    "DESCRIPCION": "Barrita con avena, miel y frutos secos",
+    "CATEGORIA": "alimentacion",
+    "MARCA": "NutriPower",
+    "TIPO": "snack"
+  },
+  {
+    "ID": "p004",
+    "NOMBRE": "Agua mineral 1.5L",
+    "DESCRIPCION": "Agua mineral natural de manantial",
+    "CATEGORIA": "alimentacion",
+    "MARCA": "Aguapura",
+    "TIPO": "bebida"
+  },
+  {
+    "ID": "p005",
+    "NOMBRE": "Arroz integral ecológico",
+    "DESCRIPCION": "Arroz de cultivo orgánico",
+    "CATEGORIA": "alimentacion",
+    "MARCA": "BioSabores",
+    "TIPO": "grano"
+  },
+  {
+    "ID": "p006",
+    "NOMBRE": "Aceite de oliva virgen extra",
+    "DESCRIPCION": "Aceite prensado en frío",
+    "CATEGORIA": "alimentacion",
+    "MARCA": "La Almazara",
+    "TIPO": "aceite"
+  },
+  {
+    "ID": "p007",
+    "NOMBRE": "Yogur natural sin lactosa",
+    "DESCRIPCION": "Yogur cremoso para intolerantes",
+    "CATEGORIA": "alimentacion",
+    "MARCA": "LactoFree",
+    "TIPO": "lácteo"
+  },
+  {
+    "ID": "p008",
+    "NOMBRE": "Mermelada de fresa light",
+    "DESCRIPCION": "Mermelada con edulcorantes naturales",
+    "CATEGORIA": "alimentacion",
+    "MARCA": "Frutix",
+    "TIPO": "untables"
+  },
+  {
+    "ID": "p009",
+    "NOMBRE": "Leche vegetal de almendra",
+    "DESCRIPCION": "Bebida vegetal sin azúcares añadidos",
+    "CATEGORIA": "alimentacion",
+    "MARCA": "VerdeVida",
+    "TIPO": "bebida vegetal"
+  },
+  {
+    "ID": "p010",
+    "NOMBRE": "Galletas sin gluten",
+    "DESCRIPCION": "Galletas aptas para celíacos",
+    "CATEGORIA": "alimentacion",
+    "MARCA": "SinGlutenCo",
+    "TIPO": "snack"
+  },
+  {
+    "ID": "p011",
+    "NOMBRE": "Crema hidratante piel seca",
+    "DESCRIPCION": "Hidrata intensamente la piel seca",
+    "CATEGORIA": "cosmetica",
+    "MARCA": "DermaCare",
+    "TIPO": "crema"
+  },
+  {
+    "ID": "p012",
+    "NOMBRE": "Gel de baño con aloe vera",
+    "DESCRIPCION": "Gel suave con extracto de aloe",
+    "CATEGORIA": "cosmetica",
+    "MARCA": "FreshBody",
+    "TIPO": "gel"
+  },
+  {
+    "ID": "p013",
+    "NOMBRE": "Champú cabello graso",
+    "DESCRIPCION": "Regula el sebo del cuero cabelludo",
+    "CATEGORIA": "cosmetica",
+    "MARCA": "HairBalance",
+    "TIPO": "champú"
+  },
+  {
+    "ID": "p014",
+    "NOMBRE": "Protector solar SPF 50",
+    "DESCRIPCION": "Protección alta para piel sensible",
+    "CATEGORIA": "cosmetica",
+    "MARCA": "SunShield",
+    "TIPO": "protector solar"
+  },
+  {
+    "ID": "p015",
+    "NOMBRE": "Tónico facial refrescante",
+    "DESCRIPCION": "Tonifica y refresca la piel",
+    "CATEGORIA": "cosmetica",
+    "MARCA": "BellaSkin",
+    "TIPO": "tónico"
+  },
+  {
+    "ID": "p016",
+    "NOMBRE": "Mascarilla facial de arcilla",
+    "DESCRIPCION": "Limpieza profunda con arcilla verde",
+    "CATEGORIA": "cosmetica",
+    "MARCA": "CleanFace",
+    "TIPO": "mascarilla"
+  },
+  {
+    "ID": "p017",
+    "NOMBRE": "Bálsamo labial hidratante",
+    "DESCRIPCION": "Protege y suaviza los labios",
+    "CATEGORIA": "cosmetica",
+    "MARCA": "KissCare",
+    "TIPO": "bálsamo"
+  },
+  {
+    "ID": "p018",
+    "NOMBRE": "Crema antiarrugas noche",
+    "DESCRIPCION": "Rellena y reafirma mientras duermes",
+    "CATEGORIA": "cosmetica",
+    "MARCA": "AgeRepair",
+    "TIPO": "crema"
+  },
+  {
+    "ID": "p019",
+    "NOMBRE": "Desodorante sin aluminio",
+    "DESCRIPCION": "Protección natural sin químicos agresivos",
+    "CATEGORIA": "cosmetica",
+    "MARCA": "PureGuard",
+    "TIPO": "desodorante"
+  },
+  {
+    "ID": "p020",
+    "NOMBRE": "Gel íntimo suave",
+    "DESCRIPCION": "Higiene delicada sin perfumes",
+    "CATEGORIA": "cosmetica",
+    "MARCA": "IntiCare",
+    "TIPO": "gel"
+  },
+  {
+    "ID": "p021",
+    "NOMBRE": "Limpiador multisuperficie limón",
+    "DESCRIPCION": "Limpia y desinfecta con aroma cítrico",
+    "CATEGORIA": "limpieza",
+    "MARCA": "LimpioPlus",
+    "TIPO": "multiuso"
+  },
+  {
+    "ID": "p022",
+    "NOMBRE": "Detergente líquido ropa blanca",
+    "DESCRIPCION": "Eficaz contra manchas, conserva el blanco",
+    "CATEGORIA": "limpieza",
+    "MARCA": "WashPro",
+    "TIPO": "detergente"
+  },
+  {
+    "ID": "p023",
+    "NOMBRE": "Limpiacristales sin marcas",
+    "DESCRIPCION": "Fórmula antivaho para ventanas",
+    "CATEGORIA": "limpieza",
+    "MARCA": "CristalNet",
+    "TIPO": "cristales"
+  },
+  {
+    "ID": "p024",
+    "NOMBRE": "Desinfectante baño y cocina",
+    "DESCRIPCION": "Mata gérmenes en zonas críticas",
+    "CATEGORIA": "limpieza",
+    "MARCA": "Sanimax",
+    "TIPO": "desinfectante"
+  },
+  {
+    "ID": "p025",
+    "NOMBRE": "Lavavajillas ecológico",
+    "DESCRIPCION": "Limpieza efectiva con ingredientes biodegradables",
+    "CATEGORIA": "limpieza",
+    "MARCA": "EcoWash",
+    "TIPO": "lavavajillas"
+  },
+  {
+    "ID": "p026",
+    "NOMBRE": "Ambientador aroma lavanda",
+    "DESCRIPCION": "Aroma suave y duradero para el hogar",
+    "CATEGORIA": "limpieza",
+    "MARCA": "AirFresh",
+    "TIPO": "ambientador"
+  },
+  {
+    "ID": "p027",
+    "NOMBRE": "Quitagrasas cocina potente",
+    "DESCRIPCION": "Disuelve grasa incrustada sin esfuerzo",
+    "CATEGORIA": "limpieza",
+    "MARCA": "DegreaserX",
+    "TIPO": "quitagrasas"
+  },
+  {
+    "ID": "p028",
+    "NOMBRE": "Suavizante ropa floral",
+    "DESCRIPCION": "Deja la ropa suave y perfumada",
+    "CATEGORIA": "limpieza",
+    "MARCA": "SoftScent",
+    "TIPO": "suavizante"
+  },
+  {
+    "ID": "p029",
+    "NOMBRE": "Toallitas desinfectantes multiuso",
+    "DESCRIPCION": "Prácticas y efectivas para superficies y manos",
+    "CATEGORIA": "limpieza",
+    "MARCA": "CleanWipe",
+    "TIPO": "toallitas"
+  },
+  {
+    "ID": "p030",
+    "NOMBRE": "Limpiador WC espumoso",
+    "DESCRIPCION": "Espuma activa para el inodoro",
+    "CATEGORIA": "limpieza",
+    "MARCA": "PowerFlush",
+    "TIPO": "wc"
+  }
+]
