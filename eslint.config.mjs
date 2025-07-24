@@ -20,8 +20,8 @@ export default defineConfig([
     },
     extends: [
       "eslint:recommended",
-      "react/recommended",
-      "react/jsx-runtime"
+      "plugin:react/recommended",
+      "plugin:react/jsx-runtime"
     ],
     rules: {
       "react/jsx-uses-react": "off",
