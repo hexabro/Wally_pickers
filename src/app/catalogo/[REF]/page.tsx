@@ -5,17 +5,18 @@ export default async function Page({
   params,
   searchParams,
 }: {
-  params: { REF: string }; // ✅ El nombre debe coincidir con la carpeta `[id]`
-  searchParams?: Record<string, string | string[]>;
+  params: Promise<{ REF: string }>;
+  searchParams?: Promise<Record<string, string | string[]>>;
 }) {
-  const product = await getProductById(params.REF);
+  const { REF } = await params;
+  const product = await getProductById(REF);
 
   if (!product) return notFound();
 
   return (
     <main className="max-w-2xl mx-auto p-6">
       <img
-        src={'/images/products/p1.jpg'}
+        src={'/images/products/p1.jpg'} /* Cambiar esto cuando hayan imágenes reales */
         alt={product.NOMBRE}
         className="w-full h-64 object-cover rounded mb-6"
       />
