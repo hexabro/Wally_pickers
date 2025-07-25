@@ -5,10 +5,10 @@ export default async function Page({
   params,
   searchParams,
 }: {
-  params: { id: string }; // ✅ El nombre debe coincidir con la carpeta `[id]`
+  params: { REF: string }; // ✅ El nombre debe coincidir con la carpeta `[id]`
   searchParams?: Record<string, string | string[]>;
 }) {
-  const product = await getProductById(params.id);
+  const product = await getProductById(params.REF);
 
   if (!product) return notFound();
 
