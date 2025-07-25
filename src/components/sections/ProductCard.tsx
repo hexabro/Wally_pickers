@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function ProductCard({ product }: { product: Product }) {
   return (
-    <Link href={`/catalogo/${product.ID}`} className="border rounded-lg p-4 shadow hover:shadow-md transition">
+    <Link href={`/catalogo/${product.REF}`} className="border rounded-lg p-4 shadow hover:shadow-md transition">
       <img
         src={'/images/products/p2.jpg'} // temporal image to make tests
         alt={product.NOMBRE}

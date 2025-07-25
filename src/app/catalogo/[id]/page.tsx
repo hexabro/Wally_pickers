@@ -5,11 +5,10 @@ export default async function Page({
   params,
   searchParams,
 }: {
-  params: Promise<{ id: string }>;
-  searchParams?: Promise<Record<string, string | string[]>>;
+  params: { id: string }; // ✅ El nombre debe coincidir con la carpeta `[id]`
+  searchParams?: Record<string, string | string[]>;
 }) {
-  const { id } = await params;
-  const product = await getProductById(id);
+  const product = await getProductById(params.id);
 
   if (!product) return notFound();
 
@@ -25,3 +24,4 @@ export default async function Page({
     </main>
   );
 }
+
