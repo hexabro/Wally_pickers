@@ -1,60 +1,67 @@
 'use client';
 
+import {ProductType} from '@/context/ProductsProvider';
+import { ReducerActionType, ReducerAction } from '@/context/CartProvider';
+
 import { Product } from '@/lib/load-products';
 import Link from 'next/link';
-import { useCart } from '@/hooks/useCart';
+import  useCart from '@/hooks/useCart';
 import { ShoppingCart } from 'lucide-react';
-import { useState } from 'react';
+import { ReactElement, useState } from 'react';
 
-export default function ProductCard({ product }: { product: Product }) {
-  const { addToCart } = useCart();
-  const [isAdding, setIsAdding] = useState(false);
 
-  const handleAddToCart = (e: React.MouseEvent) => {
-    e.preventDefault(); // Prevenir navegación del Link
-    e.stopPropagation();
-    
-    setIsAdding(true);
-    addToCart(product);
-    
-    // Animación visual
-    setTimeout(() => {
-      setIsAdding(false);
-    }, 500);
+type PropsType = {
+  product: ProductType,
+  dispatch: React.ActionDispatch<[action: ReducerAction]>,
+  REDUCER_ACTIONS: ReducerActionType,
+  inCart: boolean,
+}
+
+export default function ProductCard({ product, dispatch, REDUCER_ACTIONS, inCart }: PropsType): ReactElement {
+  
+  // In Next.js, static assets in public/ directory can be referenced with absolute paths
+  // Try to use the product's REF for the image, fallback to p1.jpg if image doesn't exist
+  const [img, setImg] = useState<string>(`/images/products/$p1.jpg`);
+  const [imageError, setImageError] = useState<boolean>(false);
+  
+  const handleImageError = () => {
+    if (!imageError) {
+      setImageError(true);
+      setImg('/images/products/p1.jpg'); // Fallback to p1.jpg
+    }
   };
+  
+  const onAddToCart = ()  => dispatch({type: REDUCER_ACTIONS.ADD, payload: { product, quantity: 1 }});
 
-  return (
-    <div className="border rounded-lg overflow-hidden shadow hover:shadow-md transition-all duration-300 bg-white">
-      <Link href={`/catalogo/${product.REF}`}>
-        <img
-          src={'/images/products/p2.jpg'} // temporal image to make tests
-          alt={product.NOMBRE}
-          className="w-full h-40 object-cover hover:scale-105 transition-transform duration-300"
-        />
-      </Link>
-      <div className="p-4">
-        <Link href={`/catalogo/${product.REF}`}>
-          <h3 className="text-lg font-semibold hover:text-blue-600 transition-colors">{product.NOMBRE}</h3>
-          <p className="text-sm text-gray-600 mb-3 line-clamp-2">{product.DESCRIPCION}</p>
-        </Link>
-        <div className="flex items-center justify-between">
-          <div className="text-xs text-gray-500">
-            <span className="bg-gray-100 px-2 py-1 rounded">{product.MARCA}</span>
-          </div>
-          <button
-            onClick={handleAddToCart}
-            disabled={isAdding}
-            className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
-              isAdding 
-                ? 'bg-green-500 text-white scale-95' 
-                : 'bg-blue-600 hover:bg-blue-700 text-white hover:scale-105'
-            }`}
-          >
-            <ShoppingCart className="w-4 h-4" />
-            <span>{isAdding ? 'Agregado!' : 'Agregar'}</span>
-          </button>
-        </div>
-      </div>
-    </div>
-  );
+  const ItemInCart = inCart ? ' ✅ Producto añadido' : null;
+
+  const content = 
+    <article className="product-card bg-white rounded-lg shadow-md p-4 flex flex-col items-center transition hover:shadow-lg">
+      
+      <h3 className="text-lg font-semibold mb-2 text-center">
+        {product.NOMBRE}
+      </h3>
+
+      <img
+        src={img}
+        alt={product.NOMBRE}
+        className="product-img w-32 h-32 object-cover rounded-md mb-3 border"
+        onError={handleImageError}
+      />
+
+      <p className="product-description text-sm text-green-600 mb-2 h-5">
+        {ItemInCart}
+      </p>
+      
+      <button
+        onClick={onAddToCart}
+        className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 flex items-center gap-2 transition"
+        >
+          <ShoppingCart size={18} />
+          Agregar al carrito
+      </button>
+
+    </article>
+
+  return content;
 }

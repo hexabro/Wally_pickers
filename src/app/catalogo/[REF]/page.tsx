@@ -1,8 +1,8 @@
 'use client';
 
-import { getProductById } from '@/lib/load-products';
+import { getProductByRef } from '@/lib/load-products';
 import { notFound } from 'next/navigation';
-import { useCart } from '@/hooks/useCart';
+import  useCart  from '@/hooks/useCart';
 import { ShoppingCart, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
@@ -15,14 +15,14 @@ export default function Page({
 }) {
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
-  const { addToCart } = useCart();
-  const [isAdding, setIsAdding] = useState(false);
+/*   const { addToCart } = useCart();
+ */  const [isAdding, setIsAdding] = useState(false);
 
   useEffect(() => {
     const loadProduct = async () => {
       try {
         const { REF } = await params;
-        const productData = await getProductById(REF);
+        const productData = await getProductByRef(REF);
         setProduct(productData);
       } catch (error) {
         console.error('Error loading product:', error);
@@ -38,8 +38,8 @@ export default function Page({
     if (!product) return;
     
     setIsAdding(true);
-    addToCart(product);
-    
+/*     addToCart(product);
+ */    
     setTimeout(() => {
       setIsAdding(false);
     }, 1000);

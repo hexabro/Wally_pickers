@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Rubik } from "next/font/google";
 import "./globals.css";
 
-import NavBar from "@/components/sections/nav_bar";
-import Footer from "@/components/sections/footer";
+import NavBar from "@/components/nav/nav_bar";
+import Footer from "@/components/nav/footer";
+
+import { CartProvider } from "@/context/CartProvider";
+import { ProductsProvider } from "@/context/ProductsProvider";
 
 const rubik = Rubik({
   subsets: ['latin'],
@@ -32,14 +35,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className= {`${rubik.variable} ${geistSans.variable} ${geistMono.variable}`}>
+      <ProductsProvider>
+        <CartProvider>
+
+        <body className={`font-sans antialiased`}>
+          <header>
+            <NavBar/>
+          </header>
+          {children}
+          <Footer/>
+        </body>
+          
+        </CartProvider>
+      </ProductsProvider>
       
-      <body className={`font-sans antialiased`}>
-        <header>
-          <NavBar/>
-        </header>
-        {children}
-        <Footer/>
-      </body>
     </html>
   );
 }

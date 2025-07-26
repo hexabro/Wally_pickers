@@ -6,7 +6,6 @@ import LanguageSelector from '../ui/LanguageSelector';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { usePathname } from 'next/navigation';
-
 // Helper opcional para concatenar clases
 function cn(...classes: (string | undefined | null | false)[]) {
   return classes.filter(Boolean).join(' ');
@@ -66,7 +65,7 @@ const NavBar = () => {
             );
           })}
         </ul>
-
+      
         {/* ---------- Selector de idioma ---------- */}
         <LanguageSelector />
       </nav>
