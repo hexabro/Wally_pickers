@@ -1,6 +1,6 @@
 'use client';
 
-import { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction, useState, useEffect } from 'react';
 import useCart  from '@/hooks/useCart';
 
 import { X, ShoppingCart, Plus, Minus, Trash2 } from 'lucide-react';
@@ -22,19 +22,25 @@ const CartSidebar = ({ isOpen, setIsOpen }: propsType) => {
 
   const { dispatch, REDUCER_ACTIONS, totalItems, cart } = useCart();
   
-  const onSubmitOrder = () => {
-    if (confirm) {
-      // Dispatch order submission action
-      dispatch({ type: REDUCER_ACTIONS.SUBMIT });
-      setConfirm(true);
+  // Reset confirm state when items are added to cart after submission
+  useEffect(() => {
+    if (confirm && totalItems > 0) {
+      setConfirm(false);
     }
+  }, [totalItems, confirm]);
+  
+  const onSubmitOrder = () => {
+    // Dispatch order submission action to empty the cart
+    dispatch({ type: REDUCER_ACTIONS.SUBMIT });
+    // Show thank you message
+    setConfirm(true);
   };
 
   
 
   const button = (
     <button
-      className={`fixed top-1/2 transform -translate-y-1/2 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700  z-40 hover:cursor-pointer transition-all duration-300 ${
+      className={`fixed top-1/2 transform -translate-y-1/2 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700  z-50 hover:cursor-pointer transition-all duration-300 ${
         isOpen ? 'right-96' : 'right-6'
       }`}
       onClick={() => setIsOpen(!isOpen)}
@@ -57,7 +63,7 @@ const CartSidebar = ({ isOpen, setIsOpen }: propsType) => {
   const pageContent = confirm 
     ? <h2>Gracias por tu pedido</h2>
     : <>
-      <h2 className = "offscreen"> Cart </h2>
+      <h2 className="text-2xl font-bold text-center mb-4">Carrito</h2>
       <ul className="cart">
         {cart.map((item =>{
           return (
@@ -72,8 +78,12 @@ const CartSidebar = ({ isOpen, setIsOpen }: propsType) => {
       </ul>
 
       <div className = "cart-total">
-        <p>Total items: {totalItems}</p>
-        <button className = "cart-submit" onClick={onSubmitOrder} disabled={!totalItems}>
+        <p>Pedidos totales: {totalItems}</p>
+        <button
+          className="cart-submit bg-blue-600 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors duration-200 hover:cursor-pointer"
+          onClick={onSubmitOrder}
+          disabled={!totalItems}
+        >
           Confirmar pedido
         </button>
 
@@ -86,11 +96,11 @@ const CartSidebar = ({ isOpen, setIsOpen }: propsType) => {
           <>
             {/* Blurred overlay */}
             <div
-              className="fixed inset-0 backdrop-blur-sm bg-black/20 z-30"
+              className="fixed inset-0 backdrop-blur-sm bg-black/20 z-40"
               onClick={() => setIsOpen(false)}
             />
             {/* Sidebar */}
-            <aside className="fixed top-0 right-0 h-full w-96 bg-white shadow-lg z-40 flex flex-col p-6 transition-transform duration-300">
+            <aside className="fixed top-0 right-0 h-full w-96 bg-white shadow-lg z-50 flex flex-col p-6 transition-transform duration-300">
               {pageContent}
             </aside>
           </>

@@ -47,30 +47,34 @@ const onRemoveFromCart = () => {
 
 const content = (
     <li className="cart-line-item flex items-center justify-between p-4 border-b">
+        
         <div className="flex items-center gap-4">
-            <img
-                src={img}
-                alt={item.product.NOMBRE}
-                className="w-16 h-16 object-cover rounded-md"
-                onError={handleImageError}
-            />
+            {/* Imagen del producto */}
+            <img  src={img}  alt={item.product.NOMBRE}   className="w-16 h-16 object-cover rounded-md"   onError={handleImageError}/>
+            {/* Información del producto */}
             <div>
                 <h3 className="text-lg font-semibold">{item.product.NOMBRE}</h3>
                 <p className="text-sm text-gray-600">Ref: {item.product.REF}</p>
             </div>
         </div>
+
         <div className="flex items-center gap-4">
             <select
                 value={item.quantity}
                 onChange={onChangeQuantity}
                 className="border rounded px-2 py-1"
+                aria-label="item quantity"
+
             >
                 {options}
             </select>
+
             <span className="text-lg font-bold">{item.quantity}</span>
             <button
                 onClick={onRemoveFromCart}
                 className="text-red-500 hover:text-red-700 transition"
+                aria-label="remove item from cart"
+                title="remove item from cart"
             >
                 <Trash2 size={20} />
             </button>
