@@ -1,5 +1,6 @@
 import { getProducts } from '@/lib/load-products';
 import ProductCard from '@/components/sections/ProductCard';
+import CartSidebar from '@/components/sections/CartSidebar';
 import Link from 'next/link';
 import Image from 'next/image';
 const categories = [
@@ -56,6 +57,9 @@ export default async function CatalogPage({ searchParams }: {
             </Link>
           ))}
         </div>
+        
+        {/* Carrito flotante - también visible en la vista de categorías */}
+        <CartSidebar />
       </main>
     );
   }
@@ -176,6 +180,9 @@ export default async function CatalogPage({ searchParams }: {
           </Link>
         </div>
       </section>
+      
+      {/* Carrito flotante - solo visible en el catálogo */}
+      <CartSidebar />
     </main>
   );
 }
