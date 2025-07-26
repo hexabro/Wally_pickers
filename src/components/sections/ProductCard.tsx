@@ -21,7 +21,7 @@ export default function ProductCard({ product, dispatch, REDUCER_ACTIONS, inCart
   
   // In Next.js, static assets in public/ directory can be referenced with absolute paths
   // Try to use the product's REF for the image, fallback to p1.jpg if image doesn't exist
-  const [img, setImg] = useState<string>(`/images/products/$p1.jpg`);
+  const [img, setImg] = useState<string>(`/images/products/${product.REF}.jpg`);
   const [imageError, setImageError] = useState<boolean>(false);
   
   const handleImageError = () => {

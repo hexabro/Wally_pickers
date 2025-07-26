@@ -1,5 +1,6 @@
 "use client";
 import { useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import ProductCard from '@/components/sections/ProductCard';
 import CartSidebar from '@/components/nav/CartSidebar';
 import Link from 'next/link';
@@ -13,14 +14,11 @@ const categories = [
   { name: 'Cosmética', value: 'Cosmetica', image: 'cosmeticaCatalog' },
 ];
 
-export default function CatalogPage({ searchParams }: {
-  searchParams?: { category?: string; type?: string; brand?: string };
-}) {
-
-  const awaitedSearchParams = searchParams;
-  const selectedCategory =  awaitedSearchParams?.category;
-  const selectedType =  awaitedSearchParams?.type;
-  const selectedBrand =  awaitedSearchParams?.brand;
+export default function CatalogPage() {
+  const searchParams = useSearchParams();
+  const selectedCategory = searchParams.get('category');
+  const selectedType = searchParams.get('type');
+  const selectedBrand = searchParams.get('brand');
 
   const [viewCart, setViewCart] = useState(false);
 
