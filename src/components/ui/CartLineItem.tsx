@@ -12,7 +12,7 @@ type PropsType = {
 const CartLineItem = ({item, dispatch, REDUCER_ACTIONS}: PropsType) => {
 
 /* IMAGEN */
-const [img, setImg] = useState<string>(`/images/products/p1.jpg`);
+const [img, setImg] = useState<string>(`/images/products/${item.product.REF}.jpg`);
 const [imageError, setImageError] = useState<boolean>(false);
 
 const handleImageError = () => {
