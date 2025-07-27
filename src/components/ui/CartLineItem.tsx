@@ -1,4 +1,5 @@
 import {Dispatch, ReactElement, useState} from 'react'
+import { ChangeEvent, memo } from 'react';
 import {CartItemType} from '@/context/CartProvider';
 import {ReducerAction, ReducerActionType} from '@/context/CartProvider';
 import { Trash2 } from 'lucide-react';
@@ -21,21 +22,31 @@ const handleImageError = () => {
     }
 };
 
-/* la cantidad más alta */
-const highestQuantity: number = 20 > item.quantity ? 20 : item.quantity;
+/* Quantity ranges */
+const quantityRanges = [
+    { label: '20-50', min: 20, max: 50 },
+    { label: '50-100', min: 50, max: 100 },
+    { label: '100-200', min: 100, max: 200 },
+    { label: '200-500', min: 200, max: 500 },
+    { label: '500+', min: 500, max: 1000 }
+];
 
-const optionValues: number[] = [...Array(highestQuantity).keys()]
-.map(i => i + 1);
+// Find current range based on item interested range
+const getCurrentRange = (interestedRange: string) => {
+    return interestedRange;
+};
 
-const options: ReactElement[] = optionValues.map(value => {
-    return <option key = {`opt${value}`} value = {value}>  {value}    </option>
+const options: ReactElement[] = quantityRanges.map(range => {
+    return <option key={range.label} value={range.label}>{range.label}</option>
 });
 
 const onChangeQuantity = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const newQuantity: number = parseInt(e.target.value, 10);
-    dispatch(
-        {type: REDUCER_ACTIONS.QUANTITY,
-         payload: {product: item.product, quantity: Number(e.target.value)}});
+    const selectedRange = e.target.value;
+    
+    dispatch({
+        type: REDUCER_ACTIONS.UPDATE_RANGE,
+        payload: { product: item.product, interestedRange: selectedRange }
+    });
 };
 
 const onRemoveFromCart = () => {
@@ -55,21 +66,20 @@ const content = (
             <div>
                 <h3 className="text-lg font-semibold">{item.product.NOMBRE}</h3>
                 <p className="text-sm text-gray-600">Ref: {item.product.REF}</p>
+                <p className="text-sm text-blue-600">Rango de interés: {item.interestedRange}</p>
             </div>
         </div>
 
         <div className="flex items-center gap-4">
             <select
-                value={item.quantity}
+                value={item.interestedRange}
                 onChange={onChangeQuantity}
                 className="border rounded px-2 py-1"
-                aria-label="item quantity"
-
+                aria-label="item quantity range"
             >
                 {options}
             </select>
 
-            <span className="text-lg font-bold">{item.quantity}</span>
             <button
                 onClick={onRemoveFromCart}
                 className="text-red-500 hover:text-red-700 transition"
@@ -85,4 +95,12 @@ const content = (
 return content;
 }
 
-export default CartLineItem;
+function areItemsEqual({item: prevItem}: PropsType, {item: nextItem}: PropsType) {
+    return Object.keys(prevItem).every(key => {
+        return prevItem[key as keyof CartItemType] === nextItem[key as keyof CartItemType];
+    })
+}
+
+const MemizedCartLineItem = memo(CartLineItem, areItemsEqual);
+
+export default MemizedCartLineItem;

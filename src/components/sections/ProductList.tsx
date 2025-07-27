@@ -1,17 +1,24 @@
 import React, { ReactElement } from 'react'
 import useProducts from '@/hooks/useProducts';
-import useProductsContextType from '@/context/ProductsProvider';
+import { ProductType } from '@/context/ProductsProvider';
 import useCart from '@/hooks/useCart';
 import ProductCard from './ProductCard';
 import { main } from 'motion/react-client';
 
-export const ProductList = () => {
+type ProductListProps = {
+  filteredProducts?: ProductType[];
+};
+
+export const ProductList = ({ filteredProducts }: ProductListProps) => {
   const { dispatch, REDUCER_ACTIONS, cart } = useCart(); 
-  const { products } = useProducts() ;
+  const { products } = useProducts();
+
+  // Use filtered products if provided, otherwise use all products
+  const productsToShow = filteredProducts || products;
 
   let pageContent: ReactElement | ReactElement[] = <p> Loading ... </p>
-  if (products?.length) {
-    pageContent = products.map(product => {
+  if (productsToShow?.length) {
+    pageContent = productsToShow.map(product => {
       const inCart: boolean = cart.some(item => item.product.REF === product.REF)
 
       return (

@@ -61,9 +61,9 @@ const CartSidebar = ({ isOpen, setIsOpen }: propsType) => {
   );
 
   const pageContent = confirm 
-    ? <h2>Gracias por tu pedido</h2>
+    ? <h2 className="text-center text-green-600">¡Gracias por tu consulta! Te contactaremos pronto.</h2>
     : <>
-      <h2 className="text-2xl font-bold text-center mb-4">Carrito</h2>
+      <h2 className="text-2xl font-bold text-center mb-4">Productos de Interés</h2>
       <ul className="cart">
         {cart.map((item =>{
           return (
@@ -78,13 +78,13 @@ const CartSidebar = ({ isOpen, setIsOpen }: propsType) => {
       </ul>
 
       <div className = "cart-total">
-        <p>Pedidos totales: {totalItems}</p>
+        <p className="mb-4">Productos seleccionados: {totalItems}</p>
         <button
           className="cart-submit bg-blue-600 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors duration-200 hover:cursor-pointer"
           onClick={onSubmitOrder}
           disabled={!totalItems}
         >
-          Confirmar pedido
+          Solicitar información
         </button>
 
       </div>

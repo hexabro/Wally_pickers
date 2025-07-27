@@ -7,7 +7,7 @@ import { Product } from '@/lib/load-products';
 import Link from 'next/link';
 import  useCart from '@/hooks/useCart';
 import { ShoppingCart } from 'lucide-react';
-import { ReactElement, useState } from 'react';
+import { ReactElement, useState, memo} from 'react';
 
 
 type PropsType = {
@@ -17,12 +17,13 @@ type PropsType = {
   inCart: boolean,
 }
 
-export default function ProductCard({ product, dispatch, REDUCER_ACTIONS, inCart }: PropsType): ReactElement {
-  
+const ProductCard = ({ product, dispatch, REDUCER_ACTIONS, inCart }: PropsType): ReactElement => {
+
   // In Next.js, static assets in public/ directory can be referenced with absolute paths
   // Try to use the product's REF for the image, fallback to p1.jpg if image doesn't exist
   const [img, setImg] = useState<string>(`/images/products/${product.REF}.jpg`);
   const [imageError, setImageError] = useState<boolean>(false);
+  const [selectedQuantityRange, setSelectedQuantityRange] = useState<string>('20-50');
   
   const handleImageError = () => {
     if (!imageError) {
@@ -30,8 +31,27 @@ export default function ProductCard({ product, dispatch, REDUCER_ACTIONS, inCart
       setImg('/images/products/p1.jpg'); // Fallback to p1.jpg
     }
   };
+
+  /* Quantity ranges */
+  const quantityRanges = [
+    { label: '20-50', min: 20, max: 50 },
+    { label: '50-100', min: 50, max: 100 },
+    { label: '100-200', min: 100, max: 200 },
+    { label: '200-500', min: 200, max: 500 },
+    { label: '500+', min: 500, max: 1000 }
+  ];
+
+  const options: ReactElement[] = quantityRanges.map(range => {
+    return <option key={range.label} value={range.label}>{range.label}</option>
+  });
+
+  const onQuantityRangeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedQuantityRange(e.target.value);
+  };
   
-  const onAddToCart = ()  => dispatch({type: REDUCER_ACTIONS.ADD, payload: { product, quantity: 1 }});
+  const onAddToCart = () => {
+    dispatch({type: REDUCER_ACTIONS.ADD, payload: { product, interestedRange: selectedQuantityRange }});
+  };
 
   const ItemInCart = inCart ? ' ✅ Producto añadido' : null;
 
@@ -52,16 +72,39 @@ export default function ProductCard({ product, dispatch, REDUCER_ACTIONS, inCart
       <p className="product-description text-sm text-green-600 mb-2 h-5">
         {ItemInCart}
       </p>
-      
-      <button
-        onClick={onAddToCart}
-        className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 flex items-center gap-2 transition"
+
+      <div className="flex flex-col gap-2 w-full">
+        <select
+          value={selectedQuantityRange}
+          onChange={onQuantityRangeChange}
+          className="border rounded px-2 py-1 text-sm"
+          aria-label="quantity range"
+        >
+          {options}
+        </select>
+        
+        <button
+          onClick={onAddToCart}
+          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 flex items-center justify-center gap-2 transition"
         >
           <ShoppingCart size={18} />
           Agregar al carrito
-      </button>
+        </button>
+      </div>
 
     </article>
 
   return content;
 }
+
+function areProductCardsEqual({product: prevProduct, inCart: prevInCart}: PropsType, {product: nextProduct, inCart: nextInCart}: PropsType) {
+  return Object.keys(prevProduct).every(key => {
+
+    return prevProduct[key as keyof ProductType] === nextProduct[key as keyof ProductType];
+  
+  }) && prevInCart === nextInCart;
+}
+
+const MemoizedProductCard = memo(ProductCard, areProductCardsEqual);
+
+export default MemoizedProductCard;
