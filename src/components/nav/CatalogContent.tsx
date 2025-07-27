@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useProducts } from '@/context/ProductsProvider';
 import CartSidebar from '@/components/nav/CartSidebar';
@@ -22,18 +22,33 @@ export default function CatalogContent() {
 
   const { products } = useProducts();
   const [viewCart, setViewCart] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
 
   // Get filtered products based on selected category
   const categoryProducts = products.filter(product => 
     selectedCategory ? product.CATEGORIA.toLowerCase() === selectedCategory.toLowerCase() : true
   );
 
-  // Get unique brands and types for the selected category
-  const availableBrands = [...new Set(categoryProducts.map(product => product.MARCA))].sort();
-  const availableTypes = [...new Set(categoryProducts.map(product => product.TIPO))].sort();
+  // Search functionality
+  const searchFilteredProducts = useMemo(() => {
+    if (!searchQuery.trim()) return categoryProducts;
+    
+    const query = searchQuery.toLowerCase().trim();
+    return categoryProducts.filter(product => 
+      product.NOMBRE.toLowerCase().includes(query) ||
+      product.DESCRIPCION.toLowerCase().includes(query) ||
+      product.MARCA.toLowerCase().includes(query) ||
+      product.TIPO.toLowerCase().includes(query) ||
+      product.REF.toLowerCase().includes(query)
+    );
+  }, [categoryProducts, searchQuery]);
+
+  // Get unique brands and types for the filtered products
+  const availableBrands = [...new Set(searchFilteredProducts.map(product => product.MARCA))].sort();
+  const availableTypes = [...new Set(searchFilteredProducts.map(product => product.TIPO))].sort();
 
   // Apply additional filters
-  const filteredProducts = categoryProducts.filter(product => {
+  const filteredProducts = searchFilteredProducts.filter(product => {
     const matchesBrand = selectedBrand ? product.MARCA === selectedBrand : true;
     const matchesType = selectedType ? product.TIPO === selectedType : true;
     return matchesBrand && matchesType;
@@ -42,12 +57,66 @@ export default function CatalogContent() {
   const unSelectedCategoryContent = (
     <>
       <main className="flex flex-col items-center justify-center min-h-[60vh] p-6 bg-gray-50 ">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-[#0e344f] mb-4">Catálogo de Wally Pickers</h1>
-          <p className="text-lg text-gray-600">Selecciona una categoría para explorar nuestros productos</p>
+          <p className="text-lg text-gray-600 mb-6">Selecciona una categoría para explorar nuestros productos</p>
+          
+          {/* Global Search Bar */}
+          <div className="max-w-2xl mx-auto mb-8">
+            <div className="relative">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <svg 
+                  className="h-5 w-5 text-gray-400" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" 
+                  />
+                </svg>
+              </div>
+              <input
+                type="text"
+                placeholder="Buscar en todo el catálogo..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-gray-500 bg-white shadow-sm"
+              />
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery('')}
+                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600"
+                >
+                  <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              )}
+            </div>
+          </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
-          {categories.map((cat) => (
+
+        {/* Show search results if there's a search query */}
+        {searchQuery ? (
+          <div className="w-full max-w-7xl mx-auto">
+            <div className="mb-6 text-center">
+              <h2 className="text-2xl font-bold text-gray-900 mb-2">
+                Resultados de búsqueda
+              </h2>
+              <p className="text-gray-600">
+                {searchFilteredProducts.length} productos encontrados para "{searchQuery}"
+              </p>
+            </div>
+            <ProductList filteredProducts={searchFilteredProducts} />
+          </div>
+        ) : (
+          /* Category Grid */
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
+            {categories.map((cat) => (
             <Link
               key={cat.value}
               href={`/catalogo?category=${encodeURIComponent(cat.value)}`}
@@ -76,7 +145,8 @@ export default function CatalogContent() {
               </div>
             </Link>
           ))}
-        </div>
+          </div>
+        )}
         
         {/* Carrito flotante - también visible en la vista de categorías */}
         <CartSidebar isOpen={viewCart} setIsOpen={setViewCart} />
@@ -105,14 +175,204 @@ export default function CatalogContent() {
         </div>
       </div>
 
-      {/* Filters */}
-      <div className="max-w-7xl mx-auto px-4 py-6">
-        <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
-          <h3 className="text-lg font-semibold mb-4">Filtros</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {/* Mobile Search Bar and Filters (visible only on mobile) */}
+      <div className="lg:hidden">
+        {/* Search Bar */}
+        <div className="max-w-7xl mx-auto px-4 py-4">
+          <div className="bg-white rounded-lg shadow-sm p-4">
+            <div className="relative">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <svg 
+                  className="h-5 w-5 text-gray-400" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" 
+                  />
+                </svg>
+              </div>
+              <input
+                type="text"
+                placeholder="Buscar productos por nombre, marca, tipo o descripción..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-gray-500"
+              />
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery('')}
+                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600"
+                >
+                  <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              )}
+            </div>
+            {searchQuery && (
+              <div className="mt-2 text-sm text-gray-600">
+                Mostrando resultados para: <span className="font-medium">"{searchQuery}"</span>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Filters */}
+        <div className="max-w-7xl mx-auto px-4 pb-6">
+          <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
+            <h3 className="text-lg font-semibold mb-4">Filtros</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              
+              {/* Brand Filter */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Marca
+                </label>
+                <select
+                  value={selectedBrand || ''}
+                  onChange={(e) => {
+                    const newParams = new URLSearchParams(searchParams.toString());
+                    if (e.target.value) {
+                      newParams.set('brand', e.target.value);
+                    } else {
+                      newParams.delete('brand');
+                    }
+                    window.history.pushState({}, '', `?${newParams.toString()}`);
+                  }}
+                  className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+                  <option value="">Todas las marcas</option>
+                  {availableBrands.map(brand => (
+                    <option key={brand} value={brand}>{brand}</option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Type Filter */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Tipo
+                </label>
+                <select
+                  value={selectedType || ''}
+                  onChange={(e) => {
+                    const newParams = new URLSearchParams(searchParams.toString());
+                    if (e.target.value) {
+                      newParams.set('type', e.target.value);
+                    } else {
+                      newParams.delete('type');
+                    }
+                    window.history.pushState({}, '', `?${newParams.toString()}`);
+                  }}
+                  className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+                  <option value="">Todos los tipos</option>
+                  {availableTypes.map(type => (
+                    <option key={type} value={type}>{type}</option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            {/* Active Filters */}
+            {(selectedBrand || selectedType) && (
+              <div className="mt-4 flex flex-wrap gap-2">
+                <span className="text-sm text-gray-600">Filtros activos:</span>
+                {selectedBrand && (
+                  <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-blue-100 text-blue-800">
+                    Marca: {selectedBrand}
+                    <button
+                      onClick={() => {
+                        const newParams = new URLSearchParams(searchParams.toString());
+                        newParams.delete('brand');
+                        window.history.pushState({}, '', `?${newParams.toString()}`);
+                      }}
+                      className="ml-1 text-blue-600 hover:text-blue-800"
+                    >
+                      ×
+                    </button>
+                  </span>
+                )}
+                {selectedType && (
+                  <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">
+                    Tipo: {selectedType}
+                    <button
+                      onClick={() => {
+                        const newParams = new URLSearchParams(searchParams.toString());
+                        newParams.delete('type');
+                        window.history.pushState({}, '', `?${newParams.toString()}`);
+                      }}
+                      className="ml-1 text-green-600 hover:text-green-800"
+                    >
+                      ×
+                    </button>
+                  </span>
+                )}
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* Desktop Layout with Sidebar */}
+      <div className="hidden lg:flex max-w-7xl mx-auto px-4 py-6 gap-6">
+        {/* Left Sidebar - Search and Filters */}
+        <div className="w-80 flex-shrink-0">
+          {/* Search Bar */}
+          <div className="bg-white rounded-lg shadow-sm p-4 mb-6">
+            <h3 className="text-lg font-semibold mb-4">Búsqueda</h3>
+            <div className="relative">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <svg 
+                  className="h-5 w-5 text-gray-400" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" 
+                  />
+                </svg>
+              </div>
+              <input
+                type="text"
+                placeholder="Buscar productos..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-gray-500"
+              />
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery('')}
+                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600"
+                >
+                  <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              )}
+            </div>
+            {searchQuery && (
+              <div className="mt-2 text-sm text-gray-600">
+                Resultados para: <span className="font-medium">"{searchQuery}"</span>
+              </div>
+            )}
+          </div>
+
+          {/* Filters */}
+          <div className="bg-white rounded-lg shadow-sm p-6">
+            <h3 className="text-lg font-semibold mb-4">Filtros</h3>
             
             {/* Brand Filter */}
-            <div>
+            <div className="mb-4">
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Marca
               </label>
@@ -137,7 +397,7 @@ export default function CatalogContent() {
             </div>
 
             {/* Type Filter */}
-            <div>
+            <div className="mb-4">
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Tipo
               </label>
@@ -160,47 +420,56 @@ export default function CatalogContent() {
                 ))}
               </select>
             </div>
-          </div>
 
-          {/* Active Filters */}
-          {(selectedBrand || selectedType) && (
-            <div className="mt-4 flex flex-wrap gap-2">
-              <span className="text-sm text-gray-600">Filtros activos:</span>
-              {selectedBrand && (
-                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-blue-100 text-blue-800">
-                  Marca: {selectedBrand}
-                  <button
-                    onClick={() => {
-                      const newParams = new URLSearchParams(searchParams.toString());
-                      newParams.delete('brand');
-                      window.history.pushState({}, '', `?${newParams.toString()}`);
-                    }}
-                    className="ml-1 text-blue-600 hover:text-blue-800"
-                  >
-                    ×
-                  </button>
-                </span>
-              )}
-              {selectedType && (
-                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">
-                  Tipo: {selectedType}
-                  <button
-                    onClick={() => {
-                      const newParams = new URLSearchParams(searchParams.toString());
-                      newParams.delete('type');
-                      window.history.pushState({}, '', `?${newParams.toString()}`);
-                    }}
-                    className="ml-1 text-green-600 hover:text-green-800"
-                  >
-                    ×
-                  </button>
-                </span>
-              )}
-            </div>
-          )}
+            {/* Active Filters */}
+            {(selectedBrand || selectedType) && (
+              <div className="mt-4">
+                <span className="text-sm text-gray-600 block mb-2">Filtros activos:</span>
+                <div className="flex flex-col gap-2">
+                  {selectedBrand && (
+                    <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-blue-100 text-blue-800 w-fit">
+                      Marca: {selectedBrand}
+                      <button
+                        onClick={() => {
+                          const newParams = new URLSearchParams(searchParams.toString());
+                          newParams.delete('brand');
+                          window.history.pushState({}, '', `?${newParams.toString()}`);
+                        }}
+                        className="ml-1 text-blue-600 hover:text-blue-800"
+                      >
+                        ×
+                      </button>
+                    </span>
+                  )}
+                  {selectedType && (
+                    <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-green-100 text-green-800 w-fit">
+                      Tipo: {selectedType}
+                      <button
+                        onClick={() => {
+                          const newParams = new URLSearchParams(searchParams.toString());
+                          newParams.delete('type');
+                          window.history.pushState({}, '', `?${newParams.toString()}`);
+                        }}
+                        className="ml-1 text-green-600 hover:text-green-800"
+                      >
+                        ×
+                      </button>
+                    </span>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
         </div>
 
-        {/* Products Grid */}
+        {/* Main Content - Products Grid */}
+        <div className="flex-1">
+          <ProductList filteredProducts={filteredProducts} />
+        </div>
+      </div>
+
+      {/* Mobile Products Grid */}
+      <div className="lg:hidden max-w-7xl mx-auto px-4">
         <ProductList filteredProducts={filteredProducts} />
       </div>
     </div>
