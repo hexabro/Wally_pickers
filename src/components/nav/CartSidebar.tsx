@@ -110,14 +110,29 @@ const CartSidebar = ({ isOpen, setIsOpen }: propsType) => {
             const nombre = (document.getElementById("name") as HTMLInputElement).value;
             const correo = (document.getElementById("email") as HTMLInputElement).value;
             const telefono = (document.getElementById("phone") as HTMLInputElement).value;
-          
+            
+            const cartInfo = cart.map(item => ({
+              ref: item.product.REF,
+              nombre: item.product.NOMBRE,
+              marca: item.product.MARCA,
+              formato: item.product.FORMATO,
+              cantidad: item.quantity
+            }));
+
+            const cartSummary = cart.map(item => 
+              `${item.product.REF} - ${item.product.NOMBRE} (${item.product.MARCA}) - ${item.quantity} cajas`
+            ).join('\n');
+
             const endpoint = "https://script.google.com/macros/s/AKfycbxazaRzawuGFqErYai1M2e48fR3kKYGVlVWdqtDcN_aeRYt8dEvfKGIPJCWg846srjjXQ/exec"
+
+
 
             try{
               const formData = new URLSearchParams();
               formData.append("nombre", nombre);
               formData.append("correo", correo);
               formData.append("telefono", telefono);
+              formData.append("cartInfo", cartSummary);
 
               await fetch(endpoint, {
                 method: "POST",
