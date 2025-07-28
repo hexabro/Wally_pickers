@@ -111,7 +111,7 @@ const CartSidebar = ({ isOpen, setIsOpen }: propsType) => {
             const correo = (document.getElementById("email") as HTMLInputElement).value;
             const telefono = (document.getElementById("phone") as HTMLInputElement).value;
 
-            const endpoint = "https://script.google.com/macros/s/AKfycby1heJaSk3vdnShfXk0h_yRvCmnXf9aylLvfbkiRF19hnoQJm0DU43Wn2tzkkEurxl__Q/exec"
+            const endpoint = "https://script.google.com/macros/s/AKfycby2oRhsJHqWefvQ5_N-bIc2yOc-5r_Ehsye-vmMVdJaP7GQDPsVqMGcc3mOD_Fe_HLRwg/exec"
 
             try{
               const formData = new URLSearchParams();
