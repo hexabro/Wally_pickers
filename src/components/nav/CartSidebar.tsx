@@ -111,19 +111,13 @@ const CartSidebar = ({ isOpen, setIsOpen }: propsType) => {
             const correo = (document.getElementById("email") as HTMLInputElement).value;
             const telefono = (document.getElementById("phone") as HTMLInputElement).value;
             
-            const cartInfo = cart.map(item => ({
-              ref: item.product.REF,
-              nombre: item.product.NOMBRE,
-              marca: item.product.MARCA,
-              formato: item.product.FORMATO,
-              cantidad: item.quantity
-            }));
+
 
             const cartSummary = cart.map(item => 
               `${item.product.REF} - ${item.product.NOMBRE} (${item.product.MARCA}) - ${item.quantity} cajas`
             ).join('\n');
 
-            const endpoint = "https://script.google.com/macros/s/AKfycbxvbKjO3jO7OxPKuZ3qQUpzGLx8S2L4tu6zGApw9Um0j2puoxHJG-XGnHfbiK5b8Ubqfg/exec"
+            const endpoint = "https://script.google.com/macros/s/AKfycbz0t12ZsojEZXDhxAUd8RCdox4yEMUjUzCn5LEXgyDN-uJy_M9NDv9BVskBgBVUvIxpgw/exec"
 
 
 
