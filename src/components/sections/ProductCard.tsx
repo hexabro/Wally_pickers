@@ -2,13 +2,10 @@
 
 import {ProductType} from '@/context/ProductsProvider';
 import { ReducerActionType, ReducerAction } from '@/context/CartProvider';
+import Image from 'next/image';
 
-import { Product } from '@/lib/load-products';
-import Link from 'next/link';
-import  useCart from '@/hooks/useCart';
-import { ShoppingCart } from 'lucide-react';
 import { ReactElement, useState, memo} from 'react';
-
+import { Container, ShoppingBag, ShoppingBasket, ShoppingCart } from 'lucide-react';
 
 type PropsType = {
   product: ProductType,
@@ -23,73 +20,134 @@ const ProductCard = ({ product, dispatch, REDUCER_ACTIONS, inCart }: PropsType):
   // Try to use the product's REF for the image, fallback to p1.jpg if image doesn't exist
   const [img, setImg] = useState<string>(`/images/products/${product.REF}.jpg`);
   const [imageError, setImageError] = useState<boolean>(false);
-  const [selectedQuantityRange, setSelectedQuantityRange] = useState<string>('20-50');
+  const [selectedQuantity, setSelectedQuantity] = useState<number | ''>(0);
   
   const handleImageError = () => {
     if (!imageError) {
       setImageError(true);
-      setImg('/images/products/p1.jpg'); // Fallback to p1.jpg
+      setImg('/images/img-error.jpg'); // Fallback to img-error.jpg
     }
   };
 
-  /* Quantity ranges */
-  const quantityRanges = [
-    { label: '20-50', min: 20, max: 50 },
-    { label: '50-100', min: 50, max: 100 },
-    { label: '100-200', min: 100, max: 200 },
-    { label: '200-500', min: 200, max: 500 },
-    { label: '500+', min: 500, max: 1000 }
-  ];
-
-  const options: ReactElement[] = quantityRanges.map(range => {
-    return <option key={range.label} value={range.label}>{range.label}</option>
-  });
-
-  const onQuantityRangeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedQuantityRange(e.target.value);
-  };
-  
-  const onAddToCart = () => {
-    dispatch({type: REDUCER_ACTIONS.ADD, payload: { product, interestedRange: selectedQuantityRange }});
+  /* Quantity options from 0 to infinity */
+  const handleQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    const parsedValue = parseInt(value);
+    const newQuantity = value === '' ? 0 : Math.max(0, parsedValue || 0);
+    setSelectedQuantity(value === '' ? '' : newQuantity);
+    
+    // Update cart in real time
+    if (newQuantity === 0) {
+      dispatch({type: REDUCER_ACTIONS.REMOVE, payload: { product, quantity: 0 }});
+    } else if (inCart) {
+      dispatch({type: REDUCER_ACTIONS.UPDATE_QUANTITY, payload: { product, quantity: newQuantity }});
+    } else {
+      dispatch({type: REDUCER_ACTIONS.ADD, payload: { product, quantity: newQuantity }});
+    }
   };
 
-  const ItemInCart = inCart ? ' ✅ Producto añadido' : null;
+  const increaseQuantity = () => {
+    const newQuantity = (typeof selectedQuantity === 'number' ? selectedQuantity : 0) + 1;
+    setSelectedQuantity(newQuantity);
+    // Update cart in real time
+    if (inCart) {
+      dispatch({type: REDUCER_ACTIONS.UPDATE_QUANTITY, payload: { product, quantity: newQuantity }});
+    } else {
+      dispatch({type: REDUCER_ACTIONS.ADD, payload: { product, quantity: newQuantity }});
+    }
+  };
+
+  const decreaseQuantity = () => {
+    const newQuantity = Math.max(0, (typeof selectedQuantity === 'number' ? selectedQuantity : 0) - 1);
+    setSelectedQuantity(newQuantity);
+    
+    // Update cart in real time
+    if (newQuantity === 0) {
+      dispatch({type: REDUCER_ACTIONS.REMOVE, payload: { product, quantity: 0 }});
+    } else if (inCart) {
+      dispatch({type: REDUCER_ACTIONS.UPDATE_QUANTITY, payload: { product, quantity: newQuantity }});
+    } else {
+      dispatch({type: REDUCER_ACTIONS.ADD, payload: { product, quantity: newQuantity }});
+    }
+  };
+
+  const onRemoveFromCart = () => {
+    setSelectedQuantity(0);
+    dispatch({type: REDUCER_ACTIONS.REMOVE, payload: { product, quantity: 0 }});
+  };
 
   const content = 
-    <article className="product-card bg-white rounded-lg shadow-md p-4 flex flex-col items-center transition hover:shadow-lg">
+    <article className="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center transition hover:shadow-xl">
       
-      <h3 className="text-lg font-semibold mb-2 text-center">
+      <h3 className="text-xl font-bold mb-4 text-center text-gray-800">
         {product.NOMBRE}
       </h3>
 
-      <img
+      <Image
         src={img}
+        width={160}
+        height={160}
         alt={product.NOMBRE}
-        className="product-img w-32 h-32 object-cover rounded-md mb-3 border"
+        className="product-img w-40 h-40 object-cover rounded-lg mb-4"
         onError={handleImageError}
       />
 
-      <p className="product-description text-sm text-green-600 mb-2 h-5">
-        {ItemInCart}
-      </p>
+      {/* Product details */}
+      <div className="text-left w-full mb-4">
+        <p className="text-sm text-gray-700 mb-1">
+          <span className="font-semibold">Marca:</span> {product.MARCA}
+        </p>
+        <p className="text-sm text-gray-700 mb-1">
+          <span className="font-semibold">Formato:</span> {product.FORMATO}
+        </p>
+        <p className="text-sm text-gray-700">
+          <span className="font-semibold">Unidades por caja:</span> {product.UDS_CAJA}
+        </p>
+      </div>
 
-      <div className="flex flex-col gap-2 w-full">
-        <select
-          value={selectedQuantityRange}
-          onChange={onQuantityRangeChange}
-          className="border rounded px-2 py-1 text-sm"
-          aria-label="quantity range"
-        >
-          {options}
-        </select>
-        
-        <button
-          onClick={onAddToCart}
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 flex items-center justify-center gap-2 transition"
-        >
-          <ShoppingCart size={18} />
-          Agregar al carrito
-        </button>
+      <div className="flex items-center gap-2 mb-4 h-5 self-start">
+        <input
+          type="checkbox"
+          checked={inCart}
+          onChange={onRemoveFromCart}
+          className="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 focus:ring-2 cursor-pointer"
+        />
+        <span className="text-sm text-gray-700">En el container</span>
+      </div>
+
+      <div className="flex flex-col gap-3 justify-start w-full">
+        <div className="flex flex-col gap-2">
+          <label htmlFor="quantity" className="text-sm font-medium text-gray-800">
+            Cantidad:
+          </label>
+          <div className="flex items-center border rounded-lg overflow-hidden">
+            <button
+              type="button"
+              onClick={decreaseQuantity}
+              disabled={typeof selectedQuantity === 'number' && selectedQuantity <= 0}
+              className="px-4 py-2 bg-gray-100 hover:bg-gray-200 disabled:bg-gray-50 disabled:text-gray-400 disabled:cursor-not-allowed transition-colors"
+            >
+              −
+            </button>
+            <input
+              id="quantity"
+              type="number"
+              min="0"
+              max="50"
+              value={selectedQuantity === '' ? '' : selectedQuantity}
+              onChange={handleQuantityChange}
+              className="flex-1 px-4 py-2 text-center border-0 focus:outline-none focus:ring-0 appearance-none"
+              style={{ MozAppearance: 'textfield' }} // Hide spinner in Firefox
+            />
+            <button
+              type="button"
+              onClick={increaseQuantity}
+              className="px-4 py-2 bg-gray-100 hover:bg-gray-200 disabled:bg-gray-50 disabled:text-gray-400 disabled:cursor-not-allowed transition-colors"
+            >
+              +
+            </button>
+          </div>
+        </div>
       </div>
 
     </article>

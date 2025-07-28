@@ -3,7 +3,7 @@ import CatalogContent from '@/components/nav/CatalogContent';
 
 export default function CatalogPage() {
   return (
-    <Suspense fallback={<div className="flex justify-center items-center min-h-screen">Loading...</div>}>
+    <Suspense fallback={<div className="flex justify-center items-center min-h-screen">Cargando...</div>}>
       <CatalogContent />
     </Suspense>
   );

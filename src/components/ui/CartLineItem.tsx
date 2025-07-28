@@ -22,31 +22,33 @@ const handleImageError = () => {
     }
 };
 
-/* Quantity ranges */
-const quantityRanges = [
-    { label: '20-50', min: 20, max: 50 },
-    { label: '50-100', min: 50, max: 100 },
-    { label: '100-200', min: 100, max: 200 },
-    { label: '200-500', min: 200, max: 500 },
-    { label: '500+', min: 500, max: 1000 }
-];
-
-// Find current range based on item interested range
-const getCurrentRange = (interestedRange: string) => {
-    return interestedRange;
-};
-
-const options: ReactElement[] = quantityRanges.map(range => {
-    return <option key={range.label} value={range.label}>{range.label}</option>
-});
-
-const onChangeQuantity = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const selectedRange = e.target.value;
+/* Quantity controls */
+const handleQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = parseInt(e.target.value) || 1;
+    const clampedValue = Math.max(1, Math.min(50, value)); // Ensure value is between 1 and 50
     
     dispatch({
-        type: REDUCER_ACTIONS.UPDATE_RANGE,
-        payload: { product: item.product, interestedRange: selectedRange }
+        type: REDUCER_ACTIONS.UPDATE_QUANTITY,
+        payload: { product: item.product, quantity: clampedValue }
     });
+};
+
+const increaseQuantity = () => {
+    if (item.quantity < 50) {
+        dispatch({
+            type: REDUCER_ACTIONS.UPDATE_QUANTITY,
+            payload: { product: item.product, quantity: item.quantity + 1 }
+        });
+    }
+};
+
+const decreaseQuantity = () => {
+    if (item.quantity > 1) {
+        dispatch({
+            type: REDUCER_ACTIONS.UPDATE_QUANTITY,
+            payload: { product: item.product, quantity: item.quantity - 1 }
+        });
+    }
 };
 
 const onRemoveFromCart = () => {
@@ -57,36 +59,66 @@ const onRemoveFromCart = () => {
 }
 
 const content = (
-    <li className="cart-line-item flex items-center justify-between p-4 border-b">
-        
-        <div className="flex items-center gap-4">
-            {/* Imagen del producto */}
-            <img  src={img}  alt={item.product.NOMBRE}   className="w-16 h-16 object-cover rounded-md"   onError={handleImageError}/>
-            {/* Información del producto */}
-            <div>
-                <h3 className="text-lg font-semibold">{item.product.NOMBRE}</h3>
-                <p className="text-sm text-gray-600">Ref: {item.product.REF}</p>
-                <p className="text-sm text-blue-600">Rango de interés: {item.interestedRange}</p>
+    <li className="cart-line-item flex items-start gap-4 p-4 border-b">
+        {/* Product Image */}
+        <img
+            src={img}
+            alt={item.product.NOMBRE}
+            className="w-16 h-16 object-cover rounded-md"
+            onError={handleImageError}
+        />
+
+        {/* Product Details and Actions */}
+        <div className="flex flex-col flex-1 gap-2">
+            {/* Top Line: Product Name and Format */}
+            <div className="flex flex-col">
+                <h3 className="text-lg font-semibold text-gray-800">{item.product.NOMBRE}</h3>
+                <p className="text-sm text-gray-500">Formato: {item.product.FORMATO}</p>
+            </div>
+
+            {/* Middle Line: Quantity Selector */}
+            <div className="flex items-center gap-2">
+                <label htmlFor={`quantity-${item.product.REF}`} className="text-xs text-gray-600">
+                    Cantidad:
+                </label>
+                <div className="flex items-center border rounded-lg overflow-hidden">
+                    <button
+                        type="button"
+                        onClick={decreaseQuantity}
+                        disabled={item.quantity <= 1}
+                        className="px-2 py-1 bg-gray-100 hover:bg-gray-200 disabled:bg-gray-50 disabled:text-gray-400 disabled:cursor-not-allowed transition-colors text-sm"
+                    >
+                        −
+                    </button>
+                    <input
+                        id={`quantity-${item.product.REF}`}
+                        type="number"
+                        min="0"
+                        value={item.quantity}
+                        onChange={handleQuantityChange}
+                        className="w-16 px-2 py-1 text-center border-0 focus:outline-none focus:ring-0 appearance-none text-sm"
+                        style={{ MozAppearance: 'textfield' }} // Hide spinner in Firefox
+                    />
+                    <button
+                        type="button"
+                        onClick={increaseQuantity}
+                        className="px-2 py-1 bg-gray-100 hover:bg-gray-200 disabled:bg-gray-50 disabled:text-gray-400 disabled:cursor-not-allowed transition-colors text-sm"
+                    >
+                        +
+                    </button>
+                </div>
             </div>
         </div>
 
-        <div className="flex items-center gap-4">
-            <select
-                value={item.interestedRange}
-                onChange={onChangeQuantity}
-                className="border rounded px-2 py-1"
-                aria-label="item quantity range"
-            >
-                {options}
-            </select>
-
+        {/* Trashcan Icon */}
+        <div className="flex items-center mt-auto">
             <button
-                onClick={onRemoveFromCart}
-                className="text-red-500 hover:text-red-700 transition"
-                aria-label="remove item from cart"
-                title="remove item from cart"
+            onClick={onRemoveFromCart}
+            className="text-red-500 hover:text-red-700 transition mb-1"
+            aria-label="remove item from cart"
+            title="Eliminar producto del carrito"
             >
-                <Trash2 size={20} />
+            <Trash2 size={20} color="black" />
             </button>
         </div>
     </li>

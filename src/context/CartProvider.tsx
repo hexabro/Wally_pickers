@@ -4,7 +4,7 @@ import { createContext, ReactElement, useMemo, useReducer, useEffect } from "rea
 
 export type CartItemType = {
     product: ProductType;
-    interestedRange: string; // e.g., "20-50", "100-200", etc.
+    quantity: number; // Changed from interestedRange to quantity
 };
 
 type CartStateType = { cart: CartItemType[] };
@@ -52,7 +52,7 @@ const initCartState: CartStateType = loadCartFromStorage();
 const REDUCER_ACTION_TYPE = {
     ADD: 'ADD',
     REMOVE: 'REMOVE',
-    UPDATE_RANGE: 'UPDATE_RANGE',
+    UPDATE_QUANTITY: 'UPDATE_QUANTITY',
     SUBMIT: 'SUBMIT',
 }
 
@@ -76,10 +76,10 @@ const reducer = (state: CartStateType, action: ReducerAction): CartStateType => 
 
             const itemExists: CartItemType | undefined = state.cart.find(item => item.product.REF === REF);
 
-            // If item exists, update the range; if not, add new item
-            const interestedRange: string = action.payload.interestedRange;
+            // If item exists, add to existing quantity; if not, add new item
+            const quantity: number = itemExists ? itemExists.quantity + action.payload.quantity : action.payload.quantity;
 
-            newState = {...state, cart: [...filteredCart, { product: action.payload.product, interestedRange }] };
+            newState = {...state, cart: [...filteredCart, { product: action.payload.product, quantity }] };
             break;
         }
         case REDUCER_ACTION_TYPE.REMOVE: {
@@ -92,13 +92,13 @@ const reducer = (state: CartStateType, action: ReducerAction): CartStateType => 
             newState = {...state, cart: [...filteredCart]};
             break;
         }
-        case REDUCER_ACTION_TYPE.UPDATE_RANGE: {
+        case REDUCER_ACTION_TYPE.UPDATE_QUANTITY: {
             if(!action.payload) {
-                throw new Error('Payload is required for UPDATE_RANGE action');
+                throw new Error('Payload is required for UPDATE_QUANTITY action');
             }
 
             const {REF} = action.payload.product
-            const {interestedRange} = action.payload;
+            const {quantity} = action.payload;
 
             const itemExists: CartItemType | undefined = state.cart.find(item => item.product.REF === REF);
 
@@ -107,7 +107,7 @@ const reducer = (state: CartStateType, action: ReducerAction): CartStateType => 
             }
             const updatedItem: CartItemType = {
                 ...itemExists,
-                interestedRange: interestedRange
+                quantity: quantity
             };
 
             const filteredCart: CartItemType[] = state.cart.filter(item => item.product.REF !== REF);
@@ -135,7 +135,7 @@ const useCartContext = (initCartState: CartStateType ) =>{
         return REDUCER_ACTION_TYPE
     }, [])
 
-    const totalItems: number = state.cart.length; // Count of different products interested in
+    const totalItems: number = state.cart.reduce((total, item) => total + item.quantity, 0); // Sum of all quantities
 
     const cart = state.cart.sort((a, b) => {
         const itemA = Number(a.product.REF.slice(-1));

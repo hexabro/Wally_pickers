@@ -50,6 +50,20 @@ body {
 .hide-scrollbar {
   scrollbar-width: none;
 }
+
+/* Hide number input spinners for all browsers */
+/* Chrome, Safari, Edge, Opera */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 /* IE 10+ */
 .hide-scrollbar {
   -ms-overflow-style: none;
