@@ -111,20 +111,19 @@ const CartSidebar = ({ isOpen, setIsOpen }: propsType) => {
             const correo = (document.getElementById("email") as HTMLInputElement).value;
             const telefono = (document.getElementById("phone") as HTMLInputElement).value;
 
-            const endpoint = "https://script.google.com/macros/s/AKfycbzXVdQQDTSmstCM1PBc6_0Vf1dYpCVNO5A--Mu-_lkA23I6MTYQGS0mbFVSN9YJViBrYg/exec"
+            const endpoint = "https://script.google.com/macros/s/AKfycby1heJaSk3vdnShfXk0h_yRvCmnXf9aylLvfbkiRF19hnoQJm0DU43Wn2tzkkEurxl__Q/exec"
 
             try{
+              const formData = new URLSearchParams();
+              formData.append("nombre", nombre);
+              formData.append("correo", correo);
+              formData.append("telefono", telefono);
+
               await fetch(endpoint, {
                 method: "POST",
-                body: JSON.stringify({
-                  nombre,
-                  correo,
-                  telefono
-                }),
-                headers: {
-                  "Content-Type": "application/json"
-                }
+                body: formData,
               });
+
             } catch (error) {
               console.error("Error al enviar los datos:", error);
             }
