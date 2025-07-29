@@ -43,9 +43,9 @@ export default function CatalogContent() {
     );
   }, [categoryProducts, searchQuery]);
 
-  // Get unique brands and types for the filtered products
-  const availableBrands = [...new Set(searchFilteredProducts.map(product => product.MARCA))].sort();
-  const availableTypes = [...new Set(searchFilteredProducts.map(product => product.TIPO))].sort();
+  // Get unique brands and types for the filtered products within the selected category
+  const availableBrands = [...new Set(categoryProducts.map(product => product.MARCA))].sort();
+  const availableTypes = [...new Set(categoryProducts.map(product => product.TIPO))].sort();
 
   // Apply additional filters
   const filteredProducts = searchFilteredProducts.filter(product => {
@@ -159,18 +159,39 @@ export default function CatalogContent() {
       <CartSidebar isOpen={viewCart} setIsOpen={setViewCart} />
       
       {/* Header */}
-      <div className="bg-white shadow-sm border-b">
+      <div className="bg-[#0e344f] shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex items-center justify-between">
             <div>
-              <Link href="/catalogo" className="text-blue-600 hover:text-blue-800 mb-2 inline-block">
+              <Link href="/catalogo" className="text-[#d68a49] hover:text-[#bf9066] mb-2 inline-block">
                 ← Volver a categorías
               </Link>
-              <h1 className="text-3xl font-bold text-gray-900">{selectedCategory}</h1>
-              <p className="text-gray-600 mt-1">
+              <h1 className="text-3xl font-bold text-gray-200">{selectedCategory}</h1>
+              <p className="text-gray-400 mt-1">
                 {filteredProducts.length} productos encontrados
               </p>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Category Switcher Panel */}
+      <div className="lg:hidden bg-white border-b shadow-sm  top-0 z-10">
+        <div className="max-w-7xl mx-auto px-4 py-4">
+          <div className="flex items-center gap-2 flex-wrap">
+        {categories.map((cat) => (
+          <Link
+            key={cat.value}
+            href={`/catalogo?category=${encodeURIComponent(cat.value)}`}
+            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+          selectedCategory === cat.value
+            ? 'bg-[#0e344f] text-white shadow-md'
+            : 'bg-gray-100 text-gray-700 hover:bg-[#0e344f] hover:text-white shadow-sm'
+            }`}
+          >
+            {cat.name}
+          </Link>
+        ))}
           </div>
         </div>
       </div>
@@ -226,7 +247,7 @@ export default function CatalogContent() {
         <div className="max-w-7xl mx-auto px-4 pb-6">
           <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
             <h3 className="text-lg font-semibold mb-4">Filtros</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-4">
               
               {/* Brand Filter */}
               <div>
@@ -461,6 +482,26 @@ export default function CatalogContent() {
                 </div>
               )}
             </div>
+
+            {/* Category Switcher */}
+            <div className="bg-white rounded-lg shadow-sm p-4">
+              <h3 className="text-lg font-semibold mb-4">Categorías</h3>
+              <div className="flex flex-col gap-2">
+                {categories.map((cat) => (
+                  <Link
+                    key={cat.value}
+                    href={`/catalogo?category=${encodeURIComponent(cat.value)}`}
+                    className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 text-center ${
+                      selectedCategory === cat.value
+                        ? 'bg-[#0e344f] text-white shadow-md'
+                        : 'bg-gray-100 text-gray-700 hover:bg-[#0e344f] hover:text-white'
+                    }`}
+                  >
+                    {cat.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 
@@ -471,7 +512,7 @@ export default function CatalogContent() {
       </div>
 
       {/* Mobile Products Grid */}
-      <div className="lg:hidden max-w-7xl mx-auto px-4">
+      <div className="lg:hidden  mx-auto px-4">
         <ProductList filteredProducts={filteredProducts} />
       </div>
     </div>

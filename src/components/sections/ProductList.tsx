@@ -30,11 +30,13 @@ export const ProductList = ({ filteredProducts }: ProductListProps) => {
            />
       )
     });
+  }else{
+    pageContent = <p className=" text-gray-500">No se encontraron productos </p>;
   }
 
   const content = (
-    <main className="main main--products">
-      <div className="products-grid">
+    <main className="">
+      <div className="grid grid-cols-2 gap-4 md:grid-cols-3 ">
         {pageContent}
       </div>
     </main>

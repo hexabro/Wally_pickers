@@ -87,10 +87,10 @@ const CartSidebar = ({ isOpen, setIsOpen }: propsType) => {
   const popUpContent = (
     isOpenPopUp && (
       <div
-        className="fixed inset-0 flex items-center justify-center z-50"
+        className="fixed inset-0 flex items-center justify-center z-[60]"
       >
         <div className="fixed inset-0 bg-black opacity-50" onClick={() => setOpenPopup(false)}></div>
-        <motion.div className="bg-white p-6 rounded-lg shadow-xl z-10 w-full max-w-md"
+        <motion.div className="bg-white p-6 rounded-lg shadow-xl z-10 w-[90%]"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           exit={{ scale: 0 }}
@@ -103,21 +103,29 @@ const CartSidebar = ({ isOpen, setIsOpen }: propsType) => {
               <X className="w-5 h-5" />
             </button>
           </div>
-          
+            {/* - Nombre 
+                - correo 
+                - teléfono
+                - Tipo negocio (Restaurante / Bar / Cafetería ; Tienda de alimentación / Supermercado; Distribuidor/Mayorista; Hotel / Catering; Tienda especializada (gourmet, internacional, etc.); Otro(especificar);
+                - CIF 
+                - Mensaje
+            */}
           <form onSubmit={async (e) => {
             e.preventDefault();
 
             const nombre = (document.getElementById("name") as HTMLInputElement).value;
             const correo = (document.getElementById("email") as HTMLInputElement).value;
             const telefono = (document.getElementById("phone") as HTMLInputElement).value;
-            
+            const tipoNegocio = (document.getElementById("business-type") as HTMLSelectElement).value;
+            const cif = (document.getElementById("cif") as HTMLInputElement).value;
+            const mensaje = (document.getElementById("message") as HTMLTextAreaElement).value;
 
 
             const cartSummary = cart.map(item => 
               `${item.product.REF} - ${item.product.NOMBRE} (${item.product.MARCA}) - ${item.quantity} cajas`
             ).join('\n');
 
-            const endpoint = "https://script.google.com/macros/s/AKfycbwHF4fdsZMGbcyzc05tkNH56nSBw42RwdVi9us_jWdhZPsPCm1r_1_KmeTSg1v-SGXjnw/exec"
+            const endpoint = "https://script.google.com/macros/s/AKfycbxSnIL8GcmI46N_raboutzibeM1C5gSK-xEZXX4EHXNjQ_F98AjOJWdWxrpNXWSYFcQVA/exec"
 
 
 
@@ -126,6 +134,9 @@ const CartSidebar = ({ isOpen, setIsOpen }: propsType) => {
               formData.append("nombre", nombre);
               formData.append("correo", correo);
               formData.append("telefono", telefono);
+              formData.append("tipoNegocio", tipoNegocio);
+              formData.append("cif", cif);
+              formData.append("mensaje", mensaje);
               formData.append("cartInfo", cartSummary);
 
               await fetch(endpoint, {
@@ -142,38 +153,83 @@ const CartSidebar = ({ isOpen, setIsOpen }: propsType) => {
             setOpenPopup(false);
               }} className="space-y-4">
 
+            <div className="grid grid-cols-2 gap-4">
+              {/* Left Column */}
+              <div className="space-y-4">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
+                  <input
+                    type="text"
+                    id="name"
+                    required
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Ingresa tu nombre"
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    required
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="ejemplo@correo.com"
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Teléfono</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    required
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="+34 123 456 789"
+                  />
+                </div>
+              </div>
 
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
-              <input
-                type="text"
-                id="name"
-                required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Ingresa tu nombre"
-              />
-            </div>
-            
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-              <input
-                type="email"
-                id="email"
-                required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="ejemplo@correo.com"
-              />
-            </div>
-            
-            <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Teléfono</label>
-              <input
-                type="tel"
-                id="phone"
-                required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="+34 123 456 789"
-              />
+              {/* Right Column */}
+              <div className="space-y-4">
+                <div>
+                  <label htmlFor="business-type" className="block text-sm font-medium text-gray-700 mb-1">Tipo de Negocio</label>
+                  <select
+                    id="business-type"
+                    required
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  >
+                    <option value="">Selecciona tu tipo de negocio</option>
+                    <option value="Restaurante / Bar / Cafetería">Restaurante / Bar / Cafetería</option>
+                    <option value="Tienda de alimentación / Supermercado">Tienda de alimentación / Supermercado</option>
+                    <option value="Distribuidor/Mayorista">Distribuidor/Mayorista</option>
+                    <option value="Hotel / Catering">Hotel / Catering</option>
+                    <option value="Tienda especializada (gourmet, internacional, etc.)">Tienda especializada (gourmet, internacional, etc.)</option>
+                    <option value="Otro">Otro (especificar)</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label htmlFor="cif" className="block text-sm font-medium text-gray-700 mb-1">CIF</label>
+                  <input
+                    type="text"
+                    id="cif"
+                    required
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="A12345678"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
+                  <textarea
+                    id="message"
+                    rows={4}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Escribe tu mensaje aquí..."
+                  />
+                </div>
+              </div>
             </div>
             
             <div className="flex justify-end mt-6 space-x-3">
@@ -224,12 +280,15 @@ const CartSidebar = ({ isOpen, setIsOpen }: propsType) => {
               onClick={() => setIsOpen(false)}
             />
             {/* Sidebar */}
-            <aside className="fixed top-0 right-0 h-full w-96 bg-white shadow-lg z-50 flex flex-col transition-transform duration-300">
+            <aside className="fixed top-0 right-0 h-full w-96 bg-white shadow-lg z-[60] flex flex-col transition-transform duration-300">
               
               <div className ="flex items-center justify-center p-6 border-b">
                 <h2 className="text-2xl font-bold text-center ">Productos de Interés</h2>
-
-              </div>              
+              
+            </div>
+              <p className = {`${totalItems == 0 ? 'block' : 'hidden'} p-4 text-center`}>
+                ¡Almacena aquí tus productos de interés y solicita información en sólo unos clicks!
+              </p>
               <div className="flex-1 overflow-y-auto p-6">
                 {pageContent}
               </div>
