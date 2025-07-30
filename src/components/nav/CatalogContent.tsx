@@ -7,6 +7,7 @@ import CartSidebar from '@/components/nav/CartSidebar';
 import Link from 'next/link';
 import Image from 'next/image';
 import ProductList from '@/components/sections/ProductList';
+import SelectedBrands from '../sections/SelectedBrands';
 
 const categories = [
   { name: 'Alimentación', value: 'Alimentacion', image: 'alimentacionCatalog' },
@@ -57,6 +58,11 @@ export default function CatalogContent() {
   const unSelectedCategoryContent = (
     <>
       <main className="flex flex-col items-center justify-center min-h-[60vh] p-6 bg-gray-50 ">
+
+        {/* BRANDS THAT TRUST WALLY PICKERS S.L */}
+        <div className = "py-16">
+          <SelectedBrands></SelectedBrands>
+        </div>
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-[#0e344f] mb-4">Catálogo de Wally Pickers</h1>
           <p className="text-lg text-gray-600 mb-6">Selecciona una categoría para explorar nuestros productos</p>

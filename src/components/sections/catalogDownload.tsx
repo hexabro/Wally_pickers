@@ -6,13 +6,54 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function CatalogSection() {
   const [showModal, setShowModal] = useState(false);
-  const [form, setForm] = useState({ name: "", email: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", tipoNegocio: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Formulario enviado:", form);
     setShowModal(false);
-  };
+    // Call the function to submit the order
+
+    const nombre = (document.getElementById("name") as HTMLInputElement).value;
+    const correo = (document.getElementById("email") as HTMLInputElement).value;
+    const telefono = (document.getElementById("phone") as HTMLInputElement).value;
+    const tipoNegocio = (document.getElementById("business-type") as HTMLSelectElement).value;
+    const mensaje ="Descarga de catálogo 2025";
+
+    const endpoint = "https://script.google.com/macros/s/AKfycbx0dXA_HD8iLd59h-AzeBRAOFSugALL-mhRFr4fxPLpjrEeA9SbRzOLYyjTMWr4OKbAdw/exec"
+
+
+
+    try{
+      const formData = new URLSearchParams();
+      formData.append("nombre", nombre);
+      formData.append("correo", correo);
+      formData.append("telefono", telefono);
+      formData.append("tipoNegocio", tipoNegocio);
+      formData.append("mensaje", mensaje);
+      formData.append("tipo", "info");
+
+      await fetch(endpoint, {
+      method: "POST",
+      body: formData,
+      });
+
+    } catch (error) {
+      console.error("Error al enviar los datos:", error);
+    }
+
+    const downloadPDF = () => {
+      const link = document.createElement('a');
+      link.href = '/files/Wally-pickers-catalog.pdf'; // Update this path to your actual PDF file
+      link.download = 'Catalogo-Wally-2025.pdf';
+      link.target = '_blank';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    };
+
+    // Trigger download
+    downloadPDF();
+  });
 
   return (
     <section className="flex flex-col-reverse md:flex-row items-center justify-between px-8 py-16 bg-[#0e344f] gap-8">
@@ -77,6 +118,7 @@ export default function CatalogSection() {
                 <input
                   type="text"
                   name= "name"
+                  id="name"
                   autoComplete="name"
                   placeholder="Tu nombre"
                   className="border p-2 rounded"
@@ -89,7 +131,8 @@ export default function CatalogSection() {
                 <input
                   type="email"
                   name="email"
-                  autoComplete = "email"
+                  id="email"
+                  autoComplete="email"
                   placeholder="Tu correo"
                   className="border p-2 rounded"
                   value={form.email}
@@ -98,6 +141,34 @@ export default function CatalogSection() {
                   }
                   required
                 />
+                <input
+                  type="text"
+                  id="phone"
+                  autoComplete="tel"
+                  placeholder="Tu teléfono"
+                  className="border p-2 rounded"
+                  value={form.phone}
+                  onChange={(e) =>
+                    setForm({ ...form, phone: e.target.value })
+                  }
+                  required
+                />
+                <select
+                  id="business-type"
+                  className="border p-2 rounded"
+                  value={form.tipoNegocio}
+                  onChange={(e) =>
+                    setForm({ ...form, tipoNegocio: e.target.value })
+                  }
+                  required
+                >
+                   <option value="Restaurante / Bar / Cafetería">Restaurante / Bar / Cafetería</option>
+                  <option value="Tienda de alimentación / Supermercado">Tienda de alimentación / Supermercado</option>
+                  <option value="Distribuidor/Mayorista">Distribuidor/Mayorista</option>
+                  <option value="Hotel / Catering">Hotel / Catering</option>
+                  <option value="Tienda especializada (gourmet, internacional, etc.)">Tienda especializada (gourmet, internacional, etc.)</option>
+                  <option value="Otro">Otro</option>
+                </select>
                 <button
                   type="submit"
                   className="bg-purple-600 text-white py-2 rounded hover:bg-purple-700 transition"

@@ -3,22 +3,46 @@
 import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 
-const logos = [
-  'logo_template.svg',
-  'logo_template.svg',
-  'logo_template.svg',
-  'logo_template.svg',
-  'logo_template.svg',
-  'logo_template.svg',
-  'logo_template.svg',
-  'logo_template.svg',
+const defaultLogos = [
+  'calypso.svg',
+  'chilerito.svg',
+  'coca-cola.svg',
+  'costenya.svg',
+  'cream-of-wheat.svg',
+  'dubai.svg',
+  'feastables.svg',
+  'general-mills.svg',
+  'hershey.svg',
+  'honey-maid.svg',
+  'indomie.svg',
+  'jinro.svg',
+  'juan-valdez.svg',
+  'kelloggs.svg',
+  'kikkoman.svg',
+  'lee-kum-kee.svg',
+  'nerds.svg',
+  'nin-jiom.svg',
+  'nissin.svg',
+  'nongshim.svg',
+  'pepsico.svg',
+  'prime.svg',
+  'reeses.svg',
+  'samyang.svg',
+  'sarape.svg',
+  'sempio.svg',
+  'sour-patch.svg',
+  'tajin.svg',
+  'toxic-waste.svg',
+  'valentina.svg',
+  'yucateco.svg',
 ]
 
 interface BrandCarouselProps {
   direction?: 'left' | 'right'
+  brands?: string[]
 }
 
-export default function BrandCarousel({ direction = 'right' }: BrandCarouselProps) {
+export default function BrandCarousel({ direction = 'right', brands = defaultLogos }: BrandCarouselProps) {
   const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -62,7 +86,7 @@ export default function BrandCarousel({ direction = 'right' }: BrandCarouselProp
         className="overflow-hidden whitespace-nowrap select-none"
       >
         <div className="flex gap-12 w-max">
-          {[...logos, ...logos, ...logos, ...logos, ...logos, ...logos].map((logo, i) => (
+          {[...brands, ...brands, ...brands, ...brands, ...brands, ...brands].map((logo, i) => (
             <Image
               key={i}
               src={`/images/brands/${logo}`}

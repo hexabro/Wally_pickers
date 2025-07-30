@@ -112,7 +112,10 @@ const CartSidebar = ({ isOpen, setIsOpen }: propsType) => {
             */}
           <form onSubmit={async (e) => {
             e.preventDefault();
-
+            // Call the function to submit the order
+            onSubmitOrder();
+            setOpenPopup(false);
+            
             const nombre = (document.getElementById("name") as HTMLInputElement).value;
             const correo = (document.getElementById("email") as HTMLInputElement).value;
             const telefono = (document.getElementById("phone") as HTMLInputElement).value;
@@ -125,7 +128,7 @@ const CartSidebar = ({ isOpen, setIsOpen }: propsType) => {
               `${item.product.REF} - ${item.product.NOMBRE} (${item.product.MARCA}) - ${item.quantity} cajas`
             ).join('\n');
 
-            const endpoint = "https://script.google.com/macros/s/AKfycbxSnIL8GcmI46N_raboutzibeM1C5gSK-xEZXX4EHXNjQ_F98AjOJWdWxrpNXWSYFcQVA/exec"
+            const endpoint = "https://script.google.com/macros/s/AKfycbx0dXA_HD8iLd59h-AzeBRAOFSugALL-mhRFr4fxPLpjrEeA9SbRzOLYyjTMWr4OKbAdw/exec"
 
 
 
@@ -138,6 +141,7 @@ const CartSidebar = ({ isOpen, setIsOpen }: propsType) => {
               formData.append("cif", cif);
               formData.append("mensaje", mensaje);
               formData.append("cartInfo", cartSummary);
+              formData.append("tipo", "pedido" );
 
               await fetch(endpoint, {
                 method: "POST",
@@ -148,9 +152,7 @@ const CartSidebar = ({ isOpen, setIsOpen }: propsType) => {
               console.error("Error al enviar los datos:", error);
             }
 
-            // Call the function to submit the order
-            onSubmitOrder();
-            setOpenPopup(false);
+            
               }} className="space-y-4">
 
             <div className="grid grid-cols-2 gap-4">
@@ -236,13 +238,13 @@ const CartSidebar = ({ isOpen, setIsOpen }: propsType) => {
               <button
                 type="button"
                 onClick={() => setOpenPopup(false)}
-                className="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50"
+                className="px-4 py-2 border border-gray-300 hover:cursor-pointer rounded-md text-gray-700 hover:bg-gray-50"
               >
                 Cancelar
               </button>
               <button
                 type="submit"
-                className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+                className="px-4 py-2 bg-blue-600 hover:cursor-pointer text-white rounded-md hover:bg-blue-700"
               >
                 Enviar
               </button>

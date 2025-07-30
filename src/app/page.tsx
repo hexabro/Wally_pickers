@@ -24,6 +24,8 @@ import { SwipeCarousel } from "@/components/sections/SwipeCarousel";
 
 
 /* PRESENTACIÓN */
+
+
 function Presentacion() {
 
 
@@ -98,8 +100,47 @@ export default function HomePage() {
         <p className = "text-center pt-3.5 ">Descubre algunas de las empresas líderes que ya han apostado por nuestro trabajo.</p>
       </div>
       
-      <BrandCarousel direction="right" />
-      <BrandCarousel direction ="left"/>
+      <BrandCarousel 
+        direction="right" 
+        brands={[
+          'calypso.svg',
+          'chilerito.svg',
+          'coca-cola.svg',
+          'costenya.svg',
+          'cream-of-wheat.svg',
+          'dubai.svg',
+          'feastables.svg',
+          'general-mills.svg',
+          'hershey.svg',
+          'honey-maid2.svg',
+          'indomie.svg',
+          'jinro.svg',
+          'juan-valdez2.svg',
+          'kelloggs.svg',
+          'kikkoman.svg',
+          'lee-kum-kee.svg'
+        ]} 
+      />
+      <BrandCarousel 
+        direction="left" 
+        brands={[
+          'nerds.svg',
+          'nin-jiom.svg',
+          'nissin.svg',
+          'nongshim.svg',
+          'pepsico.svg',
+          'prime.svg',
+          'reeses.svg',
+          'samyang.svg',
+          'sarape.svg',
+          'sempio.svg',
+          'sour-patch.svg',
+          'tajin.svg',
+          'toxic-waste.svg',
+          'valentina.svg',
+          'yucateco.svg'
+        ]} 
+      />
       
       <CategorySection />
 
