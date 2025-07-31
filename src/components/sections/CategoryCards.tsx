@@ -2,28 +2,29 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import ProfileCard from "../ui/profileCard";
-import {ExternalLink} from "lucide-react"
+import { Link as LinkIcon } from "lucide-react"
+import Link from 'next/link';
 const categories = [
   {
     name: "Alimentación",
     handle: "Othon",
     avatarUrl: "/images/categorias/alimentacion.jpg",
     avatarUrl2: "/images/categorias/alimentacion2.jpg",
-    profileLink: "https://www.linkedin.com/in/othon-ansatu%C3%B1a-gomes-86297624b/"
+    profileLink: "/catalogo?category=Alimentacion"
   },
   {
     name: "Limpieza",
     handle: "Jhonatan",
     avatarUrl: "/images/categorias/limpieza.jpg",
     avatarUrl2: "/images/categorias/limpieza2.jpg",
-    profileLink: "https://www.linkedin.com/in/othon-ansatu%C3%B1a-gomes-86297624b/"
+    profileLink: "/catalogo?category=Limpieza"
   },
   {
     name: "Cosmética",
     handle: "Pablo",
     avatarUrl: "/images/categorias/cosmetica.jpg",
     avatarUrl2: "/images/categorias/cosmetica2.jpg",
-    profileLink: "https://www.linkedin.com/in/pablo-lopez-hernandez-/"
+    profileLink: "/catalogo?category=Cosmetica"
   },
 ];
 
@@ -58,9 +59,9 @@ export default function CategoryCards() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent " />
 
             {/* Contenido superpuesto */}
-            <div className="absolute inset-0 flex flex-col justify-center items-center p-4">
-              <button
-                onClick={() => window.open(cat.profileLink, "_blank")}
+            <div className="absolute inset-0 flex flex-col justify-center items-center p-4 hover:cursor-pointer">
+              <Link
+                href={cat.profileLink}
                 className="
                   text-3xl
                   text-white font-medium
@@ -68,11 +69,12 @@ export default function CategoryCards() {
                   stroke-black
                   px-6 py-2
                   transition
-                  focus:outline-none   focus:ring-2 focus:ring-green-500
+                  focus:outline-none   
+                  hover:cursor-pointer
                 "
               >
-                {cat.name} <ExternalLink className = "inline t"/>
-              </button>
+                {cat.name} <LinkIcon className = "inline t"/>
+              </Link>
             </div>
           </div>
         ))}

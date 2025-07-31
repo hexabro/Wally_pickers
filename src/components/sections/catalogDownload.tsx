@@ -155,7 +155,7 @@ export default function CatalogSection() {
                 />
                 <select
                   id="business-type"
-                  className="border p-2 rounded"
+                  className="border p-2 rounded hover:cursor-pointer"
                   value={form.tipoNegocio}
                   onChange={(e) =>
                     setForm({ ...form, tipoNegocio: e.target.value })
@@ -171,13 +171,13 @@ export default function CatalogSection() {
                 </select>
                 <button
                   type="submit"
-                  className="bg-purple-600 text-white py-2 rounded hover:bg-purple-700 transition"
+                  className="bg-[#d68a49] text-white py-2 mt-3  rounded-full hover:cursor-pointer"
                 >
                   Enviar y descargar
                 </button>
                 <button
                   type="button"
-                  className="text-sm text-gray-500 underline mt-2"
+                  className="text-sm text-gray-500 underline mt-2 hover:text-gray-700 hover:cursor-pointer"
                   onClick={() => setShowModal(false)}
                 >
                   Cancelar

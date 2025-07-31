@@ -5,7 +5,7 @@
     "DESCRIPCION": "Fideos instantáneos cremosos con un toque picante de carbonara.",
     "CATEGORIA": "alimentacion",
     "MARCA": "SAMYANG",
-    "TIPO": "fideos",
+    "TIPO": "Ramen",
     "FORMATO": "5 x 130g",
     "UDS_CAJA": 8
   },
@@ -15,7 +15,7 @@
     "DESCRIPCION": "Fideos extremadamente picantes con sabor original a pollo.",
     "CATEGORIA": "alimentacion",
     "MARCA": "SAMYANG",
-    "TIPO": "fideos",
+    "TIPO": "Ramen",
     "FORMATO": "5 x 140g",
     "UDS_CAJA": 8
   },
@@ -25,7 +25,7 @@
     "DESCRIPCION": "Fideos el doble de picantes que los originales para los más atrevidos.",
     "CATEGORIA": "alimentacion",
     "MARCA": "SAMYANG",
-    "TIPO": "fideos",
+    "TIPO": "Ramen",
     "FORMATO": "5 x 140g",
     "UDS_CAJA": 8
   },
@@ -35,7 +35,7 @@
     "DESCRIPCION": "Fideos picantes con queso para una mezcla cremosa y ardiente.",
     "CATEGORIA": "alimentacion",
     "MARCA": "SAMYANG",
-    "TIPO": "fideos",
+    "TIPO": "Ramen",
     "FORMATO": "5 x 140g",
     "UDS_CAJA": 8
   },
@@ -45,7 +45,7 @@
     "DESCRIPCION": "Fideos con un nivel de picante extremo, Â¡solo para valientes!",
     "CATEGORIA": "alimentacion",
     "MARCA": "SAMYANG",
-    "TIPO": "fideos",
+    "TIPO": "Ramen",
     "FORMATO": "5 x 140g",
     "UDS_CAJA": 8
   },
@@ -55,7 +55,7 @@
     "DESCRIPCION": "Fideos con un picante toque de curry oriental.",
     "CATEGORIA": "alimentacion",
     "MARCA": "SAMYANG",
-    "TIPO": "fideos",
+    "TIPO": "Ramen",
     "FORMATO": "5 x 140g",
     "UDS_CAJA": 8
   },
@@ -65,17 +65,17 @@
     "DESCRIPCION": "Fideos picantes con habanero y un toque cítrico de lima.",
     "CATEGORIA": "alimentacion",
     "MARCA": "SAMYANG",
-    "TIPO": "fideos",
+    "TIPO": "Ramen",
     "FORMATO": "5 x 185g",
     "UDS_CAJA": 8
   },
   {
     "REF": "p0008",
     "NOMBRE": "Jjajang Ramen",
-    "DESCRIPCION": "Fideos con salsa negra coreana de estilo jjajang.",
+    "DESCRIPCION": "Fideos con Salsa negra coreana de estilo jjajang.",
     "CATEGORIA": "alimentacion",
     "MARCA": "SAMYANG",
-    "TIPO": "fideos",
+    "TIPO": "Ramen",
     "FORMATO": "5 x 180g",
     "UDS_CAJA": 8
   },
@@ -85,7 +85,7 @@
     "DESCRIPCION": "Versión instantánea en vaso del famoso carbonara picante.",
     "CATEGORIA": "alimentacion",
     "MARCA": "SAMYANG",
-    "TIPO": "fideos cup",
+    "TIPO": "Ramen",
     "FORMATO": "80g",
     "UDS_CAJA": 6
   },
@@ -95,7 +95,7 @@
     "DESCRIPCION": "Vaso de fideos extremadamente picantes con sabor a pollo.",
     "CATEGORIA": "alimentacion",
     "MARCA": "SAMYANG",
-    "TIPO": "fideos cup",
+    "TIPO": "Ramen",
     "FORMATO": "80g",
     "UDS_CAJA": 6
   },
@@ -105,7 +105,7 @@
     "DESCRIPCION": "Fideos picantes con queso en vaso para preparar fácilmente.",
     "CATEGORIA": "alimentacion",
     "MARCA": "SAMYANG",
-    "TIPO": "fideos cup",
+    "TIPO": "Ramen",
     "FORMATO": "80g",
     "UDS_CAJA": 6
   },
@@ -115,14 +115,14 @@
     "DESCRIPCION": "Fideos en vaso con el doble de picante que el original.",
     "CATEGORIA": "alimentacion",
     "MARCA": "SAMYANG",
-    "TIPO": "fideos cup",
+    "TIPO": "Ramen",
     "FORMATO": "80g",
     "UDS_CAJA": 6
   },
   {
     "REF": "p0013",
     "NOMBRE": "Buldak Carbonara Topokki",
-    "DESCRIPCION": "Topokki de arroz picante con salsa carbonara.",
+    "DESCRIPCION": "Topokki de arroz picante con Salsa carbonara.",
     "CATEGORIA": "alimentacion",
     "MARCA": "SAMYANG",
     "TIPO": "topokki",
@@ -132,7 +132,7 @@
   {
     "REF": "p0014",
     "NOMBRE": "Buldak Original Topokki",
-    "DESCRIPCION": "Topokki de arroz coreano con salsa original picante.",
+    "DESCRIPCION": "Topokki de arroz coreano con Salsa original picante.",
     "CATEGORIA": "alimentacion",
     "MARCA": "SAMYANG",
     "TIPO": "topokki",
@@ -145,7 +145,7 @@
     "DESCRIPCION": "Salsa picante cremosa tipo carbonara para acompañar platos.",
     "CATEGORIA": "alimentacion",
     "MARCA": "SAMYANG",
-    "TIPO": "salsa picante",
+    "TIPO": "Salsa",
     "FORMATO": "120g",
     "UDS_CAJA": 12
   },
@@ -155,7 +155,7 @@
     "DESCRIPCION": "Salsa picante original ideal para intensificar cualquier comida.",
     "CATEGORIA": "alimentacion",
     "MARCA": "SAMYANG",
-    "TIPO": "salsa picante",
+    "TIPO": "Salsa",
     "FORMATO": "120g",
     "UDS_CAJA": 12
   },
@@ -165,17 +165,17 @@
     "DESCRIPCION": "Fideos coreanos picantes con el sabor clásico y más vendido de Nongshim.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NONGSHIM",
-    "TIPO": "fideos",
+    "TIPO": "Ramen",
     "FORMATO": "5 x 120g",
     "UDS_CAJA": 20
   },
   {
     "REF": "p0018",
     "NOMBRE": "Chapagetti Jjajang",
-    "DESCRIPCION": "Fideos estilo jjajang coreano con salsa negra sabrosa.",
+    "DESCRIPCION": "Fideos estilo jjajang coreano con Salsa negra sabrosa.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NONGSHIM",
-    "TIPO": "fideos",
+    "TIPO": "Ramen",
     "FORMATO": "5 x 137g",
     "UDS_CAJA": 20
   },
@@ -185,7 +185,7 @@
     "DESCRIPCION": "Fideos vegetarianos suaves, ideales para quienes buscan opciones sin carne.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NONGSHIM",
-    "TIPO": "fideos",
+    "TIPO": "Ramen",
     "FORMATO": "5 x 112g",
     "UDS_CAJA": 20
   },
@@ -195,7 +195,7 @@
     "DESCRIPCION": "Fideos picantes con auténtico sabor a kimchi coreano.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NONGSHIM",
-    "TIPO": "fideos",
+    "TIPO": "Ramen",
     "FORMATO": "5 x 120g",
     "UDS_CAJA": 20
   },
@@ -205,17 +205,17 @@
     "DESCRIPCION": "Fideos suaves con caldo ligero, típicos de la región de Ansung.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NONGSHIM",
-    "TIPO": "fideos",
+    "TIPO": "Ramen",
     "FORMATO": "5 x 125g",
     "UDS_CAJA": 20
   },
   {
     "REF": "p0022",
     "NOMBRE": "Shin Stir Fry",
-    "DESCRIPCION": "Fideos sin caldo con salsa picante estilo stir fry.",
+    "DESCRIPCION": "Fideos sin caldo con Salsa picante estilo stir fry.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NONGSHIM",
-    "TIPO": "fideos",
+    "TIPO": "Ramen",
     "FORMATO": "5 x 131g",
     "UDS_CAJA": 20
   },
@@ -225,7 +225,7 @@
     "DESCRIPCION": "Fideos extrafuertes con doble picante coreano.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NONGSHIM",
-    "TIPO": "fideos",
+    "TIPO": "Ramen",
     "FORMATO": "5 x 120g",
     "UDS_CAJA": 20
   },
@@ -235,7 +235,7 @@
     "DESCRIPCION": "Fideos con sabor a mariscos al estilo coreano.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NONGSHIM",
-    "TIPO": "fideos",
+    "TIPO": "Ramen",
     "FORMATO": "130g",
     "UDS_CAJA": 8
   },
@@ -245,7 +245,7 @@
     "DESCRIPCION": "Fideos instantáneos picantes en formato cup para preparar fácilmente.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NONGSHIM",
-    "TIPO": "fideos cup",
+    "TIPO": "Ramen",
     "FORMATO": "75g",
     "UDS_CAJA": 6
   },
@@ -255,7 +255,7 @@
     "DESCRIPCION": "Fideos vegetarianos suaves y saludables en formato cup.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NONGSHIM",
-    "TIPO": "fideos cup",
+    "TIPO": "Ramen",
     "FORMATO": "75g",
     "UDS_CAJA": 6
   },
@@ -265,7 +265,7 @@
     "DESCRIPCION": "Fideos udon gruesos con topping de tempura crujiente.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NONGSHIM",
-    "TIPO": "fideos cup",
+    "TIPO": "Ramen",
     "FORMATO": "75g",
     "UDS_CAJA": 6
   },
@@ -275,7 +275,7 @@
     "DESCRIPCION": "Fideos picantes con sabor intenso a pollo.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NONGSHIM",
-    "TIPO": "bowl noodle",
+    "TIPO": "bowl",
     "FORMATO": "100g",
     "UDS_CAJA": 6
   },
@@ -285,7 +285,7 @@
     "DESCRIPCION": "Fideos en bowl con un caldo ardiente y delicioso.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NONGSHIM",
-    "TIPO": "bowl noodle",
+    "TIPO": "bowl",
     "FORMATO": "100g",
     "UDS_CAJA": 6
   },
@@ -295,7 +295,7 @@
     "DESCRIPCION": "Fideos estilo bowl con sabroso sabor a gambas.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NONGSHIM",
-    "TIPO": "bowl noodle",
+    "TIPO": "bowl",
     "FORMATO": "100g",
     "UDS_CAJA": 6
   },
@@ -305,7 +305,7 @@
     "DESCRIPCION": "Fideos instantáneos con intenso sabor a ternera.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NISSIN",
-    "TIPO": "fideos",
+    "TIPO": "Ramen",
     "FORMATO": "100g",
     "UDS_CAJA": 30
   },
@@ -315,7 +315,7 @@
     "DESCRIPCION": "Fideos suaves con sabor a sésamo tostado.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NISSIN",
-    "TIPO": "fideos",
+    "TIPO": "Ramen",
     "FORMATO": "100g",
     "UDS_CAJA": 30
   },
@@ -325,7 +325,7 @@
     "DESCRIPCION": "Fideos con el sabor clásico a ternera y un toque picante.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NISSIN",
-    "TIPO": "fideos",
+    "TIPO": "Ramen",
     "FORMATO": "100g",
     "UDS_CAJA": 30
   },
@@ -335,7 +335,7 @@
     "DESCRIPCION": "Fideos con sabroso sabor a gambas.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NISSIN",
-    "TIPO": "fideos",
+    "TIPO": "Ramen",
     "FORMATO": "100g",
     "UDS_CAJA": 30
   },
@@ -345,7 +345,7 @@
     "DESCRIPCION": "Fideos con caldo marino y sabor a mariscos.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NISSIN",
-    "TIPO": "fideos",
+    "TIPO": "Ramen",
     "FORMATO": "100g",
     "UDS_CAJA": 30
   },
@@ -355,7 +355,7 @@
     "DESCRIPCION": "Fideos suaves con sabor tradicional a pollo.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NISSIN",
-    "TIPO": "fideos",
+    "TIPO": "Ramen",
     "FORMATO": "100g",
     "UDS_CAJA": 30
   },
@@ -365,17 +365,17 @@
     "DESCRIPCION": "Fideos con sabor intenso a pato, estilo oriental.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NISSIN",
-    "TIPO": "fideos",
+    "TIPO": "Ramen",
     "FORMATO": "100g",
     "UDS_CAJA": 30
   },
   {
     "REF": "p0038",
     "NOMBRE": "Soy Sauce Ramen",
-    "DESCRIPCION": "Fideos con salsa de soja japonesa.",
+    "DESCRIPCION": "Fideos con Salsa de soja japonesa.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NISSIN",
-    "TIPO": "fideos",
+    "TIPO": "Ramen",
     "FORMATO": "100g",
     "UDS_CAJA": 30
   },
@@ -385,7 +385,7 @@
     "DESCRIPCION": "Fideos picantes que despiertan todos los sentidos.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NISSIN",
-    "TIPO": "fideos",
+    "TIPO": "Ramen",
     "FORMATO": "100g",
     "UDS_CAJA": 30
   },
@@ -395,7 +395,7 @@
     "DESCRIPCION": "Fideos con sabor a curry suave y especiado.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NISSIN",
-    "TIPO": "fideos",
+    "TIPO": "Ramen",
     "FORMATO": "100g",
     "UDS_CAJA": 30
   },
@@ -405,7 +405,7 @@
     "DESCRIPCION": "Fideos con sabroso caldo de miso japonés.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NISSIN",
-    "TIPO": "fideos",
+    "TIPO": "Ramen",
     "FORMATO": "100g",
     "UDS_CAJA": 30
   },
@@ -415,7 +415,7 @@
     "DESCRIPCION": "Fideos soba clásicos en formato cup listos en minutos.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NISSIN",
-    "TIPO": "soba cup",
+    "TIPO": "Soba cup",
     "FORMATO": "100g",
     "UDS_CAJA": 8
   },
@@ -425,7 +425,7 @@
     "DESCRIPCION": "Fideos soba con picante sabor chili.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NISSIN",
-    "TIPO": "soba cup",
+    "TIPO": "Soba cup",
     "FORMATO": "100g",
     "UDS_CAJA": 8
   },
@@ -435,7 +435,7 @@
     "DESCRIPCION": "Fideos soba con el dulce y salado sabor del teriyaki.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NISSIN",
-    "TIPO": "soba cup",
+    "TIPO": "Soba cup",
     "FORMATO": "100g",
     "UDS_CAJA": 8
   },
@@ -445,7 +445,7 @@
     "DESCRIPCION": "Fideos soba con el sabroso gusto a pollo estilo yakitori.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NISSIN",
-    "TIPO": "soba cup",
+    "TIPO": "Soba cup",
     "FORMATO": "100g",
     "UDS_CAJA": 8
   },
@@ -455,7 +455,7 @@
     "DESCRIPCION": "Fideos soba con sabor a carne sukiyaki tradicional.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NISSIN",
-    "TIPO": "soba cup",
+    "TIPO": "Soba cup",
     "FORMATO": "100g",
     "UDS_CAJA": 8
   },
@@ -465,7 +465,7 @@
     "DESCRIPCION": "Fideos fritos al estilo indonesio con un toque dulce y salado.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NISSIN",
-    "TIPO": "fideos",
+    "TIPO": "Noodles",
     "FORMATO": "1 x 80g",
     "UDS_CAJA": 40
   },
@@ -475,7 +475,7 @@
     "DESCRIPCION": "Fideos fritos picantes para amantes del sabor intenso.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NISSIN",
-    "TIPO": "fideos",
+    "TIPO": "Noodles",
     "FORMATO": "1 x 100g",
     "UDS_CAJA": 30
   },
@@ -485,7 +485,7 @@
     "DESCRIPCION": "Fideos con delicioso sabor a carne de res.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NISSIN",
-    "TIPO": "fideos",
+    "TIPO": "Noodles",
     "FORMATO": "1 x 100g",
     "UDS_CAJA": 30
   },
@@ -495,7 +495,7 @@
     "DESCRIPCION": "Fideos suaves y sabrosos con sabor a pollo tradicional.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NISSIN",
-    "TIPO": "fideos",
+    "TIPO": "Noodles",
     "FORMATO": "1 x 100g",
     "UDS_CAJA": 30
   },
@@ -505,7 +505,7 @@
     "DESCRIPCION": "Pasta de chile coreano con un toque dulce y picante, ideal para marinados y sopas.",
     "CATEGORIA": "alimentacion",
     "MARCA": "SEMPI0",
-    "TIPO": "pasta fermentada",
+    "TIPO": "Pasta",
     "FORMATO": "1 x 500g",
     "UDS_CAJA": 24
   },
@@ -515,7 +515,7 @@
     "DESCRIPCION": "Pasta de chile extra picante con sabor profundo y fermentado.",
     "CATEGORIA": "alimentacion",
     "MARCA": "SEMPI0",
-    "TIPO": "pasta fermentada",
+    "TIPO": "Pasta",
     "FORMATO": "1 x 500g",
     "UDS_CAJA": 24
   },
@@ -525,7 +525,7 @@
     "DESCRIPCION": "Pasta Gochujang en formato familiar, perfecta para platos coreanos tradicionales.",
     "CATEGORIA": "alimentacion",
     "MARCA": "SEMPI0",
-    "TIPO": "pasta fermentada",
+    "TIPO": "Pasta",
     "FORMATO": "1 x 1000g",
     "UDS_CAJA": 24
   },
@@ -535,17 +535,17 @@
     "DESCRIPCION": "Salsa fermentada de soja coreana con sabor umami.",
     "CATEGORIA": "alimentacion",
     "MARCA": "SEMPI0",
-    "TIPO": "pasta fermentada",
+    "TIPO": "Salsa",
     "FORMATO": "1 x 500g",
     "UDS_CAJA": 24
   },
   {
     "REF": "p0055",
     "NOMBRE": "Doenjang Soybean Sauce",
-    "DESCRIPCION": "Versión líquida de la salsa de soja fermentada coreana.",
+    "DESCRIPCION": "Versión líquida de la Salsa de soja fermentada coreana.",
     "CATEGORIA": "alimentacion",
     "MARCA": "SEMPI0",
-    "TIPO": "salsa fermentada",
+    "TIPO": "Salsa",
     "FORMATO": "1 x 460g",
     "UDS_CAJA": 24
   },
@@ -555,7 +555,7 @@
     "DESCRIPCION": "Polvo de pimiento rojo coreano, ideal para preparar kimchi.",
     "CATEGORIA": "alimentacion",
     "MARCA": "SEMPI0",
-    "TIPO": "especia",
+    "TIPO": "Especia",
     "FORMATO": "1 x 100g",
     "UDS_CAJA": 10
   },
@@ -565,7 +565,7 @@
     "DESCRIPCION": "Formato grande de polvo de pimiento rojo para kimchi y guisos.",
     "CATEGORIA": "alimentacion",
     "MARCA": "SEMPI0",
-    "TIPO": "especia",
+    "TIPO": "Especia",
     "FORMATO": "1 x 500g",
     "UDS_CAJA": 5
   },
@@ -575,7 +575,7 @@
     "DESCRIPCION": "Condimento vegetal natural con sabor umami profundo.",
     "CATEGORIA": "alimentacion",
     "MARCA": "SEMPI0",
-    "TIPO": "condimento liquido",
+    "TIPO": "Condimento",
     "FORMATO": "1 x 275ml",
     "UDS_CAJA": 30
   },
@@ -585,7 +585,7 @@
     "DESCRIPCION": "Versión ligera del condimento Yondu, sabor vegetal suave.",
     "CATEGORIA": "alimentacion",
     "MARCA": "SEMPI0",
-    "TIPO": "condimento liquido",
+    "TIPO": "Condimento",
     "FORMATO": "1 x 275ml",
     "UDS_CAJA": 30
   },
@@ -595,7 +595,7 @@
     "DESCRIPCION": "Fideos con sabor a curry suave y aromático.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NISSIN",
-    "TIPO": "fideos",
+    "TIPO": "Ramen",
     "FORMATO": "1 x 830ml",
     "UDS_CAJA": 30
   },
@@ -605,7 +605,7 @@
     "DESCRIPCION": "Salsa barbacoa coreana con sabor dulce y ahumado.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NISSIN",
-    "TIPO": "salsa BBQ",
+    "TIPO": "Salsa",
     "FORMATO": "1 x 100g",
     "UDS_CAJA": 30
   },
@@ -615,7 +615,7 @@
     "DESCRIPCION": "Salsa coreana para bulgogi, dulce y salada.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NISSIN",
-    "TIPO": "salsa BBQ",
+    "TIPO": "Salsa",
     "FORMATO": "1 x 100g",
     "UDS_CAJA": 30
   },
@@ -625,7 +625,7 @@
     "DESCRIPCION": "Jarabe herbal para la tos en formato pequeño, ideal para llevar.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NIN JIOM",
-    "TIPO": "jarabe",
+    "TIPO": "Syrup",
     "FORMATO": "1 x 75ml",
     "UDS_CAJA": 24
   },
@@ -635,7 +635,7 @@
     "DESCRIPCION": "Eficaz jarabe herbal para calmar la tos y suavizar la garganta.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NIN JIOM",
-    "TIPO": "jarabe",
+    "TIPO": "Syrup",
     "FORMATO": "1 x 150ml",
     "UDS_CAJA": 24
   },
@@ -645,7 +645,7 @@
     "DESCRIPCION": "Jarabe herbal concentrado para aliviar la tos de forma natural.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NIN JIOM",
-    "TIPO": "jarabe",
+    "TIPO": "Syrup",
     "FORMATO": "1 x 300ml",
     "UDS_CAJA": 24
   },
@@ -655,7 +655,7 @@
     "DESCRIPCION": "Caramelos herbales tradicionales para refrescar la garganta.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NIN JIOM",
-    "TIPO": "caramelo",
+    "TIPO": "Caramelo ",
     "FORMATO": "1 x 60g",
     "UDS_CAJA": 12
   },
@@ -665,7 +665,7 @@
     "DESCRIPCION": "Caramelos con mezcla cítrica de mandarina y limón, refrescantes y suaves.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NIN JIOM",
-    "TIPO": "caramelo",
+    "TIPO": "Caramelo ",
     "FORMATO": "1 x 60g",
     "UDS_CAJA": 12
   },
@@ -675,7 +675,7 @@
     "DESCRIPCION": "Caramelos herbales con un delicioso toque de manzana y longan.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NIN JIOM",
-    "TIPO": "caramelo",
+    "TIPO": "Caramelo ",
     "FORMATO": "1 x 60g",
     "UDS_CAJA": 12
   },
@@ -685,7 +685,7 @@
     "DESCRIPCION": "Caramelos herbales con sabor a ciruela ume, dulces y equilibrados.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NIN JIOM",
-    "TIPO": "caramelo",
+    "TIPO": "Caramelo ",
     "FORMATO": "1 x 60g",
     "UDS_CAJA": 12
   },
@@ -695,7 +695,7 @@
     "DESCRIPCION": "Caramelos herbales extra mentolados para una sensación intensa de frescor.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NIN JIOM",
-    "TIPO": "caramelo",
+    "TIPO": "Caramelo ",
     "FORMATO": "1 x 60g",
     "UDS_CAJA": 12
   },
@@ -705,7 +705,7 @@
     "DESCRIPCION": "Caramelos herbales con refrescante aroma a citronela.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NIN JIOM",
-    "TIPO": "caramelo",
+    "TIPO": "Caramelo ",
     "FORMATO": "1 x 60g",
     "UDS_CAJA": 12
   },
@@ -715,7 +715,7 @@
     "DESCRIPCION": "Salsa de ostras Panda en botella ideal para realzar el sabor de tus platos",
     "CATEGORIA": "alimentacion",
     "MARCA": "LEE KUM KEE",
-    "TIPO": "salsa",
+    "TIPO": "Salsa",
     "FORMATO": "1 x 255ml",
     "UDS_CAJA": 12
   },
@@ -725,7 +725,7 @@
     "DESCRIPCION": "Salsa de ostras Panda en presentación familiar para cocinar en casa",
     "CATEGORIA": "alimentacion",
     "MARCA": "LEE KUM KEE",
-    "TIPO": "salsa",
+    "TIPO": "Salsa",
     "FORMATO": "1 x 510ml",
     "UDS_CAJA": 12
   },
@@ -735,7 +735,7 @@
     "DESCRIPCION": "Salsa de ostras Panda en tamaño grande para usos múltiples",
     "CATEGORIA": "alimentacion",
     "MARCA": "LEE KUM KEE",
-    "TIPO": "salsa",
+    "TIPO": "Salsa",
     "FORMATO": "1 x 907ml",
     "UDS_CAJA": 12
   },
@@ -745,7 +745,7 @@
     "DESCRIPCION": "Salsa de soja oscura premium para un sabor intenso y auténtico",
     "CATEGORIA": "alimentacion",
     "MARCA": "LEE KUM KEE",
-    "TIPO": "salsa",
+    "TIPO": "Salsa",
     "FORMATO": "1 x 500ml",
     "UDS_CAJA": 12
   },
@@ -755,7 +755,7 @@
     "DESCRIPCION": "Salsa de soja suprema para cocinar o usar directamente en la mesa",
     "CATEGORIA": "alimentacion",
     "MARCA": "LEE KUM KEE",
-    "TIPO": "salsa",
+    "TIPO": "Salsa",
     "FORMATO": "1 x 500ml",
     "UDS_CAJA": 12
   },
@@ -765,7 +765,7 @@
     "DESCRIPCION": "Marinado de pollo que aporta un sabor delicioso a tus recetas",
     "CATEGORIA": "alimentacion",
     "MARCA": "LEE KUM KEE",
-    "TIPO": "marinado",
+    "TIPO": "Marinado",
     "FORMATO": "1 x 410ml",
     "UDS_CAJA": 12
   },
@@ -775,7 +775,7 @@
     "DESCRIPCION": "Marinado chino clásico para carnes y guisos",
     "CATEGORIA": "alimentacion",
     "MARCA": "LEE KUM KEE",
-    "TIPO": "marinado",
+    "TIPO": "Marinado",
     "FORMATO": "1 x 410ml",
     "UDS_CAJA": 12
   },
@@ -785,7 +785,7 @@
     "DESCRIPCION": "Marinado multiusos para realzar cualquier tipo de plato",
     "CATEGORIA": "alimentacion",
     "MARCA": "LEE KUM KEE",
-    "TIPO": "marinado",
+    "TIPO": "Marinado",
     "FORMATO": "1 x 410ml",
     "UDS_CAJA": 12
   },
@@ -795,7 +795,7 @@
     "DESCRIPCION": "Salsa de soja especial para sushi y sashimi",
     "CATEGORIA": "alimentacion",
     "MARCA": "LEE KUM KEE",
-    "TIPO": "salsa",
+    "TIPO": "Salsa",
     "FORMATO": "1 x 1000ml",
     "UDS_CAJA": 12
   },
@@ -805,7 +805,7 @@
     "DESCRIPCION": "Salsa de soja al estilo japonés, perfecta para acompañar",
     "CATEGORIA": "alimentacion",
     "MARCA": "LEE KUM KEE",
-    "TIPO": "salsa",
+    "TIPO": "Salsa",
     "FORMATO": "1 x 1000ml",
     "UDS_CAJA": 12
   },
@@ -815,7 +815,7 @@
     "DESCRIPCION": "Salsa de soja premium en formato económico para cocinas profesionales",
     "CATEGORIA": "alimentacion",
     "MARCA": "LEE KUM KEE",
-    "TIPO": "salsa",
+    "TIPO": "Salsa",
     "FORMATO": "1 x 1900ml",
     "UDS_CAJA": 6
   },
@@ -825,7 +825,7 @@
     "DESCRIPCION": "Salsa de soja oscura premium para cocina intensiva",
     "CATEGORIA": "alimentacion",
     "MARCA": "LEE KUM KEE",
-    "TIPO": "salsa",
+    "TIPO": "Salsa",
     "FORMATO": "1 x 1900ml",
     "UDS_CAJA": 6
   },
@@ -835,7 +835,7 @@
     "DESCRIPCION": "Salsa de ostras Panda en formato industrial para hostelería",
     "CATEGORIA": "alimentacion",
     "MARCA": "LEE KUM KEE",
-    "TIPO": "salsa",
+    "TIPO": "Salsa",
     "FORMATO": "1 x 2,27kg",
     "UDS_CAJA": 6
   },
@@ -845,7 +845,7 @@
     "DESCRIPCION": "Salsa de ajo con frijoles negros, ideal para platos asiáticos",
     "CATEGORIA": "alimentacion",
     "MARCA": "LEE KUM KEE",
-    "TIPO": "salsa",
+    "TIPO": "Salsa",
     "FORMATO": "1 x 250g",
     "UDS_CAJA": 24
   },
@@ -855,7 +855,7 @@
     "DESCRIPCION": "Salsa teriyaki dulce y salada para carnes y salteados",
     "CATEGORIA": "alimentacion",
     "MARCA": "LEE KUM KEE",
-    "TIPO": "salsa",
+    "TIPO": "Salsa",
     "FORMATO": "1 x 200g",
     "UDS_CAJA": 24
   },
@@ -865,7 +865,7 @@
     "DESCRIPCION": "Salsa de pimienta negra ideal para platos con carne",
     "CATEGORIA": "alimentacion",
     "MARCA": "Nissin",
-    "TIPO": "salsa",
+    "TIPO": "Salsa",
     "FORMATO": "1 x 350g",
     "UDS_CAJA": 8
   },
@@ -875,17 +875,17 @@
     "DESCRIPCION": "Salsa de soja clásica para realzar cualquier plato asiático.",
     "CATEGORIA": "alimentacion",
     "MARCA": "KIKKOMAN",
-    "TIPO": "Salsa de soja",
+    "TIPO": "Salsa",
     "FORMATO": "1 x 150ml",
     "UDS_CAJA": 12
   },
   {
     "REF": "p0089",
     "NOMBRE": "Soy Sauce Gluten Free 150ml",
-    "DESCRIPCION": "Versión sin gluten de la tradicional salsa de soja Kikkoman.",
+    "DESCRIPCION": "Versión sin gluten de la tradicional Salsa de soja Kikkoman.",
     "CATEGORIA": "alimentacion",
     "MARCA": "KIKKOMAN",
-    "TIPO": "Salsa de soja",
+    "TIPO": "Salsa",
     "FORMATO": "1 x 150ml",
     "UDS_CAJA": 12
   },
@@ -895,7 +895,7 @@
     "DESCRIPCION": "Salsa de soja con menos sal para una alternativa más ligera.",
     "CATEGORIA": "alimentacion",
     "MARCA": "KIKKOMAN",
-    "TIPO": "Salsa de soja",
+    "TIPO": "Salsa",
     "FORMATO": "1 x 150ml",
     "UDS_CAJA": 12
   },
@@ -905,7 +905,7 @@
     "DESCRIPCION": "Salsa de soja para todo uso, ideal para cocina y mesa.",
     "CATEGORIA": "alimentacion",
     "MARCA": "KIKKOMAN",
-    "TIPO": "Salsa de soja",
+    "TIPO": "Salsa",
     "FORMATO": "1 x 250ml",
     "UDS_CAJA": 12
   },
@@ -915,7 +915,7 @@
     "DESCRIPCION": "Salsa teriyaki perfecta para marinar carnes y vegetales.",
     "CATEGORIA": "alimentacion",
     "MARCA": "KIKKOMAN",
-    "TIPO": "Salsa teriyaki",
+    "TIPO": "Salsa",
     "FORMATO": "1 x 250ml",
     "UDS_CAJA": 12
   },
@@ -925,7 +925,7 @@
     "DESCRIPCION": "Salsa teriyaki sin gluten, ideal para personas con intolerancia.",
     "CATEGORIA": "alimentacion",
     "MARCA": "KIKKOMAN",
-    "TIPO": "Salsa teriyaki",
+    "TIPO": "Salsa",
     "FORMATO": "1 x 250ml",
     "UDS_CAJA": 12
   },
@@ -935,7 +935,7 @@
     "DESCRIPCION": "Salsa de soja con bajo contenido en sal para una dieta equilibrada.",
     "CATEGORIA": "alimentacion",
     "MARCA": "KIKKOMAN",
-    "TIPO": "Salsa de soja",
+    "TIPO": "Salsa",
     "FORMATO": "1 x 250ml",
     "UDS_CAJA": 12
   },
@@ -945,7 +945,7 @@
     "DESCRIPCION": "Salsa especialmente diseñada para cocinar al wok.",
     "CATEGORIA": "alimentacion",
     "MARCA": "KIKKOMAN",
-    "TIPO": "Salsa wok",
+    "TIPO": "Salsa",
     "FORMATO": "1 x 250ml",
     "UDS_CAJA": 12
   },
@@ -955,7 +955,7 @@
     "DESCRIPCION": "Salsa de soja delicada para sushi y sashimi.",
     "CATEGORIA": "alimentacion",
     "MARCA": "KIKKOMAN",
-    "TIPO": "Salsa de soja",
+    "TIPO": "Salsa",
     "FORMATO": "1 x 250ml",
     "UDS_CAJA": 12
   },
@@ -965,7 +965,7 @@
     "DESCRIPCION": "Salsa Tamari sin gluten, sabor intenso ideal para marinados.",
     "CATEGORIA": "alimentacion",
     "MARCA": "KIKKOMAN",
-    "TIPO": "Salsa de soja",
+    "TIPO": "Salsa",
     "FORMATO": "1 x 250ml",
     "UDS_CAJA": 12
   },
@@ -975,7 +975,7 @@
     "DESCRIPCION": "Salsa de soja dulce ideal para glasear o salteados.",
     "CATEGORIA": "alimentacion",
     "MARCA": "KIKKOMAN",
-    "TIPO": "Salsa de soja dulce",
+    "TIPO": "Salsa",
     "FORMATO": "1 x 250ml",
     "UDS_CAJA": 12
   },
@@ -985,17 +985,17 @@
     "DESCRIPCION": "Salsa de soja con limón, fresca y ácida para ensaladas y pescados.",
     "CATEGORIA": "alimentacion",
     "MARCA": "KIKKOMAN",
-    "TIPO": "Ponzu",
+    "TIPO": "Salsa",
     "FORMATO": "1 x 250ml",
     "UDS_CAJA": 12
   },
   {
     "REF": "p0100",
     "NOMBRE": "Soy Sauce 1L",
-    "DESCRIPCION": "Formato grande de la clásica salsa de soja para uso frecuente.",
+    "DESCRIPCION": "Formato grande de la clásica Salsa de soja para uso frecuente.",
     "CATEGORIA": "alimentacion",
     "MARCA": "KIKKOMAN",
-    "TIPO": "Salsa de soja",
+    "TIPO": "Salsa",
     "FORMATO": "1 x 1000ml",
     "UDS_CAJA": 6
   },
@@ -1005,7 +1005,7 @@
     "DESCRIPCION": "Salsa lista para poke bowls, mezcla dulce-salada con toque asiático.",
     "CATEGORIA": "alimentacion",
     "MARCA": "KIKKOMAN",
-    "TIPO": "Salsa poke",
+    "TIPO": "Salsa",
     "FORMATO": "1 x 975ml",
     "UDS_CAJA": 6
   },
@@ -1015,17 +1015,17 @@
     "DESCRIPCION": "Glaseado teriyaki espeso, ideal para brochetas y carnes a la parrilla.",
     "CATEGORIA": "alimentacion",
     "MARCA": "KIKKOMAN",
-    "TIPO": "Salsa teriyaki",
+    "TIPO": "Salsa",
     "FORMATO": "1 x 975ml",
     "UDS_CAJA": 6
   },
   {
     "REF": "p0103",
     "NOMBRE": "Ponzu Lemon Sauce 1L",
-    "DESCRIPCION": "Versión grande de la salsa Ponzu con limón, perfecta para profesionales.",
+    "DESCRIPCION": "Versión grande de la Salsa Ponzu con limón, perfecta para profesionales.",
     "CATEGORIA": "alimentacion",
     "MARCA": "KIKKOMAN",
-    "TIPO": "Ponzu",
+    "TIPO": "Salsa",
     "FORMATO": "1 x 1000ml",
     "UDS_CAJA": 6
   },
@@ -1035,7 +1035,7 @@
     "DESCRIPCION": "Soju coreano sabor pomelo, suave y refrescante.",
     "CATEGORIA": "alimentacion",
     "MARCA": "JINRO",
-    "TIPO": "Botella",
+    "TIPO": "Bebida",
     "FORMATO": "1 x 350ml",
     "UDS_CAJA": 20
   },
@@ -1045,7 +1045,7 @@
     "DESCRIPCION": "Soju coreano sabor uva verde, ideal para tomar frío.",
     "CATEGORIA": "alimentacion",
     "MARCA": "JINRO",
-    "TIPO": "Botella",
+    "TIPO": "Bebida",
     "FORMATO": "1 x 350ml",
     "UDS_CAJA": 20
   },
@@ -1055,7 +1055,7 @@
     "DESCRIPCION": "Soju coreano con un dulce toque de ciruela.",
     "CATEGORIA": "alimentacion",
     "MARCA": "JINRO",
-    "TIPO": "Botella",
+    "TIPO": "Bebida",
     "FORMATO": "1 x 350ml",
     "UDS_CAJA": 20
   },
@@ -1065,7 +1065,7 @@
     "DESCRIPCION": "Soju sabor fresa, perfecto para quienes prefieren bebidas afrutadas.",
     "CATEGORIA": "alimentacion",
     "MARCA": "JINRO",
-    "TIPO": "Botella",
+    "TIPO": "Bebida",
     "FORMATO": "1 x 350ml",
     "UDS_CAJA": 20
   },
@@ -1075,7 +1075,7 @@
     "DESCRIPCION": "Soju sabor melocotón, dulce y fácil de beber.",
     "CATEGORIA": "alimentacion",
     "MARCA": "JINRO",
-    "TIPO": "Botella",
+    "TIPO": "Bebida",
     "FORMATO": "1 x 350ml",
     "UDS_CAJA": 20
   },
@@ -1085,7 +1085,7 @@
     "DESCRIPCION": "Soju original con un sabor limpio y refrescante.",
     "CATEGORIA": "alimentacion",
     "MARCA": "JINRO",
-    "TIPO": "Botella",
+    "TIPO": "Bebida",
     "FORMATO": "1 x 350ml",
     "UDS_CAJA": 20
   },
@@ -1095,7 +1095,7 @@
     "DESCRIPCION": "Versión clásica del soju coreano con sabor tradicional.",
     "CATEGORIA": "alimentacion",
     "MARCA": "JINRO",
-    "TIPO": "Botella",
+    "TIPO": "Bebida",
     "FORMATO": "1 x 350ml",
     "UDS_CAJA": 20
   },
@@ -1105,7 +1105,7 @@
     "DESCRIPCION": "Sake japonés de sabor suave, ideal para maridar con sushi.",
     "CATEGORIA": "alimentacion",
     "MARCA": "KUITANXIA",
-    "TIPO": "Botella",
+    "TIPO": "Bebida",
     "FORMATO": "1 x 300ml",
     "UDS_CAJA": 20
   },
@@ -1115,7 +1115,7 @@
     "DESCRIPCION": "Cereales de mantequilla de cacahuete y chocolate con un sabor clásico de Reese's.",
     "CATEGORIA": "alimentacion",
     "MARCA": "REESE'S",
-    "TIPO": "Caja",
+    "TIPO": "Cereales",
     "FORMATO": "1 x 326g",
     "UDS_CAJA": 12
   },
@@ -1125,7 +1125,7 @@
     "DESCRIPCION": "Cereales con malvaviscos de colores y avena, muy populares entre los niños.",
     "CATEGORIA": "alimentacion",
     "MARCA": "GENERAL MILLS",
-    "TIPO": "Caja",
+    "TIPO": "Cereales",
     "FORMATO": "1 x 300g",
     "UDS_CAJA": 12
   },
@@ -1135,7 +1135,7 @@
     "DESCRIPCION": "Crujientes copos de maíz y avena con almendras tostadas.",
     "CATEGORIA": "alimentacion",
     "MARCA": "HONEY MAID",
-    "TIPO": "Caja",
+    "TIPO": "Cereales",
     "FORMATO": "1 x 340g",
     "UDS_CAJA": 12
   },
@@ -1145,7 +1145,7 @@
     "DESCRIPCION": "Cereales con forma de rollos de canela y sabor intenso.",
     "CATEGORIA": "alimentacion",
     "MARCA": "GENERAL MILLS",
-    "TIPO": "Caja",
+    "TIPO": "Cereales",
     "FORMATO": "1 x 303g",
     "UDS_CAJA": 12
   },
@@ -1155,7 +1155,7 @@
     "DESCRIPCION": "Aros de cereal integrales con forma de corazón, bajos en azúcar.",
     "CATEGORIA": "alimentacion",
     "MARCA": "GENERAL MILLS",
-    "TIPO": "Caja",
+    "TIPO": "Cereales",
     "FORMATO": "1 x 350g",
     "UDS_CAJA": 12
   },
@@ -1165,7 +1165,7 @@
     "DESCRIPCION": "Crujientes cuadrados de cereal cubiertos con azúcar y canela.",
     "CATEGORIA": "alimentacion",
     "MARCA": "GENERAL MILLS",
-    "TIPO": "Caja",
+    "TIPO": "Cereales",
     "FORMATO": "1 x 354g",
     "UDS_CAJA": 12
   },
@@ -1175,7 +1175,7 @@
     "DESCRIPCION": "Mini cereales de mantequilla de cacahuete estilo Reese's.",
     "CATEGORIA": "alimentacion",
     "MARCA": "REESE'S",
-    "TIPO": "Caja",
+    "TIPO": "Cereales",
     "FORMATO": "1 x 331g",
     "UDS_CAJA": 12
   },
@@ -1185,7 +1185,7 @@
     "DESCRIPCION": "Aros de colores con sabor afrutado, ideales para niños.",
     "CATEGORIA": "alimentacion",
     "MARCA": "KELLOGG'S",
-    "TIPO": "Caja",
+    "TIPO": "Cereales",
     "FORMATO": "1 x 320g",
     "UDS_CAJA": 12
   },
@@ -1195,7 +1195,7 @@
     "DESCRIPCION": "Waffles congelados con sabor a canela, ideales para el desayuno.",
     "CATEGORIA": "alimentacion",
     "MARCA": "GENERAL MILLS",
-    "TIPO": "Caja",
+    "TIPO": "Cereales",
     "FORMATO": "1 x 328g",
     "UDS_CAJA": 12
   },
@@ -1205,7 +1205,7 @@
     "DESCRIPCION": "Cereal caliente de trigo, suave y fácil de preparar.",
     "CATEGORIA": "alimentacion",
     "MARCA": "CREAM OF WHEAT",
-    "TIPO": "Caja",
+    "TIPO": "Cereales",
     "FORMATO": "1 x 794g",
     "UDS_CAJA": 12
   },
@@ -1215,7 +1215,7 @@
     "DESCRIPCION": "Caramelos blandos con sabor intenso a fresa y un toque ácido.",
     "CATEGORIA": "alimentacion",
     "MARCA": "SOUR PATCH",
-    "TIPO": "Caramelo blando",
+    "TIPO": "Chuches",
     "FORMATO": "1 x 102g",
     "UDS_CAJA": 12
   },
@@ -1225,7 +1225,7 @@
     "DESCRIPCION": "Caramelos masticables con sabor a melocotón y recubrimiento ácido.",
     "CATEGORIA": "alimentacion",
     "MARCA": "SOUR PATCH",
-    "TIPO": "Caramelo blando",
+    "TIPO": "Chuches",
     "FORMATO": "1 x 102g",
     "UDS_CAJA": 12
   },
@@ -1235,7 +1235,7 @@
     "DESCRIPCION": "Caramelos surtidos de frutas con una capa ácida inicial.",
     "CATEGORIA": "alimentacion",
     "MARCA": "SOUR PATCH",
-    "TIPO": "Caramelo blando",
+    "TIPO": "Chuches",
     "FORMATO": "1 x 130g",
     "UDS_CAJA": 12
   },
@@ -1245,7 +1245,7 @@
     "DESCRIPCION": "Caramelos extra ácidos para los amantes del sabor intenso.",
     "CATEGORIA": "alimentacion",
     "MARCA": "SOUR PATCH",
-    "TIPO": "Caramelo blando",
+    "TIPO": "Chuches",
     "FORMATO": "1 x 99g",
     "UDS_CAJA": 12
   },
@@ -1255,7 +1255,7 @@
     "DESCRIPCION": "Caramelos crujientes Nerds rellenos de gomitas de frutas.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NERDS",
-    "TIPO": "Caramelo blando",
+    "TIPO": "Chuches",
     "FORMATO": "1 x 113g",
     "UDS_CAJA": 12
   },
@@ -1265,7 +1265,7 @@
     "DESCRIPCION": "Deliciosos caramelos Nerds rellenos de gomitas de frutos del bosque.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NERDS",
-    "TIPO": "Caramelo blando",
+    "TIPO": "Chuches",
     "FORMATO": "1 x 113g",
     "UDS_CAJA": 12
   },
@@ -1275,7 +1275,7 @@
     "DESCRIPCION": "Caramelos clásicos con sabores a fresa y uva.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NERDS",
-    "TIPO": "Caramelo duro",
+    "TIPO": "Chuches",
     "FORMATO": "1 x 46.7g",
     "UDS_CAJA": 36
   },
@@ -1285,7 +1285,7 @@
     "DESCRIPCION": "Nerds crujientes con un toque dulce y ácido de sandía y cereza.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NERDS",
-    "TIPO": "Caramelo duro",
+    "TIPO": "Chuches",
     "FORMATO": "1 x 46.7g",
     "UDS_CAJA": 36
   },
@@ -1295,7 +1295,7 @@
     "DESCRIPCION": "Mezcla de caramelos Nerds en una variedad de sabores frutales.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NERDS",
-    "TIPO": "Caramelo duro",
+    "TIPO": "Chuches",
     "FORMATO": "1 x 141g",
     "UDS_CAJA": 12
   },
@@ -1305,7 +1305,7 @@
     "DESCRIPCION": "Gomitas recubiertas de mini Nerds con sabor a frutas.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NERDS",
-    "TIPO": "Caramelo blando",
+    "TIPO": "Chuches",
     "FORMATO": "1 x 45g",
     "UDS_CAJA": 24
   },
@@ -1315,7 +1315,7 @@
     "DESCRIPCION": "Gomitas recubiertas de mini Nerds con sabor a frutas del bosque.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NERDS",
-    "TIPO": "Caramelo blando",
+    "TIPO": "Chuches",
     "FORMATO": "1 x 45g",
     "UDS_CAJA": 24
   },
@@ -1325,7 +1325,7 @@
     "DESCRIPCION": "Caramelos ultra ácidos con sabor cítrico intenso.",
     "CATEGORIA": "alimentacion",
     "MARCA": "TOXIC WASTE",
-    "TIPO": "Caramelo duro",
+    "TIPO": "Chuches",
     "FORMATO": "1 x 42g",
     "UDS_CAJA": 12
   },
@@ -1335,7 +1335,7 @@
     "DESCRIPCION": "Caramelos extremadamente ácidos con sabores verdes como manzana o lima.",
     "CATEGORIA": "alimentacion",
     "MARCA": "TOXIC WASTE",
-    "TIPO": "Caramelo duro",
+    "TIPO": "Chuches",
     "FORMATO": "1 x 42g",
     "UDS_CAJA": 12
   },
@@ -1345,7 +1345,7 @@
     "DESCRIPCION": "Caramelos ácidos con sabores frutales como uva y mora.",
     "CATEGORIA": "alimentacion",
     "MARCA": "TOXIC WASTE",
-    "TIPO": "Caramelo duro",
+    "TIPO": "Chuches",
     "FORMATO": "1 x 42g",
     "UDS_CAJA": 12
   },
@@ -1355,7 +1355,7 @@
     "DESCRIPCION": "Caramelos ultra ácidos con sabores como fresa, cereza y frambuesa.",
     "CATEGORIA": "alimentacion",
     "MARCA": "TOXIC WASTE",
-    "TIPO": "Caramelo duro",
+    "TIPO": "Chuches",
     "FORMATO": "1 x 42g",
     "UDS_CAJA": 12
   },
@@ -1495,7 +1495,7 @@
     "DESCRIPCION": "Galletas Pop Tarts rellenas de crema de galleta con cobertura de vainilla.",
     "CATEGORIA": "alimentacion",
     "MARCA": "KELLOGG'S",
-    "TIPO": "Pop Tarts",
+    "TIPO": "Galletas",
     "FORMATO": "8 x 384g",
     "UDS_CAJA": 12
   },
@@ -1505,7 +1505,7 @@
     "DESCRIPCION": "Galletas Pop Tarts con relleno de marshmallow y chocolate, cubiertas de glaseado.",
     "CATEGORIA": "alimentacion",
     "MARCA": "KELLOGG'S",
-    "TIPO": "Pop Tarts",
+    "TIPO": "Galletas",
     "FORMATO": "8 x 384g",
     "UDS_CAJA": 12
   },
@@ -1515,7 +1515,7 @@
     "DESCRIPCION": "Pop Tarts de chocolate con chips, para los amantes del cacao.",
     "CATEGORIA": "alimentacion",
     "MARCA": "KELLOGG'S",
-    "TIPO": "Pop Tarts",
+    "TIPO": "Galletas",
     "FORMATO": "8 x 384g",
     "UDS_CAJA": 12
   },
@@ -1525,7 +1525,7 @@
     "DESCRIPCION": "Refresco con sabor a bayas, ideal para disfrutar frío.",
     "CATEGORIA": "alimentacion",
     "MARCA": "COCA-COLA",
-    "TIPO": "Refresco",
+    "TIPO": "Bebida",
     "FORMATO": "1 x 355ml",
     "UDS_CAJA": 12
   },
@@ -1535,7 +1535,7 @@
     "DESCRIPCION": "Refresco con sabor a fresa, burbujeante y refrescante.",
     "CATEGORIA": "alimentacion",
     "MARCA": "COCA-COLA",
-    "TIPO": "Refresco",
+    "TIPO": "Bebida",
     "FORMATO": "1 x 355ml",
     "UDS_CAJA": 12
   },
@@ -1545,7 +1545,7 @@
     "DESCRIPCION": "Refresco tropical con sabor a piña, perfecto para el verano.",
     "CATEGORIA": "alimentacion",
     "MARCA": "COCA-COLA",
-    "TIPO": "Refresco",
+    "TIPO": "Bebida",
     "FORMATO": "1 x 355ml",
     "UDS_CAJA": 12
   },
@@ -1555,7 +1555,7 @@
     "DESCRIPCION": "Refresco con sabor a uva, dulce y afrutado.",
     "CATEGORIA": "alimentacion",
     "MARCA": "COCA-COLA",
-    "TIPO": "Refresco",
+    "TIPO": "Bebida",
     "FORMATO": "1 x 355ml",
     "UDS_CAJA": 12
   },
@@ -1565,7 +1565,7 @@
     "DESCRIPCION": "Refresco con sabor a durazno, suave y burbujeante.",
     "CATEGORIA": "alimentacion",
     "MARCA": "COCA-COLA",
-    "TIPO": "Refresco",
+    "TIPO": "Bebida",
     "FORMATO": "1 x 355ml",
     "UDS_CAJA": 12
   },
@@ -1575,7 +1575,7 @@
     "DESCRIPCION": "Bebida hidratante con sabor afrutado, edición Mahomes.",
     "CATEGORIA": "alimentacion",
     "MARCA": "PRIME",
-    "TIPO": "Bebida deportiva",
+    "TIPO": "Bebida",
     "FORMATO": "1 x 500ml",
     "UDS_CAJA": 12
   },
@@ -1585,7 +1585,7 @@
     "DESCRIPCION": "Bebida hidratante edición especial Aaron Judge.",
     "CATEGORIA": "alimentacion",
     "MARCA": "PRIME",
-    "TIPO": "Bebida deportiva",
+    "TIPO": "Bebida",
     "FORMATO": "1 x 100g",
     "UDS_CAJA": 30
   },
@@ -1595,7 +1595,7 @@
     "DESCRIPCION": "Bebida deportiva con sabor a limón y lima, muy refrescante.",
     "CATEGORIA": "alimentacion",
     "MARCA": "PRIME",
-    "TIPO": "Bebida deportiva",
+    "TIPO": "Bebida",
     "FORMATO": "1 x 500ml",
     "UDS_CAJA": 12
   },
@@ -1605,7 +1605,7 @@
     "DESCRIPCION": "Bebida deportiva con sabor a cereza helada.",
     "CATEGORIA": "alimentacion",
     "MARCA": "PRIME",
-    "TIPO": "Bebida deportiva",
+    "TIPO": "Bebida",
     "FORMATO": "1 x 500ml",
     "UDS_CAJA": 12
   },
@@ -1615,7 +1615,7 @@
     "DESCRIPCION": "Refresco de Coca-Cola con un toque de vainilla.",
     "CATEGORIA": "alimentacion",
     "MARCA": "COCA-COLA",
-    "TIPO": "Refresco",
+    "TIPO": "Bebida",
     "FORMATO": "1 x 355ml",
     "UDS_CAJA": 12
   },
@@ -1625,7 +1625,7 @@
     "DESCRIPCION": "Refresco de Coca-Cola con sabor a cereza.",
     "CATEGORIA": "alimentacion",
     "MARCA": "COCA-COLA",
-    "TIPO": "Refresco",
+    "TIPO": "Bebida",
     "FORMATO": "1 x 355ml",
     "UDS_CAJA": 12
   },
@@ -1635,7 +1635,7 @@
     "DESCRIPCION": "Refresco de Coca-Cola con mezcla de cereza y vainilla.",
     "CATEGORIA": "alimentacion",
     "MARCA": "COCA-COLA",
-    "TIPO": "Refresco",
+    "TIPO": "Bebida",
     "FORMATO": "1 x 355ml",
     "UDS_CAJA": 12
   },
@@ -1645,7 +1645,7 @@
     "DESCRIPCION": "Refresco tropical con notas cítricas, sin cafeína.",
     "CATEGORIA": "alimentacion",
     "MARCA": "PEPSICO",
-    "TIPO": "Refresco",
+    "TIPO": "Bebida",
     "FORMATO": "1 x 355ml",
     "UDS_CAJA": 12
   },
@@ -1655,7 +1655,7 @@
     "DESCRIPCION": "Refresco de 7 UP con sabor a cereza.",
     "CATEGORIA": "alimentacion",
     "MARCA": "PEPSICO",
-    "TIPO": "Refresco",
+    "TIPO": "Bebida",
     "FORMATO": "1 x 355ml",
     "UDS_CAJA": 12
   },
@@ -1665,7 +1665,7 @@
     "DESCRIPCION": "Bebida tropical con mezcla de frutas exóticas.",
     "CATEGORIA": "alimentacion",
     "MARCA": "CALYPSO",
-    "TIPO": "Limonada",
+    "TIPO": "Bebida",
     "FORMATO": "1 x 473ml",
     "UDS_CAJA": 12
   },
@@ -1675,7 +1675,7 @@
     "DESCRIPCION": "Limonada con sabor a fresa, muy refrescante.",
     "CATEGORIA": "alimentacion",
     "MARCA": "CALYPSO",
-    "TIPO": "Limonada",
+    "TIPO": "Bebida",
     "FORMATO": "1 x 473ml",
     "UDS_CAJA": 12
   },
@@ -1685,7 +1685,7 @@
     "DESCRIPCION": "Café premium molido de origen colombiano con notas intensas.",
     "CATEGORIA": "alimentacion",
     "MARCA": "JUAN VALDEZ",
-    "TIPO": "Café molido",
+    "TIPO": "Café",
     "FORMATO": "1 x 250g",
     "UDS_CAJA": 12
   },
@@ -1695,7 +1695,7 @@
     "DESCRIPCION": "Café molido de sabor fuerte y aroma volcánico.",
     "CATEGORIA": "alimentacion",
     "MARCA": "JUAN VALDEZ",
-    "TIPO": "Café molido",
+    "TIPO": "Café",
     "FORMATO": "1 x 250g",
     "UDS_CAJA": 12
   },
@@ -1705,7 +1705,7 @@
     "DESCRIPCION": "Café molido suave de las colinas colombianas.",
     "CATEGORIA": "alimentacion",
     "MARCA": "JUAN VALDEZ",
-    "TIPO": "Café molido",
+    "TIPO": "Café",
     "FORMATO": "1 x 250g",
     "UDS_CAJA": 12
   },
@@ -1715,7 +1715,7 @@
     "DESCRIPCION": "Café orgánico colombiano en presentación de 1kg.",
     "CATEGORIA": "alimentacion",
     "MARCA": "JUAN VALDEZ",
-    "TIPO": "Café molido",
+    "TIPO": "Café",
     "FORMATO": "1 x 1000g",
     "UDS_CAJA": 12
   },
@@ -1725,7 +1725,7 @@
     "DESCRIPCION": "Café de origen Sierra Nevada, intenso y equilibrado.",
     "CATEGORIA": "alimentacion",
     "MARCA": "JUAN VALDEZ",
-    "TIPO": "Café molido",
+    "TIPO": "Café",
     "FORMATO": "1 x 1000g",
     "UDS_CAJA": 12
   },
@@ -1735,7 +1735,7 @@
     "DESCRIPCION": "Café soluble con sabor dulce de leche.",
     "CATEGORIA": "alimentacion",
     "MARCA": "JUAN VALDEZ",
-    "TIPO": "Café soluble",
+    "TIPO": "Café",
     "FORMATO": "1 x 95g",
     "UDS_CAJA": 12
   },
@@ -1745,7 +1745,7 @@
     "DESCRIPCION": "Café soluble liofilizado para conservar todo su sabor.",
     "CATEGORIA": "alimentacion",
     "MARCA": "JUAN VALDEZ",
-    "TIPO": "Café soluble",
+    "TIPO": "Café",
     "FORMATO": "1 x 95g",
     "UDS_CAJA": 12
   },
@@ -1755,7 +1755,7 @@
     "DESCRIPCION": "Café soluble con un toque de sabor a avellanas.",
     "CATEGORIA": "alimentacion",
     "MARCA": "JUAN VALDEZ",
-    "TIPO": "Café soluble",
+    "TIPO": "Café",
     "FORMATO": "1 x 95g",
     "UDS_CAJA": 12
   },
@@ -1765,7 +1765,7 @@
     "DESCRIPCION": "Café soluble descafeinado, ideal para cualquier hora.",
     "CATEGORIA": "alimentacion",
     "MARCA": "JUAN VALDEZ",
-    "TIPO": "Café soluble",
+    "TIPO": "Café",
     "FORMATO": "1 x 95g",
     "UDS_CAJA": 12
   },
@@ -1882,7 +1882,7 @@
   {
     "REF": "p0189",
     "NOMBRE": "Valentina Negra 370ml",
-    "DESCRIPCION": "Versión más picante de la salsa Valentina, sabor intenso.",
+    "DESCRIPCION": "Versión más picante de la Salsa Valentina, sabor intenso.",
     "CATEGORIA": "alimentacion",
     "MARCA": "VALENTINA",
     "TIPO": "Salsa",
@@ -1912,7 +1912,7 @@
   {
     "REF": "p0192",
     "NOMBRE": "Salsa Chipotle 150ml",
-    "DESCRIPCION": "Salsa elaborada con chipotle, ahumada y ligeramente dulce.",
+    "DESCRIPCION": "Salsa elaborada con chipotle, ahumada y ligeRamente dulce.",
     "CATEGORIA": "alimentacion",
     "MARCA": "EL YUCATECO",
     "TIPO": "Salsa",
@@ -2052,7 +2052,7 @@
   {
     "REF": "p0206",
     "NOMBRE": "Salsa Roja Taquera 250g",
-    "DESCRIPCION": "Salsa roja estilo taquero, ligeramente picante.",
+    "DESCRIPCION": "Salsa roja estilo taquero, ligeRamente picante.",
     "CATEGORIA": "alimentacion",
     "MARCA": "LA COSTEÑA",
     "TIPO": "Salsa",
@@ -2082,10 +2082,10 @@
   {
     "REF": "p0209",
     "NOMBRE": "Chile de Ãrbol 75g (Tajín)",
-    "DESCRIPCION": "Chile seco de árbol, ideal para dar picor a guisos y salsas.",
+    "DESCRIPCION": "Chile seco de árbol, ideal para dar picor a guisos y Salsas.",
     "CATEGORIA": "alimentacion",
     "MARCA": "TAJÍN",
-    "TIPO": "Chile seco",
+    "TIPO": "Chile  ",
     "FORMATO": "1 x 75g",
     "UDS_CAJA": 20
   },
@@ -2095,17 +2095,17 @@
     "DESCRIPCION": "Chile pasilla seco, sabor ahumado y suave.",
     "CATEGORIA": "alimentacion",
     "MARCA": "TAJÍN",
-    "TIPO": "Chile seco",
+    "TIPO": "Chile  ",
     "FORMATO": "1 x 75g",
     "UDS_CAJA": 20
   },
   {
     "REF": "p0211",
     "NOMBRE": "Chile Ancho 75g (Tajín)",
-    "DESCRIPCION": "Chile ancho seco, dulce y ligeramente picante.",
+    "DESCRIPCION": "Chile ancho seco, dulce y ligeRamente picante.",
     "CATEGORIA": "alimentacion",
     "MARCA": "TAJÍN",
-    "TIPO": "Chile seco",
+    "TIPO": "Chile  ",
     "FORMATO": "1 x 75g",
     "UDS_CAJA": 20
   },
@@ -2115,37 +2115,37 @@
     "DESCRIPCION": "Chile guajillo seco, sabor suave y color intenso.",
     "CATEGORIA": "alimentacion",
     "MARCA": "TAJÍN",
-    "TIPO": "Chile seco",
+    "TIPO": "Chile  ",
     "FORMATO": "1 x 75g",
     "UDS_CAJA": 20
   },
   {
     "REF": "p0213",
     "NOMBRE": "Chile Guajillo 100g (El Sarape)",
-    "DESCRIPCION": "Chile guajillo seco, perfecto para salsas mexicanas.",
+    "DESCRIPCION": "Chile guajillo seco, perfecto para Salsas mexicanas.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NISSIN",
-    "TIPO": "Chile seco",
+    "TIPO": "Chile  ",
     "FORMATO": "1 x 100g",
     "UDS_CAJA": 30
   },
   {
     "REF": "p0214",
     "NOMBRE": "Chile Ancho 100g (El Sarape)",
-    "DESCRIPCION": "Chile ancho seco, ideal para adobos y salsas.",
+    "DESCRIPCION": "Chile ancho seco, ideal para adobos y Salsas.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NISSIN",
-    "TIPO": "Chile seco",
+    "TIPO": "Chile  ",
     "FORMATO": "1 x 100g",
     "UDS_CAJA": 30
   },
   {
     "REF": "p0215",
     "NOMBRE": "Chile de Ãrbol 100g (El Sarape)",
-    "DESCRIPCION": "Chile de árbol seco, muy picante, usado en salsas.",
+    "DESCRIPCION": "Chile de árbol seco, muy picante, usado en Salsas.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NISSIN",
-    "TIPO": "Chile seco",
+    "TIPO": "Chile  ",
     "FORMATO": "1 x 100g",
     "UDS_CAJA": 30
   },
@@ -2155,7 +2155,7 @@
     "DESCRIPCION": "Chile pasilla seco, ahumado, ideal para moles.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NISSIN",
-    "TIPO": "Chile seco",
+    "TIPO": "Chile  ",
     "FORMATO": "1 x 100g",
     "UDS_CAJA": 30
   },
@@ -2165,7 +2165,7 @@
     "DESCRIPCION": "Presentación grande de chile ancho seco.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NISSIN",
-    "TIPO": "Chile seco",
+    "TIPO": "Chile  ",
     "FORMATO": "1 x 3kg",
     "UDS_CAJA": 30
   },
@@ -2175,17 +2175,17 @@
     "DESCRIPCION": "Chile de árbol seco en gran formato para cocina intensiva.",
     "CATEGORIA": "alimentacion",
     "MARCA": "NISSIN",
-    "TIPO": "Chile seco",
+    "TIPO": "Chile  ",
     "FORMATO": "1 x 3kg",
     "UDS_CAJA": 30
   },
   {
     "REF": "p0219",
     "NOMBRE": "Chipotles Adobados 220g",
-    "DESCRIPCION": "Chiles chipotles en adobo, perfectos para salsas y guisos.",
+    "DESCRIPCION": "Chiles chipotles en adobo, perfectos para Salsas y guisos.",
     "CATEGORIA": "alimentacion",
     "MARCA": "LA COSTEÑA",
-    "TIPO": "Conserva",
+    "TIPO": "Chipotles",
     "FORMATO": "1 x 220g",
     "UDS_CAJA": 24
   },
@@ -2195,7 +2195,7 @@
     "DESCRIPCION": "Chipotles adobados con sabor intenso y ahumado.",
     "CATEGORIA": "alimentacion",
     "MARCA": "LA COSTEÑA",
-    "TIPO": "Conserva",
+    "TIPO": "Chipotles",
     "FORMATO": "1 x 340g",
     "UDS_CAJA": 24
   },
@@ -2205,7 +2205,7 @@
     "DESCRIPCION": "Presentación industrial de chipotles adobados.",
     "CATEGORIA": "alimentacion",
     "MARCA": "LA COSTEÑA",
-    "TIPO": "Conserva",
+    "TIPO": "Chipotles",
     "FORMATO": "1 x 2900g",
     "UDS_CAJA": 6
   },
@@ -2215,7 +2215,7 @@
     "DESCRIPCION": "Cuitlacoche en conserva, ingrediente tradicional mexicano.",
     "CATEGORIA": "alimentacion",
     "MARCA": "LA COSTEÑA",
-    "TIPO": "Conserva",
+    "TIPO": "Cuitlacoche",
     "FORMATO": "1 x 380g",
     "UDS_CAJA": 12
   },
@@ -2225,7 +2225,7 @@
     "DESCRIPCION": "Frijoles bayos enteros listos para calentar y servir.",
     "CATEGORIA": "alimentacion",
     "MARCA": "LA COSTEÑA",
-    "TIPO": "Conserva",
+    "TIPO": "Frijoles",
     "FORMATO": "1 x 560g",
     "UDS_CAJA": 24
   },
@@ -2235,7 +2235,7 @@
     "DESCRIPCION": "Frijoles bayos refritos, cremosos y sabrosos.",
     "CATEGORIA": "alimentacion",
     "MARCA": "LA COSTEÑA",
-    "TIPO": "Conserva",
+    "TIPO": "Frijoles",
     "FORMATO": "1 x 580g",
     "UDS_CAJA": 12
   },
@@ -2245,7 +2245,7 @@
     "DESCRIPCION": "Frijoles negros enteros cocidos, listos para servir.",
     "CATEGORIA": "alimentacion",
     "MARCA": "LA COSTEÑA",
-    "TIPO": "Conserva",
+    "TIPO": "Frijoles",
     "FORMATO": "1 x 560g",
     "UDS_CAJA": 24
   },
@@ -2255,7 +2255,7 @@
     "DESCRIPCION": "Frijoles negros refritos con auténtico sabor casero.",
     "CATEGORIA": "alimentacion",
     "MARCA": "LA COSTEÑA",
-    "TIPO": "Conserva",
+    "TIPO": "Frijoles",
     "FORMATO": "1 x 580g",
     "UDS_CAJA": 12
   },
@@ -2265,7 +2265,7 @@
     "DESCRIPCION": "Guayabas dulces en almíbar, listas para postres o comer directo.",
     "CATEGORIA": "alimentacion",
     "MARCA": "LA COSTEÑA",
-    "TIPO": "Conserva",
+    "TIPO": "Guayaba",
     "FORMATO": "1 x 800g",
     "UDS_CAJA": 12
   },
@@ -2275,7 +2275,7 @@
     "DESCRIPCION": "Chiles jalapeños enteros en escabeche, sabor intenso.",
     "CATEGORIA": "alimentacion",
     "MARCA": "LA COSTEÑA",
-    "TIPO": "Conserva",
+    "TIPO": "Jalapeños",
     "FORMATO": "1 x 220g",
     "UDS_CAJA": 24
   },
@@ -2285,7 +2285,7 @@
     "DESCRIPCION": "Presentación grande de jalapeños enteros en escabeche.",
     "CATEGORIA": "alimentacion",
     "MARCA": "LA COSTEÑA",
-    "TIPO": "Conserva",
+    "TIPO": "Jalapeños",
     "FORMATO": "1 x 2800g",
     "UDS_CAJA": 6
   },
@@ -2295,7 +2295,7 @@
     "DESCRIPCION": "Jalapeños picados en escabeche para cocina intensiva.",
     "CATEGORIA": "alimentacion",
     "MARCA": "LA COSTEÑA",
-    "TIPO": "Conserva",
+    "TIPO": "Jalapeños",
     "FORMATO": "1 x 2900g",
     "UDS_CAJA": 6
   },
@@ -2305,7 +2305,7 @@
     "DESCRIPCION": "Maíz blanco precocido ideal para pozole y otros platillos.",
     "CATEGORIA": "alimentacion",
     "MARCA": "LA COSTEÑA",
-    "TIPO": "Conserva",
+    "TIPO": "Maíz",
     "FORMATO": "1 x 3000g",
     "UDS_CAJA": 8
   },
@@ -2315,7 +2315,7 @@
     "DESCRIPCION": "Rodajas de jalapeño ideales para nachos y botanas.",
     "CATEGORIA": "alimentacion",
     "MARCA": "LA COSTEÑA",
-    "TIPO": "Conserva",
+    "TIPO": "Jalapeños",
     "FORMATO": "1 x 220g",
     "UDS_CAJA": 24
   }

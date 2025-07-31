@@ -5,7 +5,8 @@ import { ReducerActionType, ReducerAction } from '@/context/CartProvider';
 import Image from 'next/image';
 
 import { ReactElement, useState, memo} from 'react';
-import { Container, ShoppingBag, ShoppingBasket, ShoppingCart } from 'lucide-react';
+import { Container, ShoppingBag, ShoppingBasket, ShoppingCart, Expand, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 type PropsType = {
   product: ProductType,
@@ -21,6 +22,7 @@ const ProductCard = ({ product, dispatch, REDUCER_ACTIONS, inCart }: PropsType):
   const [img, setImg] = useState<string>(`/images/products/${product.REF}.jpg`);
   const [imageError, setImageError] = useState<boolean>(false);
   const [selectedQuantity, setSelectedQuantity] = useState<number | ''>(0);
+  const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false);
   
   const handleImageError = () => {
     if (!imageError) {
@@ -76,21 +78,31 @@ const ProductCard = ({ product, dispatch, REDUCER_ACTIONS, inCart }: PropsType):
     dispatch({type: REDUCER_ACTIONS.REMOVE, payload: { product, quantity: 0 }});
   };
 
-  const content = 
-    <article className="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center transition hover:shadow-xl">
-      
-      <h3 className="text-xl font-bold mb-4 text-center text-gray-800">
-        {product.NOMBRE}
-      </h3>
+  const content = (
+    <>
+      <article className="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center transition hover:shadow-xl relative">
+        
+        <h3 className="text-xl font-bold mb-4 text-center text-gray-800 max-w-48">
+          {product.NOMBRE}
+        </h3>
 
-      <Image
-        src={img}
-        width={160}
-        height={160}
-        alt={product.NOMBRE}
-        className="product-img w-40 h-40 object-cover rounded-lg mb-4"
-        onError={handleImageError}
-      />
+      <motion.div
+        initial={{ scale: 1 }}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="cursor-pointer"
+        onClick={() => setIsPopupOpen(true)}
+        title="Ver más información"
+      >
+        <Image
+          src={img}
+          width={160}
+          height={160}
+          alt={product.NOMBRE}
+          className="product-img w-40 h-40 object-cover rounded-lg mb-4 transition-transform"
+          onError={handleImageError}
+        />
+      </motion.div>
 
       {/* Product details */}
       <div className="text-left w-full mb-4">
@@ -125,7 +137,7 @@ const ProductCard = ({ product, dispatch, REDUCER_ACTIONS, inCart }: PropsType):
               type="button"
               onClick={decreaseQuantity}
               disabled={typeof selectedQuantity === 'number' && selectedQuantity <= 0}
-              className="px-4 py-2 bg-gray-100 hover:bg-gray-200 disabled:bg-gray-50 disabled:text-gray-400 disabled:cursor-not-allowed transition-colors"
+              className="px-4 py-2 bg-[#4b68e8] hover:bg-[#6581ff] disabled:cursor-not-allowed transition-colors"
             >
               −
             </button>
@@ -142,7 +154,7 @@ const ProductCard = ({ product, dispatch, REDUCER_ACTIONS, inCart }: PropsType):
             <button
               type="button"
               onClick={increaseQuantity}
-              className="px-4 py-2 bg-gray-100 hover:bg-gray-200 disabled:bg-gray-50 disabled:text-gray-400 disabled:cursor-not-allowed transition-colors"
+              className="px-4 py-2 bg-[#4b68e8] hover:bg-[#6581ff]  transition-colors"
             >
               +
             </button>
@@ -150,7 +162,148 @@ const ProductCard = ({ product, dispatch, REDUCER_ACTIONS, inCart }: PropsType):
         </div>
       </div>
 
-    </article>
+      </article>
+
+      {/* Popup Modal */}
+      <AnimatePresence>
+        {isPopupOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0  bg-opacity-30 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+            onClick={() => setIsPopupOpen(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ duration: 0.3, type: "spring", damping: 25, stiffness: 300 }}
+              className="bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-hidden"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Header */}
+              <div className="flex items-center justify-between p-6 border-b bg-gray-50">
+                <h2 className="text-2xl font-bold text-gray-800">
+                  {product.NOMBRE}
+                </h2>
+                <button
+                  type="button"
+                  onClick={() => setIsPopupOpen(false)}
+                  className="p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-200 rounded-full transition-colors"
+                  title="Cerrar"
+                >
+                  <X size={24} />
+                </button>
+              </div>
+
+              {/* Content */}
+              <div className="p-6 flex flex-col md:flex-row gap-6 max-h-[calc(90vh-88px)] overflow-y-auto">
+                {/* Left Column - Image and Details */}
+                <div className="flex-1">
+                  <Image
+                    src={img}
+                    width={300}
+                    height={300}
+                    alt={product.NOMBRE}
+                    className="w-full max-w-sm h-64 object-cover rounded-lg mb-6 mx-auto"
+                    onError={handleImageError}
+                  />
+                  
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="space-y-3">
+                      <p className="text-sm text-gray-700">
+                        <span className="font-semibold">Marca:</span> {product.MARCA}
+                      </p>
+                      <p className="text-sm text-gray-700">
+                        <span className="font-semibold">Categoría:</span> {product.CATEGORIA}
+                      </p>
+                      <p className="text-sm text-gray-700">
+                        <span className="font-semibold">Tipo:</span> {product.TIPO}
+                      </p>
+                    </div>
+                    <div className="space-y-3">
+                      <p className="text-sm text-gray-700">
+                        <span className="font-semibold">Formato:</span> {product.FORMATO}
+                      </p>
+                      <p className="text-sm text-gray-700">
+                        <span className="font-semibold">Unidades por caja:</span> {product.UDS_CAJA}
+                      </p>
+                      <p className="text-sm text-gray-700">
+                        <span className="font-semibold">REF:</span> {product.REF}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right Column - Description and Controls */}
+                <div className="flex-1 flex flex-col">
+                  {/* Description */}
+                  <div className="flex-1 mb-6">
+                    <h3 className="font-semibold text-gray-800 mb-3 text-lg">Descripción</h3>
+                    <div className="overflow-y-auto">
+                      <p className="text-sm text-gray-700 leading-relaxed">
+                        {product.DESCRIPCION || 'No hay descripción disponible para este producto.'}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Container Controls */}
+                  <div className="border-t pt-6 space-y-4">
+                    {/* Container checkbox */}
+                    <div className="flex items-center gap-3">
+                      <input
+                        type="checkbox"
+                        checked={inCart}
+                        onChange={onRemoveFromCart}
+                        className="w-5 h-5 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 focus:ring-2 cursor-pointer"
+                      />
+                      <span className="text-base font-medium text-gray-800">En el container</span>
+                    </div>
+
+                    {/* Quantity controls */}
+                    <div className="space-y-3">
+                      <label htmlFor="popup-quantity" className="text-base font-medium text-gray-800 block">
+                        Cantidad:
+                      </label>
+                      <div className="flex items-center border-2 rounded-lg overflow-hidden max-w-xs">
+                        <button
+                          type="button"
+                          onClick={decreaseQuantity}
+                          disabled={typeof selectedQuantity === 'number' && selectedQuantity <= 0}
+                          className="px-6 py-3 text-white bg-[#4b68e8] hover:bg-[#6581ff] disabled:bg-gray-50 disabled:text-gray-400 disabled:cursor-not-allowed transition-colors text-lg font-semibold"
+                        >
+                          −
+                        </button>
+                        <input
+                          id="popup-quantity"
+                          type="number"
+                          min="0"
+                          max="50"
+                          value={selectedQuantity === '' ? '' : selectedQuantity}
+                          onChange={handleQuantityChange}
+                          className="flex-1 px-6 py-3 text-center border-0 focus:outline-none focus:ring-0 appearance-none text-lg font-semibold"
+                          style={{ MozAppearance: 'textfield' }}
+                        />
+                        <button
+                          type="button"
+                          onClick={increaseQuantity}
+                          className="px-6 py-3 bg-[var(--principal)] text-white hover:bg-[#6581ff] disabled:bg-gray-50 disabled:text-gray-400 disabled:cursor-not-allowed transition-colors text-lg font-semibold"
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
 
   return content;
 }

@@ -10,6 +10,7 @@
     "convert-excel": "node scripts/excel-convert.js"
   },
   "dependencies": {
+    "framer-motion": "^12.23.12",
     "lucide-react": "^0.525.0",
     "motion": "^12.23.1",
     "next": "15.3.4",

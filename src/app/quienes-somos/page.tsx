@@ -37,7 +37,7 @@ const AboutUsPage: React.FC = () => {
       <section className="flex flex-col sm:flex-row items-center justify-center h-auto sm:h-[80vh] mb-0  sm:p-16 p-8 gap-8">
         <div className="relative flex justify-center items-center w-full sm:w-1/2 h-64 sm:h-full mb-6 sm:mb-0">
           <Image
-            src="/images/about/fundadores.jpg"
+            src="/images/about/othon&jhonny.jpg"
             alt="Trabajador de Wally Pickers sonriendo"
             width={600}
             height={500}
@@ -64,17 +64,17 @@ const AboutUsPage: React.FC = () => {
         <ReviewsSection title = "Lo que opinan nuestros clientes" titleColor="white" backgroundColor=""></ReviewsSection>
       </div>
 
-      {/* EL EQUIPO FUNDADOR */}
+      {/* EL EQUIPO FUNDADOR */}{/* 
       <div className = "bg-neutral-100   mt-0">
 
         <FoundersSection />
 
-      </div>
+      </div> */}
 
       
 
       {/* SECCIÓN DE FORMULARIO DE CONTACTO, FORMULARIO A LA DRECHA Y SECCIÓN DE TEXTO A LA IZQUIERDA */}
-        <div className="mx-auto p-10 pt-0 flex flex-col md:flex-row items-stretch gap-8 ">
+        <div className="mx-auto p-10 pt-10 flex flex-col md:flex-row items-stretch gap-8 ">
           <div className="relative  bg-center flex-1 rounded-lg text-center md:text-left flex flex-col justify-center h-auto" 
             style = {{ backgroundImage: "url(/images/contact/background.jpg)", }}>
           {/* DARK OVERLAY */}

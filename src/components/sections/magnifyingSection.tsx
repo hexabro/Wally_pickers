@@ -101,7 +101,7 @@ export default function MagnifyingSection({title, description, titleColor, descC
       />
       {/* PALO */}
       <div
-        className={`absolute w-2 h-20 bg-${magnifyColor} pointer-events-none hidden xl:block`}
+        className={`absolute w-2 h-20 rounded-b-3xl bg-${magnifyColor} pointer-events-none hidden xl:block`}
         style={{
           left: pointer.x - 60,
           top: pointer.y + 50,

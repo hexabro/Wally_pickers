@@ -13,10 +13,10 @@ const brands = [
   { name: "Feastables", logo: "/images/brands/feastables.svg" },
   { name: "General Mills", logo: "/images/brands/general-mills.svg" },
   { name: "Hershey", logo: "/images/brands/hershey.svg" },
-  { name: "Honey Maid", logo: "/images/brands/honey-maid.svg" },
+  { name: "Honey Maid", logo: "/images/brands/honey-maid2.svg" },
   { name: "Indomie", logo: "/images/brands/indomie.svg" },
   { name: "Jinro", logo: "/images/brands/jinro.svg" },
-  { name: "Juan Valdez", logo: "/images/brands/juan-valdez.svg" },
+  { name: "Juan Valdez", logo: "/images/brands/juan-valdez2.svg" },
   { name: "Kellogg's", logo: "/images/brands/kelloggs.svg" },
   { name: "Kikkoman", logo: "/images/brands/kikkoman.svg" },
   { name: "Lee Kum Kee", logo: "/images/brands/lee-kum-kee.svg" },
@@ -38,8 +38,8 @@ const brands = [
 
 export default function SelectedBrands() {
   return (
-    <section className=" bg-gradient-to-b from-gray-50 to-white">
-      <div className=" mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="  bg-gray-50">
+      <div className="mx-auto px-6 lg:px-8">
         {/* Header */}
         <motion.div
           className="text-center mb-16"
@@ -59,7 +59,7 @@ export default function SelectedBrands() {
 
         {/* Brands Grid */}
         <motion.div
-          className="flex flex-wrap justify-start items-start "
+          className="grid grid-cols-4 md:flex md:flex-wrap justify-start items-center "
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -68,7 +68,7 @@ export default function SelectedBrands() {
           {brands.map((brand, index) => (
             <motion.div
               key={brand.name}
-              className="group flex items-center justify-center   bg-white   transition-all duration-300   w-32 h-20 sm:w-36 sm:h-24 md:w-40 md:h-28 lg:w-44 lg:h-32"
+              className="group  bg-gray-50 w-24 h-20 sm:w-36 sm:h-24 md:w-40 md:h-28 lg:w-44 lg:h-32"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

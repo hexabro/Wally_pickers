@@ -8,11 +8,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import ProductList from '@/components/sections/ProductList';
 import SelectedBrands from '../sections/SelectedBrands';
+import path from 'path';
+import { Link as LinkIcon } from 'lucide-react';
 
 const categories = [
-  { name: 'Alimentación', value: 'Alimentacion', image: 'alimentacionCatalog' },
-  { name: 'Limpieza', value: 'Limpieza', image: 'limpiezaCatalogo' },
-  { name: 'Cosmética', value: 'Cosmetica', image: 'cosmeticaCatalog' },
+  { name: 'Alimentación', value: 'Alimentacion', image: 'alimentacionCatalog', mobileImage: "/images/categorias/alimentacion2.jpg", link: "/catalogo?category=Alimentacion" },
+  { name: 'Limpieza', value: 'Limpieza', image: 'limpiezaCatalogo', mobileImage: "/images/categorias/limpieza2.jpg", link: "/catalogo?category=Limpieza" },
+  { name: 'Cosmética', value: 'Cosmetica', image: 'cosmeticaCatalog', mobileImage: "/images/categorias/cosmetica2.jpg", link: "/catalogo?category=Cosmetica" },
 ];
 
 export default function CatalogContent() {
@@ -57,15 +59,12 @@ export default function CatalogContent() {
 
   const unSelectedCategoryContent = (
     <>
-      <main className="flex flex-col items-center justify-center min-h-[60vh] p-6 bg-gray-50 ">
+      <main className="flex flex-col items-center justify-center min-h-[60vh] p-6 pt-20 bg-gray-50 ">
 
-        {/* BRANDS THAT TRUST WALLY PICKERS S.L */}
-        <div className = "py-16">
-          <SelectedBrands></SelectedBrands>
-        </div>
+        
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-[#0e344f] mb-4">Catálogo de Wally Pickers</h1>
-          <p className="text-lg text-gray-600 mb-6">Selecciona una categoría para explorar nuestros productos</p>
+          <p className="text-lg text-gray-600 mb-6 max-w-3xl">Selecciona una categoría para explorar nuestros productos o usa el buscador para encontrar exactamente lo que necesites</p>
           
           {/* Global Search Bar */}
           <div className="max-w-2xl mx-auto mb-8">
@@ -121,41 +120,91 @@ export default function CatalogContent() {
           </div>
         ) : (
           /* Category Grid */
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
-            {categories.map((cat) => (
-            <Link
-              key={cat.value}
-              href={`/catalogo?category=${encodeURIComponent(cat.value)}`}
-              className="group bg-white shadow-lg rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-gray-100 hover:border-sky-400 hover:border-2"
-            >
-              <div className="relative  overflow-hidden">
-                <Image
-                  src={`/images/categorias/${cat.image}.jpg`}
-                  alt={cat.name}
-                  width={300}
-                  height={200}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 "
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent transition-opacity duration-300"></div>
-                <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-6">
-                  <h3 className="text-2xl font-bold text-neutral-200  mb-2 drop-shadow-lg ">
-                    {cat.name}
-                  </h3>
-                  <div className="inline-flex items-center text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute bottom-4">
-                    Ver productos
-                    <svg className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
+          <div className = "w-full h-full">
+            {/* DESKTOP */}
+              <div className="hidden md:grid md:grid-cols-3 gap-8 ">
+                {categories.map((cat) => (
+                <Link
+                  key={cat.value}
+                  href={`/catalogo?category=${encodeURIComponent(cat.value)}`}
+                  className="group bg-white shadow-lg rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-gray-100 hover:border-sky-400 hover:border-2"
+                >
+                  <div className="relative  overflow-hidden">
+                    <Image
+                      src={`/images/categorias/${cat.image}.jpg`}
+                      alt={cat.name}
+                      width={300}
+                      height={200}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 "
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-6">
+                      <h3 className="text-2xl font-bold text-neutral-200  mb-2 drop-shadow-lg ">
+                        {cat.name}
+                      </h3>
+                      <div className="inline-flex items-center text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute bottom-4">
+                        Ver productos
+                        <svg className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                </Link>
+              ))}
               </div>
-            </Link>
-          ))}
+          {/* MOBILE */}
+            <div className="md:hidden w-full h-full flex flex-col space-y-4 hide-scrollbar">
+                  {categories.map((cat) => (
+                    <div
+                      key={cat.name}
+                      className={`w-full h-40 rounded-xl overflow-hidden shadow-lg  relative `}
+                    >
+          
+                      {/* Imagen de fondo */}
+                      <Image
+                        src={cat.mobileImage}
+                        alt={cat.name}
+                        fill
+                        className="object-cover blur-xs"
+                      />
+          
+                      {/* Capa degradada para legibilidad */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent " />
+          
+                      {/* Contenido superpuesto */}
+                      <div className="absolute inset-0 flex flex-col justify-center items-center p-4 hover:cursor-pointer">
+                        <Link
+                          href={cat.link}
+                          className="
+                            text-3xl
+                            text-white font-medium
+                            rounded-full
+                            stroke-black
+                            px-6 py-2
+                            transition
+                            focus:outline-none
+                            hover:cursor-pointer
+                          "
+                        >
+                          {cat.name} <LinkIcon className = "inline t"/>
+                        </Link>
+                      </div>
+                    </div>
+                  ))}
+                </div>
           </div>
+          
+
+                
         )}
         
         {/* Carrito flotante - también visible en la vista de categorías */}
         <CartSidebar isOpen={viewCart} setIsOpen={setViewCart} />
+        {/* BRANDS THAT TRUST WALLY PICKERS S.L */}
+        <div className = "bg-gray-50 py-16 mt-20">
+          <SelectedBrands></SelectedBrands>
+        </div>
       </main>
     </>
   );

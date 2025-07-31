@@ -16,8 +16,8 @@ const navItems = [
   { href: '/catalogo', label: 'Catálogo' },
   { href: '/ser-cliente', label: 'Ser Cliente' },
   { href: '/quienes-somos', label: 'Quiénes Somos' },
-  { href: '/noticias', label: 'Noticias' },
-  { href: '/contacto', label: 'Contacto' },
+/*   { href: '/noticias', label: 'Noticias' },
+ */  { href: '/contacto', label: 'Contacto' },
 ];
 
 const NavBar = () => {

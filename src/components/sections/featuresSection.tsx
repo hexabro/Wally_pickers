@@ -80,7 +80,7 @@ export default function FeaturesSection() {
       />
       {/* PALO */}
       <div
-        className={`absolute w-2 h-20 bg-black pointer-events-none hidden xl:block`}
+        className={`absolute w-2 h-20 rounded-b-3xl bg-black pointer-events-none hidden xl:block`}
         style={{
           left: pointer.x - 60,
           top: pointer.y + 50,

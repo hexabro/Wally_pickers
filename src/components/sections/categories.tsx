@@ -6,7 +6,6 @@ import { ArrowRight, LucideIcon } from 'lucide-react';
 import AnimatedColumns from "@/components/ui/AnimatedColumns"
 
 import {
-  Candy,
   Cookie,
   Nut,
   SprayCan,
@@ -14,7 +13,10 @@ import {
   Sparkles,
   ShowerHead,
   Smile,
-  ShieldCheck
+  ShieldCheck,
+  Soup,
+  Flame,
+  Wheat
 } from "lucide-react";
 
 
@@ -48,10 +50,10 @@ export default function CategorySection() {
   {
     label: 'Alimentación',
     items: [
-      { href: '#chocolates', label: 'Chocolates', icon: Candy },
-      { href: '#snacks', label: 'Snacks', icon: Cookie },
-      { href: '#chicles', label: 'Chicles', icon: Cookie },
-      { href: '#frutos-secos', label: 'Frutos secos', icon: Nut },
+      { href: '/catalogo?category=Alimentacion&type=Ramen', label: 'Ramen', icon: Soup },
+      { href: '/catalogo?category=Alimentacion&type=Salsa', label: 'Salsas', icon: Flame },
+      { href: '/catalogo?category=Alimentacion&type=Chocolate', label: 'Chocolate', icon: Cookie },
+      { href: '/catalogo?category=Alimentacion&type=Cereales', label: 'Cereales', icon: Wheat },
     ],
   },
   {
