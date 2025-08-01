@@ -15,6 +15,7 @@ const navItems = [
   { href: "/catalogo", label: "Catálogo" },
   { href: "/ser-cliente", label: "Ser Cliente" },
   { href: "/quienes-somos", label: "Sobre Nosotros" },
+  { href: "/guia-compra", label: "Guía de Compra" },
   { href: "/contacto", label: "Contacto" },
   { href: "/blog", label: "Noticias" },
   
