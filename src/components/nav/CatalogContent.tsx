@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useProducts } from '@/context/ProductsProvider';
 import CartSidebar from '@/components/nav/CartSidebar';
@@ -8,8 +8,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import ProductList from '@/components/sections/ProductList';
 import SelectedBrands from '../sections/SelectedBrands';
-import path from 'path';
-import { Link as LinkIcon } from 'lucide-react';
+import { Link as LinkIcon, ChevronUp } from 'lucide-react';
 
 const categories = [
   { name: 'Alimentación', value: 'Alimentacion', image: 'alimentacionCatalog', mobileImage: "/images/categorias/alimentacion2.jpg", link: "/catalogo?category=Alimentacion" },
@@ -26,6 +25,26 @@ export default function CatalogContent() {
   const { products } = useProducts();
   const [viewCart, setViewCart] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  // Handle scroll to show/hide scroll-to-top button
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      setShowScrollTop(scrollTop > 300); // Show button after scrolling 300px
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Scroll to top function
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
 
   // Get filtered products based on selected category
   const categoryProducts = products.filter(product => 
@@ -201,6 +220,7 @@ export default function CatalogContent() {
         
         {/* Carrito flotante - también visible en la vista de categorías */}
         <CartSidebar isOpen={viewCart} setIsOpen={setViewCart} />
+        
         {/* BRANDS THAT TRUST WALLY PICKERS S.L */}
         <div className = "bg-gray-50 py-16 mt-20">
           <SelectedBrands></SelectedBrands>
@@ -570,6 +590,17 @@ export default function CatalogContent() {
       <div className="lg:hidden  mx-auto px-4">
         <ProductList filteredProducts={filteredProducts} />
       </div>
+      
+      {/* Scroll to Top Button - Mobile Only */}
+      {showScrollTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-6 left-6 md:hidden bg-[#4b68e8] hover:bg-[#6581ff] text-white p-3 rounded-full shadow-lg z-50 transition-all duration-300 hover:scale-110"
+          aria-label="Scroll to top"
+        >
+          <ChevronUp className="w-6 h-6" />
+        </button>
+      )}
     </div>
   );
 

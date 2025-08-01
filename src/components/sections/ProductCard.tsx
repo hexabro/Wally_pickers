@@ -81,8 +81,8 @@ const ProductCard = ({ product, dispatch, REDUCER_ACTIONS, inCart }: PropsType):
   const content = (
     <>
       <article className="product-card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center transition hover:shadow-xl relative">
-        
-        <h3 className="text-xl font-bold mb-4 text-center text-gray-800 max-w-48">
+
+        <h3 className="text-xl font-bold mb-4 text-center text-gray-800 ">
           {product.NOMBRE}
         </h3>
 
