@@ -172,7 +172,7 @@ const ProductCard = ({ product, dispatch, REDUCER_ACTIONS, inCart }: PropsType):
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0  bg-opacity-30 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+            className="fixed inset-0  bg-opacity-30 backdrop-blur-sm flex items-center justify-center z-[60] p-4"
             onClick={() => setIsPopupOpen(false)}
           >
             <motion.div
@@ -180,14 +180,28 @@ const ProductCard = ({ product, dispatch, REDUCER_ACTIONS, inCart }: PropsType):
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
               transition={{ duration: 0.3, type: "spring", damping: 25, stiffness: 300 }}
-              className="bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-hidden"
+              className="bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] flex flex-col"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Header */}
-              <div className="flex items-center justify-between p-6 border-b bg-gray-50">
+              <div className="flex items-center justify-between p-6 border-b bg-gray-50 flex-shrink-0">
                 <h2 className="text-2xl font-bold text-gray-800">
                   {product.NOMBRE}
                 </h2>
+                {/* PRODUCT NAV INFO */}
+                <div className="flex flex-wrap gap-3 ">
+                  <span className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">
+                    {product.MARCA}
+                  </span>
+                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    {product.CATEGORIA}
+                  </span>
+                  {product.TIPO && (
+                    <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                      {product.TIPO}
+                    </span>
+                  )}
+                </div>
                 <button
                   type="button"
                   onClick={() => setIsPopupOpen(false)}
@@ -199,7 +213,7 @@ const ProductCard = ({ product, dispatch, REDUCER_ACTIONS, inCart }: PropsType):
               </div>
 
               {/* Content */}
-              <div className="p-6 flex flex-col md:flex-row gap-6 max-h-[calc(90vh-88px)] overflow-y-auto">
+              <div className="p-6 flex flex-col md:flex-row gap-6 flex-1 overflow-y-auto">
                 {/* Left Column - Image and Details */}
                 <div className="flex-1">
                   <Image
@@ -210,8 +224,8 @@ const ProductCard = ({ product, dispatch, REDUCER_ACTIONS, inCart }: PropsType):
                     className="w-full max-w-sm h-64 object-cover rounded-lg mb-6 mx-auto"
                     onError={handleImageError}
                   />
-                  
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+                  <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-3">
                       <p className="text-sm text-gray-700">
                         <span className="font-semibold">Marca:</span> {product.MARCA}
