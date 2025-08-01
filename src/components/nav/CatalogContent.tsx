@@ -122,27 +122,27 @@ export default function CatalogContent() {
           /* Category Grid */
           <div className = "w-full h-full">
             {/* DESKTOP */}
-              <div className="hidden md:grid md:grid-cols-3 gap-8 ">
+              <div className="hidden md:grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
                 {categories.map((cat) => (
                 <Link
                   key={cat.value}
                   href={`/catalogo?category=${encodeURIComponent(cat.value)}`}
                   className="group bg-white shadow-lg rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-gray-100 hover:border-sky-400 hover:border-2"
                 >
-                  <div className="relative  overflow-hidden">
+                  <div className="relative h-48 overflow-hidden">
                     <Image
                       src={`/images/categorias/${cat.image}.jpg`}
                       alt={cat.name}
                       width={300}
-                      height={200}
+                      height={192}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 "
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent transition-opacity duration-300"></div>
-                    <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-6">
-                      <h3 className="text-2xl font-bold text-neutral-200  mb-2 drop-shadow-lg ">
+                    <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-4">
+                      <h3 className="text-xl font-bold text-white  mb-2 drop-shadow-lg ">
                         {cat.name}
                       </h3>
-                      <div className="inline-flex items-center text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute bottom-4">
+                      <div className="inline-flex items-center text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute bottom-3">
                         Ver productos
                         <svg className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
