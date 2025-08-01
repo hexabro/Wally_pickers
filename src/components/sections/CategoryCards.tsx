@@ -95,10 +95,10 @@ export default function CategoryCards() {
         }}
       >
         {categories.map((cat, i) => (
-          <div
+            <div
             key={cat.name}
             className={`${i=== 1 ? 'snap-center': ''} py-6 flex-shrink-0 w-64 md:flex-shrink md:w-auto hover: z-50`}
-          >
+            >
             <ProfileCard
               name={cat.name}
               title=""
@@ -109,10 +109,10 @@ export default function CategoryCards() {
               showBehindGradient={false}
               showUserInfo={true}
               enableTilt={!isMobile}
-              onContactClick={() => window.open(cat.profileLink, "_blank")}
+              onContactClick={() => window.location.href = cat.profileLink}
               innerGradient="linear-gradient(to bottom, #0e344f, #0b2533, #081821)"
             />
-          </div>
+            </div>
         ))}
       </div>
     </section>
