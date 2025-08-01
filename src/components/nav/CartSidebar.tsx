@@ -73,7 +73,7 @@ const CartSidebar = ({ isOpen, setIsOpen }: propsType) => {
         <X className="w-6 h-6" />
       ) : (
         <div className="relative">
-          <Image src= "images/container2.svg" width={40} height={32} alt="Container" />
+          <Image src="/images/container2.svg" width={40} height={32} alt="Container" />
           {totalItems > 0 && (
             <span className="absolute -bottom-5 -right-6 bg-red-500 text-white text-xs rounded-full px-2 py-0.5 font-bold">
               {totalItems}
