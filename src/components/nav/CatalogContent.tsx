@@ -595,7 +595,7 @@ export default function CatalogContent() {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-6 left-6 md:hidden bg-[#4b68e8] hover:bg-[#6581ff] text-white p-3 rounded-full shadow-lg z-50 transition-all duration-300 hover:scale-110"
+          className="fixed bottom-6 left-6 lg:hidden bg-[#4b68e8] hover:bg-[#6581ff] text-white p-3 rounded-full shadow-lg z-50 transition-all duration-300 hover:scale-110"
           aria-label="Scroll to top"
         >
           <ChevronUp className="w-6 h-6" />
