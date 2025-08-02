@@ -35,7 +35,7 @@ const ProductCard = ({ product, dispatch, REDUCER_ACTIONS, inCart }: PropsType):
   const handleQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     const parsedValue = parseInt(value);
-    const newQuantity = value === '' ? 0 : Math.max(0, parsedValue || 0);
+    const newQuantity = value === '' ? 0 : Math.max(0, Math.min(100, parsedValue || 0));
     setSelectedQuantity(value === '' ? '' : newQuantity);
     
     // Update cart in real time
@@ -49,7 +49,10 @@ const ProductCard = ({ product, dispatch, REDUCER_ACTIONS, inCart }: PropsType):
   };
 
   const increaseQuantity = () => {
-    const newQuantity = (typeof selectedQuantity === 'number' ? selectedQuantity : 0) + 1;
+    const currentQuantity = typeof selectedQuantity === 'number' ? selectedQuantity : 0;
+    if (currentQuantity >= 100) return; // Don't increase if already at max
+    
+    const newQuantity = currentQuantity + 1;
     setSelectedQuantity(newQuantity);
     // Update cart in real time
     if (inCart) {
@@ -145,7 +148,7 @@ const ProductCard = ({ product, dispatch, REDUCER_ACTIONS, inCart }: PropsType):
               id="quantity"
               type="number"
               min="0"
-              max="50"
+              max="100"
               value={selectedQuantity === '' ? '' : selectedQuantity}
               onChange={handleQuantityChange}
               className="flex-1 px-4 py-2 text-center border-0 focus:outline-none focus:ring-0 appearance-none"
@@ -154,7 +157,8 @@ const ProductCard = ({ product, dispatch, REDUCER_ACTIONS, inCart }: PropsType):
             <button
               type="button"
               onClick={increaseQuantity}
-              className="px-4 py-2 bg-[#4b68e8] hover:bg-[#6581ff]  transition-colors"
+              disabled={typeof selectedQuantity === 'number' && selectedQuantity >= 100}
+              className="px-4 py-2 bg-[#4b68e8] hover:bg-[#6581ff] disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
             >
               +
             </button>
