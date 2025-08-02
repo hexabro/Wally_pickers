@@ -17,7 +17,6 @@ const navItems = [
   { href: "/quienes-somos", label: "Sobre Nosotros" },
   { href: "/guia-compra", label: "Guía de Compra" },
   { href: "/contacto", label: "Contacto" },
-  { href: "/blog", label: "Noticias" },
   
 ];
 
@@ -110,38 +109,32 @@ export default function Footer() {
               <p className="text-sm text-gray-300 mb-3">Negocios que apoyamos con calidad:</p>
               
               {/* Placeholder for certification images */}
-              <div className="grid grid-cols-2 gap-3">
-                <div className="bg-white/10 rounded-lg p-3 flex items-center justify-center min-h-[60px] border border-gray-600">
-                  <span className="text-xs text-center text-gray-400">
-                    Restaurantes / Bares / Cafeterías
-                  </span>
-                </div>
-                <div className="bg-white/10 rounded-lg p-3 flex items-center justify-center min-h-[60px] border border-gray-600">
-                  <span className="text-xs text-center text-gray-400">
-                    Supermercados
-                  </span>
-                </div>
-                <div className="bg-white/10 rounded-lg p-3 flex items-center justify-center min-h-[60px] border border-gray-600">
-                  <span className="text-xs text-center text-gray-400">
-                    Distribuidores o mayoristas
-                  </span>
-                </div>
-                <div className="bg-white/10 rounded-lg p-3 flex items-center justify-center min-h-[60px] border border-gray-600">
-                  <span className="text-xs text-center text-gray-400">
-                    Hoteles 
-                  </span>
-                </div>
-                <div className="bg-white/10 rounded-lg p-3 flex items-center justify-center min-h-[60px] border border-gray-600">
-                  <span className="text-xs text-center text-gray-400">
-                    Catering
-                  </span>
-                </div>
-                <div className="bg-white/10 rounded-lg p-3 flex items-center justify-center min-h-[60px] border border-gray-600">
-                  <span className="text-xs text-center text-gray-400">
-                    Tiendas especializadas
-                  </span>
-                </div>
-              </div>
+                <ul className="space-y-2 text-xs text-gray-400">
+                <li className="flex items-center">
+                  <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></div>
+                  Restaurantes / Bares / Cafeterías
+                </li>
+                <li className="flex items-center">
+                  <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></div>
+                  Supermercados
+                </li>
+                <li className="flex items-center">
+                  <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></div>
+                  Distribuidores o mayoristas
+                </li>
+                <li className="flex items-center">
+                  <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></div>
+                  Hoteles
+                </li>
+                <li className="flex items-center">
+                  <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></div>
+                  Catering
+                </li>
+                <li className="flex items-center">
+                  <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></div>
+                  Tiendas especializadas
+                </li>
+                </ul>
               
               <p className="text-xs text-gray-400 mt-3">
                 * ¿No ves tu negocio aquí? ¡Contáctanos! Estamos en constante expansión y buscamos nuevos socios.
