@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 import { X, ShoppingCart, Container, ContainerIcon } from 'lucide-react';
 import CartLineItem from '../ui/CartLineItem';
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 
 type propsType = {
   isOpen: boolean;
@@ -62,26 +62,39 @@ const CartSidebar = ({ isOpen, setIsOpen }: propsType) => {
 
   
 
-  const button = (
-    <button
-      className={`fixed top-1/4 transform -translate-y-1/2 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700  z-50 hover:cursor-pointer transition-all duration-300 ${
-        isOpen ? 'right-96' : 'right-6'
-      }`}
-      onClick={() => setIsOpen(!isOpen)}
-    >
-      {isOpen ? (
-        <X className="w-6 h-6" />
-      ) : (
+  const openButton = (
+    !isOpen && (
+      <motion.button
+        className="fixed top-1/4 transform -translate-y-1/2 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 z-50 hover:cursor-pointer"
+        onClick={() => setIsOpen(true)}
+        initial={{ x: 100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        exit={{ x: 100, opacity: 0 }}
+        transition={{ 
+          type: 'spring',
+          stiffness: 400,
+          damping: 25,
+          duration: 0.2
+        }}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        style={{ right: '24px' }}
+      >
         <div className="relative">
           <Image src="/images/container2.svg" width={40} height={32} alt="Container" />
           {totalItems > 0 && (
-            <span className="absolute -bottom-5 -right-6 bg-red-500 text-white text-xs rounded-full px-2 py-0.5 font-bold">
+            <motion.span 
+              className="absolute -bottom-5 -right-6 bg-red-500 text-white text-xs rounded-full px-2 py-0.5 font-bold"
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.2, type: 'spring', stiffness: 500, damping: 15 }}
+            >
               {totalItems}
-            </span>
+            </motion.span>
           )}
         </div>
-      )}
-    </button>
+      </motion.button>
+    )
   );
 
   const popUpContent = (
@@ -274,20 +287,41 @@ const CartSidebar = ({ isOpen, setIsOpen }: propsType) => {
 
     const content = (
       <>
-        {isOpen && (
-          <>
-            {/* Blurred overlay */}
-            <div
-              className="fixed inset-0 backdrop-blur-sm bg-black/20 z-40"
-              onClick={() => setIsOpen(false)}
-            />
-            {/* Sidebar */}
-            <aside className="fixed top-0 right-0 h-full w-96 bg-white shadow-lg z-[60] flex flex-col transition-transform duration-300">
+        <AnimatePresence mode="wait">
+          {isOpen && (
+            <>
+              {/* Blurred overlay */}
+              <motion.div
+                className="fixed inset-0 backdrop-blur-sm bg-black/20 z-40"
+                onClick={() => setIsOpen(false)}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+              />
+              {/* Sidebar */}
+              <motion.aside 
+                className="fixed top-0 right-0 h-full w-96 bg-white shadow-lg z-[60] flex flex-col"
+                initial={{ x: '100%' }}
+                animate={{ x: 0 }}
+                exit={{ x: '100%' }}
+                transition={{ 
+                  type: 'spring',
+                  stiffness: 300,
+                  damping: 30,
+                  duration: 0.3
+                }}
+              >
               
-              <div className ="flex items-center justify-center p-6 border-b">
-                <h2 className="text-2xl font-bold text-center ">Productos de Interés</h2>
-              
-            </div>
+              <div className ="flex items-center justify-between p-6 border-b">
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="text-gray-500 hover:text-gray-700 transition-colors"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+                <h2 className="text-2xl font-bold text-center flex-1">Productos de Interés</h2>
+              </div>
               <p className = {`${totalItems == 0 ? 'block' : 'hidden'} p-4 text-center`}>
                 ¡Almacena aquí tus productos de interés y solicita información en sólo unos clicks!
               </p>
@@ -304,10 +338,13 @@ const CartSidebar = ({ isOpen, setIsOpen }: propsType) => {
                   Solicitar información
                 </button>
               </div>
-            </aside>
-          </>
-        )}
-        {button}
+            </motion.aside>
+            </>
+          )}
+        </AnimatePresence>
+        <AnimatePresence>
+          {openButton}
+        </AnimatePresence>
         {popUpContent}
       </>
     )
