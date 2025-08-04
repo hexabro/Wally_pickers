@@ -53,7 +53,7 @@ export default function ContactPage() {
      <section className="bg-white py-16  ">
       <div className="container mx-auto flex flex-col-reverse xl:flex-row space-y-8 xl:space-y-0 xl:space-x-8  ">
         {/* Left Column: Contact Info */}
-        <div className="w-full xl:w-2/6 space-y-8 flex flex-col items-start  justify-center py-16 px-5">
+        <div className="w-full xl:w-2/6 space-y-8 flex flex-col items-start  justify-center py-16 px-5 xl:pl-10 3xl:px-0">
           <div className="space-y-4">
             <h2 className="text-4xl font-bold text-[#0e344f] ">¿Dónde está Wally?</h2>
           </div>
