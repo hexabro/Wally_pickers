@@ -225,11 +225,11 @@ const ProductCard = ({ product, dispatch, REDUCER_ACTIONS, inCart }: PropsType):
                     width={300}
                     height={300}
                     alt={product.NOMBRE}
-                    className="w-full max-w-sm h-64 object-cover rounded-lg mb-6 mx-auto"
+                    className="w-full max-w-sm h-64 object-contain rounded-lg mb-6 mx-auto"
                     onError={handleImageError}
                   />
 
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-2 gap-4 bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-100">
                     <div className="space-y-3">
                       <p className="text-sm text-gray-700">
                         <span className="font-semibold">Marca:</span> {product.MARCA}

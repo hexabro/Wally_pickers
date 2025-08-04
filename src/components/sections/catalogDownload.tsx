@@ -4,7 +4,12 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function CatalogSection() {
+interface CatalogSectionProps {
+  bgColor?: string;
+  textColor?: string;
+}
+
+export default function CatalogSection({ bgColor, textColor }: CatalogSectionProps) {
   const [showModal, setShowModal] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", phone: "", tipoNegocio: "" });
 
@@ -56,15 +61,15 @@ export default function CatalogSection() {
   });
 
   return (
-    <section className="flex flex-col-reverse md:flex-row items-center justify-between px-8 py-16 bg-[#0e344f] gap-8">
+    <section className={`flex flex-col-reverse md:flex-row items-center justify-between px-8 py-16  gap-8 ${bgColor || "bg-[#0e344f]"}`}>
       {/* Izquierda: Título + Botón */}
       <div className="flex flex-col items-center  text-center md:text-left max-w-lg">
-        <h2 className="block text-3xl font-bold mb-6 text-center  text-white">
+        <h2 className={`block text-3xl font-bold mb-6 text-center  ${textColor || "text-white"}`}>
           ¡Descubre +300 productos esperándote!
         </h2>
         <button
           onClick={() => setShowModal(true)}
-          className="flex items-center gap-2 px-6 py-3 rounded-full text-white font-semibold bg-gradient-to-r from-blue-700 to-blue-400 hover:from-blue-800 hover:to-blue-500 transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-300 hover:cursor-pointer"
+          className={`flex items-center gap-2 px-6 py-3 rounded-full text-white font-semibold bg-gradient-to-r from-blue-700 to-blue-400 hover:from-blue-800 hover:to-blue-500 transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-300 hover:cursor-pointer`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

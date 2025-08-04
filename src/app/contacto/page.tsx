@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import ContactForm from '@/components/sections/contactForm'
 import Link from 'next/link'
 import { useState } from 'react'
+import { MapPin, Phone, Mail, ShoppingBag, Copy, Check } from 'lucide-react'
 
 export default function ContactPage() {
     const [copied, setCopied] = useState(false);
@@ -49,49 +50,87 @@ export default function ContactPage() {
       </section>
 
       {/* Visit Us Section */}
-     <section className="bg-white py-16 ">
-      <div className="container mx-auto px-4 xl:px-16 2xl:px-4 flex flex-col-reverse xl:flex-row space-y-8 xl:space-y-0 xl:space-x-8  ">
+     <section className="bg-white py-16  ">
+      <div className="container mx-auto flex flex-col-reverse xl:flex-row space-y-8 xl:space-y-0 xl:space-x-8  ">
         {/* Left Column: Contact Info */}
-        <div className="w-full xl:w-2/6 space-y-8 flex flex-col items-start  justify-center py-16  mx-5">
+        <div className="w-full xl:w-2/6 space-y-8 flex flex-col items-start  justify-center py-16 px-5">
           <div className="space-y-4">
-            <h2 className="text-5xl font-bold text-[#0e344f] ">¿Dónde está Wally?</h2>
-             <Link href = "https://www.google.com/maps/place/Wally+Pickers+Trading+S.L./@40.6037937,-3.2232876,629m/data=!3m2!1e3!4b1!4m6!3m5!1s0xd43ade45f6f9797:0x8c4dd2487a6cddae!8m2!3d40.6037897!4d-3.2207127!16s%2Fg%2F11xml5f319?entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D"
-                  target = "_blank"
-                  rel= "noopener noreferrer"
-             >
-              <p className="text-gray-700 underline text-xl lg:text-sm">
-                  C/Francisco de Medina y Mendoza 50, <br />
-                  19171 Cabanillas del Campo (Guadalajara) – España
-                
-                </p>
-             </Link> 
-              
+            <h2 className="text-4xl font-bold text-[#0e344f] ">¿Dónde está Wally?</h2>
           </div>
 
-          <div className="flex flex-col space-y-2 text-gray-700 lg:text-xl text-2xl text-left  w-full">
-            <p ><span className="font-semibold ">Teléfono:</span> (+34) 640 69 05 04</p>
-            <p><span className="font-semibold">Pedidos:</span> (+34) 634 65 34 75</p>
-            <p className="flex items-center space-x-2">
-              <span className="font-semibold">Email:</span>
-              <button
-                onClick={handleCopyEmail}
-                className="underline focus:outline-none hover:cursor-pointer "
-              >
-                {email}
-              </button>
-              {copied && <span className={`text-sm text-[#0e344f] ${copied ? 'hidden' : 'block'}`}>¡Copiado!</span>}
-
-            </p>
+          <div className="flex flex-col space-y-4 w-full">
+            {/* Location Box */}
+            <div className="bg-white p-4 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+              <div className="flex items-start">
+                <div className="p-3  rounded-full mr-4">
+                  <MapPin className="text-[#d68a49] h-6 w-6" />
+                </div>
+                <Link href="https://www.google.com/maps/place/Wally+Pickers+Trading+S.L./@40.6037937,-3.2232876,629m/data=!3m2!1e3!4b1!4m6!3m5!1s0xd43ade45f6f9797:0x8c4dd2487a6cddae!8m2!3d40.6037897!4d-3.2207127!16s%2Fg%2F11xml5f319?entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-blue-600 transition-colors"
+                >
+                  <p className="text-gray-700 ">
+                    C/Francisco de Medina y Mendoza 50, <br />
+                    19171 Cabanillas del Campo (Guadalajara) – España
+                  </p>
+                </Link>
+              </div>
+            </div>
             
+            {/* Phone Box */}
+            <div className="bg-white p-4 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+              <div className="flex items-center">
+                <div className="p-3 0 rounded-full mr-4">
+                  <Phone className="text-[#d68a49] h-6 w-6" />
+                </div>
+                <div>
+                  <p className="text-gray-700"><span className="font-semibold">General:</span> (+34) 640 69 05 04</p>
+                  <p className="text-gray-700"><span className="font-semibold"> Compras:</span> (+34) 634 65 34 75</p>
+                </div>
+                
+              </div>
+            </div>
+            
+
+            
+            {/* Email Box */}
+            <div className="bg-white p-4 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+              <div className="flex items-center">
+                <div className="p-3 rounded-full mr-4">
+                  <Mail className="text-[#d68a49] h-6 w-6" />
+                </div>
+                <div className="flex items-center">
+                  <span className="text-gray-700 mr-2">{email}</span>
+                  <button
+                    onClick={handleCopyEmail}
+                    className="p-2 rounded-full hover:bg-gray-100 focus:outline-none transition-colors flex items-center justify-center relative"
+                    title="Copiar al portapapeles"
+                  >
+                    {copied ? (
+                      <Check className="h-5 w-5 text-green-600" />
+                    ) : (
+                      <Copy className="h-5 w-5 text-gray-500 hover:text-[#d68a49]" />
+                    )}
+                    {copied && (
+                      <span className="absolute -bottom-7 left-1/2 transform -translate-x-1/2 text-xs bg-gray-800 text-white py-1 px-2 rounded whitespace-nowrap">
+                        ¡Copiado!
+                      </span>
+                    )}
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
          
         </div>
 
         {/* Right Column: Map */}
-        <div className="w-full xl:w-4/6">
+        <div className="w-full xl:w-4/6 p-4">
           <div className="relative w-full h-[50vh] 2xl:h-[80vh]  rounded-lg overflow-hidden shadow-lg">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2741.2525233398937!2d-3.223287624507281!3d40.603793744233876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd43ade45f6f9797%3A0x8c4dd2487a6cddae!2sWally%20Pickers%20Trading%20S.L.!5e1!3m2!1ses!2ses!4v1753092901195!5m2!1ses!2ses"              width="100%"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2741.2525233398937!2d-3.223287624507281!3d40.603793744233876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd43ade45f6f9797%3A0x8c4dd2487a6cddae!2sWally%20Pickers%20Trading%20S.L.!5e1!3m2!1ses!2ses!4v1753092901195!5m2!1ses!2ses"
+              width="100%"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen={false}

@@ -32,7 +32,8 @@ const features = [
 export default function FeaturesSection() {
 
     const containerRef = useRef<HTMLDivElement>(null);
-    const [pointer, setPointer] = useState<{ x: number; y: number }>({ x: -1000, y: -1000 });
+    const [pointer, setPointer] = useState<{ x: number; y: number }>({ x: -9999, y: -9999 });
+    const [isMouseInSection, setIsMouseInSection] = useState(false);
   
     // Update pointer position logic
     const updatePointer = (clientX: number, clientY: number) => {
@@ -45,11 +46,15 @@ export default function FeaturesSection() {
       }
     };
   
-    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) =>
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+      setIsMouseInSection(true);
       updatePointer(e.clientX, e.clientY);
+    };
   
-    const handleMouseLeave = () =>
-      setPointer({ x: -1000, y: -1000 });
+    const handleMouseLeave = () => {
+      setIsMouseInSection(false);
+      setPointer({ x: -9999, y: -9999 });
+    };
 
   return (
     <section 
@@ -67,27 +72,39 @@ export default function FeaturesSection() {
           {features.map(({ title, Icon }) => (
             <div key={title} className="flex flex-col items-center space-y-4">
               <Icon className="w-12 h-12 text-[#0e344f]" />
-              <MagnifyingSection  description = {title} titleColor='black' descColor='black' magnifyColor="[#0e344f]" textCentered={true}/>
+              <MagnifyingSection 
+               description = {title} 
+               titleColor='black'
+                descColor='black' 
+                magnifyColor="border-[#0e344f]" 
+                stickColor="bg-[#0e344f]"
+                textCentered={true}
+                bgColor="bg-gray-50"/>
             </div>
           ))}
         </div>
       </div>
 
       {/* Magnifier lens */}
-      <div
-        className={`absolute w-40 h-40  rounded-full border-2  border-black pointer-events-none hidden xl:block`}
-        style={{ left: pointer.x - 80, top: pointer.y - 80 }}
-      />
-      {/* PALO */}
-      <div
-        className={`absolute w-2 h-20 rounded-b-3xl bg-black pointer-events-none hidden xl:block`}
-        style={{
-          left: pointer.x - 60,
-          top: pointer.y + 50,
-          transform: 'rotate(45deg)',
-          transformOrigin: 'top left'
-        }}
-      />
+        <div>
+          {/*LENS */}
+           <div
+            className={`absolute w-40 h-40 rounded-full border-2 border-[#0e344f] pointer-events-none ${isMouseInSection ? 'xl:block' : 'hidden'}`}
+            style={{ left: pointer.x - 80, top: pointer.y - 80 }}
+           />
+            {/* PALO */}
+            <div
+              className={`absolute w-2 h-20 rounded-b-3xl bg-[#0e344f] pointer-events-none ${isMouseInSection ? 'xl:block' : 'hidden'}`}
+              style={{
+                left: pointer.x - 60,
+                top: pointer.y + 50,
+                transform: 'rotate(45deg)',
+                transformOrigin: 'top left'
+              }}
+            />
+        
+        </div>
+       
     </section>
   )
 }

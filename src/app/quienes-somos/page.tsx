@@ -74,7 +74,7 @@ const AboutUsPage: React.FC = () => {
       
 
       {/* SECCIÓN DE FORMULARIO DE CONTACTO, FORMULARIO A LA DRECHA Y SECCIÓN DE TEXTO A LA IZQUIERDA */}
-        <div className="mx-auto p-10 pt-10 flex flex-col md:flex-row items-stretch gap-8 ">
+        <div id="contact" className="mx-auto p-10 pt-10 flex flex-col md:flex-row items-stretch gap-8 ">
           <div className="relative  bg-center flex-1 rounded-lg text-center md:text-left flex flex-col justify-center h-auto" 
             style = {{ backgroundImage: "url(/images/contact/background.jpg)", }}>
           {/* DARK OVERLAY */}
@@ -99,8 +99,8 @@ const AboutUsPage: React.FC = () => {
         </div>
 
       {/* SECCIÓN DE DESCARGA DE CATÁLOGO */}
-      <CatalogDownload />
-        
+      <CatalogDownload textColor = "text-[#0e344f]" bgColor="bg-gray-50"/>
+
     </main>
   );
 };

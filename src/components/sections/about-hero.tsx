@@ -20,7 +20,7 @@ export default function AboutHero() {
     <section className="relative w-full h-[70vh] md:h-[80vh] lg:h-[90vh] overflow-hidden">
       {/* Background image */}
       <Image
-        src="/images/about/hero-img-tmpl.jpg"
+        src="/images/about/about-hero.jpg"
         alt="Hero background"
         fill
         className="object-cover object-bottom"

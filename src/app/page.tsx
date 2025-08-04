@@ -72,14 +72,15 @@ export default function HomePage() {
         <div className="w-full md:w-1/2 h-64 my-20">
           <MagnifyingSection  
             title = "Calidad garantizada" 
-            description = {`Trabajamos con fabricantes y distribuidores líderes en Asia, América, Europa y Reino Unido.${<br />}
-            Contamos con más de 300 productos internacionales listos para tu negocio, con alta rotación,${<br />}>
-            márgenes competitivos y distribución eficiente.`}
-             titleColor="white" 
-             descColor= "white"
-             magnifyColor="white" 
-             textCentered={false}/>
-          
+            description = 
+              "Trabajamos con fabricantes y distribuidores líderes en Asia, América, Europa y Reino Unido.         Contamos con más de 300 productos internacionales listos para tu negocio, con alta rotación, márgenes competitivos y distribución eficiente."
+            titleColor="white" 
+            descColor= "white"
+            magnifyColor="border-white" 
+            stickColor="bg-white"
+            textCentered={false}
+            bgColor="bg-[#2c81be]"/>
+
         </div>
         <div className="w-full md:w-1/2">
           <Image

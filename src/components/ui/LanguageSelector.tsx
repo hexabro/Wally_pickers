@@ -43,18 +43,17 @@ export default function LanguageSelector() {
             {/* BOTÓN PRINCIPAL */}
             <button
                 onClick={() => setIsOpen((prev) => !prev)}
-                className="flex items-center gap-2 rounded-md bg-green-600 px-4 py-2 text-white font-medium hover:bg-green-500 transition"
+                className="flex text-sm items-center gap-2 rounded-md bg-green-600 px-4 py-2 text-white font-medium hover:bg-green-500 transition"
             >
             <Image
                 src= {flagSrc[selectedLang]}
                 alt = {`Bandera ${selectedLang}`}
-                width={20}
+                width={15}
                 height={20}
                 className = "rounded-sm"
             />
             
             {selectedLang}
-            <ChevronDown size={18} className="shrink-0" />
             </button>
 
             {/* LISTA DESPLEGABLE */}

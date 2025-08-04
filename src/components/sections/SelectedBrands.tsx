@@ -38,8 +38,8 @@ const brands = [
 
 export default function SelectedBrands() {
   return (
-    <section className="  bg-gray-50">
-      <div className="mx-auto px-6 lg:px-8">
+    <section className="bg-gray-50 py-12 md:py-16">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8">
         {/* Header */}
         <motion.div
           className="text-center mb-16"
@@ -59,7 +59,7 @@ export default function SelectedBrands() {
 
         {/* Brands Grid */}
         <motion.div
-          className="grid grid-cols-4 md:flex md:flex-wrap justify-start items-center "
+          className="grid grid-cols-4 gap-2 justify-items-center md:flex md:flex-wrap md:justify-center items-center mx-auto"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -68,7 +68,7 @@ export default function SelectedBrands() {
           {brands.map((brand, index) => (
             <motion.div
               key={brand.name}
-              className="group  bg-gray-50 w-24 h-20 sm:w-36 sm:h-24 md:w-40 md:h-28 lg:w-44 lg:h-32"
+              className="group bg-gray-50 w-20 h-20 sm:w-32 sm:h-24 md:w-40 md:h-28 lg:w-44 lg:h-32 flex items-center justify-center mx-auto"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

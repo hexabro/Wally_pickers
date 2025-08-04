@@ -48,47 +48,67 @@ const NavBar = () => {
 
   const NavContent = ({ isMobile = false }) => (
     <>
-      {/* ---------- Botón hamburguesa (solo móvil) ---------- */}
-      <button onClick={() => setIsOpen(true)} className="lg:hidden hover:cursor-pointer" aria-label="Abrir menú">
-        <Menu size={28} />
-      </button>
+      {/* Mobile Layout */}
+      <div className="lg:hidden w-full flex items-center justify-between relative">
+        {/* ---------- Botón hamburguesa (solo móvil) ---------- */}
+        <button onClick={() => setIsOpen(true)} className="hover:cursor-pointer" aria-label="Abrir menú">
+          <Menu size={28} />
+        </button>
 
-      {/* ---------- Logo (solo desktop) ---------- */}
-      <Link href="/" className="hidden lg:flex  ml-4">
-        <Image
-          src="/images/logo_wally.svg"
-          alt="Wally pickers logo"
-          width={130}
-          height={40}
-          priority
-        />
-      </Link>
+        {/* ---------- Logo (mobile centered) ---------- */}
+        <Link href="/" className="absolute left-1/2 transform -translate-x-1/2">
+          <Image
+            src="/images/logo_wally.svg"
+            alt="Wally pickers logo"
+            width={100}
+            height={40}
+            priority
+          />
+        </Link>
 
-      {/* ---------- Links navegación (desktop) ---------- */}
-      <ul className="hidden lg:flex items-center gap-10 text-lg font-medium">
-        {navItems.map(({ href, label }) => {
-          const isActive = pathname === href || (href !== '/' && pathname.startsWith(href));
-          return (
-            <li key={href}>
-              <Link
-                href={href}
-                className={cn(
-                  'relative transition-colors font-semibold',
-                  isActive
-                    ? 'text-[#1a5a85] underline decoration-2 underline-offset-8'
-                    : 'text-[#070707] hover:text-[#6b80c1] hover:underline hover:decoration-2 underline-offset-8'
-                )}
-                aria-current={isActive ? 'page' : undefined}
-              >
-                {label}
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-    
-      {/* ---------- Selector de idioma ---------- */}
-      <LanguageSelector />
+        {/* ---------- Selector de idioma (móvil) ---------- */}
+        <LanguageSelector />
+      </div>
+
+      {/* Desktop Layout */}
+      <div className="hidden lg:flex items-center justify-between w-full">
+        {/* ---------- Logo (desktop left) ---------- */}
+        <Link href="/" className="ml-4">
+          <Image
+            src="/images/logo_wally.svg"
+            alt="Wally pickers logo"
+            width={110}
+            height={40}
+            priority
+          />
+        </Link>
+
+        {/* ---------- Links navegación (desktop) ---------- */}
+        <ul className="flex items-center gap-10 text-lg font-medium">
+          {navItems.map(({ href, label }) => {
+            const isActive = pathname === href || (href !== '/' && pathname.startsWith(href));
+            return (
+              <li key={href}>
+                <Link
+                  href={href}
+                  className={cn(
+                    'relative transition-colors font-semibold',
+                    isActive
+                      ? 'text-[#1a5a85] underline decoration-2 underline-offset-8'
+                      : 'text-[#070707] hover:text-[#6b80c1] hover:underline hover:decoration-2 underline-offset-8'
+                  )}
+                  aria-current={isActive ? 'page' : undefined}
+                >
+                  {label}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      
+        {/* ---------- Selector de idioma (desktop) ---------- */}
+        <LanguageSelector />
+      </div>
     </>
   );
 

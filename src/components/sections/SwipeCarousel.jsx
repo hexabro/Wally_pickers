@@ -53,7 +53,7 @@ export const SwipeCarousel = () => {
   };
 
   return (
-    <div className="relative overflow-hidden  py-8">
+    <div className="relative overflow-hidden w-full">
       <motion.div
         drag="x"
         dragConstraints={{
@@ -68,7 +68,7 @@ export const SwipeCarousel = () => {
         }}
         transition={SPRING_OPTIONS}
         onDragEnd={onDragEnd}
-        className="flex cursor-grab items-center active:cursor-grabbing"
+        className="flex cursor-grab items-center active:cursor-grabbing w-full"
       >
         <Images imgIndex={imgIndex} />
       </motion.div>
@@ -95,7 +95,7 @@ const Images = ({ imgIndex }) => {
               scale: imgIndex === idx ? 1 : 1,
             }}
             transition={SPRING_OPTIONS}
-            className={`aspect-video w-screen h-[25vh] sm:h-[30vh] md:h-[35vh] xl:h-[75vh] shrink-0 bg-neutral-800 object-cover `}
+            className={`aspect-video w-full h-[25vh] sm:h-[30vh] md:h-[35vh] xl:h-[75vh] flex-shrink-0 bg-neutral-800 object-cover`}
           />
         );
       })}
