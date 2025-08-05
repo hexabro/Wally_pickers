@@ -1,0 +1,112 @@
+{
+  "navigation": {
+    "home": "Startseite",
+    "products": "Produkte",
+    "contact": "Kontakt",
+    "catalog": "Katalog",
+    "buyGuide": "Einkaufsführer",
+    "aboutUs": "Über Uns",
+    "becomeClient": "Kunde Werden",
+    "news": "Nachrichten"
+  },
+  "hero": {
+    "title": "Ihr strategischer Partner für internationale Produkte",
+    "subtitle": "Wir verbinden Ihr Unternehmen mit den besten Marken und Produkten der Welt. Entdecken, importieren und verkaufen Sie mit Vertrauen.",
+    "cta": "Produkte Anzeigen",
+    "watch": "Video Ansehen"
+  },
+  "features": {
+    "title": "Entdecken Sie, was uns einzigartig macht",
+    "analysis": "Trendanalyse",
+    "network": "Globales Lieferantennetzwerk",
+    "logistics": "Schnelle und sichere Logistik",
+    "prices": "Wettbewerbsfähige Preise"
+  },
+  "brands": {
+    "title": "Marken, die uns vertrauen",
+    "description": "Wir arbeiten mit den bekanntesten Marken der Welt zusammen, um Ihnen Produkte höchster Qualität zu bieten"
+  },
+  "reasons": {
+    "title": "Warum uns wählen?",
+    "experience": {
+      "title": "10+ Jahre Erfahrung",
+      "description": "Ein Jahrzehnt der Verbindung von Unternehmen mit hochwertigen internationalen Produkten"
+    },
+    "network": {
+      "title": "Globales Lieferantennetzwerk",
+      "description": "Wir arbeiten mit den besten Lieferanten aus Asien, Europa und Amerika"
+    },
+    "logistics": {
+      "title": "Effiziente Logistik",
+      "description": "Schnelle und sichere Lieferung in ganz Spanien und Europa"
+    },
+    "support": {
+      "title": "Persönlicher Support",
+      "description": "Engagiertes Team, das Ihnen bei jedem Schritt des Prozesses hilft"
+    }
+  },
+  "contact": {
+    "title": "Lass uns reden!",
+    "subtitle": "Interessieren Sie sich für eines unserer Produkte oder denken Sie, dass wir zusammenarbeiten könnten? Sie wissen, was zu tun ist.",
+    "form": {
+      "name": "Name",
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "companyType": "Geschäftstyp",
+      "companyTypes": [
+        "Restaurant / Bar / Café",
+        "Lebensmittelgeschäft / Supermarkt",
+        "Großhändler / Distributor",
+        "Hotel / Catering",
+        "Fachgeschäft",
+        "Andere (angeben)"
+      ],
+      "message": "Nachricht",
+      "send": "Senden",
+      "required": "Dieses Feld ist erforderlich"
+    },
+    "info": {
+      "title": "Wo ist Wally?",
+      "address": "Adresse",
+      "phone": {
+        "general": "allgemein",
+        "sales": "Vertrieb"
+      }
+    }
+  },
+  "about": {
+    "title": "Über Uns",
+    "mission": "Unsere Mission",
+    "vision": "Unsere Vision",
+    "values": "Unsere Werte"
+  },
+  "products": {
+    "title": "Unsere Produkte",
+    "search": "Produkte suchen...",
+    "filter": "Filtern",
+    "category": "Kategorie",
+    "brand": "Marke",
+    "inCart": "Im Container",
+    "quantity": "Menge",
+    "viewMore": "Weitere Informationen anzeigen",
+    "close": "Schließen",
+    "description": "Beschreibung",
+    "noDescription": "Keine Beschreibung für dieses Produkt verfügbar."
+  },
+  "buyGuide": {
+    "title": "Einkaufsführer",
+    "subtitle": "Tipps und Strategien für den erfolgreichen Import von Produkten",
+    "readMore": "Weiterlesen",
+    "backToBlog": "Weitere Artikel anzeigen",
+    "tags": "Schlagwörter",
+    "readTime": "Min. Lesezeit",
+    "back": "Zurück"
+  },
+  "common": {
+    "loading": "Wird geladen...",
+    "error": "Ein Fehler ist aufgetreten",
+    "tryAgain": "Erneut versuchen",
+    "notFound": "Nicht gefunden",
+    "goBack": "Zurück gehen"
+  }
+}

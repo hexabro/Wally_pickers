@@ -2,7 +2,7 @@ import CountUp from "../ui/CountUp";
 /* =============== 3 · MÉTRICAS DESTACADAS ==================== */
 const metrics = [
   { label: "productos internacionales", value: "300" },
-  { label: "Países abastecidos", value: "27" },
+  { label: "Países integrados en nuestro catálogo", value: "27" },
   { label: "Marcas exclusivas", value: "45" },
   { label: "+Clientes B2B", value: "600" },
 ];

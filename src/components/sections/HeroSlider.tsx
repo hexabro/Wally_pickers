@@ -23,7 +23,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 
 /* ====================== 1 · ARRAY ORIGINAL ========================== */
 const heroSlides = [
-  { src: "/images/hero/tmpl1.jpg", alt: "Jamón Ibérico" },
+  { src: "/images/hero/prueba-def (2560 x 1080 px).jpg", alt: "Jamón Ibérico" },
   { src: "/images/hero/tmpl2.jpg", alt: "Jamón Ibérico" },
   { src: "/images/hero/tmpl3.jpg", alt: "Jamón Ibérico" },
   

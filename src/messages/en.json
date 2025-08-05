@@ -1,0 +1,112 @@
+{
+  "navigation": {
+    "home": "Home",
+    "products": "Products",
+    "contact": "Contact",
+    "catalog": "Catalog",
+    "buyGuide": "Buy Guide",
+    "aboutUs": "About Us",
+    "becomeClient": "Become Client",
+    "news": "News"
+  },
+  "hero": {
+    "title": "Your strategic partner in international products",
+    "subtitle": "We connect your business with the best brands and products in the world. Discover, import and sell with confidence.",
+    "cta": "View Products",
+    "watch": "Watch Video"
+  },
+  "features": {
+    "title": "Discover what makes us unique",
+    "analysis": "Trend analysis",
+    "network": "Global supplier network",
+    "logistics": "Fast and secure logistics",
+    "prices": "Competitive prices"
+  },
+  "brands": {
+    "title": "Brands that trust us",
+    "description": "We work with the world's most recognized brands to offer you the highest quality products"
+  },
+  "reasons": {
+    "title": "Why choose us?",
+    "experience": {
+      "title": "10+ years of experience",
+      "description": "A decade connecting companies with quality international products"
+    },
+    "network": {
+      "title": "Global supplier network",
+      "description": "We work with the best suppliers from Asia, Europe and America"
+    },
+    "logistics": {
+      "title": "Efficient logistics",
+      "description": "Fast and secure delivery throughout Spain and Europe"
+    },
+    "support": {
+      "title": "Personalized support",
+      "description": "Dedicated team to help you every step of the way"
+    }
+  },
+  "contact": {
+    "title": "Let's talk!",
+    "subtitle": "Are you interested in any of our products or think we could collaborate? You know what to do.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "companyType": "Business type",
+      "companyTypes": [
+        "Restaurant / Bar / Café",
+        "Grocery store / Supermarket",
+        "Wholesaler / Distributor",
+        "Hotel / Catering",
+        "Specialized store",
+        "Other (specify)"
+      ],
+      "message": "Message",
+      "send": "Send",
+      "required": "Complete this field"
+    },
+    "info": {
+      "title": "Where is Wally?",
+      "address": "Address",
+      "phone": {
+        "general": "general",
+        "sales": "sales"
+      }
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "mission": "Our Mission",
+    "vision": "Our Vision",
+    "values": "Our Values"
+  },
+  "products": {
+    "title": "Our Products",
+    "search": "Search products...",
+    "filter": "Filter",
+    "category": "Category",
+    "brand": "Brand",
+    "inCart": "In container",
+    "quantity": "Quantity",
+    "viewMore": "View more information",
+    "close": "Close",
+    "description": "Description",
+    "noDescription": "No description available for this product."
+  },
+  "buyGuide": {
+    "title": "Buy Guide",
+    "subtitle": "Tips and strategies for importing successful products",
+    "readMore": "Read more",
+    "backToBlog": "View more articles",
+    "tags": "Tags",
+    "readTime": "min read",
+    "back": "Back"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "tryAgain": "Try again",
+    "notFound": "Not found",
+    "goBack": "Go back"
+  }
+}

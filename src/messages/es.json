@@ -1,0 +1,114 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "products": "Productos",
+    "contact": "Contacto",
+    "catalog": "Catálogo",
+    "buyGuide": "Guía de Compra",
+    "aboutUs": "Quiénes Somos",
+    "becomeClient": "Ser Cliente",
+    "news": "Noticias"
+  },
+  "hero": {
+    "title": "Tu socio estratégico en productos internacionales",
+    "subtitle": "Conectamos tu negocio con las mejores marcas y productos del mundo. Descubre, importa y vende con confianza.",
+    "cta": "Ver Productos",
+    "watch": "Ver Video"
+  },
+  "features": {
+    "title": "Descubre lo que nos hace únicos",
+    "analysis": "Análisis de tendencias",
+    "network": "Red global de proveedores",
+    "logistics": "Logística rápida y segura",
+    "prices": "Precios competitivos"
+  },
+  "brands": {
+    "title": "Marcas que confían en nosotros",
+    "description": "Trabajamos con las marcas más reconocidas del mundo para ofrecerte productos de la más alta calidad"
+  },
+  "reasons": {
+    "title": "¿Por qué elegirnos?",
+    "experience": {
+      "title": "10+ años de experiencia",
+      "description": "Una década conectando empresas con productos internacionales de calidad"
+    },
+    "network": {
+      "title": "Red global de proveedores",
+      "description": "Trabajamos con los mejores proveedores de Asia, Europa y América"
+    },
+    "logistics": {
+      "title": "Logística eficiente",
+      "description": "Entrega rápida y segura en toda España y Europa"
+    },
+    "support": {
+      "title": "Soporte personalizado",
+      "description": "Equipo dedicado para ayudarte en cada paso del proceso"
+    }
+  },
+
+  "contact": {
+    "title": "¡Hablemos!",
+    "subtitle": "¿Te interesa alguno de nuestros productos o crees que podríamos colaborar? Ya sabes lo que hacer.",
+    "form": {
+      "name": "Nombre",
+      "email": "Correo",
+      "phone": "Teléfono",
+      "companyType": "Tipo de negocio",
+      "companyTypes": [
+        "Restaurante / Bar / Cafetería",
+        "Tienda de alimentación / Supermercado",
+        "Mayorista / Distribuidor",
+        "Hotel / Catering",
+        "Tienda especializada",
+        "Otro (especificar)"
+      ],
+      "message": "Mensaje",
+      "send": "Enviar",
+      "required": "Completa este campo"
+    },
+    "info": {
+      "title": "¿Dónde está Wally?",
+      "phone": {
+        "general": "General",
+        "sales": "Ventas"
+      },
+      "copy": "Copiar al portapapeles"
+    }
+  },
+
+  "about": {
+    "title": "Quiénes Somos",
+    "mission": "Nuestra Misión",
+    "vision": "Nuestra Visión",
+    "values": "Nuestros Valores"
+  },
+  "products": {
+    "title": "Nuestros Productos",
+    "search": "Buscar productos...",
+    "filter": "Filtrar",
+    "category": "Categoría",
+    "brand": "Marca",
+    "inCart": "En el container",
+    "quantity": "Cantidad",
+    "viewMore": "Ver más información",
+    "close": "Cerrar",
+    "description": "Descripción",
+    "noDescription": "No hay descripción disponible para este producto."
+  },
+  "buyGuide": {
+    "title": "Guía de Compra",
+    "subtitle": "Consejos y estrategias para importar productos exitosos",
+    "readMore": "Leer más",
+    "backToBlog": "Ver más artículos",
+    "tags": "Etiquetas",
+    "readTime": "min lectura",
+    "back": "Volver"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Ha ocurrido un error",
+    "tryAgain": "Intentar de nuevo",
+    "notFound": "No encontrado",
+    "goBack": "Volver"
+  }
+}

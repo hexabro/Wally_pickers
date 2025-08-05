@@ -3,9 +3,8 @@ import React, { useEffect, useState } from "react";
 import { motion, useMotionValue } from "framer-motion";
 
 const imgs = [
-  "/images/hero/tmpl1.jpg",
-  "/images/hero/tmpl2.jpg",
-  "/images/hero/tmpl3.jpg",
+  "/images/hero/1.jpg",
+  "/images/hero/2.jpg",
   
 ];
 

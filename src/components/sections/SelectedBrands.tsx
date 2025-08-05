@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useTranslations } from 'next-intl';
 
 const brands = [
   { name: "Calypso", logo: "/images/brands/calypso.svg" },
@@ -37,6 +38,8 @@ const brands = [
 ];
 
 export default function SelectedBrands() {
+  const t = useTranslations('brands');
+  
   return (
     <section className="bg-gray-50 py-12 md:py-16">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
@@ -49,10 +52,10 @@ export default function SelectedBrands() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-[#0e344f] mb-4">
-            Marcas que confían en nosotros
+            {t('title')}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Trabajamos con las marcas más reconocidas del mundo para ofrecerte productos de la más alta calidad
+            {t('description')}
           </p>
           <div className="mt-6 w-24 h-0.5 bg-[#d68a49] mx-auto rounded-full"></div>
         </motion.div>

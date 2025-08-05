@@ -5,8 +5,10 @@ import ContactForm from '@/components/sections/contactForm'
 import Link from 'next/link'
 import { useState } from 'react'
 import { MapPin, Phone, Mail, ShoppingBag, Copy, Check } from 'lucide-react'
+import { useTranslations } from 'next-intl';
 
 export default function ContactPage() {
+  const t = useTranslations('contact');
     const [copied, setCopied] = useState(false);
     const email = 'info@wally-pickers.com';
 
@@ -20,11 +22,15 @@ export default function ContactPage() {
       }
     };
 
+    const title = t('title');
+    const subtitle = t('subtitle');
+
+
   return (
     <main className="bg-gray-50">
       {/* Hero Section */}
       <section className="flex flex-col md:flex-row items-center py-16 px-6 md:px-12 h-auto lg:h-screen bg-cover bg-center"
-       style={{ backgroundImage: "url('images/contact/bg.jpg')" }}
+       style={{ backgroundImage: "url('/images/contact/bg.jpg')" }}
       >
         <motion.div
           className="md:w-1/2 space-y-6 "
@@ -33,10 +39,10 @@ export default function ContactPage() {
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-4xl md:text-5xl font-bold text-white">
-            ¡Hablemos!
+            {title}
           </h1>
           <p className="text-xl text-gray-300  max-w-xl">
-            ¿Te interesa alguno de nuestros productos o crees que podríamos colaborar? Ya sabes lo que hacer
+            {subtitle}
           </p>
         </motion.div>
         <motion.div
@@ -55,7 +61,7 @@ export default function ContactPage() {
         {/* Left Column: Contact Info */}
         <div className="w-full xl:w-2/6 space-y-8 flex flex-col items-start  justify-center py-16 px-5 xl:pl-10 3xl:px-0">
           <div className="space-y-4">
-            <h2 className="text-4xl font-bold text-[#0e344f] ">¿Dónde está Wally?</h2>
+            <h2 className="text-4xl font-bold text-[#0e344f] ">{t('info.title')}</h2>
           </div>
 
           <div className="flex flex-col space-y-4 w-full">
@@ -85,8 +91,8 @@ export default function ContactPage() {
                   <Phone className="text-[#d68a49] h-6 w-6" />
                 </div>
                 <div>
-                  <p className="text-gray-700"><span className="font-semibold">General:</span> (+34) 640 69 05 04</p>
-                  <p className="text-gray-700"><span className="font-semibold"> Compras:</span> (+34) 634 65 34 75</p>
+                  <p className="text-gray-700"><span className="font-semibold">{t('info.phone.general')}:</span> (+34) 640 69 05 04</p>
+                  <p className="text-gray-700"><span className="font-semibold">{t('info.phone.sales')}:</span> (+34) 634 65 34 75</p>
                 </div>
                 
               </div>
@@ -105,7 +111,7 @@ export default function ContactPage() {
                   <button
                     onClick={handleCopyEmail}
                     className="p-2 rounded-full hover:bg-gray-100 focus:outline-none transition-colors flex items-center justify-center relative"
-                    title="Copiar al portapapeles"
+                    title={t('info.copy')}
                   >
                     {copied ? (
                       <Check className="h-5 w-5 text-green-600" />

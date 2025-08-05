@@ -25,26 +25,26 @@ export default function ReasonsCards() {
  const cards = [
     {
       id: 1,
-      title: 'Más de 25 años de experiencia',
-      description: 'Importando productos FMCG desde 1998 con profundo conocimiento de mercado global.',
+      title: 'Más de 27 países en un sólo lugar',
+      description: 'Importando productos FMCG más exclusivos de más de 27 países.',
       Icon: Award
     },
     {
       id: 2,
-      title: 'Certificaciones internacionales',
-      description: 'Cumplimos con ISO 9001 e ISO 22000 para garantizar calidad y seguridad alimentaria.',
+      title: 'Comprometidos con la seguridad',
+      description: 'Aplicando nuestro propio sistema APPCC. garantizando productos seguros y de la máxima calidad',
       Icon: ShieldCheck
     },
     {
       id: 3,
-      title: 'Red logística global',
-      description: 'Distribución eficiente en más de 60 países con socios de transporte de primer nivel.',
+      title: 'Cobertura en crecimiento',
+      description: 'Ampliamos nuestra red de distribución cada día, asegurando un servicio ágil y fiable para nuestros clientes.',
       Icon: Globe
     },
     {
       id: 4,
-      title: 'Alianzas con marcas líderes',
-      description: 'Socios oficiales de proveedores top en el sector FMCG, avalados por referencias de clientes.',
+      title: 'Impulsamos el valor de cada marca',
+      description: 'Impulsamos a nuestros proveedores con distribución cuidada y enfoque en crecimiento conjunto.',
       Icon: Truck
     },
     {

@@ -1,5 +1,6 @@
 "use client"
 import { useRef, useState } from 'react';
+import { useTranslations } from 'next-intl';
 import {
   TrendingUp,
   Globe,
@@ -10,26 +11,28 @@ import {
 
 import MagnifyingSection from './magnifyingSection';
 import AnimatedUnderline from '../ui/animatedUnderline';
-const features = [
-{
-    title: 'Análisis de tendencias',
-    Icon: TrendingUp,
-},
-{
-    title: 'Red global de proveedores',
-    Icon: Globe,
-},
-{
-    title: 'Logística rápida y segura',
-    Icon: Truck,
-},
-{
-    title: 'Precios competitivos',
-    Icon: DollarSign,
-},
-]
 
 export default function FeaturesSection() {
+  const t = useTranslations('features');
+  
+  const features = [
+    {
+      title: t('analysis'),
+      Icon: TrendingUp,
+    },
+    {
+      title: t('network'),
+      Icon: Globe,
+    },
+    {
+      title: t('logistics'),
+      Icon: Truck,
+    },
+    {
+      title: t('prices'),
+      Icon: DollarSign,
+    },
+  ]
 
     const containerRef = useRef<HTMLDivElement>(null);
     const [pointer, setPointer] = useState<{ x: number; y: number }>({ x: -9999, y: -9999 });
@@ -65,7 +68,7 @@ export default function FeaturesSection() {
     className="relative bg-gray-50 py-16 mb-0 pb-20 xl:cursor-none">
       <div className="max-w-4xl mx-auto px-4 text-center s">
         <h2 className="text-2xl md:text-3xl font-semibold text-[#0e344f] mb-20   ">
-          Descubre lo que nos hace  <AnimatedUnderline>únicos</AnimatedUnderline>
+          {t('title').split(' ').slice(0, -1).join(' ')} <AnimatedUnderline>{t('title').split(' ').slice(-1)}</AnimatedUnderline>
         </h2>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-x-0 ">

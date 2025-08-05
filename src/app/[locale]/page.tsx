@@ -98,7 +98,7 @@ export default function HomePage() {
         <h2 className="text-3xl font-bold text-center text-sky-900 bg-neutral-100">
           Marcas que confían en nosotros
         </h2>
-        <p className = "text-center pt-3.5 ">Descubre algunas de las empresas líderes que ya han apostado por nuestro trabajo.</p>
+        <p className = "text-center pt-3.5 ">Descubre algunas de las empresas líderes con lo más alto en calidad.</p>
       </div>
       
       <BrandCarousel 
