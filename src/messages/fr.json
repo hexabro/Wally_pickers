@@ -343,6 +343,11 @@
       "send": "Envoyer et télécharger",
       "cancel": "Annuler",
       "required": "Complétez ce champ"
+    },
+    "confirmation": {
+      "title": "Téléchargement commencé !",
+      "message": "Votre catalogue est en cours de téléchargement. Nous vous contacterons bientôt avec des informations plus personnalisées.",
+      "close": "Fermer"
     }
   },
   "ContactForm": {

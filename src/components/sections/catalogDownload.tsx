@@ -14,6 +14,7 @@ interface CatalogSectionProps {
 export default function CatalogSection({ bgColor, textColor }: CatalogSectionProps) {
   const t = useTranslations("catalogDownload");
   const [showModal, setShowModal] = useState(false);
+  const [showConfirmation, setShowConfirmation] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", phone: "", tipoNegocio: "" });
 
   // Get the company types array directly from translations
@@ -21,8 +22,8 @@ export default function CatalogSection({ bgColor, textColor }: CatalogSectionPro
   const handleSubmit = (async (e: React.FormEvent) => {
     e.preventDefault();
     setShowModal(false);
+    
     // Call the function to submit the order
-
     const nombre = (document.getElementById("name") as HTMLInputElement).value;
     const correo = (document.getElementById("email") as HTMLInputElement).value;
     const telefono = (document.getElementById("phone") as HTMLInputElement).value;
@@ -30,8 +31,6 @@ export default function CatalogSection({ bgColor, textColor }: CatalogSectionPro
     const mensaje ="Descarga de catálogo 2025";
 
     const endpoint = "https://script.google.com/macros/s/AKfycbx0dXA_HD8iLd59h-AzeBRAOFSugALL-mhRFr4fxPLpjrEeA9SbRzOLYyjTMWr4OKbAdw/exec"
-
-
 
     try{
       const formData = new URLSearchParams();
@@ -63,6 +62,12 @@ export default function CatalogSection({ bgColor, textColor }: CatalogSectionPro
 
     // Trigger download
     downloadPDF();
+    
+    // Show confirmation popup
+    setShowConfirmation(true);
+    
+    // Reset form
+    setForm({ name: "", email: "", phone: "", tipoNegocio: "" });
   });
 
   return (
@@ -109,7 +114,7 @@ export default function CatalogSection({ bgColor, textColor }: CatalogSectionPro
       <AnimatePresence>
         {showModal && (
           <motion.div
-            className="fixed inset-0   flex items-center justify-center z-50"
+            className="fixed inset-0  backdrop-blur-sm flex items-center justify-center z-50"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -195,6 +200,54 @@ export default function CatalogSection({ bgColor, textColor }: CatalogSectionPro
               </form>
             </motion.div>
           </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Confirmation Modal */}
+      <AnimatePresence>
+        {showConfirmation && (
+            <motion.div
+            className="fixed inset-0  backdrop-blur-sm flex items-center justify-center z-50"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            >
+            <motion.div
+              className="bg-white p-8 rounded-xl shadow-lg w-96 text-center"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+            >
+              <div className="mb-4">
+              <svg
+                className="mx-auto h-16 w-16 text-green-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+              </div>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800">
+              {t('confirmation.title')}
+              </h3>
+              <p className="text-gray-600 mb-6">
+              {t('confirmation.message')}
+              </p>
+              <button
+              onClick={() => setShowConfirmation(false)}
+              className="bg-[#0e344f] text-white px-6 py-2 rounded-full hover:bg-[#1a4a6b] transition-colors"
+              >
+              {t('confirmation.close')}
+              </button>
+            </motion.div>
+            </motion.div>
         )}
       </AnimatePresence>
     </section>

@@ -343,6 +343,11 @@
       "send": "Send and download",
       "cancel": "Cancel",
       "required": "Complete this field"
+    },
+    "confirmation": {
+      "title": "Download started!",
+      "message": "Your catalog is downloading. We will contact you soon with more personalized information.",
+      "close": "Close"
     }
   },
   "ContactForm": {

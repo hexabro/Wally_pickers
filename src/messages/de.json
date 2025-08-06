@@ -343,6 +343,11 @@
       "send": "Senden und herunterladen",
       "cancel": "Abbrechen",
       "required": "Füllen Sie dieses Feld aus"
+    },
+    "confirmation": {
+      "title": "Download gestartet!",
+      "message": "Ihr Katalog wird heruntergeladen. Wir werden Sie bald mit personalisierten Informationen kontaktieren.",
+      "close": "Schließen"
     }
   },
   "ContactForm": {

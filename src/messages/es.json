@@ -314,6 +314,11 @@
       "send": "Enviar y descargar",
       "cancel": "Cancelar",
       "required": "Completa este campo"
+    },
+    "confirmation": {
+      "title": "¡Descarga iniciada!",
+      "message": "Tu catálogo se está descargando. Nos pondremos en contacto contigo pronto con más información personalizada.",
+      "close": "Cerrar"
     }
   },
 
