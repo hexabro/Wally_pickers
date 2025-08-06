@@ -10,6 +10,8 @@ import Footer from "@/components/nav/footer";
 import { CartProvider } from "@/context/CartProvider";
 import { ProductsProvider } from "@/context/ProductsProvider";
 
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 const rubik = Rubik({
   subsets: ['latin'],
   variable: '--font-rubik',
@@ -42,6 +44,10 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className= {`${rubik.variable} ${geistSans.variable} ${geistMono.variable}`}>
+      <SpeedInsights>
+
+        
+      </SpeedInsights>
       <ProductsProvider>
         <CartProvider>
           <NextIntlClientProvider messages={messages}>
@@ -50,6 +56,7 @@ export default async function RootLayout({
                 <NavBar/>
               </header>
               {children}
+              <SpeedInsights/>
               <Footer/>
             </body>
           </NextIntlClientProvider>
