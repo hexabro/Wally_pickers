@@ -48,6 +48,10 @@
         {
           "label": "Datenschutzrichtlinie",
           "href": "/de/datenschutzrichtlinie"
+        },
+        {
+          "label": "Impressum",
+          "href": "/de/impressum"
         }
       ]
     }
@@ -574,5 +578,122 @@
     "tryAgain": "Erneut versuchen",
     "notFound": "Nicht gefunden",
     "goBack": "Zurück gehen"
+  },
+  "legal": {
+    "termsAndConditions": {
+      "title": "Geschäftsbedingungen",
+      "section1": {
+        "title": "1. Allgemeine Informationen",
+        "content": "Diese Geschäftsbedingungen (nachfolgend 'Bedingungen') regeln die Nutzung der von Wally Pickers S.L. angebotenen Dienstleistungen mit Sitz in C/Francisco de Medina y Mendoza 50, 19171 Cabanillas del Campo (Guadalajara), Spanien, und CIF B-21954870. Durch Zugriff und Nutzung unserer Dienstleistungen erklären Sie sich damit einverstanden, an diese Bedingungen gebunden zu sein."
+      },
+      "section2": {
+        "title": "2. Angebotene Dienstleistungen",
+        "content": "Wally Pickers S.L. widmet sich dem Import und Vertrieb internationaler Lebensmittel, Reinigungsprodukte und Kosmetika. Unsere Dienstleistungen richten sich ausschließlich an Unternehmen (B2B), einschließlich Restaurants, Hotels, Supermärkte, Großhändler und andere Gewerbebetriebe. Wir bieten einen Beratungsservice, bei dem Kunden Informationen über interessante Produkte anfordern und personalisierte Geschäftsvorschläge erhalten."
+      },
+      "section3": {
+        "title": "3. Beratungs- und Angebotsprozess",
+        "content": "Unsere Website fungiert als Informationskatalog, in dem Kunden Produkte erkunden und Informationen anfordern können. Es werden keine öffentlichen Preise angezeigt. Anfragen erfolgen über Kontaktformulare oder direkte Kommunikation. Jede Informationsanfrage wird individuell bewertet und ein personalisiertes Angebot basierend auf Volumen, Bestellhäufigkeit und Kundenprofil bereitgestellt."
+      },
+      "section4": {
+        "title": "4. Geschäftsvorschläge und Bedingungen",
+        "content": "Geschäftsvorschläge sind kundenspezifisch und haben eine zeitlich begrenzte Gültigkeit, die in jedem Angebot angegeben wird. Preise, Zahlungsbedingungen, Lieferzeiten und Geschäftsbedingungen werden von Fall zu Fall festgelegt. Es besteht keine Kaufverpflichtung seitens des Kunden bei der Informationsanfrage, noch eine Verkaufsverpflichtung unsererseits bei der Bereitstellung eines Angebots."
+      },
+      "section5": {
+        "title": "5. Bestellformalisierung",
+        "content": "Bestellungen werden nur nach gegenseitiger Annahme eines spezifischen Geschäftsvorschlags formalisiert. Der Prozess umfasst: (1) Kundeninformationsanfrage, (2) Bewertung und Geschäftsvorschlag unsererseits, (3) Verhandlung der Bedingungen falls erforderlich, und (4) formelle Bestellbestätigung mit vereinbarten Bedingungen. Wir behalten uns das Recht vor, Anfragen abzulehnen oder keine Angebote gemäß unseren Geschäftskriterien bereitzustellen."
+      },
+      "section6": {
+        "title": "6. Lieferung und Transport",
+        "content": "Lieferzeiten werden in jedem akzeptierten Geschäftsvorschlag spezifiziert und können je nach Produktverfügbarkeit, angeforderten Volumen und Lieferort variieren. Wally Pickers S.L. ist nicht verantwortlich für Verzögerungen, die durch Umstände außerhalb unserer Kontrolle verursacht werden, einschließlich Transportproblemen, Zoll, Lieferantenverfügbarkeit oder höhere Gewalt."
+      },
+      "section7": {
+        "title": "7. Qualität und Rücksendungen",
+        "content": "Alle unsere Produkte entsprechen europäischen Qualitätsstandards und den im Geschäftsvorschlag vereinbarten Spezifikationen. Bei defekten oder nicht vereinbarungsgemäßen Produkten muss der Kunde dies innerhalb von maximal 48 Stunden nach Erhalt melden. Rücksendungen und Reklamationen werden von Fall zu Fall entsprechend den spezifischen Umständen und den in jeder Operation vereinbarten Bedingungen bewertet."
+      },
+      "section8": {
+        "title": "8. Vertraulichkeit von Geschäftsinformationen",
+        "content": "Alle ausgetauschten Geschäftsinformationen, einschließlich Preise, Bedingungen, Volumen und Vorschlagsbedingungen, gelten als vertraulich zwischen den Parteien. Kunden verpflichten sich, diese Informationen nicht ohne ausdrückliche Genehmigung an Dritte weiterzugeben. Ebenso wird Wally Pickers S.L. die Vertraulichkeit der Geschäftsinformationen seiner Kunden wahren."
+      },
+      "section9": {
+        "title": "9. Verantwortlichkeit",
+        "content": "Wally Pickers S.L. verpflichtet sich, wahrheitsgemäße Produktinformationen bereitzustellen und die in akzeptierten Geschäftsvorschlägen vereinbarten Spezifikationen einzuhalten. Unsere Verantwortung beschränkt sich auf den Wert der gemäß den vereinbarten Bedingungen gelieferten Produkte und umfasst in keinem Fall indirekte Schäden, Gewinnverluste oder Folgeschäden."
+      },
+      "section10": {
+        "title": "10. Änderungen und anwendbares Recht",
+        "content": "Diese Bedingungen können jederzeit geändert werden, wobei Änderungen für neue Anfragen und Vorschläge nach ihrer Veröffentlichung gelten. Bereits etablierte spezifische Geschäftsbeziehungen behalten die ursprünglich vereinbarten Bedingungen bei. Diese Bedingungen unterliegen spanischem Recht und alle Streitigkeiten werden von den zuständigen Gerichten in Guadalajara, Spanien, beigelegt."
+      },
+      "lastUpdated": "Zuletzt aktualisiert",
+      "date": "6. August 2025"
+    },
+    "privacyPolicy": {
+      "title": "Datenschutzrichtlinie",
+      "section1": {
+        "title": "1. Datenverantwortlicher",
+        "content": "Wally Pickers S.L., mit Adresse C/Francisco de Medina y Mendoza 50, 19171 Cabanillas del Campo (Guadalajara), Spanien, und CIF B-21954870, ist der Verantwortliche für die Verarbeitung Ihrer personenbezogenen Daten gemäß der Datenschutz-Grundverordnung (DSGVO) der Europäischen Union."
+      },
+      "section2": {
+        "title": "2. Erhobene Daten",
+        "content": "Wir erheben nur die für die Erbringung unserer B2B-Geschäftsdienstleistungen erforderlichen Daten, einschließlich: Geschäftskontaktdaten, Rechnungsinformationen, Bestellhistorie und Geschäftskommunikation. Wir erheben keine personenbezogenen Daten von Endverbrauchern."
+      },
+      "section3": {
+        "title": "3. Verarbeitungszweck",
+        "content": "Ihre Daten werden ausschließlich verwendet für: Bestellverwaltung und Geschäftsbeziehungen, Rechnungsstellung und Buchhaltung, Geschäftskommunikation im Zusammenhang mit unseren Produkten und Dienstleistungen, und Erfüllung rechtlicher und steuerlicher Verpflichtungen."
+      },
+      "section4": {
+        "title": "4. Rechtsgrundlage",
+        "content": "Die Verarbeitung Ihrer Daten basiert auf: Erfüllung des zwischen den Parteien geschlossenen Geschäftsvertrags, berechtigtem Interesse für die Entwicklung der Geschäftstätigkeit, und Erfüllung rechtlicher Verpflichtungen in steuerlichen und kommerziellen Angelegenheiten."
+      },
+      "section5": {
+        "title": "5. Datenaufbewahrung",
+        "content": "Daten werden für die Zeit aufbewahrt, die zur Erfüllung der Zwecke erforderlich ist, für die sie erhoben wurden, und in jedem Fall während der von der anwendbaren Steuer- und Handelsgesetzgebung festgelegten Fristen (mindestens 6 Jahre ab der letzten Geschäftstransaktion)."
+      },
+      "section6": {
+        "title": "6. Datenübermittlung",
+        "content": "Ihre Daten können an Dritte nur übermittelt werden, wenn dies für die Dienstleistungserbringung erforderlich ist (Spediteure, Finanzinstitute) oder wenn dies gesetzlich vorgeschrieben ist. Wir verkaufen oder übertragen keine Daten an Dritte für kommerzielle Zwecke, die nicht mit unserer Tätigkeit zusammenhängen."
+      },
+      "section7": {
+        "title": "7. Betroffenenrechte",
+        "content": "Sie haben das Recht auf Zugang, Berichtigung, Löschung, Einschränkung der Verarbeitung, Widerspruch dagegen und Datenübertragbarkeit. Um diese Rechte auszuüben, können Sie uns unter ventas@wallypickers.com oder an unserer Postanschrift kontaktieren."
+      },
+      "section8": {
+        "title": "8. Sicherheit",
+        "content": "Wir implementieren angemessene technische und organisatorische Maßnahmen zum Schutz Ihrer personenbezogenen Daten vor unbefugtem Zugriff, Änderung, Offenlegung oder Zerstörung. Diese Maßnahmen werden regelmäßig überprüft und gemäß den geltenden Sicherheitsstandards aktualisiert."
+      },
+      "section9": {
+        "title": "9. Kontakt und Beschwerden",
+        "content": "Bei Fragen zu dieser Datenschutzrichtlinie oder zur Verarbeitung Ihrer Daten können Sie uns unter ventas@wallypickers.com kontaktieren. Sie haben auch das Recht, eine Beschwerde bei der Spanischen Datenschutzbehörde (www.aepd.es) einzureichen."
+      },
+      "lastUpdated": "Zuletzt aktualisiert",
+      "date": "6. August 2025"
+    },
+    "legalNotice": {
+      "title": "Impressum",
+      "section1": {
+        "title": "1. Identifikationsdaten",
+        "content": "In Übereinstimmung mit dem Gesetz 34/2002 vom 11. Juli über Dienste der Informationsgesellschaft und des elektronischen Geschäftsverkehrs informieren wir, dass der Eigentümer dieser Website ist: Wally Pickers S.L., mit Sitz in C/Francisco de Medina y Mendoza 50, 19171 Cabanillas del Campo (Guadalajara), Spanien. CIF: B-21954870. Telefon: +34 640 69 05 04. E-Mail: ventas@wallypickers.com"
+      },
+      "section2": {
+        "title": "2. Zweck",
+        "content": "Dieses Impressum regelt die Nutzung der Website von Wally Pickers S.L. sowie die Beziehungen zwischen der Website und ihren Nutzern. Der Zugang zur Website impliziert die vollständige Akzeptanz dieses Impressums."
+      },
+      "section3": {
+        "title": "3. Nutzungsbedingungen",
+        "content": "Der Nutzer verpflichtet sich zur angemessenen Nutzung der Website in Übereinstimmung mit geltendem Recht, Moral, guten Sitten und öffentlicher Ordnung. Die Nutzung der Website für rechtswidrige Zwecke oder solche, die die Interessen oder Rechte Dritter schädigen könnten, ist untersagt."
+      },
+      "section4": {
+        "title": "4. Geistiges Eigentum",
+        "content": "Alle Inhalte der Website, einschließlich Texte, Fotografien, Grafiken, Bilder, Symbole, Technologie, Software, Links und andere audiovisuelle oder akustische Inhalte sowie ihr grafisches Design und Quellcodes, sind geistiges Eigentum von Wally Pickers S.L., ohne dass Nutzungsrechte an den Nutzer übertragen werden."
+      },
+      "section5": {
+        "title": "5. Haftungsausschluss",
+        "content": "Wally Pickers S.L. ist nicht verantwortlich für Schäden, die sich aus der unsachgemäßen Nutzung dieser Website ergeben können. Insbesondere ist sie nicht verantwortlich für Ausfälle, Unterbrechungen, Mangel oder Defekte der Telekommunikation, die auftreten könnten."
+      },
+      "section6": {
+        "title": "6. Anwendbares Recht",
+        "content": "Dieses Impressum unterliegt spanischem Recht. Zur Beilegung von Streitigkeiten unterwerfen sich die Parteien den Gerichten von Guadalajara, Spanien, und verzichten ausdrücklich auf jede andere Gerichtsbarkeit, die ihnen zustehen könnte."
+      },
+      "lastUpdated": "Zuletzt aktualisiert",
+      "date": "6. August 2025"
+    }
   }
 }

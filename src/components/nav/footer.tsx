@@ -166,6 +166,12 @@ export default function Footer() {
               >
                 {f('bottom.links.1.label')}
               </Link>
+              <Link
+                href={f('bottom.links.2.href')}
+                className="text-blue-400 hover:text-blue-300 transition-colors"
+              >
+                {f('bottom.links.2.label')}
+              </Link>
             </div>
           </div>
         </div>

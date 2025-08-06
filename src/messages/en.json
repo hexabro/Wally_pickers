@@ -48,6 +48,10 @@
         {
           "label": "Privacy Policy",
           "href": "/en/privacy-policy"
+        },
+        {
+          "label": "Legal Notice",
+          "href": "/en/legal-notice"
         }
       ]
     }
@@ -574,5 +578,122 @@
     "tryAgain": "Try again",
     "notFound": "Not found",
     "goBack": "Go back"
+  },
+  "legal": {
+    "termsAndConditions": {
+      "title": "Terms and Conditions",
+      "section1": {
+        "title": "1. General Information",
+        "content": "These terms and conditions (hereinafter, the 'Terms') govern the use of services offered by Wally Pickers S.L., with registered office at C/Francisco de Medina y Mendoza 50, 19171 Cabanillas del Campo (Guadalajara), Spain, and CIF B-21954870. By accessing and using our services, you agree to be bound by these Terms."
+      },
+      "section2": {
+        "title": "2. Services Offered",
+        "content": "Wally Pickers S.L. is dedicated to importing and distributing international food products, cleaning products, and cosmetics. Our services are exclusively directed to businesses (B2B), including restaurants, hotels, supermarkets, wholesalers, and other commercial establishments. We offer a consultation service where clients request information about products of interest and receive personalized commercial proposals."
+      },
+      "section3": {
+        "title": "3. Consultation and Quotation Process",
+        "content": "Our website functions as an informative catalog where clients can explore products and request information. No public prices are displayed. Inquiries are made through contact forms or direct communication. Each information request is evaluated individually and a personalized quotation is provided based on volumes, order frequency, and client profile."
+      },
+      "section4": {
+        "title": "4. Commercial Proposals and Conditions",
+        "content": "Commercial proposals are specific to each client and have limited validity in time, which will be specified in each quotation. Prices, payment conditions, delivery terms, and commercial terms are established case by case. There is no obligation to purchase on the part of the client when requesting information, nor obligation to sell on our part when providing a quotation."
+      },
+      "section5": {
+        "title": "5. Order Formalization",
+        "content": "Orders are formalized only after mutual acceptance of a specific commercial proposal. The process includes: (1) client information request, (2) evaluation and commercial proposal on our part, (3) term negotiation if necessary, and (4) formal order confirmation with agreed conditions. We reserve the right to reject requests or not provide quotations according to our commercial criteria."
+      },
+      "section6": {
+        "title": "6. Delivery and Transport",
+        "content": "Delivery terms are specified in each accepted commercial proposal and may vary according to product availability, requested volumes, and delivery location. Wally Pickers S.L. is not responsible for delays caused by circumstances beyond our control, including transport problems, customs, supplier availability, or force majeure."
+      },
+      "section7": {
+        "title": "7. Quality and Returns",
+        "content": "All our products comply with European quality standards and specifications agreed in the commercial proposal. In case of defective products or non-conforming to what was agreed, the client must notify within a maximum period of 48 hours from reception. Returns and claims will be evaluated case by case according to specific circumstances and terms agreed in each operation."
+      },
+      "section8": {
+        "title": "8. Commercial Information Confidentiality",
+        "content": "All commercial information exchanged, including prices, conditions, volumes, and proposal terms, is considered confidential between the parties. Clients commit not to disclose this information to third parties without express authorization. Similarly, Wally Pickers S.L. will maintain the confidentiality of its clients' commercial information."
+      },
+      "section9": {
+        "title": "9. Responsibility",
+        "content": "Wally Pickers S.L. commits to providing truthful product information and complying with specifications agreed in accepted commercial proposals. Our responsibility is limited to the value of products delivered according to agreed terms and in no case will include indirect damages, loss of profits, or consequential damages."
+      },
+      "section10": {
+        "title": "10. Modifications and Applicable Law",
+        "content": "These terms may be modified at any time, with modifications being applicable to new inquiries and proposals subsequent to their publication. Specific commercial relationships already established will maintain the originally agreed terms. These terms are governed by Spanish legislation and any dispute will be resolved by the competent courts of Guadalajara, Spain."
+      },
+      "lastUpdated": "Last updated",
+      "date": "August 6, 2025"
+    },
+    "privacyPolicy": {
+      "title": "Privacy Policy",
+      "section1": {
+        "title": "1. Data Controller",
+        "content": "Wally Pickers S.L., with address at C/Francisco de Medina y Mendoza 50, 19171 Cabanillas del Campo (Guadalajara), Spain, and CIF B-21954870, is the controller of your personal data in accordance with the General Data Protection Regulation (GDPR) of the European Union."
+      },
+      "section2": {
+        "title": "2. Data Collected",
+        "content": "We collect only the data necessary for providing our B2B commercial services, including: business contact data, billing information, order history, and commercial communications. We do not collect personal data from end consumers."
+      },
+      "section3": {
+        "title": "3. Processing Purpose",
+        "content": "Your data is used exclusively for: order management and commercial relations, billing and accounting, commercial communications related to our products and services, and compliance with legal and fiscal obligations."
+      },
+      "section4": {
+        "title": "4. Legal Basis",
+        "content": "The processing of your data is based on: execution of the commercial contract established between the parties, legitimate interest for commercial activity development, and compliance with legal obligations in fiscal and commercial matters."
+      },
+      "section5": {
+        "title": "5. Data Retention",
+        "content": "Data will be retained for the time necessary to fulfill the purposes for which it was collected and, in any case, during the periods established by applicable fiscal and commercial legislation (minimum 6 years from the last commercial operation)."
+      },
+      "section6": {
+        "title": "6. Data Communication",
+        "content": "Your data may be communicated to third parties only when necessary for service provision (carriers, financial entities) or when required by law. We do not sell or transfer data to third parties for commercial purposes unrelated to our activity."
+      },
+      "section7": {
+        "title": "7. Data Subject Rights",
+        "content": "You have the right to access, rectify, delete, limit processing, object to it, and data portability. To exercise these rights, you can contact us at ventas@wallypickers.com or at our postal address."
+      },
+      "section8": {
+        "title": "8. Security",
+        "content": "We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction. These measures are regularly reviewed and updated according to applicable security standards."
+      },
+      "section9": {
+        "title": "9. Contact and Complaints",
+        "content": "For any inquiry about this privacy policy or the processing of your data, you can contact us at ventas@wallypickers.com. You also have the right to file a complaint with the Spanish Data Protection Agency (www.aepd.es)."
+      },
+      "lastUpdated": "Last updated",
+      "date": "August 6, 2025"
+    },
+    "legalNotice": {
+      "title": "Legal Notice",
+      "section1": {
+        "title": "1. Identifying Data",
+        "content": "In compliance with Law 34/2002, of July 11, on Information Society Services and Electronic Commerce, we inform that the owner of this website is: Wally Pickers S.L., with registered office at C/Francisco de Medina y Mendoza 50, 19171 Cabanillas del Campo (Guadalajara), Spain. CIF: B-21954870. Phone: +34 640 69 05 04. Email: ventas@wallypickers.com"
+      },
+      "section2": {
+        "title": "2. Purpose",
+        "content": "This legal notice regulates the use of Wally Pickers S.L.'s website, as well as the relationships between the website and its users. Access to the website implies full acceptance of this legal notice."
+      },
+      "section3": {
+        "title": "3. Terms of Use",
+        "content": "The user commits to making appropriate use of the website, in accordance with current legislation, morality, good customs, and public order. The use of the website for illicit purposes or that may damage the interests or rights of third parties is prohibited."
+      },
+      "section4": {
+        "title": "4. Intellectual Property",
+        "content": "All website contents, including texts, photographs, graphics, images, icons, technology, software, links, and other audiovisual or sound contents, as well as their graphic design and source codes, are intellectual property of Wally Pickers S.L., without any exploitation rights being understood as transferred to the user."
+      },
+      "section5": {
+        "title": "5. Limitation of Liability",
+        "content": "Wally Pickers S.L. is not responsible for damages that may derive from incorrect use of this website. In particular, it is not responsible for failures, interruptions, lack or defect of telecommunications that may occur."
+      },
+      "section6": {
+        "title": "6. Applicable Law",
+        "content": "This legal notice is governed by Spanish legislation. For the resolution of any controversy, the parties submit to the Courts and Tribunals of Guadalajara, Spain, expressly waiving any other jurisdiction that may correspond to them."
+      },
+      "lastUpdated": "Last updated",
+      "date": "August 6, 2025"
+    }
   }
 }
