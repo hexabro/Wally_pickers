@@ -10,7 +10,7 @@ import { useTranslations } from 'next-intl';
 export default function ContactPage() {
   const t = useTranslations('contact');
     const [copied, setCopied] = useState(false);
-    const email = 'info@wally-pickers.com';
+    const email = 'ventas@wally-pickers.com';
 
     const handleCopyEmail = async () => {
       try {
