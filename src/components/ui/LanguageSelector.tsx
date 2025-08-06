@@ -96,7 +96,7 @@ export default function LanguageSelector() {
       {/* BOTÓN PRINCIPAL */}
       <button
         onClick={() => setIsOpen((prev) => !prev)}
-        className="flex text-sm items-center gap-2 rounded-md bg-green-600 px-4 py-2 text-white font-medium hover:bg-green-500 transition"
+        className="flex text-sm items-center gap-2 rounded-md bg-[#184c71] px-4 py-2 text-white font-medium hover:bg-[#0e344f] transition"
       >
         <Image
           key={locale} // Force re-render when locale changes
