@@ -3,6 +3,7 @@
 import {ProductType} from '@/context/ProductsProvider';
 import { ReducerActionType, ReducerAction } from '@/context/CartProvider';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 import { ReactElement, useState, memo} from 'react';
 import { Container, ShoppingBag, ShoppingBasket, ShoppingCart, Expand, X } from 'lucide-react';
@@ -16,6 +17,7 @@ type PropsType = {
 }
 
 const ProductCard = ({ product, dispatch, REDUCER_ACTIONS, inCart }: PropsType): ReactElement => {
+  const t = useTranslations('productCard');
 
   // In Next.js, static assets in public/ directory can be referenced with absolute paths
   // Try to use the product's REF for the image, fallback to p1.jpg if image doesn't exist
@@ -95,7 +97,7 @@ const ProductCard = ({ product, dispatch, REDUCER_ACTIONS, inCart }: PropsType):
         whileTap={{ scale: 0.95 }}
         className="cursor-pointer"
         onClick={() => setIsPopupOpen(true)}
-        title="Ver más información"
+        title={t('viewMoreInfo')}
       >
         <Image
           src={img}
@@ -110,13 +112,13 @@ const ProductCard = ({ product, dispatch, REDUCER_ACTIONS, inCart }: PropsType):
       {/* Product details */}
       <div className="text-left w-full mb-4">
         <p className="text-sm text-gray-700 mb-1">
-          <span className="font-semibold">Marca:</span> {product.MARCA}
+          <span className="font-semibold">{t('brand')}</span> {product.MARCA}
         </p>
         <p className="text-sm text-gray-700 mb-1">
-          <span className="font-semibold">Formato:</span> {product.FORMATO}
+          <span className="font-semibold">{t('format')}</span> {product.FORMATO}
         </p>
         <p className="text-sm text-gray-700">
-          <span className="font-semibold">Unidades por caja:</span> {product.UDS_CAJA}
+          <span className="font-semibold">{t('unitsPerBox')}</span> {product.UDS_CAJA}
         </p>
       </div>
 
@@ -127,13 +129,13 @@ const ProductCard = ({ product, dispatch, REDUCER_ACTIONS, inCart }: PropsType):
           onChange={onRemoveFromCart}
           className="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 focus:ring-2 cursor-pointer"
         />
-        <span className="text-sm text-gray-700">En el container</span>
+        <span className="text-sm text-gray-700">{t('inContainer')}</span>
       </div>
 
       <div className="flex flex-col gap-3 justify-start w-full">
         <div className="flex flex-col gap-2">
           <label htmlFor="quantity" className="text-sm font-medium text-gray-800">
-            Cantidad:
+            {t('quantity')}
           </label>
           <div className="flex items-center border rounded-lg overflow-hidden">
             <button
@@ -210,7 +212,7 @@ const ProductCard = ({ product, dispatch, REDUCER_ACTIONS, inCart }: PropsType):
                   type="button"
                   onClick={() => setIsPopupOpen(false)}
                   className="p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-200 rounded-full transition-colors"
-                  title="Cerrar"
+                  title={t('close')}
                 >
                   <X size={24} />
                 </button>
@@ -232,24 +234,24 @@ const ProductCard = ({ product, dispatch, REDUCER_ACTIONS, inCart }: PropsType):
                   <div className="grid grid-cols-2 gap-4 bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-100">
                     <div className="space-y-3">
                       <p className="text-sm text-gray-700">
-                        <span className="font-semibold">Marca:</span> {product.MARCA}
+                        <span className="font-semibold">{t('brand')}</span> {product.MARCA}
                       </p>
                       <p className="text-sm text-gray-700">
-                        <span className="font-semibold">Categoría:</span> {product.CATEGORIA}
+                        <span className="font-semibold">{t('category')}</span> {product.CATEGORIA}
                       </p>
                       <p className="text-sm text-gray-700">
-                        <span className="font-semibold">Tipo:</span> {product.TIPO}
+                        <span className="font-semibold">{t('type')}</span> {product.TIPO}
                       </p>
                     </div>
                     <div className="space-y-3">
                       <p className="text-sm text-gray-700">
-                        <span className="font-semibold">Formato:</span> {product.FORMATO}
+                        <span className="font-semibold">{t('format')}</span> {product.FORMATO}
                       </p>
                       <p className="text-sm text-gray-700">
-                        <span className="font-semibold">Unidades por caja:</span> {product.UDS_CAJA}
+                        <span className="font-semibold">{t('unitsPerBox')}</span> {product.UDS_CAJA}
                       </p>
                       <p className="text-sm text-gray-700">
-                        <span className="font-semibold">REF:</span> {product.REF}
+                        <span className="font-semibold">{t('ref')}</span> {product.REF}
                       </p>
                     </div>
                   </div>
@@ -259,10 +261,10 @@ const ProductCard = ({ product, dispatch, REDUCER_ACTIONS, inCart }: PropsType):
                 <div className="flex-1 flex flex-col">
                   {/* Description */}
                   <div className="flex-1 mb-6">
-                    <h3 className="font-semibold text-gray-800 mb-3 text-lg">Descripción</h3>
+                    <h3 className="font-semibold text-gray-800 mb-3 text-lg">{t('description')}</h3>
                     <div className="overflow-y-auto">
                       <p className="text-sm text-gray-700 leading-relaxed">
-                        {product.DESCRIPCION || 'No hay descripción disponible para este producto.'}
+                        {product.DESCRIPCION || t('noDescription')}
                       </p>
                     </div>
                   </div>
@@ -277,13 +279,13 @@ const ProductCard = ({ product, dispatch, REDUCER_ACTIONS, inCart }: PropsType):
                         onChange={onRemoveFromCart}
                         className="w-5 h-5 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 focus:ring-2 cursor-pointer"
                       />
-                      <span className="text-base font-medium text-gray-800">En el container</span>
+                      <span className="text-base font-medium text-gray-800">{t('inContainer')}</span>
                     </div>
 
                     {/* Quantity controls */}
                     <div className="space-y-3">
                       <label htmlFor="popup-quantity" className="text-base font-medium text-gray-800 block">
-                        Cantidad:
+                        {t('quantity')}
                       </label>
                       <div className="flex items-center border-2 rounded-lg overflow-hidden max-w-xs">
                         <button

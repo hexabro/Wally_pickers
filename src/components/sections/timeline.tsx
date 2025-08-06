@@ -3,6 +3,7 @@ import React , {useRef} from "react";
 import "./timeline.css";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 
 export type TimelineEvent = {
@@ -12,39 +13,9 @@ export type TimelineEvent = {
   icon: string;
 };
 
-const events: TimelineEvent[] = [
-  {
-    year: "",
-    title: "1. Descubrimiento",
-    description:
-      "Nos reunimos contigo para conocer tus necesidades específicas de abastecimiento, volumen y frecuencia. Queremos entender lo que hace único tu negocio.",
-    icon: "/images/timeline/lupa_blanca.svg",
-  },
-  {
-    year: "",
-    title: "2. Planificamos tu suministro",
-    description:
-      "Diseñamos una estrategia personalizada de abastecimiento para que siempre tengas los productos que necesitas, al mejor precio y en el momento justo.",
-    icon: "/images/timeline/engranaje.svg",
-  },
-  {
-    year: "",
-    title: "3. Gestionamos tu pedido",
-    description:
-      "Procesamos y preparamos tu pedido con rapidez y precisión, asegurando que la calidad y las condiciones de almacenamiento se mantengan siempre óptimas.",
-    icon: "/images/timeline/pedido-blanco2.svg",
-  },
-  {
-    year: "",
-    title: "4. Entrega y seguimiento",
-    description:
-      "Realizamos la entrega en el tiempo acordado, y te ofrecemos un seguimiento continuo para adaptarnos a tus futuras necesidades de stock.",
-    icon: "/images/timeline/seguimiento-blanco.svg",
-  },
-];
-
-
 const VerticalTimelineSection: React.FC = () => {
+  const t = useTranslations('become-client.timeline');
+  const events: TimelineEvent[] = t.raw('events');
     
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -52,7 +23,7 @@ const VerticalTimelineSection: React.FC = () => {
   return (
     <section className="w-full">
       <h2 className="text-3xl font-bold text-center mb-6 text-[#0e344f]">
-        Nuestra manera de trabajar
+        {t('title')}
       </h2>
 
       <div ref ={ref}

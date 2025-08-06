@@ -1,9 +1,10 @@
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
-
+import { useTranslations } from "next-intl";
 
 const CustomersRectangle: React.FC = () => {
+  const t = useTranslations("become-client");
   return (
     <section className="w-full  px-6  py-6 sm:py-12 lg:py-20 sm:px-6 lg:px-20h[80vh] ">
       <div className="overflow-hidden rounded-2xl grid grid-cols-1 md:grid-cols-2 min-h-[60vh]">
@@ -16,17 +17,16 @@ const CustomersRectangle: React.FC = () => {
           "
         >
           <span className="text-black md:text-white/80 uppercase tracking-widest sm:text-sm md:text-base font-semibold">
-            Ser cliente
+            {t("title")}
           </span>
           <h2 className=" md:inline text-black md: md:text-white mt-4 sm:mt-6 font-serif  text-6xl leading-tight whitespace-pre-line">
-            Crezcamos juntos
+            {t("subtitle")}
           </h2>
           
            
           <p className="mt-3 sm:mt-4  text-xl md:text-lg text-black/80 md:text-white/80">
-            Nos enorgullecemos de apoyar el éxito de nuestros clientes proporcionando productos de alta calidad y un servicio excepcional.
+            {t("description")}
           </p>
-          
 
           {/* BUTTON hide on mobile, show from sm+ */}
           
@@ -43,7 +43,7 @@ const CustomersRectangle: React.FC = () => {
               
             "
           >
-            Contacta con nosotros
+            {t("contact")}
           </Link>
           </div>
           
@@ -88,7 +88,7 @@ const CustomersRectangle: React.FC = () => {
               text-center w-full
             "
           >
-            Contacta con nosotros
+            {t("contact")}
           </Link>
         </div>
       </div>

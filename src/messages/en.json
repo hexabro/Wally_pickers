@@ -1,19 +1,350 @@
 {
   "navigation": {
+    "homeHref": "/en/",
     "home": "Home",
-    "products": "Products",
+    "contactHref": "/en/contacto",
     "contact": "Contact",
+    "catalogHref": "/en/catalogo",
     "catalog": "Catalog",
+    "buyGuideHref": "/en/guia-compra",
     "buyGuide": "Buy Guide",
+    "aboutUsHref": "/en/quienes-somos",
     "aboutUs": "About Us",
+    "becomeClientHref": "/en/ser-cliente",
     "becomeClient": "Become Client",
-    "news": "News"
+    "menu": "Menu"
   },
-  "hero": {
-    "title": "Your strategic partner in international products",
-    "subtitle": "We connect your business with the best brands and products in the world. Discover, import and sell with confidence.",
-    "cta": "View Products",
-    "watch": "Watch Video"
+  "footer": {
+    "contact": {
+      "title": "Contact",
+      "direction": "Address",
+      "phone": "Phone",
+      "email": "Email"
+    },
+    "CompanyInfo": {
+      "p1": "Specialists in importing and distributing quality international products.",
+      "p2": "More than 300 trending products waiting to be discovered."
+    },
+    "Coverage": {
+      "title": "Coverage",
+      "description": "Businesses we support with quality.",
+      "businesses": [
+        "Restaurants / Bars / Cafés",
+        "Food stores / Supermarkets",
+        "Wholesalers / Distributors",
+        "Hotels",
+        "Caterings",
+        "Specialized stores"
+      ],
+      "worry": "* Don't see your business here? Contact us! We are constantly expanding and looking for new partners."
+    },
+    "bottom": {
+      "text": "© 2025 Wally Pickers S.L. All rights reserved.",
+      "links": [
+        {
+          "label": "Terms and Conditions",
+          "href": "/en/terms-and-conditions"
+        },
+        {
+          "label": "Privacy Policy",
+          "href": "/en/privacy-policy"
+        }
+      ]
+    }
+  },
+  "home": {
+    "presentation": {
+      "title": "Specialists in high ",
+      "span": "turnover",
+      "description": "We import the best products from around the world so your business is stocked with what sells the most."
+    },
+    "categoryCards": {
+      "cta": "Discover them all",
+      "cat1": "Food",
+      "link1": "/en/catalog?category=Food",
+      "cat2": "Cleaning",
+      "link2": "/en/catalog?category=Cleaning",
+      "cat3": "Cosmetics",
+      "link3": "/en/catalog?category=Cosmetics"
+    },
+    "magnifySection": {
+      "title": "Quality guaranteed",
+      "description": "We work with leading manufacturers and distributors in Asia, America, Europe and the United Kingdom. We have more than 300 international products ready for your business, with high turnover, competitive margins and efficient distribution."
+    },
+    "statsStrip": {
+      "productsInternational": "international products",
+      "countries": "Countries integrated in our catalog",
+      "brands": "Exclusive brands",
+      "b2bClients": "+B2B Clients"
+    },
+    "brandCarousel": {
+      "title": "Brands that trust us",
+      "description": "Discover some of the leading companies with the highest quality."
+    },
+    "categoriesSection": {
+      "title": "Explore our categories",
+      "col1": {
+        "title": "Food",
+        "items": [
+          {
+            "name": "Ramen",
+            "href": "/en/catalog?category=Food&type=Ramen"
+          },
+          {
+            "name": "Sauces",
+            "href": "/en/catalog?category=Food&type=Sauce"
+          },
+          {
+            "name": "Chocolates",
+            "href": "/en/catalog?category=Food&type=Chocolate"
+          },
+          {
+            "name": "Cereals",
+            "href": "/en/catalog?category=Food&type=Cereals"
+          }
+        ]
+      },
+      "col2": {
+        "title": "Cleaning",
+        "items": [
+          {
+            "name": "Detergents",
+            "href": "/en/catalog?category=Cleaning&type=Detergents"
+          },
+          {
+            "name": "Multipurpose",
+            "href": "/en/catalog?category=Cleaning&type=Multipurpose"
+          },
+          {
+            "name": "Disinfectants",
+            "href": "/en/catalog?category=Cleaning&type=Disinfectants"
+          },
+          {
+            "name": "Softeners",
+            "href": "/en/catalog?category=Cleaning&type=Softeners"
+          }
+        ]
+      },
+      "col3": {
+        "title": "Cosmetics",
+        "items": [
+          {
+            "name": "Shampoo",
+            "href": "/en/catalog?category=Cosmetics&type=Shampoo"
+          },
+          {
+            "name": "Body wash",
+            "href": "/en/catalog?category=Cosmetics&type=Body-wash"
+          },
+          {
+            "name": "Face cream",
+            "href": "/en/catalog?category=Cosmetics&type=Face-cream"
+          },
+          {
+            "name": "Deodorant",
+            "href": "/en/catalog?category=Cosmetics&type=Deodorant"
+          }
+        ]
+      },
+      "cta": "View all our products"
+    }
+  },
+  "catalog": {
+    "title": "Wally Pickers Catalog",
+    "description": "Select a category to explore our products or use the search engine to find exactly what you need",
+    "searchHolder": "Search products...",
+    "searchResults": "Search results",
+    "resultsPerProduct": "products found for",
+    "viewProducts": "View products",
+    "backToCategories": "Back to categories",
+    "productsFound": "products found",
+    "searchPlaceholder": "Search products by name, brand, type or description...",
+    "showingResults": "Showing results for:",
+    "search": "Search",
+    "filters": "Filters",
+    "brand": "Brand",
+    "allBrands": "All brands",
+    "type": "Type",
+    "allTypes": "All types",
+    "activeFilters": "Active filters",
+    "categoriesTitle": "Categories",
+    "categories": [
+      {
+        "name": "Food",
+        "value": "Alimentacion",
+        "href": "/en/catalogo?category=Alimentacion",
+        "link": "/en/catalogo?category=Alimentacion"
+      },
+      {
+        "name": "Cleaning",
+        "value": "Limpieza",
+        "href": "/en/catalogo?category=Limpieza",
+        "link": "/en/catalogo?category=Limpieza"
+      },
+      {
+        "name": "Cosmetics",
+        "value": "Cosmetica",
+        "href": "/en/catalogo?category=Cosmetica",
+        "link": "/en/catalogo?category=Cosmetica"
+      }
+    ]
+  },
+  "become-client": {
+    "title": "BECOME CLIENT",
+    "subtitle": "Let's grow together",
+    "description": "We are proud to support our customers' success by providing high-quality products and exceptional service.",
+    "contact": "Contact us",
+    "pick": "Choose ",
+    "quality": "quality",
+    "beforeCircleText": " At Wally Pickers we offer you a carefully selected selection of products from around the world, chosen to guarantee ",
+    "circleText": "excellence",
+    "chooseUs": "Why choose us?",
+    "chooseUsDescription": "We have brought products from around the world to our customers' shelves. From supermarkets to restaurants and specialty stores. Our experience and global network allow us to offer you an unmatched selection of high-quality products.",
+    "reasonsCards": [
+      {
+        "title": "More than 27 countries in one place",
+        "description": "Importing the most exclusive FMCG products from more than 27 countries."
+      },
+      {
+        "title": "Committed to safety",
+        "description": "Applying our own HACCP system that guarantees safety and quality."
+      },
+      {
+        "title": "Growing coverage",
+        "description": "We expand our distribution network every day, ensuring agile and reliable service."
+      },
+      {
+        "title": "We boost the value of every brand",
+        "description": "Our suppliers are selected and supported for mutual growth."
+      },
+      {
+        "title": "Rigorous quality control",
+        "description": "Multi-stage inspection processes and complete batch traceability."
+      },
+      {
+        "title": "Personalized attention",
+        "description": "Expert team in regulations, customs and dedicated after-sales support."
+      }
+    ],
+    "reasonsTitle": "Need more reasons?",
+    "reasonsDescription": "Discover them with the following button",
+    "reasonsStartButton": "Discover reasons",
+    "reasonsNextButton": "Next reason",
+    "reasonsRestartButton": "Start over",
+    "reviewsSection": {
+      "title": "What our customers say",
+      "prevButton": "Previous",
+      "nextButton": "Next",
+      "reviews": [
+        {
+          "author": "John Pérez",
+          "rating": 5,
+          "text": "Excellent supplier, they always meet delivery deadlines and product quality is exceptional."
+        },
+        {
+          "author": "Maria Gomez",
+          "rating": 5,
+          "text": "Customer service is unbeatable. They helped us find the perfect products for our business."
+        },
+        {
+          "author": "Carlos Ruiz",
+          "rating": 4,
+          "text": "Great variety of products and competitive prices. Very satisfied with the service."
+        },
+        {
+          "author": "Lucia Fernandez",
+          "rating": 5,
+          "text": "Logistics is fast and efficient. We always receive our orders on time."
+        },
+        {
+          "author": "Peter Martinez",
+          "rating": 5,
+          "text": "Product quality never disappoints. 100% recommended."
+        },
+        {
+          "author": "Ana Torres",
+          "rating": 4,
+          "text": "Very good service and quick response to any inquiry."
+        },
+        {
+          "author": "Sofia Lopez",
+          "rating": 5,
+          "text": "They offered us digital solutions that greatly facilitated order management."
+        },
+        {
+          "author": "Miguel Sanchez",
+          "rating": 5,
+          "text": "The team is very professional and always willing to help."
+        },
+        {
+          "author": "Elena Navarro",
+          "rating": 5,
+          "text": "Integration with our system was simple and effective. Highly recommended."
+        },
+        {
+          "author": "Javier Ortega",
+          "rating": 4,
+          "text": "Good service and quality products. We will definitely buy again."
+        }
+      ]
+    },
+    "timeline": {
+      "title": "Our way of working",
+      "events": [
+        {
+          "year": "",
+          "title": "1. Discovery",
+          "description": "We meet with you to understand your specific supply needs, volume and frequency. We want to understand what makes your business unique.",
+          "icon": "/images/timeline/lupa_blanca.svg"
+        },
+        {
+          "year": "",
+          "title": "2. We plan your supply",
+          "description": "We design a personalized supply strategy so you always have the products you need, at the best price and at the right time.",
+          "icon": "/images/timeline/engranaje.svg"
+        },
+        {
+          "year": "",
+          "title": "3. We manage your order",
+          "description": "We process and prepare your order quickly and precisely, ensuring that quality and storage conditions are always optimal.",
+          "icon": "/images/timeline/pedido-blanco2.svg"
+        },
+        {
+          "year": "",
+          "title": "4. Delivery and tracking",
+          "description": "We deliver on the agreed time, and offer you continuous monitoring to adapt to your future stock needs.",
+          "icon": "/images/timeline/seguimiento-blanco.svg"
+        }
+      ]
+    }
+  },
+  "catalogDownload": {
+    "title": "Discover +300 products waiting for you!",
+    "cta": "Download 2025 catalog",
+    "form": {
+      "title": "Download catalog",
+      "nameHolder": "Enter your name",
+      "emailHolder": "Enter your email",
+      "phoneHolder": "Enter your phone",
+      "businessTypeLabel": "Business type",
+      "companyTypes": [
+        "Restaurant / Bar / Café",
+        "Food store / Supermarket",
+        "Wholesaler / Distributor",
+        "Hotel / Catering",
+        "Specialized store",
+        "Other (specify)"
+      ],
+      "message": "Message",
+      "send": "Send and download",
+      "cancel": "Cancel",
+      "required": "Complete this field"
+    }
+  },
+  "ContactForm": {
+    "title": "Ready to start?",
+    "desc1": "Fill out the form and we will contact you to offer you a personalized proposal.",
+    "desc2": "Our team is ready to help you find the perfect products for your business and answer all your questions."
   },
   "features": {
     "title": "Discover what makes us unique",
@@ -24,7 +355,7 @@
   },
   "brands": {
     "title": "Brands that trust us",
-    "description": "We work with the world's most recognized brands to offer you the highest quality products"
+    "description": "We work with the most recognized brands in the world to offer you products of the highest quality"
   },
   "reasons": {
     "title": "Why choose us?",
@@ -34,7 +365,7 @@
     },
     "network": {
       "title": "Global supplier network",
-      "description": "We work with the best suppliers from Asia, Europe and America"
+      "description": "We work with the best suppliers in Asia, Europe and America"
     },
     "logistics": {
       "title": "Efficient logistics",
@@ -42,20 +373,21 @@
     },
     "support": {
       "title": "Personalized support",
-      "description": "Dedicated team to help you every step of the way"
+      "description": "Dedicated team to help you every step of the process"
     }
   },
   "contact": {
     "title": "Let's talk!",
-    "subtitle": "Are you interested in any of our products or think we could collaborate? You know what to do.",
+    "subtitle": "Are you interested in any of our products or do you think we could collaborate? You know what to do.",
     "form": {
       "name": "Name",
       "email": "Email",
       "phone": "Phone",
+      "select": "Select an option",
       "companyType": "Business type",
       "companyTypes": [
         "Restaurant / Bar / Café",
-        "Grocery store / Supermarket",
+        "Food store / Supermarket",
         "Wholesaler / Distributor",
         "Hotel / Catering",
         "Specialized store",
@@ -67,11 +399,11 @@
     },
     "info": {
       "title": "Where is Wally?",
-      "address": "Address",
       "phone": {
-        "general": "general",
-        "sales": "sales"
-      }
+        "general": "General",
+        "sales": "Sales"
+      },
+      "copy": "Copy to clipboard"
     }
   },
   "about": {
@@ -86,7 +418,7 @@
     "filter": "Filter",
     "category": "Category",
     "brand": "Brand",
-    "inCart": "In container",
+    "inCart": "In the container",
     "quantity": "Quantity",
     "viewMore": "View more information",
     "close": "Close",
@@ -99,12 +431,146 @@
     "readMore": "Read more",
     "backToBlog": "View more articles",
     "tags": "Tags",
-    "readTime": "min read",
+    "readTime": "min reading",
     "back": "Back"
+  },
+  "about-us": {
+    "hero": {
+      "title": "Reliable, fast, secure and competitive",
+      "description": "At Wally Pickers we guarantee products of maximum quality and safety, delivered on time and at the best price.",
+      "cta": "Contact us"
+    },
+    "presentation": {
+      "title": "Where does Wally Pickers come from?",
+      "description": "The founders detected a problem: many businesses have difficulties identifying trending products, even when they have great demand.",
+      "description2": "Solving this need, Wally Pickers was born, which in addition to offering trending products, guarantees constant and efficient supply."
+    },
+    "contactSection": {
+      "title": "Ready to start?",
+      "description1": "Fill out the form and we will contact you to offer you a personalized proposal.",
+      "description2": "Our team is ready to help you find the perfect products for your business and answer all your questions."
+    }
+  },
+  "buy-guide": {
+    "hero": {
+      "title": "Buy Guide",
+      "description": "Discover tips, trends and buying guides from our experts. Find everything you need to know to make the best commercial choices."
+    },
+    "posts": [
+      {
+        "id": "1",
+        "title": "How to detect trending products before your competition",
+        "excerpt": "Discover the most effective techniques and tools to identify trending products before they become mainstream and gain competitive advantage in your business.",
+        "content": "<h2>Introduction</h2><p>In the competitive world of retail and commerce, detecting trends before the competition can be the difference between success and failure. The ability to identify products that are about to explode in popularity allows you to position yourself as a market leader and maximize your profits.</p><h2>Key tools for detecting trends</h2><h3>1. Google Trends and search analysis</h3><p>Google Trends is your best ally for detecting growth in searches for specific products. Analyze seasonal patterns, interest peaks and compare related terms to identify emerging opportunities.</p><h3>2. Social media as a thermometer</h3><p>Instagram, TikTok and Pinterest are trend laboratories. Observe which products appear frequently in influencer posts, which hashtags are growing and what content generates the most engagement.</p><h3>3. Competition analysis</h3><p>Monitor what your most successful competitors do, but don't limit yourself to copying. Look for patterns in their launches and anticipate their next moves.</p><h2>Market research strategies</h2><h3>Trade fairs and sector events</h3><p>Trade fairs are windows to the future. Exhibitors usually present products that will be on the market in 6-12 months. Networking with suppliers will give you access to privileged information.</p><h3>Consumption in advanced markets</h3><p>What is popular in Japan, South Korea or California today, could be a trend in Spain in 6 months. Study markets that usually set global trends.</p><h3>Generational analysis</h3><p>Generation Z and millennials are the main drivers of new trends. Understand their values, concerns and aspirations to anticipate which products will resonate with them.</p><h2>Early indicators of success</h2><p>Look for products that show sustained growth in searches for 2-3 months, appearance on multiple social platforms, and endorsement from micro-influencers before macro-influencers.</p><h2>Conclusion</h2><p>Detecting trends is a combination of data analysis, market intuition and perfect timing. Develop a constant monitoring system and don't be afraid to bet on innovative products when all indicators point in the same direction.</p>",
+        "category": "Strategy",
+        "image": "/images/buy-guide/trends.jpg",
+        "tags": [
+          "trends",
+          "strategy",
+          "competition",
+          "analysis"
+        ],
+        "readTime": 6
+      },
+      {
+        "id": "2",
+        "title": "What are the most common mistakes when buying trending products?",
+        "excerpt": "Avoid the most costly mistakes buyers make when selecting trending products. A practical guide to making better purchasing decisions.",
+        "content": "<h2>Mistakes that can sink your business</h2><p>Buying trending products can be extremely lucrative, but also risky. Mistakes in this process can cost thousands of euros and damage your business reputation. Learn from the most common mistakes to avoid falling into the same traps.</p><h2>Mistake #1: Arriving too late to the trend</h2><h3>The problem</h3><p>Many buyers wait for a trend to be fully established before acting. By then, the market is already saturated and margins have been drastically reduced.</p><h3>The solution</h3><p>Develop an early warning system and accept that not all products will be successes. It's better to bet on 10 emerging products and have 3 be successful, than to bet on 1 established product with minimal margins.</p><h2>Mistake #2: Overestimating demand</h2><h3>The problem</h3><p>Seeing the first signs of success of a product and assuming that demand will be massive and unlimited. This leads to overstock and products that don't rotate.</p><h3>The solution</h3><p>Start with small orders and scale gradually. Analyze the typical adoption curve in your market and adjust your expectations to the reality of your audience.</p><h2>Mistake #3: Ignoring seasonality</h2><h3>The problem</h3><p>Many trending products have seasonal components that are ignored. Buying summer products in April may seem smart, but if the trend died in February, you'll be left with unsellable stock.</p><h3>The solution</h3><p>Study historical patterns of similar products and consider external factors such as weather, social events and commercial calendars.</p><h2>Mistake #4: Not verifying supplier quality</h2><p>The rush to capitalize on a trend leads many to work with unverified suppliers. This results in defective products, delivery delays and dissatisfied customers.</p><h2>Mistake #5: Lack of differentiation</h2><p>Copying exactly what the competition does is not a strategy. Look for ways to differentiate your offer: better price, better quality, better service or better presentation.</p><h2>How to avoid these mistakes</h2><p>Develop a systematic evaluation process, maintain solid relationships with reliable suppliers, and always have a plan B. The key is to balance decision speed with due diligence.</p>",
+        "category": "Purchases",
+        "image": "/images/buy-guide/errors.jpg",
+        "tags": [
+          "mistakes",
+          "purchases",
+          "trends",
+          "tips"
+        ],
+        "readTime": 7
+      },
+      {
+        "id": "3",
+        "title": "How to set up an impulse products corner in your physical store",
+        "excerpt": "Learn to design and organize an impulse products corner that maximizes your sales and improves your customers' shopping experience.",
+        "content": "<h2>The power of impulse buying</h2><p>Impulse products can represent up to 30% of total sales in a well-organized physical store. An effective impulse corner not only increases your income, but also improves the perception of variety and novelty of your establishment.</p><h2>Strategic corner location</h2><h3>Near the cash register</h3><p>The most effective area for impulse products is next to the payment area. Customers have time to observe while waiting and are in 'shopping' mode, facilitating quick decisions.</p><h3>High traffic areas</h3><p>Main aisles, store entrance and near anchor products (products people come to look for specifically) are ideal locations to capture attention.</p><h3>Optimal visual heights</h3><p>Products should be between 90cm and 160cm high - the customer's natural vision zone. What is too high is ignored, what is too low is not seen.</p><h2>Selection of ideal products</h2><h3>Perfect impulse product characteristics</h3><p>Low price (less than €20), immediate utility, attractive packaging, complementary product to main purchases, and novelty or 'wow' factor.</p><h3>Categories that work best</h3><p>Snacks and drinks, tech accessories, beauty and personal care products, seasonal items, and curious or fun products.</p><h2>Corner design and presentation</h2><h3>Pyramid principle</h3><p>Place the most attractive products at eye level, complementary products at the middle level, and additional stock at the bottom.</p><h3>Effective lighting</h3><p>Use directional LED lighting to highlight products. Warm light (3000K) is ideal for food products, while cool light (4000K) works better for technology.</p><h3>Clear signage</h3><p>Visible prices, product benefits in few words, and clearly marked special offers. Avoid overloading with information.</p><h2>Constant rotation and renewal</h2><p>Change at least 30% of products every 2-3 weeks. Regular customers should always find something new that surprises them.</p><h2>Success metrics</h2><p>Measure rotation per product, average ticket, and frequency of impulse product purchases. A successful corner should have a rotation of at least 8 times per year.</p><h2>Common mistakes to avoid</h2><p>Don't overload the space, keep the corner clean and organized, avoid products too expensive for impulse, and don't neglect stock replenishment.</p>",
+        "category": "Retail",
+        "image": "/images/buy-guide/corner.jpg",
+        "tags": [
+          "retail",
+          "merchandising",
+          "impulse",
+          "store"
+        ],
+        "readTime": 8
+      }
+    ],
+    "postPage": {
+      "notFound": {
+        "title": "Article not found",
+        "description": "The article you are looking for does not exist or has been deleted.",
+        "backButton": "Back to Buy Guide"
+      },
+      "backButton": "Back",
+      "readTime": "min reading",
+      "shareButton": "Share",
+      "tags": "Tags",
+      "moreArticles": "View more articles",
+      "urlCopied": "URL copied to clipboard"
+    }
+  },
+  "cartSidebar": {
+    "title": "Products of Interest",
+    "emptyMessage": "Store your products of interest here and request information in just a few clicks!",
+    "totalBoxes": "Total boxes:",
+    "requestInfoButton": "Request information",
+    "thankYouMessage": "Thank you for your inquiry! We will contact you soon.",
+    "contactForm": {
+      "title": "Contact Information",
+      "name": "Name",
+      "namePlaceholder": "Enter your name",
+      "email": "Email",
+      "emailPlaceholder": "example@email.com",
+      "phone": "Phone",
+      "phonePlaceholder": "+34 123 456 789",
+      "businessType": "Business Type",
+      "businessTypePlaceholder": "Select your business type",
+      "businessTypes": [
+        "Restaurant / Bar / Café",
+        "Food store / Supermarket",
+        "Distributor/Wholesaler",
+        "Hotel / Catering",
+        "Specialized store (gourmet, international, etc.)",
+        "Other (specify)"
+      ],
+      "cif": "Tax ID",
+      "cifPlaceholder": "A12345678",
+      "message": "Message",
+      "messagePlaceholder": "Write your message here...",
+      "cancelButton": "Cancel",
+      "sendButton": "Send"
+    }
+  },
+  "cartLineItem": {
+    "format": "Format:",
+    "quantity": "Quantity:",
+    "removeFromCart": "Remove product from cart"
+  },
+  "productCard": {
+    "brand": "Brand:",
+    "format": "Format:",
+    "unitsPerBox": "Units per box:",
+    "inContainer": "In container",
+    "quantity": "Quantity:",
+    "viewMoreInfo": "View more information",
+    "close": "Close",
+    "category": "Category:",
+    "type": "Type:",
+    "ref": "REF:",
+    "description": "Description",
+    "noDescription": "No description available for this product."
   },
   "common": {
     "loading": "Loading...",
-    "error": "An error occurred",
+    "error": "An error has occurred",
     "tryAgain": "Try again",
     "notFound": "Not found",
     "goBack": "Go back"

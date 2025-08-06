@@ -1,5 +1,7 @@
+"use client"; 
 import React from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 import AboutHero from "@/components/sections/about-hero";
 import ContactForm from "@/components/sections/contactForm";
@@ -14,11 +16,12 @@ import FoundersSection from "@/components/sections/FoundersSection";
  * ────────────────────────────────────────────────────────────────────────────
  * -   Sección 1: Imagen derecha, texto izquierda.
  * -   Sección 2: Misión – Imagen izquierda, texto derecha.
- * -   Sección 3: Historia – Timeline vertical.
  */
 
 
 const AboutUsPage: React.FC = () => {
+  const t = useTranslations('about-us');
+  
   return (
     <main className="space-y-8">
       {/* HERO */}
@@ -48,12 +51,12 @@ const AboutUsPage: React.FC = () => {
 
         <div id="presentación" className="flex flex-col w-full sm:w-1/2 pt-0 mt-0">
           <h1 className="font-semibold text-3xl sm:text-4xl mt-3 sm:ml-7 mb-0 max-w-xl text-[#0e344f]">
-            ¿De dónde surge Wally Pickers?
+            {t('presentation.title')}
           </h1>
           <p className="m-0 sm:m-7 mt-4">
-            Los fundadores detectaron un problema: muchos negocios tienen dificultades para identificar productos en tendencia, aún cuando estos cuentan con una gran demanda.
+            {t('presentation.description')}
             <br /><br />
-            Dando solución a esta necesidad nace Wally Pickers, que además de ofrecer productos en tendencia, garantiza un abastecimiento constante y eficiente.
+            {t('presentation.description2')}
           </p>
         </div>
       </section>
@@ -61,7 +64,7 @@ const AboutUsPage: React.FC = () => {
 
       {/* REVIEWS */}
       <div className = "bg-sky-900 mb-0 py-10">
-        <ReviewsSection title = "Lo que opinan nuestros clientes" titleColor="white" backgroundColor=""></ReviewsSection>
+        <ReviewsSection titleColor="white" backgroundColor=""></ReviewsSection>
       </div>
 
       {/* EL EQUIPO FUNDADOR */}{/* 
@@ -82,13 +85,13 @@ const AboutUsPage: React.FC = () => {
             {/* CONTENT INSIDE THE OVERLAY */}
             <div className="p-10 relative z-10">
               <h3 className="text-2xl font-semibold text-white mb-8">
-                ¿Listo para empezar?
+                {t('contactSection.title')}
               </h3>
               <p className="text-white/80 mb-4">
-                Rellena el formulario y nos pondremos en contacto contigo para ofrecerte una propuesta personalizada.
+                {t('contactSection.description1')}
               </p>
               <p className="text-white/80 mb-4 flex-1">
-                Nuestro equipo está listo para ayudarte a encontrar los productos perfectos para tu negocio y responder a todas tus preguntas.
+                {t('contactSection.description2')}
               </p>
             </div>
           </div>

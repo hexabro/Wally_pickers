@@ -2,8 +2,10 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { useTranslations } from 'next-intl'
 
 export default function AboutHero() {
+  const t = useTranslations('about-us.hero');
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -42,20 +44,20 @@ export default function AboutHero() {
                     className="text-4xl md:text-6xl font-semibold text-sky-600 mb-4"
                     variants={fadeInUp}
                     >
-                    Confiables, rápidos, seguros y competitivos
+                    {t('title')}
                 </motion.h2>
                 <motion.p
                     className="text-gray-200 text-xl mb-6"
                     variants={fadeInUp}
                 > 
-                 En Wally Pickers garantizamos productos de máxima calidad y seguridad, entregados puntualmente y al mejor precio.
+                 {t('description')}
                 </motion.p>
                 <motion.a
                   href="#contact"
                   className="inline-block bg-white text-gray-900 font-medium px-6 py-2 rounded shadow hover:bg-gray-100"
                   variants={fadeInUp}
               >
-                  Contacta con nosotros
+                  {t('cta')}
               </motion.a>
             </div>
             

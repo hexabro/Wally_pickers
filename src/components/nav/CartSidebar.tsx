@@ -3,6 +3,7 @@
 import { Dispatch, SetStateAction, useState, useEffect } from 'react';
 import useCart  from '@/hooks/useCart';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 import { X, ShoppingCart, Container, ContainerIcon } from 'lucide-react';
 import CartLineItem from '../ui/CartLineItem';
@@ -18,6 +19,7 @@ type propsType = {
 } */
 
 const CartSidebar = ({ isOpen, setIsOpen }: propsType) => {
+  const t = useTranslations('cartSidebar');
   const [isOpenPopUp, setOpenPopup] = useState<boolean>(false);
 
   const [confirm, setConfirm] = useState<boolean>(false);
@@ -111,7 +113,7 @@ const CartSidebar = ({ isOpen, setIsOpen }: propsType) => {
 
         >
           <div className="flex justify-between items-center mb-4">
-            <h3 className="text-xl font-bold">Información de Contacto</h3>
+            <h3 className="text-xl font-bold">{t('contactForm.title')}</h3>
             <button onClick={() => setOpenPopup(false)} className="text-gray-500 hover:text-gray-700">
               <X className="w-5 h-5" />
             </button>
@@ -172,35 +174,35 @@ const CartSidebar = ({ isOpen, setIsOpen }: propsType) => {
               {/* Left Column */}
               <div className="space-y-4">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">{t('contactForm.name')}</label>
                   <input
                     type="text"
                     id="name"
                     required
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Ingresa tu nombre"
+                    placeholder={t('contactForm.namePlaceholder')}
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">{t('contactForm.email')}</label>
                   <input
                     type="email"
                     id="email"
                     required
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="ejemplo@correo.com"
+                    placeholder={t('contactForm.emailPlaceholder')}
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Teléfono</label>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">{t('contactForm.phone')}</label>
                   <input
                     type="tel"
                     id="phone"
                     required
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="+34 123 456 789"
+                    placeholder={t('contactForm.phonePlaceholder')}
                   />
                 </div>
               </div>
@@ -208,40 +210,37 @@ const CartSidebar = ({ isOpen, setIsOpen }: propsType) => {
               {/* Right Column */}
               <div className="space-y-4">
                 <div>
-                  <label htmlFor="business-type" className="block text-sm font-medium text-gray-700 mb-1">Tipo de Negocio</label>
+                  <label htmlFor="business-type" className="block text-sm font-medium text-gray-700 mb-1">{t('contactForm.businessType')}</label>
                   <select
                     id="business-type"
                     required
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                   >
-                    <option value="">Selecciona tu tipo de negocio</option>
-                    <option value="Restaurante / Bar / Cafetería">Restaurante / Bar / Cafetería</option>
-                    <option value="Tienda de alimentación / Supermercado">Tienda de alimentación / Supermercado</option>
-                    <option value="Distribuidor/Mayorista">Distribuidor/Mayorista</option>
-                    <option value="Hotel / Catering">Hotel / Catering</option>
-                    <option value="Tienda especializada (gourmet, internacional, etc.)">Tienda especializada (gourmet, internacional, etc.)</option>
-                    <option value="Otro">Otro (especificar)</option>
+                    <option value="">{t('contactForm.businessTypePlaceholder')}</option>
+                    {t.raw('contactForm.businessTypes').map((type: string, index: number) => (
+                      <option key={index} value={type}>{type}</option>
+                    ))}
                   </select>
                 </div>
 
                 <div>
-                  <label htmlFor="cif" className="block text-sm font-medium text-gray-700 mb-1">CIF</label>
+                  <label htmlFor="cif" className="block text-sm font-medium text-gray-700 mb-1">{t('contactForm.cif')}</label>
                   <input
                     type="text"
                     id="cif"
                     required
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="A12345678"
+                    placeholder={t('contactForm.cifPlaceholder')}
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">{t('contactForm.message')}</label>
                   <textarea
                     id="message"
                     rows={4}
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Escribe tu mensaje aquí..."
+                    placeholder={t('contactForm.messagePlaceholder')}
                   />
                 </div>
               </div>
@@ -253,13 +252,13 @@ const CartSidebar = ({ isOpen, setIsOpen }: propsType) => {
                 onClick={() => setOpenPopup(false)}
                 className="px-4 py-2 border border-gray-300 hover:cursor-pointer rounded-md text-gray-700 hover:bg-gray-50"
               >
-                Cancelar
+                {t('contactForm.cancelButton')}
               </button>
               <button
                 type="submit"
                 className="px-4 py-2 bg-blue-600 hover:cursor-pointer text-white rounded-md hover:bg-blue-700"
               >
-                Enviar
+                {t('contactForm.sendButton')}
               </button>
             </div>
           </form>
@@ -268,7 +267,7 @@ const CartSidebar = ({ isOpen, setIsOpen }: propsType) => {
     )
   );
   const pageContent = confirm 
-    ? <h2 className="text-center text-green-600">¡Gracias por tu consulta! Te contactaremos pronto.</h2>
+    ? <h2 className="text-center text-green-600">{t('thankYouMessage')}</h2>
     : <>
       <ul className="cart">
         {cart.map((item =>{
@@ -320,22 +319,22 @@ const CartSidebar = ({ isOpen, setIsOpen }: propsType) => {
                 >
                   <X className="w-6 h-6" />
                 </button>
-                <h2 className="text-2xl font-bold text-center flex-1">Productos de Interés</h2>
+                <h2 className="text-2xl font-bold text-center flex-1">{t('title')}</h2>
               </div>
               <p className = {`${totalItems == 0 ? 'block' : 'hidden'} p-4 text-center`}>
-                ¡Almacena aquí tus productos de interés y solicita información en sólo unos clicks!
+                {t('emptyMessage')}
               </p>
               <div className="flex-1 overflow-y-auto p-6">
                 {pageContent}
               </div>
               <div className="cart-total p-6 border-t">
-                <p className="mb-4">Total de cajas: {totalItems}</p>
+                <p className="mb-4">{t('totalBoxes')} {totalItems}</p>
                 <button
                   className="cart-submit bg-blue-600 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors duration-200 hover:cursor-pointer w-full"
                   onClick={onAskInfo}
                   disabled={!totalItems}
                 >
-                  Solicitar información
+                  {t('requestInfoButton')}
                 </button>
               </div>
             </motion.aside>

@@ -101,7 +101,7 @@ const ContactForm = () => {
                   onInvalid={handleInvalidInput}
                   onInput={handleInput}
                 >
-                  <option value="">Seleccione una opción</option>
+                  <option value="">{t('select')}</option>
                   {companyTypes && companyTypes.length > 0 ? (
                     companyTypes.map((type, index) => (
                       <option key={index} value={type}>

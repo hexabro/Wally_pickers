@@ -1,12 +1,15 @@
 import CountUp from "../ui/CountUp";
+import { useTranslations } from 'next-intl';
 /* =============== 3 · MÉTRICAS DESTACADAS ==================== */
-const metrics = [
-  { label: "productos internacionales", value: "300" },
-  { label: "Países integrados en nuestro catálogo", value: "27" },
-  { label: "Marcas exclusivas", value: "45" },
-  { label: "+Clientes B2B", value: "600" },
-];
+
 export default function StatsStrip() {
+  const t = useTranslations('home.statsStrip');
+  const metrics = [
+  { label: t('productsInternational'), value: "300" },
+  { label: t('countries'), value: "27" },
+  { label: t('brands'), value: "45" },
+  { label: t('b2bClients'), value: "600" },
+];
   return (
     <section className="bg-gray-600 py-12 text-white">
       <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">

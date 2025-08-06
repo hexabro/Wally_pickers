@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef, useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 /**
  * ──────────────────────────────────────────────────────────────────────────────
@@ -13,69 +14,16 @@ type Review = {
   text: string;
 };
 
-const reviews: Review[] = [
-  {
-    author: "Juan Pérez",
-    rating: 5,
-    text: "Excelente proveedor, siempre cumplen con los plazos de entrega y la calidad de los productos es excepcional.",
-  },
-  {
-    author: "María Gómez",
-    rating: 5,
-    text: "El trato al cliente es inmejorable. Nos ayudaron a encontrar los productos perfectos para nuestro negocio.",
-  },
-  {
-    author: "Carlos Ruiz",
-    rating: 4,
-    text: "Gran variedad de productos y precios competitivos. Muy satisfecho con el servicio.",
-  },
-  {
-    author: "Lucía Fernández",
-    rating: 5,
-    text: "La logística es rápida y eficiente. Recibimos nuestros pedidos siempre a tiempo.",
-  },
-  {
-    author: "Pedro Martínez",
-    rating: 5,
-    text: "La calidad de los productos nunca decepciona. Recomendado al 100%.",
-  },
-  {
-    author: "Ana Torres",
-    rating: 4,
-    text: "Muy buena atención y respuesta rápida ante cualquier consulta.",
-  },
-  {
-    author: "Sofía López",
-    rating: 5,
-    text: "Nos ofrecieron soluciones digitales que facilitaron mucho la gestión de pedidos.",
-  },
-  {
-    author: "Miguel Sánchez",
-    rating: 5,
-    text: "El equipo es muy profesional y siempre dispuesto a ayudar.",
-  },
-  {
-    author: "Elena Navarro",
-    rating: 5,
-    text: "La integración con nuestro sistema fue sencilla y efectiva. Muy recomendable.",
-  },
-  {
-    author: "Javier Ortega",
-    rating: 4,
-    text: "Buen servicio y productos de calidad. Volveremos a comprar sin duda.",
-  },
-];
-
 interface ReviewsSectionProps  {
-  title: string;
   backgroundColor?: string;
   titleColor?: string;  
-
-
 };
 
 /* ── COMPONENTE ────────────────────────────────────────────────────────────── */
-const ReviewsSection: React.FC<ReviewsSectionProps> = ({ title, backgroundColor, titleColor }) => {
+const ReviewsSection: React.FC<ReviewsSectionProps> = ({ backgroundColor, titleColor }) => {
+  const t = useTranslations('become-client.reviewsSection');
+  const reviews: Review[] = t.raw('reviews');
+  
   const trackRef = useRef<HTMLDivElement>(null);
   const [canPrev, setCanPrev] = useState(false);
   const [canNext, setCanNext] = useState(false);
@@ -106,7 +54,7 @@ const ReviewsSection: React.FC<ReviewsSectionProps> = ({ title, backgroundColor,
     <section className={`py-12 bg-${backgroundColor} relative`}>
       <div className="mx-auto px-4">
         <h2 className={`text-3xl font-semibold text-${titleColor} mb-8 text-center`}>
-          {title || "Lo que dicen nuestros clientes"}
+          {t('title')}
         </h2>
 
         {/* PISTA HORIZONTAL */}
@@ -151,7 +99,7 @@ const ReviewsSection: React.FC<ReviewsSectionProps> = ({ title, backgroundColor,
 
       {/* BOTÓN PREV */}
       <button
-        aria-label="Anterior"
+        aria-label={t('prevButton')}
         onClick={() => scrollBy("prev")}
         disabled={!canPrev}
         className="
@@ -166,7 +114,7 @@ const ReviewsSection: React.FC<ReviewsSectionProps> = ({ title, backgroundColor,
 
       {/* BOTÓN NEXT */}
       <button
-        aria-label="Siguiente"
+        aria-label={t('nextButton')}
         onClick={() => scrollBy("next")}
         disabled={!canNext}
         className="

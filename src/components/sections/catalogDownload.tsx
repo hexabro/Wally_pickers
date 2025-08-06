@@ -4,15 +4,20 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
+import { useTranslations } from "next-intl";
+
 interface CatalogSectionProps {
   bgColor?: string;
   textColor?: string;
 }
 
 export default function CatalogSection({ bgColor, textColor }: CatalogSectionProps) {
+  const t = useTranslations("catalogDownload");
   const [showModal, setShowModal] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", phone: "", tipoNegocio: "" });
 
+  // Get the company types array directly from translations
+  const businessTypes = t.raw('form.companyTypes') as string[];
   const handleSubmit = (async (e: React.FormEvent) => {
     e.preventDefault();
     setShowModal(false);
@@ -65,7 +70,7 @@ export default function CatalogSection({ bgColor, textColor }: CatalogSectionPro
       {/* Izquierda: Título + Botón */}
       <div className="flex flex-col items-center  text-center md:text-left max-w-lg">
         <h2 className={`block text-3xl font-bold mb-6 text-center  ${textColor || "text-white"}`}>
-          ¡Descubre +300 productos esperándote!
+          {t('title')}
         </h2>
         <button
           onClick={() => setShowModal(true)}
@@ -86,7 +91,7 @@ export default function CatalogSection({ bgColor, textColor }: CatalogSectionPro
               d="M12 4v12m0 0l-4-4m4 4l4-4M4 20h16"
             />
           </svg>
-          Descargar catálogo 2025
+          {t('cta')}
         </button>
       </div>
 
@@ -117,7 +122,7 @@ export default function CatalogSection({ bgColor, textColor }: CatalogSectionPro
               transition={{ duration: 0.3, ease: "easeOut" }}
             >
               <h3 className="text-2xl font-semibold mb-4 text-center">
-                Descargar Catálogo
+                {t('form.title')}
               </h3>
               <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <input
@@ -125,7 +130,7 @@ export default function CatalogSection({ bgColor, textColor }: CatalogSectionPro
                   name= "name"
                   id="name"
                   autoComplete="name"
-                  placeholder="Tu nombre"
+                  placeholder={t('form.nameHolder')}
                   className="border p-2 rounded"
                   value={form.name}
                   onChange={(e) =>
@@ -138,7 +143,7 @@ export default function CatalogSection({ bgColor, textColor }: CatalogSectionPro
                   name="email"
                   id="email"
                   autoComplete="email"
-                  placeholder="Tu correo"
+                  placeholder={t('form.emailHolder')}
                   className="border p-2 rounded"
                   value={form.email}
                   onChange={(e) =>
@@ -150,7 +155,7 @@ export default function CatalogSection({ bgColor, textColor }: CatalogSectionPro
                   type="text"
                   id="phone"
                   autoComplete="tel"
-                  placeholder="Tu teléfono"
+                  placeholder={t('form.phoneHolder')}
                   className="border p-2 rounded"
                   value={form.phone}
                   onChange={(e) =>
@@ -163,29 +168,29 @@ export default function CatalogSection({ bgColor, textColor }: CatalogSectionPro
                   className="border p-2 rounded hover:cursor-pointer"
                   value={form.tipoNegocio}
                   onChange={(e) =>
-                    setForm({ ...form, tipoNegocio: e.target.value })
+                  setForm({ ...form, tipoNegocio: e.target.value })
                   }
                   required
                 >
-                   <option value="Restaurante / Bar / Cafetería">Restaurante / Bar / Cafetería</option>
-                  <option value="Tienda de alimentación / Supermercado">Tienda de alimentación / Supermercado</option>
-                  <option value="Distribuidor/Mayorista">Distribuidor/Mayorista</option>
-                  <option value="Hotel / Catering">Hotel / Catering</option>
-                  <option value="Tienda especializada (gourmet, internacional, etc.)">Tienda especializada (gourmet, internacional, etc.)</option>
-                  <option value="Otro">Otro</option>
+                  <option value="">{t('form.businessTypeLabel')}</option>
+                  {businessTypes.map((type, index) => (
+                  <option key={index} value={type}>
+                    {type}
+                  </option>
+                  ))}
                 </select>
                 <button
                   type="submit"
                   className="bg-[#d68a49] text-white py-2 mt-3  rounded-full hover:cursor-pointer"
                 >
-                  Enviar y descargar
+                  {t('form.send')}
                 </button>
                 <button
                   type="button"
                   className="text-sm text-gray-500 underline mt-2 hover:text-gray-700 hover:cursor-pointer"
                   onClick={() => setShowModal(false)}
                 >
-                  Cancelar
+                  {t('form.cancel')}
                 </button>
               </form>
             </motion.div>

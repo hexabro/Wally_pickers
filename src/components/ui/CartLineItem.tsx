@@ -1,8 +1,10 @@
+"use client"
 import {Dispatch, ReactElement, useState} from 'react'
 import { ChangeEvent, memo } from 'react';
 import {CartItemType} from '@/context/CartProvider';
 import {ReducerAction, ReducerActionType} from '@/context/CartProvider';
 import { Trash2 } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 type PropsType = {
     item: CartItemType;
@@ -10,6 +12,7 @@ type PropsType = {
     REDUCER_ACTIONS: ReducerActionType;
 }
 const CartLineItem = ({item, dispatch, REDUCER_ACTIONS}: PropsType) => {
+    const t = useTranslations('cartLineItem');
 
 /* IMAGEN */
 const [img, setImg] = useState<string>(`/images/products/${item.product.REF}.jpg`);
@@ -73,13 +76,13 @@ const content = (
             {/* Top Line: Product Name and Format */}
             <div className="flex flex-col">
                 <h3 className="text-lg font-semibold text-gray-800">{item.product.NOMBRE}</h3>
-                <p className="text-sm text-gray-500">Formato: {item.product.FORMATO}</p>
+                <p className="text-sm text-gray-500">{t('format')} {item.product.FORMATO}</p>
             </div>
 
             {/* Middle Line: Quantity Selector */}
             <div className="flex items-center gap-2">
                 <label htmlFor={`quantity-${item.product.REF}`} className="text-xs text-gray-600">
-                    Cantidad:
+                    {t('quantity')}
                 </label>
                 <div className="flex items-center border rounded-lg overflow-hidden">
                     <button
@@ -116,7 +119,7 @@ const content = (
             onClick={onRemoveFromCart}
             className="text-red-500 hover:text-red-700 transition mb-1"
             aria-label="remove item from cart"
-            title="Eliminar producto del carrito"
+            title={t('removeFromCart')}
             >
             <Trash2 size={20} color="black" />
             </button>

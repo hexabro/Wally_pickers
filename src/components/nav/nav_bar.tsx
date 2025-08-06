@@ -6,22 +6,28 @@ import LanguageSelector from '../ui/LanguageSelector';
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { usePathname } from 'next/navigation';
+import { useTranslations } from 'next-intl';
+
 // Helper opcional para concatenar clases
 function cn(...classes: (string | undefined | null | false)[]) {
   return classes.filter(Boolean).join(' ');
 }
 
-const navItems = [
-  { href: '/', label: 'Inicio' },
-  { href: '/catalogo', label: 'Catálogo' },
-  { href: '/ser-cliente', label: 'Ser Cliente' },
-  { href: '/quienes-somos', label: 'Quiénes Somos' },
-  { href: '/guia-compra', label: 'Guía de Compra' },
-/*   { href: '/noticias', label: 'Noticias' },
- */  { href: '/contacto', label: 'Contacto' },
-];
 
 const NavBar = () => {
+  const t = useTranslations('navigation');
+
+  
+  const navItems = [
+    { href: t('homeHref'), label: t('home') },
+    { href: t('catalogHref'), label: t('catalog') },
+    { href: t('becomeClientHref'), label: t('becomeClient') },
+    { href: t('aboutUsHref'), label: t('aboutUs') },
+    { href: t('buyGuideHref'), label: t('buyGuide') },
+    { href: t('contactHref'), label: t('contact') },
+  ];
+
+
   const [isOpen, setIsOpen] = useState(false);
   const [showFixedNav, setShowFixedNav] = useState(false);
   const pathname = usePathname(); 
@@ -86,7 +92,13 @@ const NavBar = () => {
         {/* ---------- Links navegación (desktop) ---------- */}
         <ul className="flex items-center gap-10 text-lg font-medium">
           {navItems.map(({ href, label }) => {
-            const isActive = pathname === href || (href !== '/' && pathname.startsWith(href));
+            // Check if the current path matches the link
+            // Debug values to see what's happening
+            console.log('Nav item:', { pathname, href, label });
+            // If the link is the home page (ends with '/'), check if the pathname matches exactly
+            const isActive = href.endsWith('/') && href.split('/').length === 3 ? 
+              pathname === href || pathname === href.slice(0, -1) : 
+              pathname.startsWith(href);
             return (
               <li key={href}>
                 <Link
@@ -137,14 +149,17 @@ const NavBar = () => {
         }`}
       >
         <div className="flex items-center justify-between px-6 py-4 border-b">
-          <span className="text-xl font-semibold">Menú</span>
+          <span className="text-xl font-semibold">{t('menu')}</span>
           <button onClick={() => setIsOpen(false)} className="text-gray-600 hover:cursor-pointer" aria-label="Cerrar menú">
             <X size={24} />
           </button>
         </div>
         <ul className="flex flex-col px-6 py-4 gap-4 text-base font-medium z-[60]">
           {navItems.map(({ href, label }) => {
-            const isActive = pathname === href || (href !== '/' && pathname.startsWith(href));
+            // Use the same isActive logic as the desktop navigation
+            const isActive = href.endsWith('/') && href.split('/').length === 3 ? 
+              pathname === href || pathname === href.slice(0, -1) : 
+              pathname.startsWith(href);
             return (
               <li key={href}>
                 <Link

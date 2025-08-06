@@ -9,14 +9,24 @@ import Image from 'next/image';
 import ProductList from '@/components/sections/ProductList';
 import SelectedBrands from '../sections/SelectedBrands';
 import { Link as LinkIcon, ChevronUp } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
-const categories = [
-  { name: 'Alimentación', value: 'Alimentacion', image: 'alimentacionCatalog', mobileImage: "/images/categorias/alimentacion2.jpg", link: "/catalogo?category=Alimentacion" },
-  { name: 'Limpieza', value: 'Limpieza', image: 'limpiezaCatalogo', mobileImage: "/images/categorias/limpieza2.jpg", link: "/catalogo?category=Limpieza" },
-  { name: 'Cosmética', value: 'Cosmetica', image: 'cosmeticaCatalog', mobileImage: "/images/categorias/cosmetica2.jpg", link: "/catalogo?category=Cosmetica" },
+const categoriesImages = [
+  {image: 'alimentacionCatalog', mobileImage: "/images/categorias/alimentacion2.jpg"},
+  {image: 'limpiezaCatalogo', mobileImage: "/images/categorias/limpieza2.jpg"},
+  {image: 'cosmetica', mobileImage: "/images/categorias/cosmetica2.jpg"}
 ];
 
 export default function CatalogContent() {
+  const t = useTranslations('catalog');
+  
+  const categories = t.raw('categories') as Array<{
+    name: string, 
+    value: string, 
+    href: string, 
+    link: string
+  }>;
+
   const searchParams = useSearchParams();
   const selectedCategory = searchParams.get('category');
   const selectedType = searchParams.get('type');
@@ -82,9 +92,9 @@ export default function CatalogContent() {
 
         
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-[#0e344f] mb-4">Catálogo de Wally Pickers</h1>
-          <p className="text-lg text-gray-600 mb-6 max-w-3xl">Selecciona una categoría para explorar nuestros productos o usa el buscador para encontrar exactamente lo que necesites</p>
-          
+          <h1 className="text-4xl font-bold text-[#0e344f] mb-4">{t('title')}</h1>
+          <p className="text-lg text-gray-600 mb-6 max-w-3xl">{t('description')}</p>
+
           {/* Global Search Bar */}
           <div className="max-w-2xl mx-auto mb-8">
             <div className="relative">
@@ -105,7 +115,7 @@ export default function CatalogContent() {
               </div>
               <input
                 type="text"
-                placeholder="Buscar en todo el catálogo..."
+                placeholder={t('searchHolder')}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-gray-500 bg-white shadow-sm"
@@ -129,10 +139,10 @@ export default function CatalogContent() {
           <div className="w-full max-w-7xl mx-auto">
             <div className="mb-6 text-center">
               <h2 className="text-2xl font-bold text-gray-900 mb-2">
-                Resultados de búsqueda
+                {t('searchResults')}
               </h2>
               <p className="text-gray-600">
-                {searchFilteredProducts.length} productos encontrados para "{searchQuery}"
+                {filteredProducts.length} {t('resultsPerProduct')} "{searchQuery}"
               </p>
             </div>
             <ProductList filteredProducts={searchFilteredProducts} />
@@ -142,7 +152,7 @@ export default function CatalogContent() {
           <div className = "w-full h-full">
             {/* DESKTOP */}
               <div className="hidden md:grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                {categories.map((cat) => (
+                {categories.map((cat, index) => (
                 <Link
                   key={cat.value}
                   href={`/catalogo?category=${encodeURIComponent(cat.value)}`}
@@ -150,7 +160,7 @@ export default function CatalogContent() {
                 >
                   <div className="relative h-48 overflow-hidden">
                     <Image
-                      src={`/images/categorias/${cat.image}.jpg`}
+                      src={`/images/categorias/${categoriesImages[index]?.image || 'alimentacionCatalog'}.jpg`}
                       alt={cat.name}
                       width={300}
                       height={192}
@@ -162,7 +172,7 @@ export default function CatalogContent() {
                         {cat.name}
                       </h3>
                       <div className="inline-flex items-center text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute bottom-3">
-                        Ver productos
+                        {t('viewProducts')}
                         <svg className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
@@ -174,7 +184,7 @@ export default function CatalogContent() {
               </div>
           {/* MOBILE */}
             <div className="md:hidden w-full h-full flex flex-col space-y-4 hide-scrollbar">
-                  {categories.map((cat) => (
+                  {categories.map((cat, index) => (
                     <div
                       key={cat.name}
                       className={`w-full h-40 rounded-xl overflow-hidden shadow-lg  relative `}
@@ -182,7 +192,7 @@ export default function CatalogContent() {
           
                       {/* Imagen de fondo */}
                       <Image
-                        src={cat.mobileImage}
+                        src={categoriesImages[index]?.mobileImage || "/images/categorias/alimentacion2.jpg"}
                         alt={cat.name}
                         fill
                         className="object-cover blur-xs"
@@ -239,11 +249,11 @@ export default function CatalogContent() {
           <div className="flex items-center justify-between">
             <div>
               <Link href="/catalogo" className="text-[#d68a49] hover:text-[#bf9066] mb-2 inline-block">
-                ← Volver a categorías
+                ← {t('backToCategories')}
               </Link>
               <h1 className="text-3xl font-bold text-gray-200">{selectedCategory}</h1>
               <p className="text-gray-400 mt-1">
-                {filteredProducts.length} productos encontrados
+                {filteredProducts.length} {t('productsFound')}
               </p>
             </div>
           </div>
@@ -294,7 +304,7 @@ export default function CatalogContent() {
               </div>
               <input
                 type="text"
-                placeholder="Buscar productos por nombre, marca, tipo o descripción..."
+                placeholder={t('searchPlaceholder')}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-gray-500"
@@ -312,7 +322,7 @@ export default function CatalogContent() {
             </div>
             {searchQuery && (
               <div className="mt-2 text-sm text-gray-600">
-                Mostrando resultados para: <span className="font-medium">"{searchQuery}"</span>
+                {t('showingResults')} <span className="font-medium">"{searchQuery}"</span>
               </div>
             )}
           </div>
@@ -321,13 +331,13 @@ export default function CatalogContent() {
         {/* Filters */}
         <div className="max-w-7xl mx-auto px-4 pb-6">
           <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
-            <h3 className="text-lg font-semibold mb-4">Filtros</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('filters')}</h3>
             <div className="grid grid-cols-2 gap-4">
               
               {/* Brand Filter */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Marca
+                  {t('brand')}
                 </label>
                 <select
                   value={selectedBrand || ''}
@@ -342,7 +352,7 @@ export default function CatalogContent() {
                   }}
                   className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
-                  <option value="">Todas las marcas</option>
+                  <option value="">{t('allBrands')}</option>
                   {availableBrands.map(brand => (
                     <option key={brand} value={brand}>{brand}</option>
                   ))}
@@ -352,7 +362,7 @@ export default function CatalogContent() {
               {/* Type Filter */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Tipo
+                  {t('type')}
                 </label>
                 <select
                   value={selectedType || ''}
@@ -367,7 +377,7 @@ export default function CatalogContent() {
                   }}
                   className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
-                  <option value="">Todos los tipos</option>
+                  <option value="">{t('allTypes')}</option>
                   {availableTypes.map(type => (
                     <option key={type} value={type}>{type}</option>
                   ))}
@@ -378,10 +388,10 @@ export default function CatalogContent() {
             {/* Active Filters */}
             {(selectedBrand || selectedType) && (
               <div className="mt-4 flex flex-wrap gap-2">
-                <span className="text-sm text-gray-600">Filtros activos:</span>
+                <span className="text-sm text-gray-600">{t('activeFilters')}:</span>
                 {selectedBrand && (
                   <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-blue-100 text-blue-800">
-                    Marca: {selectedBrand}
+                    {t('brand')}: {selectedBrand}
                     <button
                       onClick={() => {
                         const newParams = new URLSearchParams(searchParams.toString());
@@ -396,7 +406,7 @@ export default function CatalogContent() {
                 )}
                 {selectedType && (
                   <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-green-100 text-green-800">
-                    Tipo: {selectedType}
+                    {t('type')}: {selectedType}
                     <button
                       onClick={() => {
                         const newParams = new URLSearchParams(searchParams.toString());
@@ -422,7 +432,7 @@ export default function CatalogContent() {
           <div className="sticky top-6 space-y-6">
             {/* Search Bar */}
             <div className="bg-white rounded-lg shadow-sm p-4">
-              <h3 className="text-lg font-semibold mb-4">Búsqueda</h3>
+              <h3 className="text-lg font-semibold mb-4">{t('search')}</h3>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <svg 
@@ -441,7 +451,7 @@ export default function CatalogContent() {
                 </div>
                 <input
                   type="text"
-                  placeholder="Buscar productos..."
+                  placeholder={t('searchHolder')}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-gray-500"
@@ -459,19 +469,19 @@ export default function CatalogContent() {
               </div>
               {searchQuery && (
                 <div className="mt-2 text-sm text-gray-600">
-                  Resultados para: <span className="font-medium">"{searchQuery}"</span>
+                  {t('showingResults')} <span className="font-medium">"{searchQuery}"</span>
                 </div>
               )}
             </div>
 
             {/* Filters */}
             <div className="bg-white rounded-lg shadow-sm p-6">
-              <h3 className="text-lg font-semibold mb-4">Filtros</h3>
+              <h3 className="text-lg font-semibold mb-4">{t('filters')}</h3>
               
               {/* Brand Filter */}
               <div className="mb-4">
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Marca
+                  {t('brand')}
                 </label>
                 <select
                   value={selectedBrand || ''}
@@ -486,7 +496,7 @@ export default function CatalogContent() {
                   }}
                   className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
-                  <option value="">Todas las marcas</option>
+                  <option value="">{t('allBrands')}</option>
                   {availableBrands.map(brand => (
                     <option key={brand} value={brand}>{brand}</option>
                   ))}
@@ -496,7 +506,7 @@ export default function CatalogContent() {
               {/* Type Filter */}
               <div className="mb-4">
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Tipo
+                  {t('type')}
                 </label>
                 <select
                   value={selectedType || ''}
@@ -511,7 +521,7 @@ export default function CatalogContent() {
                   }}
                   className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
-                  <option value="">Todos los tipos</option>
+                  <option value="">{t('allTypes')}</option>
                   {availableTypes.map(type => (
                     <option key={type} value={type}>{type}</option>
                   ))}
@@ -521,11 +531,11 @@ export default function CatalogContent() {
               {/* Active Filters */}
               {(selectedBrand || selectedType) && (
                 <div className="mt-4">
-                  <span className="text-sm text-gray-600 block mb-2">Filtros activos:</span>
+                  <span className="text-sm text-gray-600 block mb-2">{t('activeFilters')}:</span>
                   <div className="flex flex-col gap-2">
                     {selectedBrand && (
                       <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-blue-100 text-blue-800 w-fit">
-                        Marca: {selectedBrand}
+                        {t('brand')}: {selectedBrand}
                         <button
                           onClick={() => {
                             const newParams = new URLSearchParams(searchParams.toString());
@@ -540,7 +550,7 @@ export default function CatalogContent() {
                     )}
                     {selectedType && (
                       <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-green-100 text-green-800 w-fit">
-                        Tipo: {selectedType}
+                        {t('type')}: {selectedType}
                         <button
                           onClick={() => {
                             const newParams = new URLSearchParams(searchParams.toString());
@@ -560,7 +570,7 @@ export default function CatalogContent() {
 
             {/* Category Switcher */}
             <div className="bg-white rounded-lg shadow-sm p-4">
-              <h3 className="text-lg font-semibold mb-4">Categorías</h3>
+              <h3 className="text-lg font-semibold mb-4">{t('categoriesTitle')}</h3>
               <div className="flex flex-col gap-2">
                 {categories.map((cat) => (
                   <Link

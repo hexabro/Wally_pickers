@@ -4,31 +4,35 @@ import Image from 'next/image';
 import ProfileCard from "../ui/profileCard";
 import { Link as LinkIcon } from "lucide-react"
 import Link from 'next/link';
-const categories = [
+import { useTranslations } from 'next-intl';
+
+
+
+export default function CategoryCards() {
+  
+  const t = useTranslations('home.categoryCards');
+
+  const categories = [
   {
-    name: "Alimentación",
-    handle: "Othon",
+    name: t('cat1'),
     avatarUrl: "/images/categorias/alimentacion.jpg",
     avatarUrl2: "/images/categorias/alimentacion2.jpg",
-    profileLink: "/catalogo?category=Alimentacion"
+    profileLink: t('link1')
   },
   {
-    name: "Limpieza",
-    handle: "Jhonatan",
+    name: t('cat2'),
     avatarUrl: "/images/categorias/limpieza.jpg",
     avatarUrl2: "/images/categorias/limpieza2.jpg",
-    profileLink: "/catalogo?category=Limpieza"
+    profileLink: t('link2')
   },
   {
-    name: "Cosmética",
-    handle: "Pablo",
+    name: t('cat3'),
     avatarUrl: "/images/categorias/cosmetica.jpg",
     avatarUrl2: "/images/categorias/cosmetica2.jpg",
-    profileLink: "/catalogo?category=Cosmetica"
+    profileLink: t('link3')
   },
 ];
 
-export default function CategoryCards() {
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     const onResize = () => setIsMobile(window.innerWidth < 768);
@@ -102,9 +106,9 @@ export default function CategoryCards() {
             <ProfileCard
               name={cat.name}
               title=""
-              handle={cat.handle}
+              handle=""
               status="Online"
-              contactText="Descúbrelos todos"
+              contactText={t('cta')}
               avatarUrl={cat.avatarUrl}
               showBehindGradient={false}
               showUserInfo={true}

@@ -3,8 +3,12 @@ import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Award, ShieldCheck, Globe, Truck, CheckCircle, Headset } from 'lucide-react';
 
+import { useTranslations } from 'next-intl';
 
 export default function ReasonsCards() {
+  const t = useTranslations('become-client');
+  const reasons = t.raw('reasonsCards') as Array<{title:string, description: string}>;
+
   const [count, setCount] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -25,38 +29,38 @@ export default function ReasonsCards() {
  const cards = [
     {
       id: 1,
-      title: 'Más de 27 países en un sólo lugar',
-      description: 'Importando productos FMCG más exclusivos de más de 27 países.',
+      title: reasons[0].title,
+      description: reasons[0].description,
       Icon: Award
     },
     {
       id: 2,
-      title: 'Comprometidos con la seguridad',
-      description: 'Aplicando nuestro propio sistema APPCC. garantizando productos seguros y de la máxima calidad',
+      title: reasons[1].title,
+      description: reasons[1].description,
       Icon: ShieldCheck
     },
     {
       id: 3,
-      title: 'Cobertura en crecimiento',
-      description: 'Ampliamos nuestra red de distribución cada día, asegurando un servicio ágil y fiable para nuestros clientes.',
+      title: reasons[2].title,
+      description: reasons[2].description,
       Icon: Globe
     },
     {
       id: 4,
-      title: 'Impulsamos el valor de cada marca',
-      description: 'Impulsamos a nuestros proveedores con distribución cuidada y enfoque en crecimiento conjunto.',
+      title: reasons[3].title,
+      description: reasons[3].description,
       Icon: Truck
     },
     {
       id: 5,
-      title: 'Control de calidad riguroso',
-      description: 'Procesos de inspección multietapa y trazabilidad completa de lotes.',
+      title: reasons[4].title,
+      description: reasons[4].description,
       Icon: CheckCircle
     },
     {
       id: 6,
-      title: 'Atención personalizada',
-      description: 'Equipo experto en regulaciones, aduanas y soporte postventa dedicado.',
+      title: reasons[5].title,
+      description: reasons[5].description,
       Icon: Headset
     }
   ];
@@ -88,12 +92,12 @@ export default function ReasonsCards() {
         animate={count ==0 ? 'center': 'top'}
         style={{ flex: count === 0 ? 1 : 'none' }}
       >
-        <h3 className="text-3xl font-bold mb-2">¿Necesitas más razones?</h3>
-        <p className="text-lg text-gray-700">Descúbrelas con el siguiente botón.</p>
+        <h3 className="text-3xl font-bold mb-2">{t('reasonsTitle')}</h3>
+        <p className="text-lg text-gray-700">{t('reasonsDescription')}</p>
         <button onClick = {handleClick}
         className = {`mt-8 px-6 py-3 rounded-full shadow focus:outline-none focus:ring-2 focus:ring-blue-400
           ${count > 0 ? 'hidden' : 'bg-blue-600 text-white hover:bg-blue-700'}`}>
-          Comenzar
+          {t('reasonsStartButton')}
         </button>
       </motion.div>
 
@@ -130,7 +134,7 @@ export default function ReasonsCards() {
         className={`mt-8 px-6 py-3 rounded-full shadow focus:outline-none focus:ring-2 focus:ring-blue-400 hover:cursor-pointer
           ${count === 0 ? 'hidden' : count < cards.length ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-[#d68a49] text-white hover:bg-[#d1a47d]'}`}
       >
-        {count === 0 ? 'Comenzar' : count < cards.length ? 'Siguiente razón' : 'Reiniciar'}
+        {count === 0 ? t('reasonsStartButton') : count < cards.length ? t('reasonsNextButton') : t('reasonsRestartButton')}
       </button>
     </section>
   );

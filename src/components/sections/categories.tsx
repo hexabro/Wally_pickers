@@ -4,7 +4,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, LucideIcon } from 'lucide-react';
 import AnimatedColumns from "@/components/ui/AnimatedColumns"
-
 import {
   Cookie,
   Nut,
@@ -19,6 +18,7 @@ import {
   Wheat
 } from "lucide-react";
 
+import { useTranslations } from "next-intl";
 
 interface FlipCardProps {
   href: string;
@@ -46,34 +46,36 @@ export interface CategoryColumn {
 }
 
 export default function CategorySection() {
+  const t = useTranslations('home.categoriesSection');
   const columns: CategoryColumn[] = [
   {
-    label: 'Alimentación',
+    label: t('col1.title'),
     items: [
-      { href: '/catalogo?category=Alimentacion&type=Ramen', label: 'Ramen', icon: Soup },
-      { href: '/catalogo?category=Alimentacion&type=Salsa', label: 'Salsas', icon: Flame },
-      { href: '/catalogo?category=Alimentacion&type=Chocolate', label: 'Chocolate', icon: Cookie },
-      { href: '/catalogo?category=Alimentacion&type=Cereales', label: 'Cereales', icon: Wheat },
+      { href: t('col1.items.0.href'), label: t('col1.items.0.name'), icon: Soup },
+      { href: t('col1.items.1.href'), label: t('col1.items.1.name'), icon: Flame },
+      { href: t('col1.items.2.href'), label: t('col1.items.2.name'), icon: Cookie },
+      { href: t('col1.items.3.href'), label: t('col1.items.3.name'), icon: Wheat },
     ],
   },
   {
-    label: 'Limpieza',
+    label: t('col2.title'),
     items: [
-      { href: '#detergentes', label: 'Detergentes', icon: SprayCan },
-      { href: '#multiusos', label: 'Multiusos', icon: SprayCan },
-      { href: '#desinfectantes', label: 'Desinfectantes', icon: ShieldCheck },
-      { href: '#suavizantes', label: 'Suavizantes', icon: Droplets },
+      { href: t('col2.items.0.href'), label: t('col2.items.0.name'), icon: Soup },
+      { href: t('col2.items.1.href'), label: t('col2.items.1.name'), icon: Flame },
+      { href: t('col2.items.2.href'), label: t('col2.items.2.name'), icon: Cookie },
+      { href: t('col2.items.3.href'), label: t('col2.items.3.name'), icon: Wheat },
     ],
   },
   {
-    label: 'Cosmética',
+    label: t('col3.title'),
     items: [
-      { href: '#champu', label: 'Champú', icon: Sparkles },
-      { href: '#gel-bano', label: 'Gel de baño', icon: ShowerHead },
-      { href: '#crema-facial', label: 'Crema facial', icon: Smile },
-      { href: '#desodorante', label: 'Desodorante', icon: Sparkles },
+      { href: t('col3.items.0.href'), label: t('col3.items.0.name'), icon: Soup },
+      { href: t('col3.items.1.href'), label: t('col3.items.1.name'), icon: Flame },
+      { href: t('col3.items.2.href'), label: t('col3.items.2.name'), icon: Cookie },
+      { href: t('col3.items.3.href'), label: t('col3.items.3.name'), icon: Wheat },
     ],
-  },
+  }
+  
 ];
   return (
     <section className="py-20 px-6 max-w-7xl mx-auto flex flex-col items-center justify-center gap-8">
@@ -86,7 +88,7 @@ export default function CategorySection() {
         transition={{ duration: 0.7, ease: "easeOut" }}
       >
         <span className="bg-clip-text text-blue-500">
-          Explora nuestras categorías
+          {t('title')}
         </span>
       </motion.h2>
 
@@ -151,7 +153,7 @@ export default function CategorySection() {
                 href="/catalogo"
                 className="inline-flex items-center px-6 py-3 rounded-full bg-[#d68a49] text-white font-semibold hover:bg transition-shadow shadow-lg hover:shadow-xl"
               >
-                Ver todos nuestros productos
+                {t('cta')}
                 <ArrowRight size={20} className="ml-2 mt-1" />
               </Link>
             </motion.div>
