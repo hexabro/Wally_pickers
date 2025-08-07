@@ -28,8 +28,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Wally pickers",
-  description: "Wally pickers importación de comida mundial",
+  title: "Wally Pickers",
+  description: "Especialistas en importación y distribución de productos internacionales de calidad",
+  manifest: '/manifest.json',
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
 };
 
 export default async function RootLayout({
@@ -44,6 +52,12 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className= {`${rubik.variable} ${geistSans.variable} ${geistMono.variable}`}>
+      <head>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="shortcut icon" href="/favicon.svg" />
+        <link rel="apple-touch-icon" href="/favicon.svg" />
+        <link rel="manifest" href="/manifest.json" />
+      </head>
       <ProductsProvider>
         <CartProvider>
           <NextIntlClientProvider messages={messages}>

@@ -1,0 +1,16 @@
+{
+  "name": "Wally Pickers",
+  "short_name": "Wally Pickers",
+  "description": "Especialistas en importación y distribución de productos internacionales de calidad",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
