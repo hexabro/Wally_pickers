@@ -53,6 +53,8 @@ export default async function RootLayout({
   return (
     <html lang={locale} className= {`${rubik.variable} ${geistSans.variable} ${geistMono.variable}`}>
       <head>
+        {/* Google Search Console Verification - Replace with your actual verification code */}
+        <meta name="google-site-verification" content="REPLACE_WITH_YOUR_VERIFICATION_CODE" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="shortcut icon" href="/favicon.svg" />
         <link rel="apple-touch-icon" href="/favicon.svg" />
