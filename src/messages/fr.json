@@ -43,15 +43,15 @@
       "links": [
         {
           "label": "Termes et Conditions",
-          "href": "/fr/termes-et-conditions"
+          "href": "/fr/legal/terminos-y-condiciones"
         },
         {
           "label": "Politique de Confidentialité",
-          "href": "/fr/politique-de-confidentialite"
+          "href": "/fr/legal/politica-privacidad"
         },
         {
           "label": "Mention Légale",
-          "href": "/fr/mention-legale"
+          "href": "/fr/legal/aviso-legal"
         }
       ]
     }

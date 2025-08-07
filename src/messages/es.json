@@ -44,15 +44,15 @@
       "links": [
         {
           "label": "Términos y Condiciones",
-          "href": "/es/terminos-y-condiciones"
+          "href": "/es/legal/terminos-y-condiciones"
         },
         {
           "label": "Política de Privacidad",
-          "href": "/es/politica-privacidad"
+          "href": "/es/legal/politica-privacidad"
         },
         {
           "label": "Aviso Legal",
-          "href": "/es/aviso-legal"
+          "href": "/es/legal/aviso-legal"
         }
       ]
     }

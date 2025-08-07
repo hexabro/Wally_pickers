@@ -43,15 +43,15 @@
       "links": [
         {
           "label": "Geschäftsbedingungen",
-          "href": "/de/geschaeftsbedingungen"
+          "href": "/de/legal/terminos-y-condiciones"
         },
         {
           "label": "Datenschutzrichtlinie",
-          "href": "/de/datenschutzrichtlinie"
+          "href": "/de/legal/politica-privacidad"
         },
         {
           "label": "Impressum",
-          "href": "/de/impressum"
+          "href": "/de/legal/aviso-legal"
         }
       ]
     }

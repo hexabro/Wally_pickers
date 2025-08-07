@@ -44,10 +44,6 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className= {`${rubik.variable} ${geistSans.variable} ${geistMono.variable}`}>
-      <SpeedInsights>
-
-        
-      </SpeedInsights>
       <ProductsProvider>
         <CartProvider>
           <NextIntlClientProvider messages={messages}>
@@ -55,8 +51,8 @@ export default async function RootLayout({
               <header>
                 <NavBar/>
               </header>
-              {children}
-              <SpeedInsights/>
+                {children}
+                <SpeedInsights/>
               <Footer/>
             </body>
           </NextIntlClientProvider>
