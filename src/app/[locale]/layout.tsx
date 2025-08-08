@@ -11,6 +11,7 @@ import { CartProvider } from "@/context/CartProvider";
 import { ProductsProvider } from "@/context/ProductsProvider";
 
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/next"
 
 const rubik = Rubik({
   subsets: ['latin'],
@@ -82,6 +83,7 @@ export default async function RootLayout({
               </header>
                 {children}
                 <SpeedInsights/>
+                <Analytics/>
               <Footer/>
             </body>
           </NextIntlClientProvider>
