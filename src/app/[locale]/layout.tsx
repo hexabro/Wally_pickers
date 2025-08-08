@@ -54,7 +54,6 @@ export default async function RootLayout({
   return (
     <html lang={locale} className= {`${rubik.variable} ${geistSans.variable} ${geistMono.variable}`}>
       <head>
-        <meta />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel = "brand-icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="shortcut icon" href="/favicon.svg" />
