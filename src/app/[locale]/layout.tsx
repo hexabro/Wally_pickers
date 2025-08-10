@@ -54,11 +54,11 @@ export default async function RootLayout({
   return (
     <html lang={locale} className= {`${rubik.variable} ${geistSans.variable} ${geistMono.variable}`}>
       <head>
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel = "brand-icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="shortcut icon" href="/favicon.svg" />
-        <link rel="apple-touch-icon" href="/favicon.svg" />
-        <link rel="manifest" href="/manifest.json" />
+        <link rel="icon" href="https://wallypickers.com/favicon.svg" type="image/svg+xml" />
+        <link rel = "brand-icon" href="https://wallypickers.com/favicon.svg" type="image/svg+xml" />
+        <link rel="shortcut icon" href="https://wallypickers.com/favicon.svg" />
+        <link rel="apple-touch-icon" href="https://wallypickers.com/favicon.svg" />
+        <link rel="manifest" href="https://wallypickers.com/manifest.json" />
 
         <script
           type="application/ld+json"
@@ -68,7 +68,7 @@ export default async function RootLayout({
               "@type": "Organization",
               name: "Wally Pickers",
               url: "https://wallypickers.com",
-              logo: "https://wallypickers.com/favicon.png" // Reemplaza esto con la URL pública de tu logo
+              logo: "https://wallypickers.com/favicon.png" 
             }),
           }}
         />
