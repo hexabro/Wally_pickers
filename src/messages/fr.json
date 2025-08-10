@@ -65,11 +65,11 @@
     "categoryCards": {
       "cta": "Découvrez-les tous",
       "cat1": "Alimentation",
-      "link1": "/fr/catalog?category=Alimentation",
+      "link1": "/fr/catalogo?category=Alimentacion",
       "cat2": "Nettoyage",
-      "link2": "/fr/catalog?category=Nettoyage",
+      "link2": "/fr/catalogo?category=Limpieza",
       "cat3": "Cosmétiques",
-      "link3": "/fr/catalog?category=Cosmétiques"
+      "link3": "/fr/catalogo?category=Cosmetica"
     },
     "magnifySection": {
       "title": "Qualité garantie",
@@ -92,19 +92,19 @@
         "items": [
           {
             "name": "Ramen",
-            "href": "/fr/catalog?category=Alimentation&type=Ramen"
+            "href": "/fr/catalogo?category=Alimentacion&type=Ramen"
           },
           {
             "name": "Sauces",
-            "href": "/fr/catalog?category=Alimentation&type=Sauce"
+            "href": "/fr/catalogo?category=Alimentacion&type=Salsa"
           },
           {
             "name": "Chocolats",
-            "href": "/fr/catalog?category=Alimentation&type=Chocolat"
+            "href": "/fr/catalogo?category=Alimentacion&type=Chocolate"
           },
           {
             "name": "Céréales",
-            "href": "/fr/catalog?category=Alimentation&type=Céréales"
+            "href": "/fr/catalogo?category=Alimentacion&type=Cereales"
           }
         ]
       },
@@ -113,19 +113,19 @@
         "items": [
           {
             "name": "Détergents",
-            "href": "/fr/catalog?category=Nettoyage&type=Détergents"
+            "href": "/fr/catalogo?category=Limpieza&type=Detergentes"
           },
           {
             "name": "Multiusage",
-            "href": "/fr/catalog?category=Nettoyage&type=Multiusage"
+            "href": "/fr/catalogo?category=Limpieza&type=Multiusos"
           },
           {
             "name": "Désinfectants",
-            "href": "/fr/catalog?category=Nettoyage&type=Désinfectants"
+            "href": "/fr/catalogo?category=Limpieza&type=Desinfectantes"
           },
           {
             "name": "Assouplissants",
-            "href": "/fr/catalog?category=Nettoyage&type=Assouplissants"
+            "href": "/fr/catalogo?category=Limpieza&type=Suavizantes"
           }
         ]
       },
@@ -134,19 +134,19 @@
         "items": [
           {
             "name": "Shampooing",
-            "href": "/fr/catalog?category=Cosmétiques&type=Shampooing"
+            "href": "/fr/catalogo?category=Cosmetica&type=Champu"
           },
           {
             "name": "Gel douche",
-            "href": "/fr/catalog?category=Cosmétiques&type=Gel-douche"
+            "href": "/fr/catalogo?category=Cosmetica&type=Gel-de-bano"
           },
           {
             "name": "Crème visage",
-            "href": "/fr/catalog?category=Cosmétiques&type=Crème-visage"
+            "href": "/fr/catalogo?category=Cosmetica&type=Crema-facial"
           },
           {
             "name": "Déodorant",
-            "href": "/fr/catalog?category=Cosmétiques&type=Déodorant"
+            "href": "/fr/catalogo?category=Cosmetica&type=Desodorante"
           }
         ]
       },

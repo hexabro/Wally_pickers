@@ -65,11 +65,11 @@
     "categoryCards": {
       "cta": "Discover them all",
       "cat1": "Food",
-      "link1": "/en/catalog?category=Food",
+      "link1": "/en/catalogo?category=Alimentacion",
       "cat2": "Cleaning",
-      "link2": "/en/catalog?category=Cleaning",
+      "link2": "/en/catalogo?category=Limpieza",
       "cat3": "Cosmetics",
-      "link3": "/en/catalog?category=Cosmetics"
+      "link3": "/en/catalogo?category=Cosmetica"
     },
     "magnifySection": {
       "title": "Quality guaranteed",
@@ -92,19 +92,19 @@
         "items": [
           {
             "name": "Ramen",
-            "href": "/en/catalog?category=Food&type=Ramen"
+            "href": "/en/catalogo?category=Alimentacion&type=Ramen"
           },
           {
             "name": "Sauces",
-            "href": "/en/catalog?category=Food&type=Sauce"
+            "href": "/en/catalogo?category=Alimentacion&type=Salsa"
           },
           {
             "name": "Chocolates",
-            "href": "/en/catalog?category=Food&type=Chocolate"
+            "href": "/en/catalogo?category=Alimentacion&type=Chocolate"
           },
           {
             "name": "Cereals",
-            "href": "/en/catalog?category=Food&type=Cereals"
+            "href": "/en/catalogo?category=Alimentacion&type=Cereales"
           }
         ]
       },
@@ -113,19 +113,19 @@
         "items": [
           {
             "name": "Detergents",
-            "href": "/en/catalog?category=Cleaning&type=Detergents"
+            "href": "/en/catalogo?category=Limpieza&type=Detergentes"
           },
           {
             "name": "Multipurpose",
-            "href": "/en/catalog?category=Cleaning&type=Multipurpose"
+            "href": "/en/catalogo?category=Limpieza&type=Multiusos"
           },
           {
             "name": "Disinfectants",
-            "href": "/en/catalog?category=Cleaning&type=Disinfectants"
+            "href": "/en/catalogo?category=Limpieza&type=Desinfectantes"
           },
           {
             "name": "Softeners",
-            "href": "/en/catalog?category=Cleaning&type=Softeners"
+            "href": "/en/catalogo?category=Limpieza&type=Suavizantes"
           }
         ]
       },
@@ -134,19 +134,19 @@
         "items": [
           {
             "name": "Shampoo",
-            "href": "/en/catalog?category=Cosmetics&type=Shampoo"
+            "href": "/en/catalogo?category=Cosmetica&type=Champu"
           },
           {
             "name": "Body wash",
-            "href": "/en/catalog?category=Cosmetics&type=Body-wash"
+            "href": "/en/catalogo?category=Cosmetica&type=Gel-de-ducha"
           },
           {
             "name": "Face cream",
-            "href": "/en/catalog?category=Cosmetics&type=Face-cream"
+            "href": "/en/catalogo?category=Cosmetica&type=Crema-facial"
           },
           {
             "name": "Deodorant",
-            "href": "/en/catalog?category=Cosmetics&type=Deodorant"
+            "href": "/en/catalogo?category=Cosmetica&type=Desodorante"
           }
         ]
       },

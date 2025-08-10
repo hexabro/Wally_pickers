@@ -65,11 +65,11 @@
     "categoryCards": {
       "cta": "Alle entdecken",
       "cat1": "Lebensmittel",
-      "link1": "/de/catalog?category=Lebensmittel",
+      "link1": "/de/catalogo?category=Alimentacion",
       "cat2": "Reinigung",
-      "link2": "/de/catalog?category=Reinigung",
+      "link2": "/de/catalogo?category=Limpieza",
       "cat3": "Kosmetik",
-      "link3": "/de/catalog?category=Kosmetik"
+      "link3": "/de/catalogo?category=Cosmetica"
     },
     "magnifySection": {
       "title": "Qualität garantiert",
@@ -92,19 +92,19 @@
         "items": [
           {
             "name": "Ramen",
-            "href": "/de/catalog?category=Lebensmittel&type=Ramen"
+            "href": "/de/catalogo?category=Alimentacion&type=Ramen"
           },
           {
             "name": "Saucen",
-            "href": "/de/catalog?category=Lebensmittel&type=Sauce"
+            "href": "/de/catalogo?category=Alimentacion&type=Salsa"
           },
           {
             "name": "Schokolade",
-            "href": "/de/catalog?category=Lebensmittel&type=Schokolade"
+            "href": "/de/catalogo?category=Alimentacion&type=Chocolate"
           },
           {
             "name": "Getreide",
-            "href": "/de/catalog?category=Lebensmittel&type=Getreide"
+            "href": "/de/catalogo?category=Alimentacion&type=Cereales"
           }
         ]
       },
@@ -113,19 +113,19 @@
         "items": [
           {
             "name": "Waschmittel",
-            "href": "/de/catalog?category=Reinigung&type=Waschmittel"
+            "href": "/de/catalogo?category=Limpieza&type=Detergentes"
           },
           {
             "name": "Mehrzweck",
-            "href": "/de/catalog?category=Reinigung&type=Mehrzweck"
+            "href": "/de/catalogo?category=Limpieza&type=Multiusos"
           },
           {
             "name": "Desinfektionsmittel",
-            "href": "/de/catalog?category=Reinigung&type=Desinfektionsmittel"
+            "href": "/de/catalogo?category=Limpieza&type=Desinfectantes"
           },
           {
             "name": "Weichspüler",
-            "href": "/de/catalog?category=Reinigung&type=Weichspüler"
+            "href": "/de/catalogo?category=Limpieza&type=Suavizantes"
           }
         ]
       },
@@ -134,19 +134,19 @@
         "items": [
           {
             "name": "Shampoo",
-            "href": "/de/catalog?category=Kosmetik&type=Shampoo"
+            "href": "/de/catalogo?category=Cosmetica&type=Champu"
           },
           {
             "name": "Duschgel",
-            "href": "/de/catalog?category=Kosmetik&type=Duschgel"
+            "href": "/de/catalogo?category=Cosmetica&type=Gel-de-bano"
           },
           {
             "name": "Gesichtscreme",
-            "href": "/de/catalog?category=Kosmetik&type=Gesichtscreme"
+            "href": "/de/catalogo?category=Cosmetica&type=Crema-facial"
           },
           {
             "name": "Deodorant",
-            "href": "/de/catalog?category=Kosmetik&type=Deodorant"
+            "href": "/de/catalogo?category=Cosmetica&type=Desodorante"
           }
         ]
       },
