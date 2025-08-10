@@ -91,6 +91,7 @@ export default function BrandCarousel({ direction = 'right', brands = defaultLog
               key={i}
               src={`/images/brands/${logo}`}
               alt={logo}
+              loading = "lazy"
               width={140}
               height={80}
               className="object-contain md:grayscale md:hover:grayscale-0"

@@ -103,6 +103,7 @@ export default function CategorySection() {
           <Image
             src="/images/categorias/imagen_trabajadora.jpg"
             alt="Cesta de productos"
+            loading = "lazy"
             width={600}
             height={400}
             className="object-cover w-full h-full"

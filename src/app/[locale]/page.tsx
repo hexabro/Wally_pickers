@@ -90,6 +90,7 @@ export default function HomePage() {
           <Image
             src="/images/mapa_wally.png"
             alt="Mapa de proveedores de Wally Pickers"
+            loading = "lazy"
             width={600}
             height={500}
             className="h-auto object-cover md:rounded-lg mb-10"
