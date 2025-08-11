@@ -115,12 +115,12 @@ export default function MagnifyingSection({title, description, titleColor, descC
 
       {/* Magnifier lens */}
       <div
-        className={`absolute w-40 h-40 rounded-full border-2 ${magnifyColor ? magnifyColor : "border-white"} pointer-events-none ${isMouseInSection ? 'xl:block' : 'hidden'} z-20`}
+        className={`hidden xl:block absolute w-40 h-40 rounded-full border-2 ${magnifyColor ? magnifyColor : "border-white"} pointer-events-none ${isMouseInSection ? 'xl:block' : 'hidden'} z-20`}
         style={{ left: pointer.x - 80, top: pointer.y - 80 }}
       />
       {/* PALO */}
       <div
-        className={`absolute w-2 h-20 rounded-b-3xl ${stickColor ? stickColor : "bg-white"} pointer-events-none ${isMouseInSection ? 'xl:block' : 'hidden'} z-20`}
+        className={`hidden xl:block absolute w-2 h-20 rounded-b-3xl ${stickColor ? stickColor : "bg-white"} pointer-events-none ${isMouseInSection ? 'xl:block' : 'hidden'} z-20`}
         style={{
           left: pointer.x - 60,
           top: pointer.y + 50,
