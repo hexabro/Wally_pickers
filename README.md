@@ -14,9 +14,7 @@ Este proyecto es una plataforma web desarrollada con Next.js para Wally Pickers,
 El catálogo incluye:
 - Listado de productos por categoría (alimentación, limpieza, cosmética, etc.)
 - Nombre, imagen y descripción breve de cada producto
-- Origen/procedencia internacional
 - Información sobre disponibilidad y logística
-- Fichas técnicas y certificaciones relevantes
 
 ## Habilidades y tecnologías utilizadas
 - Next.js (React)
