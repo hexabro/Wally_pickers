@@ -2318,5 +2318,15 @@
     "TIPO": "Jalapeños",
     "FORMATO": "1 x 220g",
     "UDS_CAJA": 24
+  },
+  {
+    "REF": "c0001",
+    "NOMBRE": "Marvis Smokers 85ml",
+    "DESCRIPCION": "Pasta blanqueadora para fumadores",
+    "CATEGORIA": "cosmetica",
+    "MARCA": "Marvis",
+    "TIPO": "Pasta de dientes",
+    "FORMATO": "85ml",
+    "UDS_CAJA": 24
   }
 ]
