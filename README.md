@@ -1,55 +1,42 @@
 # Wally Pickers - Proyecto Web
 
-Este proyecto es una plataforma web desarrollada con Next.js para Wally Pickers, una importadora y distribuidora de productos FMCG (Fast Moving Consumer Goods) internacionales. El objetivo es facilitar la conexión entre negocios y productos en tendencia, garantizando abastecimiento eficiente, precios competitivos y una experiencia de usuario moderna y confiable.
+Este proyecto es una plataforma web desarrollada con Next.js para Wally Pickers, una importadora y distribuidora mayorista de productos FMCG (Fast Moving Consumer Goods) internacionales. El objetivo es facilitar la conexión entre negocios y productos en tendencia, garantizando abastecimiento eficiente, precios competitivos y una experiencia de usuario moderna y confiable.
 
 ## Características principales
-- **Catálogo digital**: Navegación por categorías (alimentación, limpieza, cosmética) con productos destacados y acceso rápido a fichas y descarga de catálogo.
+- **Catálogo digital**: Navegación por categorías (alimentación, limpieza, cosmética) y filtros por marca y tipo de producto y acceso rápido a fichas y descarga de catálogo.
+- **Alojamiento de productos**: Por ahora, los produtos se almacenan en un json generado por un script del proyecto que obtiene los datos de un excel que pueden editar los propietarios de Wally Pickers. Esto es temporal ya que se está desarrollando actualmente el backend necesario para hacer un sistema más escalable 
 - **Animaciones y experiencia interactiva**: Uso de Framer Motion, carrousels, efectos de lupa y secciones animadas para destacar la innovación y facilidad de uso.
-- **Sección de fundadores**: Mensajes personales de los fundadores para inspirar confianza y cercanía.
-- **Formulario de contacto**: Para recibir propuestas personalizadas y resolver dudas de clientes potenciales.
+- **Formulario de contacto**: Para recibir propuestas personalizadas y resolver dudas de clientes potenciales. Los datos del formulario son enviados automáticamente a un google sheets. Dependiendo de cuál sea el formulario que haya rellenado el cliente los datos estarán en una u otra tabla
 - **Reseñas de clientes**: Testimonios reales que refuerzan la reputación y el valor de la empresa.
 - **Información de contacto y ubicación**: Mapa interactivo y datos de la central para facilitar la comunicación.
 
 ## Estructura del catálogo
-El catálogo debe incluir:
+El catálogo incluye:
 - Listado de productos por categoría (alimentación, limpieza, cosmética, etc.)
 - Nombre, imagen y descripción breve de cada producto
 - Origen/procedencia internacional
-- Precios y condiciones de compra (si aplica)
 - Información sobre disponibilidad y logística
 - Fichas técnicas y certificaciones relevantes
-- Productos en tendencia y novedades
 
-## Tecnologías utilizadas
+## Habilidades y tecnologías utilizadas
 - Next.js (React)
+- Typescript
 - Tailwind CSS
 - Framer Motion
 - Lucide Icons
-- Vercel (despliegue recomendado)
+- Next-intl para traducciones de la web
+- Proveedores de contexto para carrito y productos persistentes (se muestra un indicador cuando un producto está en el carrito)
+- Vercel para el despliegue
 
-## Cómo ejecutar el proyecto
 
-```bash
-npm run dev
-# o
-yarn dev
-# o
-pnpm dev
-# o
-bun dev
-```
+## MEJORAS FUTURAS
 
-Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver el resultado.
+- Migrar el sistema de productos a un backend con base de datos relacional.
 
-## Personalización y edición
-- Edita las páginas en la carpeta `app/` y los componentes en `src/components/`.
-- El catálogo y las categorías pueden actualizarse en los archivos de sección correspondientes.
+- Implementar autenticación de clientes para que obtengan diferentes niveles de precios según su categoría.
 
-## Recomendaciones para el catálogo
-El catálogo debe ser claro, visual y fácil de navegar. Incluye imágenes de alta calidad, información relevante y destaca los productos más demandados. Considera agregar filtros por tendencia, origen y disponibilidad.
+- Optimizar imágenes y carga diferida para mayor rendimiento.
 
-## Contacto y soporte
-Para dudas o soporte, utiliza el formulario de contacto en la web o consulta la sección de información de la empresa.
 
 ---
 
