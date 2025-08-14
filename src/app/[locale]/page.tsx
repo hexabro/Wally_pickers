@@ -70,6 +70,8 @@ export default function HomePage() {
       <div className = "mx-auto">
         <SwipeCarousel></SwipeCarousel>
       </div>  
+
+
       
       <Presentacion />
       
