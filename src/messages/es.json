@@ -379,7 +379,9 @@
       ],
       "message": "Mensaje",
       "send": "Enviar",
-      "required": "Completa este campo"
+      "required": "Completa este campo",
+      "thankYou": "¡Gracias por tu mensaje!",
+      "contactSoon": "Nos pondremos en contacto contigo pronto."
     },
     "info": {
       "title": "¿Dónde está Wally?",

@@ -404,7 +404,9 @@
       ],
       "message": "Message",
       "send": "Envoyer",
-      "required": "Complétez ce champ"
+      "required": "Complétez ce champ",
+      "thankYou": "Merci pour votre message !",
+      "contactSoon": "Nous vous contacterons bientôt."
     },
     "info": {
       "title": "Où est Wally ?",

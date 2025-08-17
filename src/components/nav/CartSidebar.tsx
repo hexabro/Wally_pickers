@@ -143,7 +143,7 @@ const CartSidebar = ({ isOpen, setIsOpen }: propsType) => {
               `${item.product.REF} - ${item.product.NOMBRE} (${item.product.MARCA}) - ${item.quantity} cajas`
             ).join('\n');
 
-            const endpoint = "https://script.google.com/macros/s/AKfycbx0dXA_HD8iLd59h-AzeBRAOFSugALL-mhRFr4fxPLpjrEeA9SbRzOLYyjTMWr4OKbAdw/exec"
+            const endpoint = "https://script.google.com/macros/s/AKfycbwBNcD_3_x7mw_tu_cmfScIFLQMt1maVBqTQKhlD_PfUOd_F7Gt8NeC-Savu6NXtKRAXg/exec"
 
 
 

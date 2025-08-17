@@ -1,11 +1,13 @@
 "use client"
 
 import { useTranslations } from 'next-intl';
-
+import { useState } from 'react';
+import { Cross } from 'lucide-react';
+import { motion } from 'motion/react';
 
 const ContactForm = () => {
     const t = useTranslations('contact.form');
-
+    const [submitted, setSubmitted] = useState(false);
     const companyTypes: string[] = t.raw('companyTypes');
 
     const handleInvalidInput = (e: React.FormEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -20,16 +22,20 @@ const ContactForm = () => {
 
     return(
         <section  id = "contact" className="mx-auto  bg-gray-50 rounded-lg shadow-md">
-            <form   onSubmit={async (e) => {
+            <form onSubmit={async (e) => {
             e.preventDefault();
-            // Call the function to submit the order
-
             
-            const nombre = (document.getElementById("name") as HTMLInputElement).value;
-            const correo = (document.getElementById("email") as HTMLInputElement).value;
-            const telefono = (document.getElementById("phone") as HTMLInputElement).value;
-            const tipoNegocio = (document.getElementById("business-type") as HTMLSelectElement).value;
-            const mensaje = (document.getElementById("message") as HTMLTextAreaElement).value;
+            const nameInput = document.getElementById("name") as HTMLInputElement;
+            const emailInput = document.getElementById("email") as HTMLInputElement;
+            const phoneInput = document.getElementById("phone") as HTMLInputElement;
+            const businessTypeInput = document.getElementById("business-type") as HTMLSelectElement;
+            const messageInput = document.getElementById("message") as HTMLTextAreaElement;
+
+            const nombre = nameInput.value;
+            const correo = emailInput.value;
+            const telefono = phoneInput.value;
+            const tipoNegocio = businessTypeInput.value;
+            const mensaje = messageInput.value;
 
             const endpoint = "https://script.google.com/macros/s/AKfycbx0dXA_HD8iLd59h-AzeBRAOFSugALL-mhRFr4fxPLpjrEeA9SbRzOLYyjTMWr4OKbAdw/exec"
 
@@ -42,10 +48,20 @@ const ContactForm = () => {
               formData.append("mensaje", mensaje);
               formData.append("tipo", "info" );
 
+              //mostrar mensaje de agradecimiento
+              setSubmitted(true);
+
               await fetch(endpoint, {
               method: "POST",
               body: formData,
               });
+              
+              // Clear form inputs after successful submission
+              nameInput.value = '';
+              emailInput.value = '';
+              phoneInput.value = '';
+              businessTypeInput.value = '';
+              messageInput.value = '';
 
             } catch (error) {
               console.error("Error al enviar los datos:", error);
@@ -130,6 +146,42 @@ const ContactForm = () => {
               ></textarea>
             </div>
             <button type="submit" className="w-full bg-[#0e344f] text-white font-semibold py-3 rounded-lg hover:bg-blue-800 transition-colors">{t('send')}</button>
+            
+            {submitted && (
+                <div 
+                className="fixed inset-0 backdrop-blur-sm bg-opacity-50 flex items-center justify-center z-50 px-4" 
+                onClick={() => setSubmitted(false)}
+                >
+                <motion.div 
+                  className="bg-white rounded-lg p-8 max-w-md w-full shadow-xl relative"
+                  onClick={(e) => e.stopPropagation()}
+                  initial={{ scale: 0.5, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.5, opacity: 0 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                >
+                    <button 
+                    onClick={() => setSubmitted(false)}
+                    className="absolute top-2 right-2 p-2 rounded-full hover:bg-gray-100 transition-colors"
+                    aria-label="Close"
+                    >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="18" y1="6" x2="6" y2="18"></line>
+                      <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                    </button>
+                  <div className="text-center">
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-6">
+                      <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">{t('thankYou')}</h3>
+                    <p className="text-gray-600 mb-6">{t('contactSoon')}</p>
+                  </div>
+                </motion.div>
+                </div>
+            )}
             </form>
         </section>
 

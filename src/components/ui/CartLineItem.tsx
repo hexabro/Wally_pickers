@@ -62,7 +62,7 @@ const onRemoveFromCart = () => {
 }
 
 const content = (
-    <li className="cart-line-item flex items-start gap-4 p-4 border-b">
+    <li className="flex items-start gap-4 p-4 border-b">
         {/* Product Image */}
         <img
             src={img}

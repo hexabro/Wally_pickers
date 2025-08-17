@@ -404,7 +404,9 @@
       ],
       "message": "Message",
       "send": "Send",
-      "required": "Complete this field"
+      "required": "Complete this field",
+      "thankYou": "Thank you for your message!",
+      "contactSoon": "We will contact you soon."
     },
     "info": {
       "title": "Where is Wally?",
