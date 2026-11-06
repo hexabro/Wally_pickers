@@ -82,8 +82,8 @@
       "b2bClients": "+Clientes B2B"
     },
     "brandCarousel": {
-      "title": "Marcas que confían en nosotros",
-      "description": "Descubre algunas de las empresas líderes con lo más alto en calidad."
+      "title": "Marcas que distribuimos",
+      "description": "Algunas de las marcas internacionales de nuestro catálogo."
     },
     "categoriesSection": {
       "title": "Explora nuestras categorías",
@@ -364,7 +364,7 @@
     "prices": "Precios competitivos"
   },
   "brands": {
-    "title": "Marcas que confían en nosotros",
+    "title": "Marcas que distribuimos",
     "description": "Trabajamos con las marcas más reconocidas del mundo para ofrecerte productos de la más alta calidad"
   },
   "reasons": {

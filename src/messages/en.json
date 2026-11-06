@@ -82,8 +82,8 @@
       "b2bClients": "+B2B Clients"
     },
     "brandCarousel": {
-      "title": "Brands that trust us",
-      "description": "Discover some of the leading companies with the highest quality."
+      "title": "Brands we distribute",
+      "description": "Some of the international brands in our catalogue."
     },
     "categoriesSection": {
       "title": "Explore our categories",
@@ -364,7 +364,7 @@
     "prices": "Competitive prices"
   },
   "brands": {
-    "title": "Brands that trust us",
+    "title": "Brands we distribute",
     "description": "We work with the most recognized brands in the world to offer you products of the highest quality"
   },
   "reasons": {

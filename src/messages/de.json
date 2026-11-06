@@ -82,8 +82,8 @@
       "b2bClients": "+B2B Kunden"
     },
     "brandCarousel": {
-      "title": "Marken, die uns vertrauen",
-      "description": "Entdecken Sie einige der führenden Unternehmen mit höchster Qualität."
+      "title": "Marken, die wir vertreiben",
+      "description": "Einige der internationalen Marken in unserem Katalog."
     },
     "categoriesSection": {
       "title": "Entdecken Sie unsere Kategorien",
@@ -364,7 +364,7 @@
     "prices": "Wettbewerbsfähige Preise"
   },
   "brands": {
-    "title": "Marken, die uns vertrauen",
+    "title": "Marken, die wir vertreiben",
     "description": "Wir arbeiten mit den anerkanntesten Marken der Welt zusammen, um Ihnen Produkte höchster Qualität zu bieten"
   },
   "reasons": {

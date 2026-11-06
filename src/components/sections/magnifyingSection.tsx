@@ -87,7 +87,7 @@ export default function MagnifyingSection({title, description, titleColor, descC
       />
 
       {/* Blurred background text */}
-      <div className={`absolute inset-0 md:filter xl:blur-sm z-0 }`}>
+      <div className={`absolute inset-0 z-0`}>
         <div className="flex flex-col items-center md:items-start p-4 space-y-4">
           <h2 className={`text-3xl md:text-4xl font-bold text-${titleColor} underline underline-offset-13 decoration-dashed ${textCentered ? 'text-center' : ''}`}>
           {title}
