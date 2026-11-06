@@ -146,6 +146,7 @@ const ContactForm = () => {
               ></textarea>
             </div>
             <button type="submit" className="w-full bg-[#0e344f] text-white font-semibold py-3 rounded-lg hover:bg-blue-800 transition-colors">{t('send')}</button>
+            <p className="mt-3 text-xs text-gray-500">{t('privacy')}</p>
             
             {submitted && (
                 <div 

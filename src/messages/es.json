@@ -14,33 +14,32 @@
     "becomeClient": "Ser Cliente",
     "menu": "Menú"
   },
-  "footer":{
-    "contact":{
-        "title": "Contacto",
-        "direction": "Dirección",
-        "phone": "Teléfono",
-        "email": "Correo Electrónico"
+  "footer": {
+    "contact": {
+      "title": "Contacto",
+      "direction": "Dirección",
+      "phone": "Teléfono",
+      "email": "Correo Electrónico"
     },
     "CompanyInfo": {
-        "p1": "Especialistas en importación y distribución de productos internacionales de calidad.",
-        "p2": "Más de 300 productos en tendencia esperando ser descubiertos."
+      "p1": "Especialistas en importación y distribución de productos internacionales de calidad.",
+      "p2": "Más de 300 productos en tendencia esperando ser descubiertos."
     },
     "Coverage": {
-        "title": "Cobertura",
-        "description": "Negocios que apoyamos con calidad.",
-        "businesses": [
-            "Restaurantes / Bares / Cafeterías",
-            "Tiendas de alimentación / Supermercados",
-            "Mayoristas / Distribuidores",
-            "Hoteles",
-            "Caterings",
-            "Tiendas especializadas"
-        ],
-        "worry": "* ¿No ves tu negocio aquí? ¡Contáctanos! Estamos en constante expansión y buscamos nuevos socios."
-
+      "title": "Cobertura",
+      "description": "Negocios que apoyamos con calidad.",
+      "businesses": [
+        "Restaurantes / Bares / Cafeterías",
+        "Tiendas de alimentación / Supermercados",
+        "Mayoristas / Distribuidores",
+        "Hoteles",
+        "Caterings",
+        "Tiendas especializadas"
+      ],
+      "worry": "* ¿No ves tu negocio aquí? ¡Contáctanos! Estamos en constante expansión y buscamos nuevos socios."
     },
     "bottom": {
-      "text": "© 2025 Wally Pickers S.L. Todos los derechos reservados.",
+      "text": "© 2025 Wally Pickers Trading S.L. Todos los derechos reservados.",
       "links": [
         {
           "label": "Términos y Condiciones",
@@ -56,15 +55,13 @@
         }
       ]
     }
-
   },
-  "home":{
+  "home": {
     "presentation": {
-        "title": "Especialistas en bienes de ",
-        "span": "alta rotación",
-        "description": "Importamos los mejores productos del mundo para que tu negocio esté abastecido con lo que más vende."
+      "title": "Especialistas en bienes de ",
+      "span": "alta rotación",
+      "description": "Importamos los mejores productos del mundo para que tu negocio esté abastecido con lo que más vende."
     },
-
     "categoryCards": {
       "cta": "Descúbrelos todos",
       "cat1": "Alimentación",
@@ -74,13 +71,11 @@
       "cat3": "Cosmética",
       "link3": "/es/catalogo?category=Cosmetica"
     },
-
     "magnifySection": {
       "title": "Calidad garantizada",
       "description": "Trabajamos con fabricantes y distribuidores líderes en Asia, América, Europa y Reino Unido. Contamos con más de 300 productos internacionales listos para tu negocio, con alta rotación, márgenes competitivos y distribución eficiente."
     },
-
-    "statsStrip":{
+    "statsStrip": {
       "productsInternational": "productos internacionales",
       "countries": "Países integrados en nuestro catálogo",
       "brands": "Marcas exclusivas",
@@ -92,38 +87,73 @@
     },
     "categoriesSection": {
       "title": "Explora nuestras categorías",
-    "col1": {
-      "title": "Alimentación",
-      "items": [
-        { "name": "Ramen", "href": "/es/catalogo?category=Alimentacion&type=Ramen" },
-        { "name": "Salsas", "href": "/es/catalogo?category=Alimentacion&type=Salsa" },
-        { "name": "Chocolates", "href": "/es/catalogo?category=Alimentacion&type=Chocolate" },
-        { "name": "Cereales", "href": "/es/catalogo?category=Alimentacion&type=Cereales" }
-      ]
-    },
-    "col2": {
-      "title": "Limpieza",
-      "items": [
-        { "name": "Detergentes", "href": "/es/catalogo?category=Limpieza&type=Detergentes" },
-        { "name": "Multiusos", "href": "/es/catalogo?category=Limpieza&type=Multiusos" },
-        { "name": "Desinfectantes", "href": "/es/catalogo?category=Limpieza&type=Desinfectantes" },
-        { "name": "Suavizantes", "href": "/es/catalogo?category=Limpieza&type=Suavizantes" }
-      ]
-    },
-    "col3": {
-      "title": "Cosmética",
-      "items": [
-        { "name": "Champú", "href": "/es/catalogo?category=Cosmetica&type=Champu" },
-        { "name": "Gel de baño", "href": "/es/catalogo?category=Cosmetica&type=Gel-de-bano" },
-        { "name": "Crema facial", "href": "/es/catalogo?category=Cosmetica&type=Crema-facial" },
-        { "name": "Desodorante", "href": "/es/catalogo?category=Cosmetica&type=Desodorante" }
-      ]
-    },
+      "col1": {
+        "title": "Alimentación",
+        "items": [
+          {
+            "name": "Ramen",
+            "href": "/es/catalogo?category=Alimentacion&type=Ramen"
+          },
+          {
+            "name": "Salsas",
+            "href": "/es/catalogo?category=Alimentacion&type=Salsa"
+          },
+          {
+            "name": "Chocolates",
+            "href": "/es/catalogo?category=Alimentacion&type=Chocolate"
+          },
+          {
+            "name": "Cereales",
+            "href": "/es/catalogo?category=Alimentacion&type=Cereales"
+          }
+        ]
+      },
+      "col2": {
+        "title": "Limpieza",
+        "items": [
+          {
+            "name": "Detergentes",
+            "href": "/es/catalogo?category=Limpieza&type=Detergentes"
+          },
+          {
+            "name": "Multiusos",
+            "href": "/es/catalogo?category=Limpieza&type=Multiusos"
+          },
+          {
+            "name": "Desinfectantes",
+            "href": "/es/catalogo?category=Limpieza&type=Desinfectantes"
+          },
+          {
+            "name": "Suavizantes",
+            "href": "/es/catalogo?category=Limpieza&type=Suavizantes"
+          }
+        ]
+      },
+      "col3": {
+        "title": "Cosmética",
+        "items": [
+          {
+            "name": "Champú",
+            "href": "/es/catalogo?category=Cosmetica&type=Champu"
+          },
+          {
+            "name": "Gel de baño",
+            "href": "/es/catalogo?category=Cosmetica&type=Gel-de-bano"
+          },
+          {
+            "name": "Crema facial",
+            "href": "/es/catalogo?category=Cosmetica&type=Crema-facial"
+          },
+          {
+            "name": "Desodorante",
+            "href": "/es/catalogo?category=Cosmetica&type=Desodorante"
+          }
+        ]
+      },
       "cta": "Ver todos nuestros productos"
     }
-
   },
-  "catalog":{
+  "catalog": {
     "title": "Catálogo de Wally Pickers",
     "description": "Selecciona una categoría para explorar nuestros productos o usa el buscador para encontrar exactamente lo que necesites",
     "searchHolder": "Buscar productos...",
@@ -142,7 +172,7 @@
     "allTypes": "Todos los tipos",
     "activeFilters": "Filtros activos",
     "categoriesTitle": "Categorías",
-    "categories":[
+    "categories": [
       {
         "name": "Alimentación",
         "value": "Alimentacion",
@@ -163,8 +193,7 @@
       }
     ]
   },
-
-  "become-client":{
+  "become-client": {
     "title": "SER CLIENTE",
     "subtitle": "Crezcamos juntos",
     "description": "Nos enorgullecemos de apoyar el éxito de nuestros clientes proporcionando productos de alta calidad y un servicio excepcional.",
@@ -313,7 +342,8 @@
       "message": "Mensaje",
       "send": "Enviar y descargar",
       "cancel": "Cancelar",
-      "required": "Completa este campo"
+      "required": "Completa este campo",
+      "privacy": "Responsable: Wally Pickers Trading S.L. Usamos tus datos solo para responder a tu solicitud; no se ceden a terceros. Puedes ejercer tus derechos en soporte@wallypickers.com. Más información en la Política de Privacidad."
     },
     "confirmation": {
       "title": "¡Descarga iniciada!",
@@ -321,14 +351,11 @@
       "close": "Cerrar"
     }
   },
-
   "ContactForm": {
     "title": "¿Listo para empezar?",
     "desc1": "Rellena el formulario y nos pondremos en contacto contigo para ofrecerte una propuesta personalizada.",
     "desc2": "Nuestro equipo está listo para ayudarte a encontrar los productos perfectos para tu negocio y responder a todas tus preguntas."
   },
-  
-  
   "features": {
     "title": "Descubre lo que nos hace únicos",
     "analysis": "Análisis de tendencias",
@@ -359,7 +386,6 @@
       "description": "Equipo dedicado para ayudarte en cada paso del proceso"
     }
   },
-
   "contact": {
     "title": "¡Hablemos!",
     "subtitle": "¿Te interesa alguno de nuestros productos o crees que podríamos colaborar? Ya sabes lo que hacer.",
@@ -381,7 +407,8 @@
       "send": "Enviar",
       "required": "Completa este campo",
       "thankYou": "¡Gracias por tu mensaje!",
-      "contactSoon": "Nos pondremos en contacto contigo pronto."
+      "contactSoon": "Nos pondremos en contacto contigo pronto.",
+      "privacy": "Responsable: Wally Pickers Trading S.L. Usamos tus datos solo para responder a tu solicitud; no se ceden a terceros. Puedes ejercer tus derechos en soporte@wallypickers.com. Más información en la Política de Privacidad."
     },
     "info": {
       "title": "¿Dónde está Wally?",
@@ -392,7 +419,6 @@
       "copy": "Copiar al portapapeles"
     }
   },
-
   "about": {
     "title": "Quiénes Somos",
     "mission": "Nuestra Misión",
@@ -451,7 +477,12 @@
         "content": "<h2>Introducción</h2><p>En el competitivo mundo del retail y el comercio, detectar tendencias antes que la competencia puede ser la diferencia entre el éxito y el fracaso. La capacidad de identificar productos que están por explotar en popularidad te permite posicionarte como líder en el mercado y maximizar tus beneficios.</p><h2>Herramientas clave para detectar tendencias</h2><h3>1. Google Trends y análisis de búsquedas</h3><p>Google Trends es tu mejor aliado para detectar el crecimiento en búsquedas de productos específicos. Analiza patrones estacionales, picos de interés y compara términos relacionados para identificar oportunidades emergentes.</p><h3>2. Redes sociales como termómetro</h3><p>Instagram, TikTok y Pinterest son laboratorios de tendencias. Observa qué productos aparecen frecuentemente en posts de influencers, qué hashtags están creciendo y qué contenido genera más engagement.</p><h3>3. Análisis de la competencia</h3><p>Monitorea qué hacen tus competidores más exitosos, pero no te limites a copiar. Busca patrones en sus lanzamientos y anticípate a sus próximos movimientos.</p><h2>Estrategias de investigación de mercado</h2><h3>Ferias y eventos del sector</h3><p>Las ferias comerciales son ventanas al futuro. Los expositores suelen presentar productos que estarán en el mercado en 6-12 meses. Networking con proveedores te dará acceso a información privilegiada.</p><h3>Consumo en mercados avanzados</h3><p>Lo que es popular en Japón, Corea del Sur o California hoy, podría ser tendencia en España en 6 meses. Estudia mercados que suelen marcar tendencias globales.</p><h3>Análisis generacional</h3><p>La Generación Z y los millennials son los principales impulsores de nuevas tendencias. Entiende sus valores, preocupaciones y aspiraciones para anticipar qué productos resonarán con ellos.</p><h2>Indicadores tempranos de éxito</h2><p>Busca productos que muestren crecimiento sostenido en búsquedas durante 2-3 meses, aparición en múltiples plataformas sociales, y endorsement de micro-influencers antes que macro-influencers.</p><h2>Conclusión</h2><p>Detectar tendencias es una combinación de análisis de datos, intuición de mercado y timing perfecto. Desarrolla un sistema de monitoreo constante y no tengas miedo de apostar por productos innovadores cuando todos los indicadores apunten en la misma dirección.</p>",
         "category": "Estrategia",
         "image": "/images/buy-guide/trends.jpg",
-        "tags": ["tendencias", "estrategia", "competencia", "análisis"],
+        "tags": [
+          "tendencias",
+          "estrategia",
+          "competencia",
+          "análisis"
+        ],
         "readTime": 6
       },
       {
@@ -461,7 +492,12 @@
         "content": "<h2>Los errores que pueden hundir tu negocio</h2><p>Comprar productos en tendencia puede ser extremadamente lucrativo, pero también arriesgado. Los errores en este proceso pueden costar miles de euros y dañar la reputación de tu negocio. Aprende de los errores más comunes para evitar caer en las mismas trampas.</p><h2>Error #1: Llegar demasiado tarde a la tendencia</h2><h3>El problema</h3><p>Muchos compradores esperan a que una tendencia esté completamente establecida antes de actuar. Para entonces, el mercado ya está saturado y los márgenes se han reducido drasticamente.</p><h3>La solución</h3><p>Desarrolla un sistema de alerta temprana y acepta que no todos los productos serán éxitos. Es mejor apostar por 10 productos emergentes y que 3 sean exitosos, que apostar por 1 producto establecido con márgenes mínimos.</p><h2>Error #2: Sobreestimar la demanda</h2><h3>El problema</h3><p>Ver las primeras señales de éxito de un producto y asumir que la demanda será masiva e ilimitada. Esto lleva a sobrestock y productos que no rotan.</p><h3>La solución</h3><p>Comienza con pedidos pequeños y escala gradualmente. Analiza la curva de adopción típica en tu mercado y ajusta tus expectativas a la realidad de tu audiencia.</p><h2>Error #3: Ignorar la estacionalidad</h2><h3>El problema</h3><p>Muchos productos trending tienen componentes estacionales que se ignoran. Comprar productos de verano en abril puede parecer inteligente, pero si la tendencia murió en febrero, te quedarás con stock invendible.</p><h3>La solución</h3><p>Estudia patrones históricos de productos similares y considera factores externos como el clima, eventos sociales y calendarios comerciales.</p><h2>Error #4: No verificar la calidad del proveedor</h2><p>La prisa por capitalizar una tendencia lleva a muchos a trabajar con proveedores no verificados. Esto resulta en productos defectuosos, retrasos en la entrega y clientes insatisfechos.</p><h2>Error #5: Falta de diferenciación</h2><p>Copiar exactamente lo que hace la competencia no es una estrategia. Busca formas de diferenciar tu oferta: mejor precio, mejor calidad, mejor servicio o mejor presentación.</p><h2>Cómo evitar estos errores</h2><p>Desarrolla un proceso de evaluación sistemático, mantén relaciones sólidas con proveedores confiables, y siempre ten un plan B. La clave está en equilibrar la velocidad de decisión con la diligencia debida.</p>",
         "category": "Compras",
         "image": "/images/buy-guide/errors.jpg",
-        "tags": ["errores", "compras", "tendencias", "consejos"],
+        "tags": [
+          "errores",
+          "compras",
+          "tendencias",
+          "consejos"
+        ],
         "readTime": 7
       },
       {
@@ -471,7 +507,12 @@
         "content": "<h2>El poder de la compra por impulso</h2><p>Los productos de impulso pueden representar hasta el 30% de las ventas totales de una tienda física bien organizada. Un corner de impulso efectivo no solo incrementa tus ingresos, sino que también mejora la percepción de variedad y novedad de tu establecimiento.</p><h2>Ubicación estratégica del corner</h2><h3>Cerca de la caja registradora</h3><p>El área más efectiva para productos de impulso es junto a la zona de pago. Los clientes tienen tiempo para observar mientras esperan y están en modo 'compra', facilitando decisiones rápidas.</p><h3>Zonas de tráfico alto</h3><p>Pasillos principales, entrada de la tienda y cerca de productos ancla (productos que la gente viene a buscar específicamente) son ubicaciones ideales para captar atención.</p><h3>Alturas visuales óptimas</h3><p>Los productos deben estar entre 90cm y 160cm de altura - la zona de visión natural del cliente. Lo que está muy alto se ignora, lo que está muy bajo no se ve.</p><h2>Selección de productos ideales</h2><h3>Características del producto perfecto de impulso</h3><p>Precio bajo (menos de 20€), utilidad inmediata, empaque atractivo, producto complementario a compras principales, y novedad o factor 'wow'.</p><h3>Categorías que funcionan mejor</h3><p>Snacks y bebidas, accesorios tecnológicos, productos de belleza y cuidado personal, artículos de temporada, y productos curiosos o divertidos.</p><h2>Diseño y presentación del corner</h2><h3>Principio de la pirámide</h3><p>Coloca los productos más atractivos a la altura de los ojos, productos complementarios en el nivel medio, y stock adicional en la parte inferior.</p><h3>Iluminación efectiva</h3><p>Usa iluminación LED direccional para destacar productos. La luz cálida (3000K) es ideal para productos alimentarios, mientras que la luz fría (4000K) funciona mejor para tecnología.</p><h3>Señalización clara</h3><p>Precios visibles, beneficios del producto en pocas palabras, y ofertas especiales claramente marcadas. Evita sobrecargar con información.</p><h2>Rotación y renovación constante</h2><p>Cambia al menos el 30% de los productos cada 2-3 semanas. Los clientes habituales deben encontrar siempre algo nuevo que los sorprenda.</p><h2>Métricas de éxito</h2><p>Mide la rotación por producto, el ticket promedio, y la frecuencia de compra de productos de impulso. Un corner exitoso debe tener una rotación de al menos 8 veces al año.</p><h2>Errores comunes a evitar</h2><p>No sobrecargar el espacio, mantener el corner limpio y organizado, evitar productos demasiado caros para impulso, y no descuidar la reposición de stock.</p>",
         "category": "Retail",
         "image": "/images/buy-guide/corner.jpg",
-        "tags": ["retail", "merchandising", "impulso", "tienda"],
+        "tags": [
+          "retail",
+          "merchandising",
+          "impulso",
+          "tienda"
+        ],
         "readTime": 8
       }
     ],
@@ -552,11 +593,11 @@
       "title": "Términos y Condiciones",
       "section1": {
         "title": "1. Información General",
-        "content": "Los presentes términos y condiciones (en adelante, los 'Términos') regulan el uso de los servicios ofrecidos por Wally Pickers S.L., con domicilio social en C/Francisco de Medina y Mendoza 50, 19171 Cabanillas del Campo (Guadalajara), España, y CIF B-21954870. Al acceder y utilizar nuestros servicios, usted acepta estar sujeto a estos Términos."
+        "content": "Los presentes términos y condiciones (en adelante, los 'Términos') regulan el uso de los servicios ofrecidos por Wally Pickers Trading S.L., con domicilio social en C/ Laguna Chica 13, 3ºA, 19005 Guadalajara, España, y CIF B-21954870. Al acceder y utilizar nuestros servicios, usted acepta estar sujeto a estos Términos."
       },
       "section2": {
         "title": "2. Servicios Ofrecidos",
-        "content": "Wally Pickers S.L. se dedica a la importación y distribución de productos alimentarios internacionales, productos de limpieza y cosmética. Nuestros servicios están dirigidos exclusivamente a empresas (B2B), incluyendo restaurantes, hoteles, supermercados, mayoristas y otros establecimientos comerciales. Ofrecemos un servicio de consulta donde los clientes solicitan información sobre productos de su interés y reciben propuestas comerciales personalizadas."
+        "content": "Wally Pickers Trading S.L. se dedica a la importación y distribución de productos alimentarios internacionales, productos de limpieza y cosmética. Nuestros servicios están dirigidos exclusivamente a empresas (B2B), incluyendo restaurantes, hoteles, supermercados, mayoristas y otros establecimientos comerciales. Ofrecemos un servicio de consulta donde los clientes solicitan información sobre productos de su interés y reciben propuestas comerciales personalizadas."
       },
       "section3": {
         "title": "3. Proceso de Consulta y Cotización",
@@ -572,7 +613,7 @@
       },
       "section6": {
         "title": "6. Entrega y Transporte",
-        "content": "Los plazos de entrega se especifican en cada propuesta comercial aceptada y pueden variar según la disponibilidad del producto, volúmenes solicitados y ubicación de entrega. Wally Pickers S.L. no se hace responsable de retrasos causados por circunstancias ajenas a su control, incluyendo problemas de transporte, aduanas, disponibilidad de proveedores o fuerza mayor."
+        "content": "Los plazos de entrega se especifican en cada propuesta comercial aceptada y pueden variar según la disponibilidad del producto, volúmenes solicitados y ubicación de entrega. Wally Pickers Trading S.L. no se hace responsable de retrasos causados por circunstancias ajenas a su control, incluyendo problemas de transporte, aduanas, disponibilidad de proveedores o fuerza mayor."
       },
       "section7": {
         "title": "7. Calidad y Devoluciones",
@@ -580,11 +621,11 @@
       },
       "section8": {
         "title": "8. Confidencialidad de la Información Comercial",
-        "content": "Toda la información comercial intercambiada, incluyendo precios, condiciones, volúmenes y términos de las propuestas, se considera confidencial entre las partes. Los clientes se comprometen a no divulgar esta información a terceros sin autorización expresa. Del mismo modo, Wally Pickers S.L. mantendrá la confidencialidad de la información comercial de sus clientes."
+        "content": "Toda la información comercial intercambiada, incluyendo precios, condiciones, volúmenes y términos de las propuestas, se considera confidencial entre las partes. Los clientes se comprometen a no divulgar esta información a terceros sin autorización expresa. Del mismo modo, Wally Pickers Trading S.L. mantendrá la confidencialidad de la información comercial de sus clientes."
       },
       "section9": {
         "title": "9. Responsabilidad",
-        "content": "Wally Pickers S.L. se compromete a proporcionar información veraz sobre productos y cumplir con las especificaciones acordadas en las propuestas comerciales aceptadas. Nuestra responsabilidad se limita al valor de los productos entregados conforme a los términos acordados y en ningún caso incluirá daños indirectos, lucro cesante o consecuenciales."
+        "content": "Wally Pickers Trading S.L. se compromete a proporcionar información veraz sobre productos y cumplir con las especificaciones acordadas en las propuestas comerciales aceptadas. Nuestra responsabilidad se limita al valor de los productos entregados conforme a los términos acordados y en ningún caso incluirá daños indirectos, lucro cesante o consecuenciales."
       },
       "section10": {
         "title": "10. Modificaciones y Legislación Aplicable",
@@ -597,7 +638,7 @@
       "title": "Política de Privacidad",
       "section1": {
         "title": "1. Responsable del Tratamiento",
-        "content": "Wally Pickers S.L., con domicilio en C/Francisco de Medina y Mendoza 50, 19171 Cabanillas del Campo (Guadalajara), España, y CIF B-21954870, es el responsable del tratamiento de sus datos personales conforme al Reglamento General de Protección de Datos (RGPD) de la Unión Europea."
+        "content": "Wally Pickers Trading S.L., con domicilio en C/ Laguna Chica 13, 3ºA, 19005 Guadalajara, España, y CIF B-21954870, es el responsable del tratamiento de sus datos personales conforme al Reglamento General de Protección de Datos (RGPD) de la Unión Europea."
       },
       "section2": {
         "title": "2. Datos Recopilados",
@@ -621,7 +662,7 @@
       },
       "section7": {
         "title": "7. Derechos del Interesado",
-        "content": "Usted tiene derecho a acceder, rectificar, suprimir, limitar el tratamiento, oponerse al mismo y a la portabilidad de sus datos. Para ejercer estos derechos, puede contactar con nosotros en ventas@wallypickers.com o en nuestra dirección postal."
+        "content": "Usted tiene derecho a acceder, rectificar, suprimir, limitar el tratamiento, oponerse al mismo y a la portabilidad de sus datos. Para ejercer estos derechos, puede contactar con nosotros en soporte@wallypickers.com o en nuestra dirección postal."
       },
       "section8": {
         "title": "8. Seguridad",
@@ -629,7 +670,7 @@
       },
       "section9": {
         "title": "9. Contacto y Reclamaciones",
-        "content": "Para cualquier consulta sobre esta política de privacidad o el tratamiento de sus datos, puede contactar con nosotros en ventas@wallypickers.com. También tiene derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (www.aepd.es)."
+        "content": "Para cualquier consulta sobre esta política de privacidad o el tratamiento de sus datos, puede contactar con nosotros en soporte@wallypickers.com. También tiene derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (www.aepd.es)."
       },
       "lastUpdated": "Última actualización",
       "date": "6 de agosto de 2025"
@@ -638,11 +679,11 @@
       "title": "Aviso Legal",
       "section1": {
         "title": "1. Datos Identificativos",
-        "content": "En cumplimiento de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico, informamos que el titular de este sitio web es: Wally Pickers S.L., con domicilio social en :Laguna Chica 13, 3A, 19005, Guadalajara, España. CIF: B-21954870. Teléfono: +34 640 69 05 04. Email: ventas@wallypickers.com"
+        "content": "En cumplimiento de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico, informamos que el titular de este sitio web es: Wally Pickers Trading S.L., con domicilio social en Laguna Chica 13, 3A, 19005, Guadalajara, España. CIF: B-21954870. Teléfono: +34 640 69 05 04. Email: ventas@wallypickers.com"
       },
       "section2": {
         "title": "2. Objeto",
-        "content": "El presente aviso legal regula el uso del sitio web de Wally Pickers S.L., así como las relaciones entre el sitio web y sus usuarios. El acceso al sitio web implica la aceptación plena de este aviso legal."
+        "content": "El presente aviso legal regula el uso del sitio web de Wally Pickers Trading S.L., así como las relaciones entre el sitio web y sus usuarios. El acceso al sitio web implica la aceptación plena de este aviso legal."
       },
       "section3": {
         "title": "3. Condiciones de Uso",
@@ -650,11 +691,11 @@
       },
       "section4": {
         "title": "4. Propiedad Intelectual",
-        "content": "Todos los contenidos del sitio web, incluyendo textos, fotografías, gráficos, imágenes, iconos, tecnología, software, enlaces y demás contenidos audiovisuales o sonoros, así como su diseño gráfico y códigos fuente, son propiedad intelectual de Wally Pickers S.L., sin que puedan entenderse cedidos al usuario ninguno de los derechos de explotación sobre los mismos."
+        "content": "Todos los contenidos del sitio web, incluyendo textos, fotografías, gráficos, imágenes, iconos, tecnología, software, enlaces y demás contenidos audiovisuales o sonoros, así como su diseño gráfico y códigos fuente, son propiedad intelectual de Wally Pickers Trading S.L., sin que puedan entenderse cedidos al usuario ninguno de los derechos de explotación sobre los mismos."
       },
       "section5": {
         "title": "5. Exclusión de Responsabilidad",
-        "content": "Wally Pickers S.L. no se hace responsable de los daños que puedan derivarse del uso incorrecto de este sitio web. En particular, no se hace responsable de las caídas, interrupciones, falta o defecto de las telecomunicaciones que pudieran ocurrir."
+        "content": "Wally Pickers Trading S.L. no se hace responsable de los daños que puedan derivarse del uso incorrecto de este sitio web. En particular, no se hace responsable de las caídas, interrupciones, falta o defecto de las telecomunicaciones que pudieran ocurrir."
       },
       "section6": {
         "title": "6. Legislación Aplicable",

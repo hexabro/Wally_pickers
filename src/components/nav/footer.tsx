@@ -64,7 +64,7 @@ export default function Footer() {
                 <div>
                   <p className="text-gray-300">{f('contact.direction')}:</p>
                   <p className="text-white">
-                    C/Francisco de Medina y Mendoza 50<br />
+                    C/ Francisco de Medina y Mendoza 22B, naves 17-20<br />
                     19171 Cabanillas del Campo (Guadalajara) – España
                   </p>
                 </div>
@@ -74,7 +74,7 @@ export default function Footer() {
                 <Phone className="w-4 h-4 text-blue-400 flex-shrink-0" />
                 <div>
                   <p className="text-gray-300">{f('contact.phone')}:</p>
-                  <a href="tel:+34123456789" className="text-white hover:text-blue-300 transition-colors">
+                  <a href="tel:+34640690504" className="text-white hover:text-blue-300 transition-colors">
                     +34 640 69 05 04
                   </a>
                 </div>

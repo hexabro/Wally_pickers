@@ -197,6 +197,7 @@ export default function CatalogSection({ bgColor, textColor }: CatalogSectionPro
                 >
                   {t('form.cancel')}
                 </button>
+                <p className="text-xs text-gray-500 mt-2">{t('form.privacy')}</p>
               </form>
             </motion.div>
           </motion.div>

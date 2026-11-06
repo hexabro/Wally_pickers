@@ -77,7 +77,7 @@ export default function ContactPage() {
                     className="hover:text-blue-600 transition-colors"
                 >
                   <p className="text-gray-700 ">
-                    C/Francisco de Medina y Mendoza 50, <br />
+                    C/ Francisco de Medina y Mendoza 22B, naves 17-20, <br />
                     19171 Cabanillas del Campo (Guadalajara) – España
                   </p>
                 </Link>
@@ -92,7 +92,6 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-gray-700"><span className="font-semibold">{t('info.phone.general')}:</span> (+34) 640 69 05 04</p>
-                  <p className="text-gray-700"><span className="font-semibold">{t('info.phone.sales')}:</span> (+34) 634 65 34 75</p>
                 </div>
                 
               </div>
